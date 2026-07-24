@@ -1,0 +1,31 @@
+.top{
+  position:sticky;
+  top:0;
+  z-index:20;
+  height:72px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 4vw;
+  background:#0b0b0bf2;
+  color:#fff;
+}
+.brand{display:flex;align-items:center;gap:18px;color:#fff;text-decoration:none}
+.head{font-size:30px;font-weight:1000;letter-spacing:-.06em}
+.copy strong,.copy small{display:block}
+.copy strong{font-size:13px;letter-spacing:.12em}
+.copy small{font-size:10px;color:#aaa}
+.actions{display:flex;gap:10px}
+.ghost,.cart,.primary{border:0;font-weight:900}
+.ghost{padding:11px 16px;border-radius:999px;background:#252525;color:#fff}
+.cart{padding:11px 16px;border-radius:999px;background:#fff;color:#111}
+.cart span{
+  display:inline-grid;
+  place-items:center;
+  min-width:24px;
+  height:24px;
+  margin-left:8px;
+  border-radius:50%;
+  background:#111;
+  color:#fff;
+}

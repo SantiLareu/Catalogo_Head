@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Real Step · HEAD Calzado</title><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><link rel="stylesheet" href="css/base/variables.css">
+<link rel="stylesheet" href="css/base/reset.css">
+<link rel="stylesheet" href="css/components/header.css">
+<link rel="stylesheet" href="css/components/hero.css">
+<link rel="stylesheet" href="css/categories/calzado.css">
+<link rel="stylesheet" href="css/components/cart.css">
+<link rel="stylesheet" href="css/components/modal.css">
+<link rel="stylesheet" href="css/components/footer.css">
+<link rel="stylesheet" href="css/base/responsive.css"></head><body>
+<header class="top"><a class="brand" href="#inicio"><span class="head">HEAD</span><span class="copy"><strong>REAL STEP</strong><small>Catálogo mayorista</small></span></a><div class="actions"><button class="ghost" id="go">Ver calzado</button><button class="cart" id="open">Pedido <span id="count">0</span></button></div></header>
+<main><section class="hero" id="inicio"><div class="hero-copy"><p class="ey">REAL STEP PRESENTA</p><h1>HEAD<br>CALZADO</h1><p>Elegí modelo, talle y cantidad. Venta por unidad y sin pagos online.</p><button id="heroGo">VER MODELOS</button></div><div class="hero-img"><img src="assets/2026-padel-coello-heroHeader.jpg" alt="HEAD ACE-M1"></div></section><section class="heading" id="productos"><p class="ey">COLECCIÓN</p><h2>Calzado HEAD</h2><p>Stock independiente por talle.</p></section><section class="list" id="list"></section></main>
+<aside class="drawer" id="drawer"><div class="back" data-close></div><div class="dpanel"><div class="dhead"><div><p class="ey">TU SELECCIÓN</p><h2>Pedido</h2></div><button class="close" data-close>×</button></div><div class="items" id="items"></div><div class="summary"><div><span>Unidades</span><strong id="units">0</strong></div><div class="grand"><span>Total</span><strong id="total">$ 0,00</strong></div><button class="primary" id="checkout">CONTINUAR</button></div></div></aside>
+<section class="modal" id="modal"><div class="back" data-close-modal></div><div class="mcard"><div class="dhead"><div><p class="ey">CONFIRMACIÓN</p><h2>Datos del cliente</h2></div><button class="close" data-close-modal>×</button></div><form class="form" id="form"><div class="grid"><label>Nombre y apellido*<input name="name" required></label><label>Comercio*<input name="company" required></label><label>Teléfono*<input name="phone" required></label><label>Correo electrónico*<input name="email" type="email" required></label><label>Provincia*<input name="province" required></label><label>Localidad*<input name="city" required></label><label class="wide">Dirección<input name="address"></label><label class="wide">Observaciones<textarea name="notes" rows="4"></textarea></label></div><div class="preview" id="preview"></div><p class="note">Esta solicitud no procesa pagos ni confirma stock de manera definitiva.</p><button class="primary" type="submit">CONFIRMAR Y ENVIAR PEDIDO</button></form></div></section><div class="toast" id="toast"></div><footer><strong>REAL STEP</strong><span>Catálogo HEAD · Calzado</span></footer>
+<script src="js/config/company.js"></script>
+<script src="js/config/email.js"></script>
+
+<script src="js/data/calzado/ace-m1.js"></script>
+<script src="js/data/calzado/ace-m2.js"></script>
+<script src="js/data/paletas/index.js"></script>
+<script src="js/data/pelotas/index.js"></script>
+<script src="js/data/bolsos/index.js"></script>
+<script src="js/data/indumentaria/index.js"></script>
+<script src="js/data/accesorios/index.js"></script>
+<script src="js/data/products.js"></script>
+
+<script src="js/utils/money.js"></script>
+<script src="js/utils/html.js"></script>
+
+<script src="js/services/storage.js"></script>
+<script src="js/services/state.js"></script>
+<script src="js/components/productCard.js"></script>
+<script src="js/components/toast.js"></script>
+<script src="js/components/cart.js"></script>
+<script src="js/services/emailService.js"></script>
+<script src="js/app.js"></script></body></html>

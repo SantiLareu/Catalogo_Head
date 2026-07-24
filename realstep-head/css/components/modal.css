@@ -1,0 +1,23 @@
+.modal{display:grid;place-items:center;padding:20px}
+.mcard{position:relative;width:min(840px,96vw);max-height:92vh;overflow:auto;background:#fff}
+.form{padding:24px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.grid label{display:grid;gap:7px;font-size:12px;font-weight:800}
+.grid input,.grid textarea{padding:12px;border:1px solid var(--l)}
+.wide{grid-column:1/-1}
+.preview{margin:22px 0;padding:18px;background:#eee;line-height:1.7}
+.note{color:var(--m);font-size:12px}
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:28px;
+  z-index:80;
+  transform:translate(-50%,20px);
+  padding:13px 18px;
+  background:#111;
+  color:#fff;
+  opacity:0;
+  visibility:hidden;
+  transition:.2s;
+}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
