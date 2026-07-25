@@ -3,6 +3,13 @@ window.RealStep = window.RealStep || {};
 RealStep.renderProductCard = function(product) {
   var currentImage = RealStep.state.selectedImageByProduct[product.id];
   var selectedSize = RealStep.state.selectedSizeByProduct[product.id];
+  var hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
+  var category = (RealStep.categories || []).find(function(item) {
+    return item.productCategory === product.category;
+  });
+  var categoryLabel = category
+    ? category.label
+    : String(product.category || '').toUpperCase();
 
   return `
     <article class="product">
@@ -28,7 +35,7 @@ RealStep.renderProductCard = function(product) {
       </div>
 
       <div class="panel">
-        <p class="ey">CALZADO</p>
+        <p class="ey">${categoryLabel}</p>
         <h2>${product.name}</h2>
         <p class="code">SKU ${product.code}</p>
 
@@ -37,23 +44,25 @@ RealStep.renderProductCard = function(product) {
           <strong>${RealStep.formatMoney(product.price)}</strong>
         </div>
 
-        <span class="label">Elegí el talle</span>
+        ${hasSizes ? `
+          <span class="label">Elegí el talle</span>
 
-        <div class="sizes">
-          ${product.sizes.map(function(size) {
-            return `
-              <button
-                class="size ${selectedSize === size.size ? 'sel' : ''}"
-                data-size-product="${product.id}"
-                data-size="${size.size}"
-                ${size.inStock ? '' : 'disabled'}
-              >
-                ${size.size}
-                ${size.inStock ? '' : '<small>Sin stock</small>'}
-              </button>
-            `;
-          }).join('')}
-        </div>
+          <div class="sizes">
+            ${product.sizes.map(function(size) {
+              return `
+                <button
+                  class="size ${selectedSize === size.size ? 'sel' : ''}"
+                  data-size-product="${product.id}"
+                  data-size="${size.size}"
+                  ${size.inStock ? '' : 'disabled'}
+                >
+                  ${size.size}
+                  ${size.inStock ? '' : '<small>Sin stock</small>'}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        ` : ''}
 
         <span class="label">Cantidad</span>
 

@@ -1,44 +1,50 @@
 window.RealStep = window.RealStep || {};
 
-RealStep.renderProducts = function() {
-  document.getElementById('list').innerHTML =
-    RealStep.products.map(function(product) {
-      return RealStep.renderProductCard(product);
-    }).join('');
-};
-
 RealStep.addToCart = function(productId) {
   var product = RealStep.findProduct(productId);
-  var size = RealStep.state.selectedSizeByProduct[productId];
+  var hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
+  var size = hasSizes
+    ? RealStep.state.selectedSizeByProduct[productId]
+    : null;
   var quantity = RealStep.state.quantityByProduct[productId];
 
-  if (!size) {
+  if (hasSizes && !size) {
     RealStep.showToast('Elegí un talle antes de agregar.');
     return;
   }
 
-  if (!RealStep.sizeIsAvailable(product, size)) {
+  if (hasSizes && !RealStep.sizeIsAvailable(product, size)) {
     RealStep.showToast('El talle ' + size + ' se encuentra sin stock.');
     return;
   }
 
   var existing = RealStep.state.cart.find(function(item) {
-    return item.productId === productId && item.size === size;
+    return item.productId === productId &&
+      (!hasSizes || item.size === size);
   });
 
   if (existing) {
     existing.quantity += quantity;
   } else {
-    RealStep.state.cart.push({
+    var cartItem = {
       productId: productId,
-      size: size,
       quantity: quantity
-    });
+    };
+
+    if (hasSizes) {
+      cartItem.size = size;
+    }
+
+    RealStep.state.cart.push(cartItem);
   }
 
   RealStep.saveCartToStorage(RealStep.state.cart);
   RealStep.renderCart();
-  RealStep.showToast(product.name + ' talle ' + size + ' agregado');
+  RealStep.showToast(
+    product.name +
+    (hasSizes ? ' talle ' + size : '') +
+    ' agregado'
+  );
 };
 
 RealStep.openCart = function() {
@@ -79,7 +85,7 @@ document.addEventListener('click', function(event) {
       imageButton.dataset.imageProduct
     ] = Number(imageButton.dataset.imageIndex);
 
-    RealStep.renderProducts();
+    RealStep.renderCatalogSections();
     return;
   }
 
@@ -90,7 +96,7 @@ document.addEventListener('click', function(event) {
       sizeButton.dataset.sizeProduct
     ] = sizeButton.dataset.size;
 
-    RealStep.renderProducts();
+    RealStep.renderCatalogSections();
     return;
   }
 
@@ -119,10 +125,16 @@ document.addEventListener('click', function(event) {
   var removeButton = event.target.closest('[data-remove-product]');
 
   if (removeButton) {
+    var removeSize = removeButton.dataset.removeSize;
+
     RealStep.state.cart = RealStep.state.cart.filter(function(item) {
       return !(
         item.productId === removeButton.dataset.removeProduct &&
-        item.size === removeButton.dataset.removeSize
+        (
+          removeSize === undefined
+            ? !item.size
+            : item.size === removeSize
+        )
       );
     });
 
@@ -139,17 +151,28 @@ document.addEventListener('click', function(event) {
   }
 });
 
+RealStep.scrollToFirstCatalogSection = function() {
+  var category = RealStep.categories.find(function(item) {
+    return item.enabled;
+  });
+  var target = category && document.getElementById(category.target);
+
+  if (target) {
+    target.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+};
+
 document.getElementById('open').addEventListener('click', RealStep.openCart);
-document.getElementById('go').addEventListener('click', function() {
-  document.getElementById('productos').scrollIntoView({
-    behavior: 'smooth'
-  });
-});
-document.getElementById('heroGo').addEventListener('click', function() {
-  document.getElementById('productos').scrollIntoView({
-    behavior: 'smooth'
-  });
-});
+var heroGoButton = document.getElementById('heroGo');
+
+if (heroGoButton) {
+  heroGoButton.addEventListener(
+    'click',
+    RealStep.scrollToFirstCatalogSection
+  );
+}
 document.getElementById('checkout').addEventListener(
   'click',
   RealStep.openCheckout
@@ -193,5 +216,6 @@ document.getElementById('form').addEventListener(
   }
 );
 
-RealStep.renderProducts();
+RealStep.renderCatalogSections();
 RealStep.renderCart();
+RealStep.renderCategoryIndex();

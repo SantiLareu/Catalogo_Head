@@ -28,19 +28,22 @@ RealStep.renderCart = function() {
   } else {
     list.innerHTML = RealStep.state.cart.map(function(item) {
       var product = RealStep.findProduct(item.productId);
+      var productDetail = item.size
+        ? 'Talle ' + item.size + ' · ' + product.code
+        : product.code;
 
       return `
         <article class="item">
           <div class="itemtop">
             <div>
               <h3>${product.name}</h3>
-              <p>Talle ${item.size} · ${product.code}</p>
+              <p>${productDetail}</p>
             </div>
 
             <button
               class="remove"
               data-remove-product="${item.productId}"
-              data-remove-size="${item.size}"
+              ${item.size ? `data-remove-size="${item.size}"` : ''}
             >
               Eliminar
             </button>

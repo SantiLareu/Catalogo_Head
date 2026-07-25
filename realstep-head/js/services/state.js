@@ -20,7 +20,7 @@ RealStep.findProduct = function(productId) {
 };
 
 RealStep.sizeIsAvailable = function(product, size) {
-  return product.sizes.some(function(item) {
+  return Array.isArray(product.sizes) && product.sizes.some(function(item) {
     return item.size === size && item.inStock;
   });
 };
