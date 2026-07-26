@@ -9,7 +9,9 @@ RealStep.getTotals = function() {
     }
 
     totals.units += item.quantity;
-    totals.total += product.price * item.quantity;
+    totals.total +=
+      RealStep.getEffectivePrice(product, item.variantId) *
+      item.quantity;
 
     return totals;
   }, { units: 0, total: 0 });
@@ -28,21 +30,35 @@ RealStep.renderCart = function() {
   } else {
     list.innerHTML = RealStep.state.cart.map(function(item) {
       var product = RealStep.findProduct(item.productId);
-      var productDetail = item.size
-        ? 'Talle ' + item.size + ' · ' + product.code
-        : product.code;
+      var variant = RealStep.findVariant(product, item.variantId);
+      var code = variant ? variant.code : product.code;
+      var price = RealStep.getEffectivePrice(product, item.variantId);
+      var productDetails = [];
+
+      if (variant && variant.colorName) {
+        productDetails.push('Color ' + variant.colorName);
+      }
+
+      if (item.size) {
+        productDetails.push('Talle ' + item.size);
+      }
+
+      if (code) {
+        productDetails.push('SKU ' + code);
+      }
 
       return `
         <article class="item">
           <div class="itemtop">
             <div>
               <h3>${product.name}</h3>
-              <p>${productDetail}</p>
+              <p>${productDetails.join(' · ')}</p>
             </div>
 
             <button
               class="remove"
               data-remove-product="${item.productId}"
+              ${item.variantId ? `data-remove-variant="${item.variantId}"` : ''}
               ${item.size ? `data-remove-size="${item.size}"` : ''}
             >
               Eliminar
@@ -50,7 +66,7 @@ RealStep.renderCart = function() {
           </div>
 
           <p>${item.quantity} unidad${item.quantity > 1 ? 'es' : ''}</p>
-          <strong>${RealStep.formatMoney(product.price * item.quantity)}</strong>
+          <strong>${RealStep.formatMoney(price * item.quantity)}</strong>
         </article>
       `;
     }).join('');

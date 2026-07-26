@@ -1,9 +1,10 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Real Step · HEAD Calzado</title><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><link rel="stylesheet" href="css/base/variables.css">
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Real Step · HEAD Mayorista</title><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script><link rel="stylesheet" href="css/base/variables.css">
 <link rel="stylesheet" href="css/base/reset.css">
 <link rel="stylesheet" href="css/components/header.css">
 <link rel="stylesheet" href="css/components/hero.css">
 <link rel="stylesheet" href="css/components/category-index.css">
 <link rel="stylesheet" href="css/categories/calzado.css">
+<link rel="stylesheet" href="css/categories/indumentaria.css">
 <link rel="stylesheet" href="css/components/cart.css">
 <link rel="stylesheet" href="css/components/modal.css">
 <link rel="stylesheet" href="css/components/footer.css">
@@ -29,13 +30,23 @@
     </button>
   </div>
 </header>
-<main><section class="hero" id="inicio"><div class="hero-copy"><p class="ey">REAL STEP PRESENTA</p><h1>HEAD</h1></div><div class="hero-img"><img src="assets/2026-padel-coello-heroHeader.jpg"></div></section>
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-copy">
+      <p class="ey">REAL STEP PRESENTA</p>
+      <h1>HEAD</h1></div><div class="hero-img"><img src="assets/2026-padel-coello-heroHeader.jpg"></div>
+  </section>
 <section class="category-index-section" id="category-index">
   <div id="category-index-list"></div>
 </section>
 <section id="catalog-sections"></section></main>
-<aside class="drawer" id="drawer"><div class="back" data-close></div><div class="dpanel"><div class="dhead"><div><p class="ey">TU SELECCIÓN</p><h2>Pedido</h2></div><button class="close" data-close>×</button></div><div class="items" id="items"></div><div class="summary"><div><span>Unidades</span><strong id="units">0</strong></div><div class="grand"><span>Total</span><strong id="total">$ 0,00</strong></div><button class="primary" id="checkout">CONTINUAR</button></div></div></aside>
-<section class="modal" id="modal"><div class="back" data-close-modal></div><div class="mcard"><div class="dhead"><div><p class="ey">CONFIRMACIÓN</p><h2>Datos del cliente</h2></div><button class="close" data-close-modal>×</button></div><form class="form" id="form"><div class="grid"><label>Nombre y apellido*<input name="name" required></label><label>Comercio*<input name="company" required></label><label>Teléfono*<input name="phone" required></label><label>Correo electrónico*<input name="email" type="email" required></label><label>Provincia*<input name="province" required></label><label>Localidad*<input name="city" required></label><label class="wide">Dirección<input name="address"></label><label class="wide">Observaciones<textarea name="notes" rows="4"></textarea></label></div><div class="preview" id="preview"></div><p class="note">Esta solicitud no procesa pagos ni confirma stock de manera definitiva.</p><button class="primary" type="submit">CONFIRMAR Y ENVIAR PEDIDO</button></form></div></section><div class="toast" id="toast"></div><footer><strong>REAL STEP</strong><span>Catálogo HEAD</span></footer>
+<aside class="drawer" id="drawer">
+  <div class="back" data-close></div>
+  <div class="dpanel"><div class="dhead"><div><p class="ey">TU SELECCIÓN</p><h2>Pedido</h2></div><button class="close" data-close>×</button></div><div class="items" id="items"></div><div class="summary"><div><span>Unidades</span><strong id="units">0</strong></div><div class="grand"><span>Total</span><strong id="total">$ 0,00</strong></div><button class="primary" id="checkout">CONTINUAR</button></div></div>
+</aside>
+<section class="modal" id="modal"><div class="back" data-close-modal></div><div class="mcard"><div class="dhead"><div><p class="ey">CONFIRMACIÓN</p><h2>Datos del cliente</h2></div><button class="close" data-close-modal>×</button></div><form class="form" id="form"><div class="grid"><label>Nombre y apellido*<input name="name" required></label><label>Comercio*<input name="company" required></label><label>Teléfono*<input name="phone" required></label><label>Correo electrónico*<input name="email" type="email" required></label><label>Provincia*<input name="province" required></label><label>Localidad*<input name="city" required></label><label class="wide">Dirección<input name="address"></label><label class="wide">Observaciones<textarea name="notes" rows="4"></textarea></label></div><div class="preview" id="preview"></div><p class="note">Esta solicitud no procesa pagos ni confirma stock de manera definitiva.</p><button class="primary" type="submit">CONFIRMAR Y ENVIAR PEDIDO</button></form></div>
+</section><div class="toast" id="toast"></div>
+<footer><strong>REAL STEP</strong><span>Catálogo HEAD</span></footer>
 <script src="js/config/company.js"></script>
 <script src="js/config/email.js"></script>
 

@@ -14,7 +14,7 @@ RealStep.categories = [
     id: 'indumentaria',
     label: 'INDUMENTARIA',
     target: 'categoria-indumentaria',
-    enabled: false,
+    enabled: true,
     productCategory: 'indumentaria',
     title: 'Indumentaria HEAD',
     subtitle: ''

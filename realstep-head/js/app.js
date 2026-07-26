@@ -2,7 +2,12 @@ window.RealStep = window.RealStep || {};
 
 RealStep.addToCart = function(productId) {
   var product = RealStep.findProduct(productId);
-  var hasSizes = Array.isArray(product.sizes) && product.sizes.length > 0;
+  var selectedVariant = RealStep.getSelectedVariant(product);
+  var variantId = selectedVariant ? selectedVariant.id : null;
+  var sizes = selectedVariant && Array.isArray(selectedVariant.sizes)
+    ? selectedVariant.sizes
+    : (Array.isArray(product.sizes) ? product.sizes : []);
+  var hasSizes = sizes.length > 0;
   var size = hasSizes
     ? RealStep.state.selectedSizeByProduct[productId]
     : null;
@@ -13,14 +18,18 @@ RealStep.addToCart = function(productId) {
     return;
   }
 
-  if (hasSizes && !RealStep.sizeIsAvailable(product, size)) {
+  if (
+    hasSizes &&
+    !RealStep.sizeIsAvailable(product, size, variantId)
+  ) {
     RealStep.showToast('El talle ' + size + ' se encuentra sin stock.');
     return;
   }
 
   var existing = RealStep.state.cart.find(function(item) {
     return item.productId === productId &&
-      (!hasSizes || item.size === size);
+      (item.variantId || null) === variantId &&
+      (item.size || null) === size;
   });
 
   if (existing) {
@@ -35,6 +44,10 @@ RealStep.addToCart = function(productId) {
       cartItem.size = size;
     }
 
+    if (variantId) {
+      cartItem.variantId = variantId;
+    }
+
     RealStep.state.cart.push(cartItem);
   }
 
@@ -42,6 +55,7 @@ RealStep.addToCart = function(productId) {
   RealStep.renderCart();
   RealStep.showToast(
     product.name +
+    (selectedVariant ? ' color ' + selectedVariant.colorName : '') +
     (hasSizes ? ' talle ' + size : '') +
     ' agregado'
   );
@@ -78,6 +92,27 @@ RealStep.closeCheckout = function() {
 };
 
 document.addEventListener('click', function(event) {
+  var variantButton = event.target.closest('[data-variant-product]');
+
+  if (variantButton) {
+    var variantProductId = variantButton.dataset.variantProduct;
+    var variantProduct = RealStep.findProduct(variantProductId);
+    var variant = RealStep.findVariant(
+      variantProduct,
+      variantButton.dataset.variantId
+    );
+
+    if (variant) {
+      RealStep.state.selectedVariantByProduct[variantProductId] =
+        variant.id;
+      RealStep.state.selectedImageByProduct[variantProductId] = 0;
+      RealStep.state.selectedSizeByProduct[variantProductId] = null;
+      RealStep.renderCatalogSections();
+    }
+
+    return;
+  }
+
   var imageButton = event.target.closest('[data-image-product]');
 
   if (imageButton) {
@@ -126,15 +161,13 @@ document.addEventListener('click', function(event) {
 
   if (removeButton) {
     var removeSize = removeButton.dataset.removeSize;
+    var removeVariant = removeButton.dataset.removeVariant;
 
     RealStep.state.cart = RealStep.state.cart.filter(function(item) {
       return !(
         item.productId === removeButton.dataset.removeProduct &&
-        (
-          removeSize === undefined
-            ? !item.size
-            : item.size === removeSize
-        )
+        (item.variantId || null) === (removeVariant || null) &&
+        (item.size || null) === (removeSize || null)
       );
     });
 

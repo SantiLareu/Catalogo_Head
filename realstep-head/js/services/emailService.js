@@ -7,21 +7,38 @@ emailjs.init({
 RealStep.buildProductRows = function() {
   return RealStep.state.cart.map(function(item) {
     var product = RealStep.findProduct(item.productId);
+    var variant = RealStep.findVariant(product, item.variantId);
+    var code = variant ? variant.code : product.code;
+    var price = RealStep.getEffectivePrice(product, item.variantId);
+    var details = [];
+
+    if (variant && variant.colorName) {
+      details.push(
+        'Color: ' + RealStep.escapeHtml(variant.colorName)
+      );
+    }
+
+    if (item.size) {
+      details.push('Talle: ' + RealStep.escapeHtml(item.size));
+    }
+
+    if (code) {
+      details.push('SKU: ' + RealStep.escapeHtml(code));
+    }
 
     return `
       <tr>
         <td style="padding:16px 12px;border-bottom:1px solid #ddd;">
           <strong>${RealStep.escapeHtml(product.name)}</strong><br>
           <span style="font-size:12px;color:#666;">
-            Talle ${RealStep.escapeHtml(item.size)}
-            · SKU ${RealStep.escapeHtml(product.code)}
+            ${details.join('<br>')}
           </span>
         </td>
         <td style="padding:16px 12px;border-bottom:1px solid #ddd;text-align:center;">
           ${item.quantity}
         </td>
         <td style="padding:16px 12px;border-bottom:1px solid #ddd;text-align:right;font-weight:700;">
-          ${RealStep.formatMoney(product.price * item.quantity)}
+          ${RealStep.formatMoney(price * item.quantity)}
         </td>
       </tr>
     `;
