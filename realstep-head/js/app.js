@@ -91,6 +91,87 @@ RealStep.closeCheckout = function() {
   document.getElementById('modal').classList.remove('open');
 };
 
+RealStep.findProductGallery = function(productId) {
+  return Array.prototype.find.call(
+    document.querySelectorAll('[data-gallery-product]'),
+    function(gallery) {
+      return gallery.dataset.galleryProduct === productId;
+    }
+  ) || null;
+};
+
+RealStep.selectProductImage = function(
+  productId,
+  imageIndex,
+  focusTarget
+) {
+  var product = RealStep.findProduct(productId);
+  var images = product ? RealStep.getProductImages(product) : [];
+
+  if (!images.length) {
+    return;
+  }
+
+  var normalizedIndex =
+    ((imageIndex % images.length) + images.length) % images.length;
+
+  RealStep.state.selectedImageByProduct[productId] = normalizedIndex;
+  RealStep.renderCatalogSections();
+
+  var gallery = RealStep.findProductGallery(productId);
+
+  if (!gallery) {
+    return;
+  }
+
+  var activeThumb = gallery.querySelector('.thumb.active');
+  var thumbRow = gallery.querySelector('.thumbs');
+
+  if (activeThumb && thumbRow) {
+    var thumbRect = activeThumb.getBoundingClientRect();
+    var rowRect = thumbRow.getBoundingClientRect();
+    var targetLeft =
+      thumbRow.scrollLeft +
+      thumbRect.left -
+      rowRect.left -
+      (thumbRow.clientWidth - activeThumb.offsetWidth) / 2;
+
+    thumbRow.scrollTo({
+      left: Math.max(0, targetLeft),
+      behavior: 'smooth'
+    });
+  }
+
+  var elementToFocus = null;
+
+  if (focusTarget === 'gallery') {
+    elementToFocus = gallery;
+  } else if (focusTarget) {
+    elementToFocus = gallery.querySelector(focusTarget);
+  }
+
+  if (elementToFocus) {
+    elementToFocus.focus({
+      preventScroll: true
+    });
+  }
+};
+
+RealStep.changeProductImage = function(
+  productId,
+  direction,
+  focusTarget
+) {
+  var currentImage =
+    RealStep.state.selectedImageByProduct[productId] || 0;
+
+  RealStep.selectProductImage(
+    productId,
+    currentImage + direction,
+    focusTarget
+  );
+};
+
 document.addEventListener('click', function(event) {
   var variantButton = event.target.closest('[data-variant-product]');
 
@@ -113,14 +194,30 @@ document.addEventListener('click', function(event) {
     return;
   }
 
+  var imageNavigation = event.target.closest('[data-image-nav]');
+
+  if (imageNavigation) {
+    var navigationDirection =
+      imageNavigation.dataset.imageNav === 'next' ? 1 : -1;
+
+    RealStep.changeProductImage(
+      imageNavigation.dataset.imageProduct,
+      navigationDirection,
+      '[data-image-nav="' +
+        imageNavigation.dataset.imageNav +
+      '"]'
+    );
+    return;
+  }
+
   var imageButton = event.target.closest('[data-image-product]');
 
   if (imageButton) {
-    RealStep.state.selectedImageByProduct[
-      imageButton.dataset.imageProduct
-    ] = Number(imageButton.dataset.imageIndex);
-
-    RealStep.renderCatalogSections();
+    RealStep.selectProductImage(
+      imageButton.dataset.imageProduct,
+      Number(imageButton.dataset.imageIndex),
+      '.thumb.active'
+    );
     return;
   }
 
@@ -182,6 +279,43 @@ document.addEventListener('click', function(event) {
   if (event.target.closest('[data-close-modal]')) {
     RealStep.closeCheckout();
   }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
+    return;
+  }
+
+  var target = event.target;
+
+  if (!target || typeof target.closest !== 'function') {
+    return;
+  }
+
+  var tagName = target.tagName;
+
+  if (
+    target.isContentEditable ||
+    tagName === 'INPUT' ||
+    tagName === 'TEXTAREA' ||
+    tagName === 'SELECT'
+  ) {
+    return;
+  }
+
+  var gallery = target.closest('[data-gallery-product]');
+
+  if (!gallery) {
+    return;
+  }
+
+  event.preventDefault();
+
+  RealStep.changeProductImage(
+    gallery.dataset.galleryProduct,
+    event.key === 'ArrowRight' ? 1 : -1,
+    'gallery'
+  );
 });
 
 RealStep.scrollToFirstCatalogSection = function() {
@@ -249,6 +383,7 @@ document.getElementById('form').addEventListener(
   }
 );
 
+RealStep.initLightbox();
 RealStep.renderCatalogSections();
 RealStep.renderCart();
 RealStep.renderCategoryIndex();

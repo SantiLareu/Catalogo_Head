@@ -1,13 +1,19 @@
 window.RealStep = window.RealStep || {};
 
+RealStep.getProductImages = function(product) {
+  var selectedVariant = RealStep.getSelectedVariant(product);
+
+  return selectedVariant && Array.isArray(selectedVariant.images)
+    ? selectedVariant.images
+    : (Array.isArray(product.images) ? product.images : []);
+};
+
 RealStep.renderProductCard = function(product) {
   var variants = Array.isArray(product.variants)
     ? product.variants
     : [];
   var selectedVariant = RealStep.getSelectedVariant(product);
-  var images = selectedVariant && Array.isArray(selectedVariant.images)
-    ? selectedVariant.images
-    : (Array.isArray(product.images) ? product.images : []);
+  var images = RealStep.getProductImages(product);
   var sizes = selectedVariant && Array.isArray(selectedVariant.sizes)
     ? selectedVariant.sizes
     : (Array.isArray(product.sizes) ? product.sizes : []);
@@ -33,10 +39,44 @@ RealStep.renderProductCard = function(product) {
 
   return `
     <article class="product product--${product.category || 'general'}">
-      <div class="gallery">
+      <div
+        class="gallery"
+        data-gallery-product="${product.id}"
+        tabindex="0"
+        aria-label="Galería de imágenes de ${product.name}"
+      >
         <div class="mainimg">
           ${images.length ? `
-            <img src="${images[currentImage]}" alt="${product.name}">
+            <button
+              type="button"
+              class="mainimg-open"
+              data-lightbox-product="${product.id}"
+              aria-label="Ampliar imagen de ${product.name}"
+            >
+              <img src="${images[currentImage]}" alt="${product.name}">
+            </button>
+          ` : ''}
+
+          ${images.length > 1 ? `
+            <button
+              type="button"
+              class="gallery-nav gallery-nav--previous"
+              data-image-nav="previous"
+              data-image-product="${product.id}"
+              aria-label="Ver imagen anterior de ${product.name}"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+
+            <button
+              type="button"
+              class="gallery-nav gallery-nav--next"
+              data-image-nav="next"
+              data-image-product="${product.id}"
+              aria-label="Ver imagen siguiente de ${product.name}"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
           ` : ''}
         </div>
 

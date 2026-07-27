@@ -17,16 +17,101 @@ RealStep.categories = [
     enabled: true,
     productCategory: 'indumentaria',
     title: 'Indumentaria HEAD',
-    subtitle: ''
+    subtitle: '',
+    children: [
+      {
+        id: 'indumentaria-hombre',
+        label: 'HOMBRE',
+        target: 'categoria-indumentaria-hombre',
+        enabled: true,
+        dataSource: 'indumentariaHombre',
+        title: 'INDUMENTARIA HOMBRE',
+        subtitle: ''
+      },
+      {
+        id: 'indumentaria-dama',
+        label: 'DAMA',
+        target: 'categoria-indumentaria-dama',
+        enabled: true,
+        dataSource: 'indumentariaDama',
+        title: 'INDUMENTARIA DAMA',
+        subtitle: ''
+      }
+    ]
   },
   {
     id: 'accesorios',
     label: 'ACCESORIOS',
     target: 'categoria-accesorios',
-    enabled: false,
+    enabled: true,
     productCategory: 'accesorios',
     title: 'Accesorios HEAD',
-    subtitle: ''
+    subtitle: '',
+    children: [
+      {
+        id: 'accesorios-medias',
+        label: 'MEDIAS',
+        target: 'categoria-accesorios-medias',
+        enabled: true,
+        dataSource: 'accesoriosMedias',
+        title: 'MEDIAS',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-antivibrador',
+        label: 'ANTIVIBRADOR',
+        target: 'categoria-accesorios-antivibrador',
+        enabled: true,
+        dataSource: 'accesoriosAntivibradores',
+        title: 'ANTIVIBRADOR',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-cubre-grips',
+        label: 'CUBRE GRIPS',
+        target: 'categoria-accesorios-cubre-grips',
+        enabled: true,
+        dataSource: 'accesoriosCubreGrips',
+        title: 'CUBRE GRIPS',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-munequeras',
+        label: 'MUÑEQUERAS',
+        target: 'categoria-accesorios-munequeras',
+        enabled: true,
+        dataSource: 'accesoriosMunequeras',
+        title: 'MUÑEQUERAS',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-grips',
+        label: 'GRIPS',
+        target: 'categoria-accesorios-grips',
+        enabled: true,
+        dataSource: 'accesoriosGrips',
+        title: 'GRIPS',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-cuerdas-tenis',
+        label: 'CUERDAS TENIS',
+        target: 'categoria-accesorios-cuerdas-tenis',
+        enabled: true,
+        dataSource: 'accesoriosCuerdasTenis',
+        title: 'CUERDAS TENIS',
+        subtitle: ''
+      },
+      {
+        id: 'accesorios-gorras',
+        label: 'GORRAS',
+        target: 'categoria-accesorios-gorras',
+        enabled: true,
+        dataSource: 'accesoriosGorras',
+        title: 'GORRAS',
+        subtitle: ''
+      }
+    ]
   },
   {
     id: 'raquetas-squash',
