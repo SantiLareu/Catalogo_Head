@@ -9,7 +9,7 @@ import useCart from '../../hooks/useCart.js';
 import { formatMoney } from '../../utils/money.js';
 
 function CartItem({ line, product }) {
-  const { removeLine } = useCart();
+  const { removeLine, setLineQuantity } = useCart();
   const variant = line.variantId == null ? null : getVariantById(product, line.variantId);
   const image = resolveProductImage(getPrimaryImagePath(product, variant));
   const price = getEffectivePrice(product, variant);
@@ -39,14 +39,33 @@ function CartItem({ line, product }) {
             Eliminar
           </button>
         </div>
-        <p>
-          {line.quantity} unidad{line.quantity === 1 ? '' : 'es'} · {formatMoney(price)} c/u
-        </p>
-        <strong>{formatMoney(price * line.quantity)}</strong>
+        <div className="cart-item-bottom">
+          <div>
+            <p>{formatMoney(price)} c/u</p>
+            <div className="cart-item-quantity" aria-label={`Cantidad de ${product.name}`}>
+              <button
+                type="button"
+                aria-label={`Disminuir cantidad de ${product.name}`}
+                disabled={line.quantity <= 1}
+                onClick={() => setLineQuantity(line, line.quantity - 1)}
+              >
+                −
+              </button>
+              <span aria-live="polite" aria-atomic="true">{line.quantity}</span>
+              <button
+                type="button"
+                aria-label={`Aumentar cantidad de ${product.name}`}
+                onClick={() => setLineQuantity(line, line.quantity + 1)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <strong>{formatMoney(price * line.quantity)}</strong>
+        </div>
       </div>
     </article>
   );
 }
 
 export default CartItem;
-

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { getCategoryLabel, normalizeSpecifications } from '../../data/catalogSelectors.js';
 import { resolveProductImage } from '../../data/productImages.js';
 import { productSelectionActions } from '../../hooks/productSelectionReducer.js';
@@ -13,13 +13,13 @@ import SizeSelector from './SizeSelector.jsx';
 import VariantSelector from './VariantSelector.jsx';
 
 function ProductCard({ categories, product }) {
+  const { addLine, resetVersion, showToast } = useCart();
   const { state, dispatch, variant, images: imagePaths, sizes, code, price } =
-    useProductSelection(product);
+    useProductSelection(product, resetVersion);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const openerRef = useRef(null);
   const variantControlRef = useRef(null);
   const sizeControlRef = useRef(null);
-  const { addLine, showToast } = useCart();
   const images = useMemo(
     () => imagePaths.map(resolveProductImage).filter(Boolean),
     [imagePaths]
@@ -33,6 +33,10 @@ function ProductCard({ categories, product }) {
     [product.variants]
   );
   const imageCount = images.length;
+
+  useEffect(() => {
+    setLightboxOpen(false);
+  }, [resetVersion]);
 
   const selectImage = (imageIndex) =>
     dispatch({ type: productSelectionActions.SET_IMAGE, imageIndex, imageCount });

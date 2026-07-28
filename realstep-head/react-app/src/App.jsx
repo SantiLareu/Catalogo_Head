@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { CartProvider } from './context/CartContext.jsx';
 import Toast from './components/feedback/Toast.jsx';
 import CatalogSections from './components/catalog/CatalogSections.jsx';
@@ -7,25 +7,39 @@ import Footer from './components/layout/Footer.jsx';
 import Header from './components/layout/Header.jsx';
 import Hero from './components/layout/Hero.jsx';
 import catalog from './data/catalog.js';
-import { scrollToHashTarget } from './utils/navigation.js';
+import {
+  getCatalogTargetIds,
+  resolveCatalogHash,
+  scrollToHashTarget
+} from './utils/navigation.js';
 
 function App() {
   const categories = Array.isArray(catalog.categories) ? catalog.categories : [];
+  const validTargetIds = useMemo(() => getCatalogTargetIds(categories), [categories]);
 
   useEffect(() => {
-    const handleHashNavigation = () => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+
+    const navigateToCurrentHash = (behavior = 'smooth') => {
+      const resolvedHash = resolveCatalogHash(window.location.hash, validTargetIds);
+      if (window.location.hash !== resolvedHash) {
+        window.history.replaceState(null, '', resolvedHash);
+      }
       window.requestAnimationFrame(() => {
-        scrollToHashTarget(window.location.hash, false);
+        scrollToHashTarget(resolvedHash, false, behavior);
       });
     };
+    const handleHashNavigation = () => navigateToCurrentHash('smooth');
 
-    handleHashNavigation();
+    navigateToCurrentHash('auto');
     window.addEventListener('hashchange', handleHashNavigation);
 
     return () => {
       window.removeEventListener('hashchange', handleHashNavigation);
+      window.history.scrollRestoration = previousScrollRestoration;
     };
-  }, []);
+  }, [validTargetIds]);
 
   return (
     <CartProvider products={catalog.products}>

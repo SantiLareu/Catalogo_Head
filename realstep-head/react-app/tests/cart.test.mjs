@@ -10,6 +10,7 @@ import {
 import {
   CART_STORAGE_KEY,
   readCart,
+  removeCart,
   sanitizeCart,
   writeCart
 } from '../src/services/cartStorage.js';
@@ -91,6 +92,52 @@ test('elimina una línea y vacía el carrito', () => {
   assert.deepEqual(cartReducer(lines, { type: actions.CLEAR_CART }), []);
 });
 
+test('aumenta y disminuye una línea mediante su clave estable', () => {
+  const black = { productId: 'variant', variantId: 'black ', size: 'M', quantity: 3 };
+  const white = { productId: 'variant', variantId: 'white', size: 'M', quantity: 2 };
+  const increased = cartReducer([black, white], {
+    type: actions.SET_LINE_QUANTITY,
+    line: black,
+    quantity: 4
+  });
+  assert.equal(increased[0].quantity, 4);
+  assert.equal(increased[1].quantity, 2);
+
+  const decreased = cartReducer(increased, {
+    type: actions.SET_LINE_QUANTITY,
+    line: black,
+    quantity: 3
+  });
+  assert.equal(decreased[0].quantity, 3);
+  assert.equal(decreased[1].quantity, 2);
+  assert.equal(decreased[0].variantId, 'black ');
+});
+
+test('no permite cantidades inferiores a uno ni no enteras', () => {
+  const line = { productId: 'plain', quantity: 1 };
+  assert.deepEqual(cartReducer([line], {
+    type: actions.SET_LINE_QUANTITY,
+    line,
+    quantity: 0
+  }), [line]);
+  assert.deepEqual(cartReducer([line], {
+    type: actions.SET_LINE_QUANTITY,
+    line,
+    quantity: 1.5
+  }), [line]);
+});
+
+test('cantidad editada recalcula unidades y total', () => {
+  const line = { productId: 'plain', quantity: 2 };
+  const updated = cartReducer([line], {
+    type: actions.SET_LINE_QUANTITY,
+    line,
+    quantity: 4
+  });
+  assert.equal(updated.reduce((sum, item) => sum + item.quantity, 0), 4);
+  assert.equal(updated.reduce((sum, item) => sum + 100 * item.quantity, 0), 400);
+});
+
 test('hidrata mediante la acción requerida', () => {
   const lines = [{ productId: 'plain', quantity: 1 }];
   assert.deepEqual(cartReducer([], { type: actions.HYDRATE_CART, lines }), lines);
@@ -160,6 +207,42 @@ test('JSON corrupto no lanza y persistencia conserva clave y formato legacy', ()
   assert.equal(CART_STORAGE_KEY, 'realstep-head-cart');
   assert.equal(memory.get(CART_STORAGE_KEY), JSON.stringify(lines));
   assert.deepEqual(readCart(storage, products), lines);
+});
+
+test('carrito incompleto persiste y la cantidad editada se restaura', () => {
+  const memory = new Map();
+  const storage = {
+    getItem: (key) => memory.get(key) ?? null,
+    setItem: (key, value) => memory.set(key, value),
+    removeItem: (key) => memory.delete(key)
+  };
+  const original = [{ productId: 'plain', quantity: 2 }];
+  writeCart(storage, original);
+  const edited = cartReducer(readCart(storage, products), {
+    type: actions.SET_LINE_QUANTITY,
+    line: original[0],
+    quantity: 4
+  });
+  writeCart(storage, edited);
+  assert.deepEqual(readCart(storage, products), [{ productId: 'plain', quantity: 4 }]);
+});
+
+test('éxito completo elimina la persistencia; un error la conserva', async () => {
+  const memory = new Map([[CART_STORAGE_KEY, '[{"productId":"plain","quantity":2}]']]);
+  const storage = {
+    getItem: (key) => memory.get(key) ?? null,
+    removeItem: (key) => memory.delete(key)
+  };
+
+  assert.equal(removeCart(storage), true);
+  assert.equal(storage.getItem(CART_STORAGE_KEY), null);
+
+  memory.set(CART_STORAGE_KEY, '[{"productId":"plain","quantity":2}]');
+  await assert.rejects(
+    Promise.reject(new Error('checkout')),
+    /checkout/
+  );
+  assert.notEqual(storage.getItem(CART_STORAGE_KEY), null);
 });
 
 test('catálogo real conserva 55 productos y cubre los casos de carrito requeridos', async () => {

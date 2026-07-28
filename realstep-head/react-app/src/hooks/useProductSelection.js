@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from 'react';
+import { useEffect, useMemo, useReducer } from 'react';
 import {
   getEffectiveCode,
   getEffectiveImages,
@@ -9,10 +9,11 @@ import {
 } from '../data/catalogSelectors.js';
 import {
   createInitialProductSelection,
+  productSelectionActions,
   productSelectionReducer
 } from './productSelectionReducer.js';
 
-function useProductSelection(product) {
+function useProductSelection(product, resetVersion = 0) {
   const firstVariant = useMemo(() => getFirstVariant(product), [product]);
   const [state, dispatch] = useReducer(
     productSelectionReducer,
@@ -25,6 +26,13 @@ function useProductSelection(product) {
   );
   const images = useMemo(() => getEffectiveImages(product, variant), [product, variant]);
   const sizes = useMemo(() => getEffectiveSizes(product, variant), [product, variant]);
+
+  useEffect(() => {
+    dispatch({
+      type: productSelectionActions.RESET_SELECTION,
+      variantId: firstVariant?.id ?? null
+    });
+  }, [firstVariant, resetVersion]);
 
   return {
     state,

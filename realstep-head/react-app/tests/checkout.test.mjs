@@ -14,6 +14,10 @@ import {
   validateEmailConfig
 } from '../src/services/emailService.js';
 import { escapeHtml } from '../src/utils/html.js';
+import {
+  productSelectionActions,
+  productSelectionReducer
+} from '../src/hooks/productSelectionReducer.js';
 
 const companyConfig = {
   companyName: 'Real Step',
@@ -249,6 +253,34 @@ test('carrito se vacía únicamente ante éxito total', async () => {
     clearCart: () => { clearCount += 1; }
   });
   assert.equal(clearCount, 1);
+});
+
+test('error de checkout conserva carrito y selección temporal', async () => {
+  const selection = { variantId: 'black ', size: 'M', quantity: 2, imageIndex: 1 };
+  const persistedCart = structuredClone(cart);
+  let clearCount = 0;
+
+  await assert.rejects(runCheckoutTransaction({
+    send: async () => { throw new Error('customer'); },
+    clearCart: () => { clearCount += 1; }
+  }));
+
+  assert.equal(clearCount, 0);
+  assert.deepEqual(cart, persistedCart);
+  assert.equal(productSelectionReducer(selection, { type: 'NO_ACTION' }), selection);
+});
+
+test('reset de éxito conserva literalmente la primera variante legacy', () => {
+  const changed = { variantId: 'white', size: 'M', quantity: 2, imageIndex: 1 };
+  assert.deepEqual(productSelectionReducer(changed, {
+    type: productSelectionActions.RESET_SELECTION,
+    variantId: 'black '
+  }), {
+    variantId: 'black ',
+    size: null,
+    quantity: 1,
+    imageIndex: 0
+  });
 });
 
 test('guard bloquea doble envío mientras el primero está activo', async () => {

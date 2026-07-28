@@ -5,7 +5,8 @@ export const productSelectionActions = {
   NEXT_IMAGE: 'NEXT_IMAGE',
   PREVIOUS_IMAGE: 'PREVIOUS_IMAGE',
   INCREMENT_QUANTITY: 'INCREMENT_QUANTITY',
-  DECREMENT_QUANTITY: 'DECREMENT_QUANTITY'
+  DECREMENT_QUANTITY: 'DECREMENT_QUANTITY',
+  RESET_SELECTION: 'RESET_SELECTION'
 };
 
 export function createInitialProductSelection(variantId = null) {
@@ -24,9 +25,15 @@ function circularIndex(index, imageCount) {
 export function productSelectionReducer(state, action) {
   switch (action.type) {
     case productSelectionActions.SELECT_VARIANT:
-      return { ...state, variantId: action.variantId, size: null, imageIndex: 0 };
+      return {
+        ...state,
+        variantId: action.variantId,
+        size: null,
+        quantity: 1,
+        imageIndex: 0
+      };
     case productSelectionActions.SELECT_SIZE:
-      return { ...state, size: action.size };
+      return { ...state, size: action.size, quantity: 1 };
     case productSelectionActions.SET_IMAGE:
       return { ...state, imageIndex: circularIndex(action.imageIndex, action.imageCount) };
     case productSelectionActions.NEXT_IMAGE:
@@ -37,6 +44,8 @@ export function productSelectionReducer(state, action) {
       return { ...state, quantity: state.quantity + 1 };
     case productSelectionActions.DECREMENT_QUANTITY:
       return { ...state, quantity: Math.max(1, state.quantity - 1) };
+    case productSelectionActions.RESET_SELECTION:
+      return createInitialProductSelection(action.variantId ?? null);
     default:
       return state;
   }

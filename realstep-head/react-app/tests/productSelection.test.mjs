@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import {
   getEffectiveCode,
@@ -12,6 +13,7 @@ import {
   productSelectionActions as actions,
   productSelectionReducer
 } from '../src/hooks/productSelectionReducer.js';
+import { advanceResetVersion } from '../src/utils/resetVersion.js';
 
 const product = {
   id: 'fixture',
@@ -33,22 +35,64 @@ test('estado inicial', () => {
   });
 });
 
-test('cambio de variante reinicia talle e imagen y preserva ID literal', () => {
+test('cambio de variante reinicia talle, cantidad e imagen y preserva ID literal', () => {
   const state = { variantId: 'white', size: 'M', quantity: 3, imageIndex: 1 };
   assert.deepEqual(
     productSelectionReducer(state, { type: actions.SELECT_VARIANT, variantId: 'black ' }),
-    { variantId: 'black ', size: null, quantity: 3, imageIndex: 0 }
+    { variantId: 'black ', size: null, quantity: 1, imageIndex: 0 }
   );
   assert.equal(getVariantById(product, 'black ')?.id, 'black ');
   assert.equal(getVariantById(product, 'black'), null);
 });
 
-test('selección de talle', () => {
-  const initial = createInitialProductSelection(null);
-  assert.equal(
-    productSelectionReducer(initial, { type: actions.SELECT_SIZE, size: 'XL' }).size,
-    'XL'
+test('cambiar únicamente de imagen conserva talle y cantidad', () => {
+  const state = { variantId: 'black ', size: 'M', quantity: 3, imageIndex: 0 };
+  assert.deepEqual(
+    productSelectionReducer(state, {
+      type: actions.SET_IMAGE,
+      imageIndex: 1,
+      imageCount: 2
+    }),
+    { ...state, imageIndex: 1 }
   );
+});
+
+test('éxito de checkout avanza la señal y reinicia la selección completa', () => {
+  const resetVersion = advanceResetVersion(4);
+  assert.equal(resetVersion, 5);
+  const changed = { variantId: 'white', size: 'M', quantity: 4, imageIndex: 1 };
+  assert.deepEqual(
+    productSelectionReducer(changed, {
+      type: actions.RESET_SELECTION,
+      variantId: 'black '
+    }),
+    createInitialProductSelection('black ')
+  );
+});
+
+test('SELECT_SIZE cambia talle, reinicia cantidad y conserva variante e imagen', () => {
+  const state = { variantId: 'black ', size: 'S', quantity: 3, imageIndex: 1 };
+  assert.deepEqual(
+    productSelectionReducer(state, { type: actions.SELECT_SIZE, size: 'M' }),
+    { variantId: 'black ', size: 'M', quantity: 1, imageIndex: 1 }
+  );
+});
+
+test('volver a seleccionar el mismo talle mantiene un estado estable', () => {
+  const state = { variantId: 'black ', size: 'M', quantity: 1, imageIndex: 1 };
+  assert.deepEqual(
+    productSelectionReducer(state, { type: actions.SELECT_SIZE, size: 'M' }),
+    state
+  );
+});
+
+test('talles agotados continúan deshabilitados y no disparan selección', async () => {
+  const source = await readFile(
+    new URL('../src/components/product/SizeSelector.jsx', import.meta.url),
+    'utf8'
+  );
+  assert.match(source, /disabled=\{!available\}/);
+  assert.match(source, /onClick=\{\(\) => available && onSelect\(size\.size\)\}/);
 });
 
 test('incremento, decremento y mínimo de cantidad', () => {

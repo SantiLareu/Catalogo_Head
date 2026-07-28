@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock.js';
 import useCart from '../../hooks/useCart.js';
 import useFocusTrap from '../../hooks/useFocusTrap.js';
+import { createLineKey } from '../../reducers/cartReducer.js';
 import CartItem from './CartItem.jsx';
 import CartSummary from './CartSummary.jsx';
 
@@ -42,7 +43,7 @@ function CartDrawer({ continueRef, onClose, onContinue, openerRef, products }) {
             </div>
           ) : lines.map((line) => {
             const product = products.find((item) => item.id === line.productId);
-            return product ? <CartItem key={JSON.stringify(line)} line={line} product={product} /> : null;
+            return product ? <CartItem key={createLineKey(line)} line={line} product={product} /> : null;
           })}
         </div>
         <CartSummary continueRef={continueRef} onContinue={onContinue} />

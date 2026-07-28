@@ -48,7 +48,7 @@ function CheckoutModal({
   openerRef,
   products
 }) {
-  const { clearCart, lines: cart, showToast } = useCart();
+  const { completeCheckout, lines: cart, showToast } = useCart();
   const [sending, setSending] = useState(false);
   const [ownerSent, setOwnerSent] = useState(false);
   const [status, setStatus] = useState({ type: 'idle', message: '' });
@@ -89,7 +89,7 @@ function CheckoutModal({
           lines: orderLines,
           ownerAlreadySent: ownerSent
         }),
-        clearCart
+        clearCart: completeCheckout
       });
       onSuccess();
       showToast('Pedido enviado correctamente. Revisá tu correo.');

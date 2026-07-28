@@ -68,3 +68,11 @@ export function writeCart(storage, lines) {
   }
 }
 
+export function removeCart(storage) {
+  try {
+    storage?.removeItem(CART_STORAGE_KEY);
+    return true;
+  } catch {
+    return false;
+  }
+}

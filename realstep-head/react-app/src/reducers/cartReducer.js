@@ -2,6 +2,7 @@ export const cartActions = {
   HYDRATE_CART: 'HYDRATE_CART',
   ADD_LINE: 'ADD_LINE',
   REMOVE_LINE: 'REMOVE_LINE',
+  SET_LINE_QUANTITY: 'SET_LINE_QUANTITY',
   CLEAR_CART: 'CLEAR_CART'
 };
 
@@ -31,10 +32,17 @@ export function cartReducer(state, action) {
       const key = createLineKey(action.line);
       return state.filter((line) => createLineKey(line) !== key);
     }
+    case cartActions.SET_LINE_QUANTITY: {
+      const key = createLineKey(action.line);
+      const quantity = Number(action.quantity);
+      if (!Number.isInteger(quantity) || quantity < 1) return state;
+      return state.map((line) =>
+        createLineKey(line) === key ? { ...line, quantity } : line
+      );
+    }
     case cartActions.CLEAR_CART:
       return [];
     default:
       return state;
   }
 }
-
