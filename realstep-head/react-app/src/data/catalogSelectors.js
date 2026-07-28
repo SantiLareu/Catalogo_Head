@@ -52,19 +52,37 @@ export function getFirstVariant(product) {
   return variants.length > 0 ? [...variants].sort(compareByOrder)[0] : null;
 }
 
+export function getVariantById(product, variantId) {
+  return (Array.isArray(product.variants) ? product.variants : []).find(
+    (variant) => variant.id === variantId
+  ) || null;
+}
+
 export function getEffectivePrice(product, variant = getFirstVariant(product)) {
   return variant?.price == null ? product.price : variant.price;
 }
 
-export function getPrimaryImagePath(product, variant = getFirstVariant(product)) {
+export function getEffectiveImages(product, variant = getFirstVariant(product)) {
   const images =
     variant && Array.isArray(variant.images) ? variant.images : product.images;
+  return Array.isArray(images) ? images : [];
+}
 
+export function getPrimaryImagePath(product, variant = getFirstVariant(product)) {
+  const images = getEffectiveImages(product, variant);
   return Array.isArray(images) && images.length > 0 ? images[0] : null;
 }
 
 export function getEffectiveCode(product, variant = getFirstVariant(product)) {
   return variant ? variant.code : product.code;
+}
+
+export function getEffectiveSizes(product, variant = getFirstVariant(product)) {
+  const sizes =
+    variant && Array.isArray(variant.sizes) ? variant.sizes : product.sizes;
+  return Array.isArray(sizes)
+    ? [...sizes].sort((left, right) => (left.order ?? 0) - (right.order ?? 0))
+    : [];
 }
 
 export function normalizeSpecifications(specifications) {

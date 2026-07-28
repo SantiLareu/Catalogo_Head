@@ -1,8 +1,15 @@
+import { useRef, useState } from 'react';
+import CartDrawer from '../cart/CartDrawer.jsx';
+import catalog from '../../data/catalog.js';
+import useCart from '../../hooks/useCart.js';
 import { scrollToHashTarget } from '../../utils/navigation.js';
 
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
 function Header() {
+  const { units } = useCart();
+  const [cartOpen, setCartOpen] = useState(false);
+  const cartButtonRef = useRef(null);
   const handleHomeClick = (event) => {
     event.preventDefault();
     scrollToHashTarget('#inicio');
@@ -22,14 +29,22 @@ function Header() {
         <button
           className="cart"
           type="button"
-          disabled
-          aria-label="Pedido, disponible en una etapa posterior"
-          title="El carrito se migrará en una etapa posterior"
+          aria-label={`Abrir pedido, ${units} ${units === 1 ? 'unidad' : 'unidades'}`}
+          aria-haspopup="dialog"
+          onClick={() => setCartOpen(true)}
+          ref={cartButtonRef}
         >
           Pedido
-          <span aria-hidden="true">0</span>
+          <span aria-hidden="true">{units}</span>
         </button>
       </div>
+      {cartOpen ? (
+        <CartDrawer
+          onClose={() => setCartOpen(false)}
+          openerRef={cartButtonRef}
+          products={catalog.products}
+        />
+      ) : null}
     </header>
   );
 }

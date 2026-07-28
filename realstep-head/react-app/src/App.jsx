@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { CartProvider } from './context/CartContext.jsx';
+import Toast from './components/feedback/Toast.jsx';
 import CatalogSections from './components/catalog/CatalogSections.jsx';
 import CategoryIndex from './components/categories/CategoryIndex.jsx';
 import Footer from './components/layout/Footer.jsx';
@@ -26,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <CartProvider products={catalog.products}>
       <Header />
       <main>
         <Hero />
@@ -34,7 +36,8 @@ function App() {
         <CatalogSections categories={categories} products={catalog.products} />
       </main>
       <Footer />
-    </>
+      <Toast />
+    </CartProvider>
   );
 }
 

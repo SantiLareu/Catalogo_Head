@@ -1,14 +1,10 @@
-const moneyFormatter = new Intl.NumberFormat('es-AR', {
-  style: 'currency',
-  currency: 'ARS',
-  minimumFractionDigits: 2
-});
+import { formatMoney } from '../../utils/money.js';
 
 function ProductPrice({ price }) {
   return (
     <div className="price">
       <span>Precio por unidad</span>
-      <strong>{moneyFormatter.format(price ?? 0)}</strong>
+      <strong>{formatMoney(price ?? 0)}</strong>
     </div>
   );
 }

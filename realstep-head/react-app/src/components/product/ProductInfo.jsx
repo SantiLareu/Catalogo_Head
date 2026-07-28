@@ -1,7 +1,15 @@
 import ProductPrice from './ProductPrice.jsx';
 import Specifications from './Specifications.jsx';
 
-function ProductInfo({ categoryLabel, code, description, name, price, specifications }) {
+function ProductInfo({
+  categoryLabel,
+  code,
+  controls,
+  description,
+  name,
+  price,
+  specifications
+}) {
   return (
     <div className="panel">
       <p className="ey">{categoryLabel}</p>
@@ -11,6 +19,7 @@ function ProductInfo({ categoryLabel, code, description, name, price, specificat
       <ProductPrice price={price} />
 
       {description ? <p className="product-description">{description}</p> : null}
+      {controls}
       <Specifications specifications={specifications} />
     </div>
   );

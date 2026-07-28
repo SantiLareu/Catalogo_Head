@@ -1,0 +1,195 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import test from 'node:test';
+import { getEffectivePrice, getVariantById } from '../src/data/catalogSelectors.js';
+import {
+  cartActions as actions,
+  cartReducer,
+  createLineKey
+} from '../src/reducers/cartReducer.js';
+import {
+  CART_STORAGE_KEY,
+  readCart,
+  sanitizeCart,
+  writeCart
+} from '../src/services/cartStorage.js';
+
+const products = [
+  { id: 'plain', price: 100, sizes: [], variants: [] },
+  {
+    id: 'direct',
+    price: 200,
+    sizes: [
+      { size: 'M', inStock: true },
+      { size: 'L', inStock: false }
+    ],
+    variants: []
+  },
+  {
+    id: 'variant',
+    price: 300,
+    sizes: [],
+    variants: [
+      {
+        id: 'black ',
+        price: 350,
+        sizes: [{ size: 'M', inStock: true }]
+      },
+      {
+        id: 'white',
+        price: null,
+        sizes: [{ size: 'M', inStock: true }, { size: 'L', inStock: true }]
+      }
+    ]
+  },
+  { id: 'free', price: 0, sizes: [], variants: [] }
+];
+
+test('claves distinguen producto, talle y variante+talle sin alterar IDs', () => {
+  assert.notEqual(createLineKey({ productId: 'p' }), createLineKey({ productId: 'p', size: 'M' }));
+  assert.notEqual(
+    createLineKey({ productId: 'p', variantId: 'black ', size: 'M' }),
+    createLineKey({ productId: 'p', variantId: 'black', size: 'M' })
+  );
+  assert.notEqual(
+    createLineKey({ productId: 'p', variantId: 'black ', size: 'M' }),
+    createLineKey({ productId: 'p', variantId: 'black ', size: 'L' })
+  );
+});
+
+test('agrega línea nueva y combina una equivalente', () => {
+  const line = { productId: 'plain', quantity: 2 };
+  const added = cartReducer([], { type: actions.ADD_LINE, line });
+  assert.deepEqual(added, [line]);
+  assert.deepEqual(cartReducer(added, {
+    type: actions.ADD_LINE,
+    line: { productId: 'plain', quantity: 3 }
+  }), [{ productId: 'plain', quantity: 5 }]);
+});
+
+test('variantes y talles distintos no se mezclan', () => {
+  const first = { productId: 'variant', variantId: 'black ', size: 'M', quantity: 1 };
+  const second = { productId: 'variant', variantId: 'white', size: 'M', quantity: 1 };
+  const third = { productId: 'variant', variantId: 'white', size: 'L', quantity: 1 };
+  const state = [first, second].reduce(
+    (cart, line) => cartReducer(cart, { type: actions.ADD_LINE, line }),
+    []
+  );
+  assert.equal(state.length, 2);
+  assert.equal(cartReducer(state, { type: actions.ADD_LINE, line: third }).length, 3);
+});
+
+test('elimina una línea y vacía el carrito', () => {
+  const lines = [
+    { productId: 'plain', quantity: 1 },
+    { productId: 'direct', size: 'M', quantity: 2 }
+  ];
+  assert.deepEqual(
+    cartReducer(lines, { type: actions.REMOVE_LINE, line: lines[0] }),
+    [lines[1]]
+  );
+  assert.deepEqual(cartReducer(lines, { type: actions.CLEAR_CART }), []);
+});
+
+test('hidrata mediante la acción requerida', () => {
+  const lines = [{ productId: 'plain', quantity: 1 }];
+  assert.deepEqual(cartReducer([], { type: actions.HYDRATE_CART, lines }), lines);
+});
+
+test('unidades, total, precio de variante, fallback y precio cero', () => {
+  const lines = [
+    { productId: 'plain', quantity: 2 },
+    { productId: 'variant', variantId: 'black ', size: 'M', quantity: 3 },
+    { productId: 'variant', variantId: 'white', size: 'L', quantity: 1 },
+    { productId: 'free', quantity: 4 }
+  ];
+  const units = lines.reduce((sum, line) => sum + line.quantity, 0);
+  const total = lines.reduce((sum, line) => {
+    const product = products.find((item) => item.id === line.productId);
+    const variant = line.variantId ? getVariantById(product, line.variantId) : null;
+    return sum + getEffectivePrice(product, variant) * line.quantity;
+  }, 0);
+  assert.equal(units, 10);
+  assert.equal(total, 1550);
+});
+
+test('sanea carrito válido y conserva ID de variante con espacio final', () => {
+  const result = sanitizeCart([
+    { productId: 'plain', quantity: 2 },
+    { productId: 'direct', size: 'M', quantity: 1 },
+    { productId: 'variant', variantId: 'black ', size: 'M', quantity: 3 }
+  ], products);
+  assert.equal(result.length, 3);
+  assert.equal(result[2].variantId, 'black ');
+});
+
+test('descarta únicamente producto, variante y talle inexistentes', () => {
+  const result = sanitizeCart([
+    { productId: 'missing', quantity: 1 },
+    { productId: 'variant', variantId: 'missing', size: 'M', quantity: 1 },
+    { productId: 'variant', variantId: 'white', size: 'XL', quantity: 1 },
+    { productId: 'plain', quantity: 1 }
+  ], products);
+  assert.deepEqual(result, [{ productId: 'plain', quantity: 1 }]);
+});
+
+test('normaliza cantidades no enteras, cero y negativas; descarta no numéricas', () => {
+  assert.deepEqual(sanitizeCart([
+    { productId: 'plain', quantity: 2.9 },
+    { productId: 'direct', size: 'M', quantity: 0 },
+    { productId: 'free', quantity: -4 },
+    { productId: 'plain', quantity: 'no' }
+  ], products), [
+    { productId: 'plain', quantity: 2 },
+    { productId: 'direct', size: 'M', quantity: 1 },
+    { productId: 'free', quantity: 1 }
+  ]);
+});
+
+test('JSON corrupto no lanza y persistencia conserva clave y formato legacy', () => {
+  const corruptStorage = { getItem: () => '{no' };
+  assert.deepEqual(readCart(corruptStorage, products), []);
+
+  const memory = new Map();
+  const storage = {
+    getItem: (key) => memory.get(key) ?? null,
+    setItem: (key, value) => memory.set(key, value)
+  };
+  const lines = [{ productId: 'variant', variantId: 'black ', size: 'M', quantity: 2 }];
+  assert.equal(writeCart(storage, lines), true);
+  assert.equal(CART_STORAGE_KEY, 'realstep-head-cart');
+  assert.equal(memory.get(CART_STORAGE_KEY), JSON.stringify(lines));
+  assert.deepEqual(readCart(storage, products), lines);
+});
+
+test('catálogo real conserva 55 productos y cubre los casos de carrito requeridos', async () => {
+  const catalog = JSON.parse(
+    await readFile(new URL('../../generated/catalog.json', import.meta.url), 'utf8')
+  );
+  assert.equal(catalog.products.length, 55);
+  assert.ok(catalog.products.some((product) =>
+    product.variants.length === 0 && product.sizes.length === 0
+  ));
+  assert.ok(catalog.products.some((product) =>
+    product.variants.length === 0 && product.sizes.length > 0
+  ));
+  assert.ok(catalog.products.some((product) =>
+    product.variants.some((variant) => variant.sizes.length > 0)
+  ));
+  assert.ok(catalog.products.some((product) =>
+    product.price === 0 || product.variants.some((variant) => variant.price === 0)
+  ));
+
+  const trailingVariantProduct = catalog.products.find((product) =>
+    product.variants.some((variant) => variant.id === 'black ')
+  );
+  const trailingVariant = getVariantById(trailingVariantProduct, 'black ');
+  const size = trailingVariant.sizes[0].size;
+  const restored = sanitizeCart([{
+    productId: trailingVariantProduct.id,
+    variantId: 'black ',
+    size,
+    quantity: 2
+  }], catalog.products);
+  assert.equal(restored[0].variantId, 'black ');
+});

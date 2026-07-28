@@ -25,7 +25,10 @@
   .gallery,
   .panel,
   .mainimg,
-  .price{
+  .thumbs,
+  .price,
+  .sizes,
+  .qty{
     width:100%;
     min-width:0;
   }
@@ -38,6 +41,8 @@
     display:block;
     max-width:100%;
   }
+  .thumbs{justify-content:flex-start;gap:8px}
+  .thumb{width:64px;min-width:64px;height:64px;flex-basis:64px}
   .panel{
     position:static;
     padding:20px 16px;
@@ -48,6 +53,11 @@
     overflow-wrap:anywhere;
   }
   .price{text-align:left}
+  .sizes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .size{width:100%;min-width:0}
+  .qty{grid-template-columns:minmax(52px,1fr) minmax(72px,2fr) minmax(52px,1fr)}
+  .qty button,.qval,.primary{width:100%}
+  .variant-swatch{width:52px;height:52px;flex-basis:52px}
   .product-specifications{
     width:100%;
     min-width:0;
@@ -71,4 +81,8 @@
     height:min(44vh,360px);
     max-height:44vh;
   }
+  .thumb{width:58px;min-width:58px;height:58px;flex-basis:58px}
+  .gallery-nav{width:48px;height:48px;font-size:32px}
+  .gallery-nav--previous{left:10px}
+  .gallery-nav--next{right:10px}
 }

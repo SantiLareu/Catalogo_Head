@@ -1,0 +1,43 @@
+export const productSelectionActions = {
+  SELECT_VARIANT: 'SELECT_VARIANT',
+  SELECT_SIZE: 'SELECT_SIZE',
+  SET_IMAGE: 'SET_IMAGE',
+  NEXT_IMAGE: 'NEXT_IMAGE',
+  PREVIOUS_IMAGE: 'PREVIOUS_IMAGE',
+  INCREMENT_QUANTITY: 'INCREMENT_QUANTITY',
+  DECREMENT_QUANTITY: 'DECREMENT_QUANTITY'
+};
+
+export function createInitialProductSelection(variantId = null) {
+  return {
+    variantId,
+    size: null,
+    quantity: 1,
+    imageIndex: 0
+  };
+}
+
+function circularIndex(index, imageCount) {
+  return imageCount > 0 ? ((index % imageCount) + imageCount) % imageCount : 0;
+}
+
+export function productSelectionReducer(state, action) {
+  switch (action.type) {
+    case productSelectionActions.SELECT_VARIANT:
+      return { ...state, variantId: action.variantId, size: null, imageIndex: 0 };
+    case productSelectionActions.SELECT_SIZE:
+      return { ...state, size: action.size };
+    case productSelectionActions.SET_IMAGE:
+      return { ...state, imageIndex: circularIndex(action.imageIndex, action.imageCount) };
+    case productSelectionActions.NEXT_IMAGE:
+      return { ...state, imageIndex: circularIndex(state.imageIndex + 1, action.imageCount) };
+    case productSelectionActions.PREVIOUS_IMAGE:
+      return { ...state, imageIndex: circularIndex(state.imageIndex - 1, action.imageCount) };
+    case productSelectionActions.INCREMENT_QUANTITY:
+      return { ...state, quantity: state.quantity + 1 };
+    case productSelectionActions.DECREMENT_QUANTITY:
+      return { ...state, quantity: Math.max(1, state.quantity - 1) };
+    default:
+      return state;
+  }
+}
