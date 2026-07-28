@@ -1,0 +1,92 @@
+.list{display:grid;gap:34px;padding:0 4vw 80px}
+.catalog-section{scroll-margin-top:72px}
+.catalog-section:focus{outline:none}
+.product{
+  display:grid;
+  grid-template-columns:minmax(0,760px) minmax(330px,1fr);
+  gap:24px;
+  padding:24px;
+  background:#fff;
+  box-shadow:var(--sh);
+}
+.gallery{
+  display:grid;
+  min-width:0;
+  gap:14px;
+  grid-template-rows:auto auto;
+  align-content:start;
+  align-self:start;
+}
+.mainimg{
+  position:relative;
+  width:100%;
+  height:min(65vh,680px);
+  max-height:65vh;
+  border:1px solid var(--l);
+  background:#fafafa;
+  overflow:hidden;
+}
+.mainimg-open{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.mainimg img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.panel{
+  position:sticky;
+  top:94px;
+  align-self:start;
+  padding:30px;
+  background:#f7f7f7;
+  border-top:6px solid #111;
+}
+.panel h2{margin:0 0 8px;font-size:34px;line-height:1}
+.code{margin:0 0 18px;color:var(--m);font-size:13px;font-weight:700}
+.price{padding:16px;border:1px solid var(--l);background:#fff}
+.price span{display:block;font-size:11px;color:var(--m);text-transform:uppercase}
+.price strong{display:block;margin-top:6px;font-size:24px}
+.product-description{line-height:1.6;color:var(--m)}
+.product-specifications{
+  margin-top:28px;
+  border-top:1px solid #d8d8d8;
+  background:#fff;
+}
+.product-specifications h3{
+  margin:0;
+  padding:18px 16px;
+  font-size:16px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.specification-row{
+  display:grid;
+  grid-template-columns:minmax(110px,34%) minmax(0,1fr);
+  gap:18px;
+  padding:16px;
+  border-top:1px solid #d8d8d8;
+  font-size:13px;
+  line-height:1.5;
+}
+.specification-row strong{font-size:12px;letter-spacing:.05em}
+.specification-row span,
+.specification-row ul{
+  min-width:0;
+  margin:0;
+  overflow-wrap:anywhere;
+}
+.specification-features ul{padding-left:18px}
+.specification-features li + li{margin-top:6px}
+.empty{
+  min-height:180px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--l);
+  background:var(--w);
+  color:var(--m);
+  text-align:center;
+}

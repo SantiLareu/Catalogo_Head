@@ -8,7 +8,7 @@ import './styles/reset.css';
 import './styles/header.css';
 import './styles/hero.css';
 import './styles/category-index.css';
-import './styles/catalog-placeholder.css';
+import './styles/product.css';
 import './styles/footer.css';
 import './styles/responsive.css';
 

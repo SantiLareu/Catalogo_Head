@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import CatalogSectionsPlaceholder from './components/catalog/CatalogSectionsPlaceholder.jsx';
+import CatalogSections from './components/catalog/CatalogSections.jsx';
 import CategoryIndex from './components/categories/CategoryIndex.jsx';
 import Footer from './components/layout/Footer.jsx';
 import Header from './components/layout/Header.jsx';
@@ -31,7 +31,7 @@ function App() {
       <main>
         <Hero />
         <CategoryIndex categories={categories} />
-        <CatalogSectionsPlaceholder categories={categories} />
+        <CatalogSections categories={categories} products={catalog.products} />
       </main>
       <Footer />
     </>
