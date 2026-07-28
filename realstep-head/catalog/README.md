@@ -14,8 +14,7 @@ generated/catalog.json
 React
 ```
 
-Los archivos de `js/data/` pertenecen exclusivamente a la aplicación clásica
-y no forman parte del pipeline.
+El catálogo JavaScript anterior fue retirado y no forma parte del pipeline.
 
 ## Hojas
 

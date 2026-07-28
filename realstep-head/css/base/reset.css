@@ -1,6 +1,0 @@
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Arial,sans-serif;background:#ececec;color:#111}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-main{max-width:1500px;margin:auto}
