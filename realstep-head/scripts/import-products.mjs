@@ -6,13 +6,14 @@ import {
   serializeCatalog
 } from './catalog-import/buildCatalog.mjs';
 import {
-  compareLegacyToCatalog
-} from './catalog-import/compareCatalogs.mjs';
+  compareCatalogs,
+  formatCatalogDifference,
+  readCatalogFile
+} from './catalog-import/catalogBaseline.mjs';
 import {
   Diagnostics,
   generalLocation
 } from './catalog-import/diagnostics.mjs';
-import { loadLegacyCatalog } from './catalog-import/loadLegacyCatalog.mjs';
 import { readWorkbook } from './catalog-import/readWorkbook.mjs';
 import { validateWorkbookData } from './catalog-import/validateWorkbook.mjs';
 import { writeOutputSafely } from './catalog-import/writeOutput.mjs';
@@ -27,7 +28,7 @@ function parseArguments(argv, repoRoot) {
     repoRoot,
     check: false,
     strict: false,
-    compareLegacy: true
+    verifyOutput: false
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -37,8 +38,6 @@ function parseArguments(argv, repoRoot) {
       options.check = true;
     } else if (argument === '--strict') {
       options.strict = true;
-    } else if (argument === '--skip-legacy-compare') {
-      options.compareLegacy = false;
     } else if (argument === '--output') {
       index += 1;
       options.outputPath = path.resolve(repoRoot, argv[index]);
@@ -93,13 +92,28 @@ export async function runImport(options) {
       if (!diagnostics.errors.length) {
         catalog = buildCatalog(readResult.sheets);
 
-        if (options.compareLegacy !== false) {
-          const legacy = await loadLegacyCatalog(repoRoot);
-          comparison = compareLegacyToCatalog(
-            legacy,
-            catalog,
-            diagnostics
-          );
+        if (options.check || options.verifyOutput) {
+          try {
+            const currentOutput = await readCatalogFile(
+              outputPath,
+              'generated/catalog.json'
+            );
+            const differences = compareCatalogs(currentOutput, catalog);
+            comparison = { differences };
+            differences.forEach(function(difference) {
+              diagnostics.error(
+                generalLocation('Comparacion JSON'),
+                'GENERATED_CATALOG_MISMATCH',
+                formatCatalogDifference(difference)
+              );
+            });
+          } catch (error) {
+            diagnostics.error(
+              generalLocation('Comparacion JSON'),
+              'GENERATED_CATALOG_INVALID',
+              error.message
+            );
+          }
         }
       }
     }
@@ -152,14 +166,7 @@ function printResult(result, options) {
   }
 
   if (result.comparison && !result.comparison.differences.length) {
-    const counts = result.comparison.counts;
-    console.log(
-      'Comparación legacy: OK (' +
-      counts.products + ' productos, ' +
-      counts.variants + ' variantes, ' +
-      counts.stock + ' stocks, ' +
-      counts.images + ' imágenes).'
-    );
+    console.log('Comparación con generated/catalog.json: OK.');
   }
 
   if (result.wroteOutput) {

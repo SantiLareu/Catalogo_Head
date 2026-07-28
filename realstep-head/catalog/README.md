@@ -1,8 +1,21 @@
-# Catálogo de productos
+# Pipeline del catálogo
 
-`products.xlsx` será la fuente manual de productos para la futura
-aplicación React. Durante la Etapa 1 la aplicación clásica sigue leyendo
-los archivos JavaScript de `js/data`.
+`catalog/products.xlsx` es la única fuente manual del catálogo.
+`generated/catalog.json` es un artefacto determinista generado por Node y la
+única fuente de catálogo consumida por React.
+
+```text
+catalog/products.xlsx
+         ↓
+importador Node
+         ↓
+generated/catalog.json
+         ↓
+React
+```
+
+Los archivos de `js/data/` pertenecen exclusivamente a la aplicación clásica
+y no forman parte del pipeline.
 
 ## Hojas
 
@@ -14,31 +27,49 @@ los archivos JavaScript de `js/data`.
 - `Caracteristicas`: ficha técnica normalizada por filas.
 - `Listas`: valores permitidos para validaciones; permanece oculta.
 
-## Stock inicial
+El importador rechaza fórmulas. Todos los valores del workbook deben ser
+literales. Los IDs se preservan exactamente, incluidos los espacios finales.
 
-La fuente JavaScript actual solo informa disponibilidad:
+## Stock
 
-- `inStock: true` se migró como `stock: 1`.
-- `inStock: false` se migró como `stock: 0`.
+El JSON incluye `"stockIsAvailabilityOnly": true`. Los valores de stock
+representan disponibilidad y no deben interpretarse como inventario comercial
+exacto hasta que se apruebe ese cambio de modelo.
 
-Esto no significa que exista una sola unidad. El JSON generado incluye
-`"stockIsAvailabilityOnly": true`; una interfaz futura debe interpretar
-el stock únicamente como disponible/no disponible hasta que se carguen
-cantidades reales.
+## Baseline canónico
 
-## Comandos
+`tests/fixtures/catalog-baseline.json` es el snapshot versionado del catálogo
+comercial aprobado. No es una fuente editable ni debe modificarse a mano.
 
-```text
+Flujo normal:
+
+```powershell
 npm run import-products
 npm run check-products
-npm run compare-products
+npm run compare-catalog
 npm run test-importer
 ```
 
-El importador rechaza fórmulas. Todos los valores del workbook deben ser
-literales.
+- `import-products`: valida Excel y genera `generated/catalog.json`.
+- `check-products`: reconstruye el catálogo sin escribir y comprueba que el
+  JSON generado esté actualizado.
+- `compare-catalog`: compara el JSON generado contra el baseline sin modificar
+  archivos; devuelve código 1 ante cualquier diferencia.
 
-`seed-products-workbook` existe únicamente para reproducir el bootstrap
-inicial desde los JavaScript legacy. Por seguridad no sobrescribe un
-`products.xlsx` existente; `--force` debe reservarse para reconstruir
-deliberadamente ese bootstrap y descartaría cambios manuales del Excel.
+## Aprobar un cambio comercial
+
+1. Modificar únicamente `catalog/products.xlsx`.
+2. Ejecutar `npm run import-products`.
+3. Revisar el diff de `generated/catalog.json`.
+4. Ejecutar checks, tests y build.
+5. Obtener aprobación comercial.
+6. Ejecutar deliberadamente:
+
+   ```powershell
+   npm run update-catalog-baseline
+   ```
+
+7. Revisar y versionar juntos Excel, JSON y baseline.
+
+`update-catalog-baseline` nunca se ejecuta desde build, dev, tests o importación.
+Antes de escribir, exige que Excel y JSON sean válidos e idénticos.

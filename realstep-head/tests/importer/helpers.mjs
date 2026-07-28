@@ -55,7 +55,7 @@ export async function runFixture(workspace, options = {}) {
     repoRoot,
     check: Boolean(options.check),
     strict: Boolean(options.strict),
-    compareLegacy: Boolean(options.compareLegacy)
+    verifyOutput: Boolean(options.verifyOutput)
   });
 }
 

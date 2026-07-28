@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "seed-products-workbook": "node scripts/seed-products-workbook.mjs",
     "import-products": "node scripts/import-products.mjs catalog/products.xlsx",
     "check-products": "node scripts/import-products.mjs --check catalog/products.xlsx",
-    "compare-products": "node scripts/compare-products.mjs",
+    "compare-catalog": "node scripts/compare-catalog.mjs",
+    "update-catalog-baseline": "node scripts/update-catalog-baseline.mjs",
     "test-importer": "node --test \"tests/importer/*.test.mjs\"",
     "test-react": "node --test \"react-app/tests/*.test.mjs\"",
     "react:dev": "npm --prefix react-app run dev",

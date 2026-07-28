@@ -1,34 +1,20 @@
-# Shell React · Etapa 2
+# Aplicación React · Real Step
 
-Esta carpeta contiene una aplicación React + Vite aislada de la versión clásica.
-Eliminar `react-app/` no afecta `index.html`, `js/`, `css/` ni los datos clásicos.
+Aplicación React + Vite del catálogo mayorista. Consume exclusivamente
+`../generated/catalog.json`, configuración React y recursos de `../assets/`.
+No carga HTML, CSS, configuración ni JavaScript de la aplicación clásica.
 
-## Fuente de datos
-
-La aplicación importa estáticamente `../generated/catalog.json`. No mantiene una
-copia propia: primero se ejecuta el importador de la raíz y luego React consume el
-resultado generado.
+## Comandos desde la raíz
 
 ```powershell
 npm run import-products
+npm run check-products
+npm run compare-catalog
+npm run test-react
 npm run react:dev
 npm run react:build
 npm run react:preview
 ```
 
-También se pueden ejecutar `npm run dev`, `npm run build` y `npm run preview`
-desde esta carpeta.
-
-No hay hooks `predev` ni `prebuild`: la importación es explícita durante esta
-etapa.
-
-## Orden de estilos
-
-`src/main.jsx` carga las hojas en este orden:
-
-1. `css/base/variables.css`, compartida con la aplicación clásica.
-2. `css/base/reset.css`, compartida con la aplicación clásica.
-3. `src/styles/shell.css`, layout mínimo y exclusivo de la shell.
-
-Vite permite estos imports compartidos mediante `server.fs.allow` y genera rutas
-relativas gracias a `base: './'`.
+La importación del Excel es explícita: no existen hooks `predev` ni `prebuild`.
+Vite genera rutas relativas mediante `base: './'`.
