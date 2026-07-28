@@ -6,7 +6,7 @@ import useFocusTrap from '../../hooks/useFocusTrap.js';
 import CartItem from './CartItem.jsx';
 import CartSummary from './CartSummary.jsx';
 
-function CartDrawer({ onClose, openerRef, products }) {
+function CartDrawer({ continueRef, onClose, onContinue, openerRef, products }) {
   const { lines } = useCart();
   const drawerRef = useRef(null);
   const closeRef = useRef(null);
@@ -45,7 +45,7 @@ function CartDrawer({ onClose, openerRef, products }) {
             return product ? <CartItem key={JSON.stringify(line)} line={line} product={product} /> : null;
           })}
         </div>
-        <CartSummary />
+        <CartSummary continueRef={continueRef} onContinue={onContinue} />
       </div>
     </aside>,
     document.body

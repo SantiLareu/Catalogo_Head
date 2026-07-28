@@ -1,5 +1,8 @@
 import { useRef, useState } from 'react';
 import CartDrawer from '../cart/CartDrawer.jsx';
+import CheckoutModal, {
+  createEmptyCheckoutForm
+} from '../checkout/CheckoutModal.jsx';
 import catalog from '../../data/catalog.js';
 import useCart from '../../hooks/useCart.js';
 import { scrollToHashTarget } from '../../utils/navigation.js';
@@ -9,7 +12,10 @@ const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.ur
 function Header() {
   const { units } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [checkoutForm, setCheckoutForm] = useState(createEmptyCheckoutForm);
   const cartButtonRef = useRef(null);
+  const continueButtonRef = useRef(null);
   const handleHomeClick = (event) => {
     event.preventDefault();
     scrollToHashTarget('#inicio');
@@ -40,8 +46,29 @@ function Header() {
       </div>
       {cartOpen ? (
         <CartDrawer
+          continueRef={continueButtonRef}
           onClose={() => setCartOpen(false)}
+          onContinue={() => {
+            setCartOpen(false);
+            setCheckoutOpen(true);
+          }}
           openerRef={cartButtonRef}
+          products={catalog.products}
+        />
+      ) : null}
+      {checkoutOpen ? (
+        <CheckoutModal
+          customer={checkoutForm}
+          onCustomerChange={setCheckoutForm}
+          onClose={() => {
+            setCheckoutOpen(false);
+            setCartOpen(true);
+          }}
+          onSuccess={() => {
+            setCheckoutForm(createEmptyCheckoutForm());
+            setCheckoutOpen(false);
+          }}
+          openerRef={continueButtonRef}
           products={catalog.products}
         />
       ) : null}

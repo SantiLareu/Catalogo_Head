@@ -1,8 +1,8 @@
 import useCart from '../../hooks/useCart.js';
 import { formatMoney } from '../../utils/money.js';
 
-function CartSummary() {
-  const { total, units } = useCart();
+function CartSummary({ continueRef, onContinue }) {
+  const { lines, total, units } = useCart();
   return (
     <div className="summary">
       <div><span>Unidades</span><strong>{units}</strong></div>
@@ -10,14 +10,14 @@ function CartSummary() {
       <button
         className="primary"
         type="button"
-        disabled
-        title="El checkout se migrará en la Etapa 7"
+        disabled={lines.length === 0}
+        onClick={onContinue}
+        ref={continueRef}
       >
-        CONTINUAR · ETAPA 7
+        CONTINUAR
       </button>
     </div>
   );
 }
 
 export default CartSummary;
-
