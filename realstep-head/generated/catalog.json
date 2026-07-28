@@ -1,0 +1,5138 @@
+{
+  "schemaVersion": 1,
+  "stockIsAvailabilityOnly": true,
+  "categories": [
+    {
+      "id": "calzado",
+      "label": "CALZADO",
+      "target": "categoria-calzado",
+      "enabled": true,
+      "title": "Calzado HEAD",
+      "subtitle": "Stock independiente por talle.",
+      "order": 0,
+      "filter": {
+        "category": "calzado",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "calzado"
+    },
+    {
+      "id": "indumentaria",
+      "label": "INDUMENTARIA",
+      "target": "categoria-indumentaria",
+      "enabled": true,
+      "title": "Indumentaria HEAD",
+      "subtitle": "",
+      "order": 1,
+      "filter": {
+        "category": "indumentaria",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "indumentaria",
+      "children": [
+        {
+          "id": "indumentaria-hombre",
+          "label": "HOMBRE",
+          "target": "categoria-indumentaria-hombre",
+          "enabled": true,
+          "title": "INDUMENTARIA HOMBRE",
+          "subtitle": "",
+          "order": 0,
+          "filter": {
+            "category": "indumentaria",
+            "subcategory": null,
+            "gender": "hombre"
+          },
+          "dataSource": "indumentariaHombre"
+        },
+        {
+          "id": "indumentaria-dama",
+          "label": "DAMA",
+          "target": "categoria-indumentaria-dama",
+          "enabled": true,
+          "title": "INDUMENTARIA DAMA",
+          "subtitle": "",
+          "order": 1,
+          "filter": {
+            "category": "indumentaria",
+            "subcategory": null,
+            "gender": "dama"
+          },
+          "dataSource": "indumentariaDama"
+        }
+      ]
+    },
+    {
+      "id": "accesorios",
+      "label": "ACCESORIOS",
+      "target": "categoria-accesorios",
+      "enabled": true,
+      "title": "Accesorios HEAD",
+      "subtitle": "",
+      "order": 2,
+      "filter": {
+        "category": "accesorios",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "accesorios",
+      "children": [
+        {
+          "id": "accesorios-medias",
+          "label": "MEDIAS",
+          "target": "categoria-accesorios-medias",
+          "enabled": true,
+          "title": "MEDIAS",
+          "subtitle": "",
+          "order": 0,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "medias",
+            "gender": null
+          },
+          "dataSource": "accesoriosMedias"
+        },
+        {
+          "id": "accesorios-antivibrador",
+          "label": "ANTIVIBRADOR",
+          "target": "categoria-accesorios-antivibrador",
+          "enabled": true,
+          "title": "ANTIVIBRADOR",
+          "subtitle": "",
+          "order": 1,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "antivibrador",
+            "gender": null
+          },
+          "dataSource": "accesoriosAntivibradores"
+        },
+        {
+          "id": "accesorios-cubre-grips",
+          "label": "CUBRE GRIPS",
+          "target": "categoria-accesorios-cubre-grips",
+          "enabled": true,
+          "title": "CUBRE GRIPS",
+          "subtitle": "",
+          "order": 2,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "cubre-grips",
+            "gender": null
+          },
+          "dataSource": "accesoriosCubreGrips"
+        },
+        {
+          "id": "accesorios-munequeras",
+          "label": "MUÑEQUERAS",
+          "target": "categoria-accesorios-munequeras",
+          "enabled": true,
+          "title": "MUÑEQUERAS",
+          "subtitle": "",
+          "order": 3,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "munequeras",
+            "gender": null
+          },
+          "dataSource": "accesoriosMunequeras"
+        },
+        {
+          "id": "accesorios-grips",
+          "label": "GRIPS",
+          "target": "categoria-accesorios-grips",
+          "enabled": true,
+          "title": "GRIPS",
+          "subtitle": "",
+          "order": 4,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "grips",
+            "gender": null
+          },
+          "dataSource": "accesoriosGrips"
+        },
+        {
+          "id": "accesorios-cuerdas-tenis",
+          "label": "CUERDAS TENIS",
+          "target": "categoria-accesorios-cuerdas-tenis",
+          "enabled": true,
+          "title": "CUERDAS TENIS",
+          "subtitle": "",
+          "order": 5,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "cuerdas-tenis",
+            "gender": null
+          },
+          "dataSource": "accesoriosCuerdasTenis"
+        },
+        {
+          "id": "accesorios-gorras",
+          "label": "GORRAS",
+          "target": "categoria-accesorios-gorras",
+          "enabled": true,
+          "title": "GORRAS",
+          "subtitle": "",
+          "order": 6,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "gorras",
+            "gender": null
+          },
+          "dataSource": "accesoriosGorras"
+        }
+      ]
+    },
+    {
+      "id": "raquetas-squash",
+      "label": "RAQUETAS SQUASH",
+      "target": "categoria-raquetas-squash",
+      "enabled": false,
+      "title": "Raquetas de Squash HEAD",
+      "subtitle": "",
+      "order": 3,
+      "filter": {
+        "category": "raquetas-squash",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "raquetas-squash"
+    },
+    {
+      "id": "raquetas-tenis",
+      "label": "RAQUETAS TENIS",
+      "target": "categoria-raquetas-tenis",
+      "enabled": false,
+      "title": "Raquetas de Tenis HEAD",
+      "subtitle": "",
+      "order": 4,
+      "filter": {
+        "category": "raquetas-tenis",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "raquetas-tenis"
+    },
+    {
+      "id": "bolsos-mochilas",
+      "label": "BOLSOS / MOCHILAS",
+      "target": "categoria-bolsos-mochilas",
+      "enabled": false,
+      "title": "Bolsos / Mochilas HEAD",
+      "subtitle": "",
+      "order": 5,
+      "filter": {
+        "category": "bolsos-mochilas",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "bolsos-mochilas"
+    },
+    {
+      "id": "pelotas",
+      "label": "PELOTAS",
+      "target": "categoria-pelotas",
+      "enabled": true,
+      "title": "Pelotas HEAD",
+      "subtitle": "",
+      "order": 6,
+      "filter": {
+        "category": "pelotas",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "pelotas"
+    },
+    {
+      "id": "pelotas-squash",
+      "label": "PELOTAS SQUASH",
+      "target": "categoria-pelotas-squash",
+      "enabled": false,
+      "title": "Pelotas de Squash HEAD",
+      "subtitle": "",
+      "order": 7,
+      "filter": {
+        "category": "pelotas-squash",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "pelotas-squash"
+    },
+    {
+      "id": "ski",
+      "label": "SKI",
+      "target": "categoria-ski",
+      "enabled": false,
+      "title": "Ski HEAD",
+      "subtitle": "",
+      "order": 8,
+      "filter": {
+        "category": "ski",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "ski"
+    },
+    {
+      "id": "pop",
+      "label": "POP",
+      "target": "categoria-pop",
+      "enabled": false,
+      "title": "POP HEAD",
+      "subtitle": "",
+      "order": 9,
+      "filter": {
+        "category": "pop",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "pop"
+    },
+    {
+      "id": "snowboard",
+      "label": "SNOWBOARD",
+      "target": "categoria-snowboard",
+      "enabled": false,
+      "title": "Snowboard HEAD",
+      "subtitle": "",
+      "order": 10,
+      "filter": {
+        "category": "snowboard",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "snowboard"
+    },
+    {
+      "id": "paletas-padel",
+      "label": "PALETAS PADEL",
+      "target": "categoria-paletas-padel",
+      "enabled": true,
+      "title": "Paletas de Padel HEAD",
+      "subtitle": "",
+      "order": 11,
+      "filter": {
+        "category": "paletas-padel",
+        "subcategory": null,
+        "gender": null
+      },
+      "productCategory": "paletas-padel"
+    }
+  ],
+  "products": [
+    {
+      "id": "ace-m1",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "ACE-M1 GREY / BLACK / RED",
+      "code": "06/1-0157",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 0,
+      "images": [
+        "assets/products/calzado/ace-m1-1.webp",
+        "assets/products/calzado/ace-m1-2.webp",
+        "assets/products/calzado/ace-m1-3.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "ace-m2",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "ACE-M2 WHITE / ORANGE / NAVY",
+      "code": "PENDIENTE",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 1,
+      "images": [
+        "assets/products/calzado/ace-m2-1.webp",
+        "assets/products/calzado/ace-m2-2.webp",
+        "assets/products/calzado/ace-m2-3.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "deuce-m2",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "DEUCE-M2 GREY / BLACK / ORANGE",
+      "code": "PENDIENTE",
+      "price": 54000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 2,
+      "images": [
+        "assets/products/calzado/deuce-m2.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "deuce-m1",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "DEUCE-M1 BLUE / NAVY / RED",
+      "code": "PENDIENTE",
+      "price": 54000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 3,
+      "images": [
+        "assets/products/calzado/deuce-m1.webp",
+        "assets/products/calzado/deuce-m1-2.webp",
+        "assets/products/calzado/deuce-m1-3.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 0,
+          "inStock": false,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 0,
+          "inStock": false,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 0,
+          "inStock": false,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 0,
+          "inStock": false,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "smash-m1",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "SMASH-M1 BLACK / GREY / WHITE",
+      "code": "PENDIENTE",
+      "price": 54000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 4,
+      "images": [
+        "assets/products/calzado/smash-m1-a.webp",
+        "assets/products/calzado/smash-m1-b.webp",
+        "assets/products/calzado/smash-m1-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 0,
+          "inStock": false,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "smash-m2",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "SMASH-M2 NAVY / GREY",
+      "code": "PENDIENTE",
+      "price": 54000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 5,
+      "images": [
+        "assets/products/calzado/smash-m2-a.webp",
+        "assets/products/calzado/smash-m2-b.webp",
+        "assets/products/calzado/smash-m2-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "10",
+          "stock": 0,
+          "inStock": false,
+          "order": 3
+        },
+        {
+          "size": "11",
+          "stock": 0,
+          "inStock": false,
+          "order": 4
+        },
+        {
+          "size": "12",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "drop-w1",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "DROP-W1 PINK/ORANGE/LIME",
+      "code": "PENDIENTE",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 6,
+      "images": [
+        "assets/products/calzado/drop-w1-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5",
+          "stock": 1,
+          "inStock": true,
+          "order": 0
+        },
+        {
+          "size": "6",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "7",
+          "stock": 0,
+          "inStock": false,
+          "order": 2
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "drop-w2",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "DROP-W2 WHITE/BLUE",
+      "code": "PENDIENTE",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 7,
+      "images": [
+        "assets/products/calzado/drop-w2-a.webp",
+        "assets/products/calzado/drop-w2-b.webp",
+        "assets/products/calzado/drop-w2-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5",
+          "stock": 0,
+          "inStock": false,
+          "order": 0
+        },
+        {
+          "size": "6",
+          "stock": 0,
+          "inStock": false,
+          "order": 1
+        },
+        {
+          "size": "7",
+          "stock": 1,
+          "inStock": true,
+          "order": 2
+        },
+        {
+          "size": "8",
+          "stock": 1,
+          "inStock": true,
+          "order": 3
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "slice-w1",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "SLICE-W1 NAVY/BLUE",
+      "code": "PENDIENTE",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 8,
+      "images": [
+        "assets/products/calzado/slice-w1-a.webp",
+        "assets/products/calzado/slice-w1-b.webp",
+        "assets/products/calzado/slice-w1-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5",
+          "stock": 0,
+          "inStock": false,
+          "order": 0
+        },
+        {
+          "size": "6",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "7",
+          "stock": 0,
+          "inStock": false,
+          "order": 2
+        },
+        {
+          "size": "8",
+          "stock": 0,
+          "inStock": false,
+          "order": 3
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "slice-w2",
+      "category": "calzado",
+      "subcategory": null,
+      "gender": null,
+      "name": "SLICE-W2 BLACK / PINK",
+      "code": "PENDIENTE",
+      "price": 52000,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 9,
+      "images": [
+        "assets/products/calzado/slice-w2-a.webp",
+        "assets/products/calzado/slice-w2-b.webp",
+        "assets/products/calzado/slice-w2-c.webp"
+      ],
+      "sizes": [
+        {
+          "size": "5",
+          "stock": 0,
+          "inStock": false,
+          "order": 0
+        },
+        {
+          "size": "6",
+          "stock": 1,
+          "inStock": true,
+          "order": 1
+        },
+        {
+          "size": "7",
+          "stock": 0,
+          "inStock": false,
+          "order": 2
+        },
+        {
+          "size": "8",
+          "stock": 0,
+          "inStock": false,
+          "order": 3
+        },
+        {
+          "size": "9",
+          "stock": 1,
+          "inStock": true,
+          "order": 4
+        },
+        {
+          "size": "10",
+          "stock": 1,
+          "inStock": true,
+          "order": 5
+        }
+      ],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "Paleta Gravity Pro 2022 228162",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "Paleta Gravity Pro 2022 228162",
+      "code": "PENDIENTE",
+      "price": 220050,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 10,
+      "images": [
+        "assets/products/paletas/228162-Gravity-Pro-2022-a.jpg",
+        "assets/products/paletas/228162-Gravity-Pro-2022-b.jpg",
+        "assets/products/paletas/228162-Gravitiy-Pro-2022-c.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "Radical Motion 2024 222044",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "Paleta Radical Motion 2024 222044",
+      "code": "PENDIENTE",
+      "price": 250690,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 11,
+      "images": [
+        "assets/products/paletas/RADICAL MOTION 2024 a.jpg",
+        "assets/products/paletas/RADICAL MOTION 2024 b.jpg",
+        "assets/products/paletas/RADICAL MOTION 2024 c.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "One Ultralight Black 225024",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "Paleta One Ultralight Black 225024",
+      "code": "PENDIENTE",
+      "price": 247500,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 12,
+      "images": [
+        "assets/products/paletas/one ultralight black a.jpg",
+        "assets/products/paletas/one ultralight black b.jpg",
+        "assets/products/paletas/one ultralight black c.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "3B-Pro+",
+      "category": "pelotas",
+      "subcategory": null,
+      "gender": null,
+      "name": "Caja Pelotas 3B Pro+ x24",
+      "code": "PENDIENTE",
+      "price": 196800,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 13,
+      "images": [
+        "assets/products/pelotas/padel-pro+-a.webp",
+        "assets/products/pelotas/padel-pro+-b.webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "3B-Team",
+      "category": "pelotas",
+      "subcategory": null,
+      "gender": null,
+      "name": "Caja Pelotas 3B Team x24",
+      "code": "PENDIENTE",
+      "price": 172800,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 14,
+      "images": [
+        "assets/products/pelotas/Team-a.webp",
+        "assets/products/pelotas/Team-b.webp",
+        "assets/products/pelotas/Team-c.webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "MOTION T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "MOTION T-SHIRT MEN",
+      "code": null,
+      "price": 16150,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 15,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "95% Polyester, 5% Elastane",
+        "features": [
+          "Round Neckline"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#111111",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0188 MOTION T-SHIRT BLACK_1773256424.jpg",
+            "assets/products/indumentaria-hombre/tshirt-head-motion-35b21c416f1afc3ae717805654532195-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "grey",
+          "code": "pendiente",
+          "colorName": "Grey",
+          "colorHex": "#808080",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0190 MOTION T-SHIRT DK GREY_1773256429.jpg",
+            "assets/products/indumentaria-hombre/tshirt-head-motion-35b21c416f1afc3ae717805654532195-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0191 MOTION T-SHIRT NAVY_1773256432.jpg",
+            "assets/products/indumentaria-hombre/tshirt-head-motion-35b21c416f1afc3ae717805654532195-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "royal blue",
+          "code": "pendiente",
+          "colorName": "Royal Blue",
+          "colorHex": "#4169E1",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0189 MOTION T-SHIRT ROYAL BLUE_1773256427.jpg",
+            "assets/products/indumentaria-hombre/tshirt-head-motion-35b21c416f1afc3ae717805654532195-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB ORIGINAL T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB ORIGINAL T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 16,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "95% Polyester, 5% Elastane",
+        "features": [
+          "Rib Crewneck Collar",
+          "Head Print On Front Panel",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#111111",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0206 CLUB Original T-Shirt Men BK_1773256752.jpg",
+            "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-rd-2-d6a446419fc50fab4f17691065542206-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-blk-1-65637a87d6ec84eee817691065544124-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "red",
+          "code": "pendiente",
+          "colorName": "Red",
+          "colorHex": "#FF0000",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0208 CLUB Original T-Shirt Men RD_1773256758.jpg",
+            "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-rd-2-d6a446419fc50fab4f17691065542206-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "royal blue",
+          "code": "pendiente",
+          "colorName": "Royal Blue",
+          "colorHex": "#4169E1",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0205 CLUB Original T-Shirt Men RB_1773256749.jpg",
+            "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-rd-2-d6a446419fc50fab4f17691065542206-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0207 CLUB Original T-Shirt Men WH_1773256755.jpg",
+            "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-rd-2-d6a446419fc50fab4f17691065542206-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SLICE 25 T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "SLICE 25 T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 17,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "100% Polyester",
+        "secondFabric": "100% Polyester Jacquard Double Knit With Wicking",
+        "features": [
+          "Round Neckline",
+          "Mesh Side Inserts For Enhanced Breathability",
+          "Color Block Design",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "lime green",
+          "code": "pendiente",
+          "colorName": "Lime Green",
+          "colorHex": "#32CD32",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0198 SLICE T-SHIRT MEN LL_1773256628.png",
+            "assets/products/indumentaria-hombre/tshirt-head-slice-3ffe6efb846d5631ee17805653104274-1024-1024.webp",
+            "assets/products/indumentaria-hombre/slice-t-shirt-men-811215-ll-1-c4f94d9e3426d21d6a17691058232450-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White/Black",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0197 SLICE T-SHIRT MEN 811215 WHBK OK_1773322070.jpg",
+            "assets/products/indumentaria-hombre/tshirt-head-slice-3ffe6efb846d5631ee17805653104274-1024-1024.webp",
+            "assets/products/indumentaria-hombre/slice-t-shirt-men-811215-whbk-1-ok-1b508aed702934364d17691058235681-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TOPSPIN 25 T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "TOPSPIN 25 T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 18,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "100% Polyester",
+        "features": [
+          "V-Neckline",
+          "Sublimated Print On Front",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "light purple",
+          "code": "pendiente",
+          "colorName": "Light Purple",
+          "colorHex": "#9370DB",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0200 TOPSPIN T-Shirt Men IGXP_1773256733.jpg",
+            "assets/products/indumentaria-hombre/tshir-top-spin-36fc3efba0e2974bb917805619124383-1024-1024.webp",
+            "assets/products/indumentaria-hombre/topspin-t-shirt-men-811235-igxp-1-cfad90d812b3f1b0ec17691060057730-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "light red",
+          "code": "pendiente",
+          "colorName": "Light Red",
+          "colorHex": "#FF6347",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0199 TOPSPIN T-Shirt Men XVNV_1773256731.png",
+            "assets/products/indumentaria-hombre/tshir-top-spin-36fc3efba0e2974bb917805619124383-1024-1024.webp",
+            "assets/products/indumentaria-hombre/topspin-t-shirt-men-811235-igxp-1-cfad90d812b3f1b0ec17691060057730-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB 25 TECH T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB 25 TECH T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 19,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "100% Polyester",
+        "secondFabric": "100% Polyester Closed Mesh",
+        "features": [
+          "Round Neckline",
+          "Contrast Insert On Front",
+          "Closed Mesh On Sides And Sleeves For Enhanced Breathability",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "dark red",
+          "code": "pendiente",
+          "colorName": "Red/White",
+          "colorHex": "#8B0000",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0192  club-25-tech-t-shirt-men-red-white_1773256435.webp",
+            "assets/products/indumentaria-hombre/811725_club-25-tech-t-shirt-men_rdwh_2-nube-fe1ff3ce9db9c58f3a17691045736852-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-t-shirt-men-811725-rdwh-4-dde45ccd0fd5581e7d17691045733714-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0193 club-25-tech-t-shirt-men-white_1773256439.webp",
+            "assets/products/indumentaria-hombre/811725_club-25-tech-t-shirt-men_wh_2-nube-f9e3c24b36f00f9ddf17691045734529-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-t-shirt-men-811725-rdwh-4-dde45ccd0fd5581e7d17691045733714-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PLAY TECH T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "PLAY TECH T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 20,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "50% Polyester, 50% Melange",
+        "secondFabric": "90,5% Polyester, 9,5% Elastane (Spandex) Closed Mesh With Wicking",
+        "features": [
+          "Round Neckline",
+          "Decorative Flatlock Seam On Front And Back",
+          "Closed Mesh Insert On Back And Sleeve Opening",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "grape fruit",
+          "code": "pendiente",
+          "colorName": "Grape Fruit",
+          "colorHex": "#F56649",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0195 PLAY  Tech T-Shirt Men GI (1)_1773256569.jpg",
+            "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-gi-1-064bac975cf4015ff617691046779525-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "grey melange",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#808080",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0194 PLAY TECH T-SHIRT MEN 811085 grey 1_1773256565.jpg",
+            "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-grey-1-ff05edd8fdaad7159117691055707986-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "willow grey",
+          "code": "pendiente",
+          "colorName": "Willow Grey",
+          "colorHex": "#EDE2DF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0196 PLAY  Tech T-Shirt Men WG_1773256583.png",
+            "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-wg-1-188cf493019bad65f817691046782612-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CARL T-SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CARL T-SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 21,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "95% Polyester, 5% Elastane",
+        "features": [
+          "Rib Crewneck Collar",
+          "Print On Front Panel",
+          "Wishbone Flag Label On Left Sleeve",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#000000",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0210 CARL T-Shirt Men bk_1773256810.webp",
+            "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-bk-1-nube-4fd6e5e2ca4e27786417734293350560-1024-1024.webp",
+            "assets/products/indumentaria-hombre/indumetnaria-remera-head-carl-3649bfffd9de316ab617805610140079-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "grey melange",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#808080",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0211 CARL T-Shirt Men GM_1773256765.jpg",
+            "assets/products/indumentaria-hombre/indumetnaria-remera-head-carl-3649bfffd9de316ab617805610140079-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/CARL T-SHIRT MEN 811395 NAVY OK_1773327701.jpg",
+            "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-navy-1-nube-ed774938b5bb48670c17734293350195-1024-1024.webp",
+            "assets/products/indumentaria-hombre/indumetnaria-remera-head-carl-3649bfffd9de316ab617805610140079-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0209 CARL T-Shirt Men WH_1773256761.jpg",
+            "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-wh-1-dcc05522781036e34b17691073989204-1024-1024.webp",
+            "assets/products/indumentaria-hombre/indumetnaria-remera-head-carl-3649bfffd9de316ab617805610140079-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB 25 TECH POLO SHIRT MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB 25 TECH POLO SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 22,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "100% Polyester",
+        "secondFabric": "100% Polyester Closed Mesh",
+        "features": [
+          "Flat-Knit Rib Collar",
+          "3-Buttoned Placket With Head Branded Buttons",
+          "Contrast Insert On Front",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0202 CLUB 25 Tech Polo Shirt Men NV_1773256739.jpg",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-nv-1-6c88e1d87127d8980917691062532245-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-19e8474e18ded1baec17691062532115-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-b-3c56890bf98967670217691062533565-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0201 CLUB 25 Tech Polo Shirt Men WH_1773256736.png",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-wh-1-9f41da4f5b8b471c0617691062532924-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-19e8474e18ded1baec17691062532115-1024-1024.webp",
+            "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-b-3c56890bf98967670217691062533565-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SLICE Polo Shirt Men",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "SLICE POLO SHIRT MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 23,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "100% Polyester",
+        "secondFabric": "100% Polyester Jacquard Double Knit With Wicking",
+        "features": [
+          "Main Fabric Polo Collar",
+          "3-Buttoned Placket With Head Branded Buttons",
+          "Mesh Side Inserts For Enhanced Breathability",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#000000",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0204 SLICE POLO SHIRT MEN 811205 BK_1773256746.jpg",
+            "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-bk-1-4773dee6d7f9ce9cc017691063574514-1024-1024.webp",
+            "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-4d5eb9ef2795a66f7c17691063571003-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0203 SLICE POLO SHIRT MEN WH_1773256743.png",
+            "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-wh-1-c53eb2e58f3c9f8f9117691063569941-1024-1024.webp",
+            "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-4d5eb9ef2795a66f7c17691063571003-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MOTION SHORTS MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "MOTION SHORTS MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 24,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "92% Polyester, 8% Elastane",
+        "features": [
+          "Elasticated Waistband With Draw Cord Adjumentment Inside Draw Cord With Transparent Tip End",
+          "Slip In Pockets",
+          "Mesh Gusset"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#000000",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0187 MOTION SHORTS BK ok_1773256422.jpg",
+            "assets/products/indumentaria-hombre/short-motion-914cd861337992507c17805658059366-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "dark grey",
+          "code": "pendiente",
+          "colorName": "Dark Grey",
+          "colorHex": "#A9A9A9",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0186 MOTION SHORTS DK GREY ok_1773256376.jpg",
+            "assets/products/indumentaria-hombre/short-motion-914cd861337992507c17805658059366-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB 25 SHORTS MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB 25 SHORTS MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 25,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "92% Polyester, 8% Elastane",
+        "secondFabric": "100% Polyester Mesh",
+        "features": [
+          "Elasticated Waistband With Draw Cord Adjumentment Inside Draw Cord With Transparent Tip End",
+          "Slip In Pockets",
+          "Mesh Gusset"
+        ]
+      },
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#000000",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0180 Club 25 Shorts Men (BLACK)_1773256356.jpg",
+            "assets/products/indumentaria-hombre/short-club-e3a32755742fc9249f17805661126525-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 0,
+              "inStock": false,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "red",
+          "code": "pendiente",
+          "colorName": "Red",
+          "colorHex": "#FF0000",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0182 Club 25 Shorts Men (RED)_1773256363.jpg",
+            "assets/products/indumentaria-hombre/short-club-e3a32755742fc9249f17805661126525-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0181 Club 25 Shorts Men WHITE_1773256358.jpg",
+            "assets/products/indumentaria-hombre/short-club-e3a32755742fc9249f17805661126525-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PLAY SHORTS MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "PLAY SHORTS MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 26,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "88% Polyester, 12% Elastane",
+        "secondFabric": "100% Polyester Mesh",
+        "features": [
+          "Elasticated Waistband With Draw Cord Adjumentment",
+          "DrawCord  With Multi Thread Tip End",
+          "Slip-In Pockets",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0183 Play Shorts Men Navy_1773256367.jpg",
+            "assets/products/indumentaria-hombre/short-head-lplay-17dda63ddc63aabb9a17805659705459-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "spacy green",
+          "code": "pendiente",
+          "colorName": "Spacy Green",
+          "colorHex": "#008000",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0184 Play Shorts Men Spacy Green_1773256370.jpg",
+            "assets/products/indumentaria-hombre/short-head-lplay-17dda63ddc63aabb9a17805659705459-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0185 Play Shorts Men WHITE_1773256373.jpg",
+            "assets/products/indumentaria-hombre/short-head-lplay-17dda63ddc63aabb9a17805659705459-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB FYNN HOODIE FZ MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB FYNN HOODIE FZ MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 27,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "60% Cotton, 40% Polyester",
+        "features": [
+          "1-Way Sab Zipper Center Front",
+          "Line Hood",
+          "Hood with Drawcord Adjustment",
+          "Rib At Bottom And Sleeve Hems",
+          "Slip-In Pockets",
+          "Head Print On Front Panel"
+        ]
+      },
+      "variants": [
+        {
+          "id": "grey melange",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#808080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/811459_CLUB_FYNN_Hoodie_FZ_Men_GM_1_1773327490.jpg",
+            "assets/products/indumentaria-hombre/811459_club_fynn_hoodie_fz_men_gm_2-9b4d8a8a63cf0abc8517133123735616-1024-1024.webp",
+            "assets/products/indumentaria-hombre/811459-club-fynn-hoodie-fz-men-2238-96f85fefbccb97e62517133123464563-1024-1024.webp",
+            "assets/products/indumentaria-hombre/811459-club-fynn-hoodie-fz-men-2275-9f2cd71524d546275817133123552401-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB ORIGINAL HOODIE FZ MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB ORIGINAL HOODIE FZ MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 28,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "60% Cotton, 40% Polyester",
+        "secondFabric": "57% Cotton, 38% Polyester, 5% Elastane (Spandex)",
+        "features": [
+          "1-Way Sab Zipper Center Front",
+          "Line Hood",
+          "Hood with Drawcord Adjustment",
+          "Rib At Bottom And Sleeve Hems",
+          "Slip-In Pockets",
+          "Head Print On Front Panel"
+        ]
+      },
+      "variants": [
+        {
+          "id": "grey melange",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#808080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0213 CLUB ORIGINAL HOODIE FZ MEN GM_1773256816.jpg",
+            "assets/products/indumentaria-hombre/club-original-hoodie-fz-men-811815-gm-4-397bd3a8e29dda62ba17691075369485-1024-1024.webp",
+            "assets/products/indumentaria-hombre/811459_club_fynn_hoodie_fz_men_gm_2-6cc7535b96929c2a5517691075370086-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLUB ORIGINAL HOODIE MEN",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "hombre",
+      "name": "CLUB ORIGINAL HOODIE MEN",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 29,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "60% Cotton, 40% Polyester",
+        "secondFabric": "57% Cotton, 38% Polyester, 5% Elastane (Spandex)",
+        "features": [
+          "Line Hood",
+          "Hood with Drawcord Adjustment",
+          "Rib At Bottom And Sleeve Hems",
+          "Kangaroo Pockets",
+          "Head Print On Front Panel"
+        ]
+      },
+      "variants": [
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-hombre/062-0214 CLUB ORIGINAL HOODIE MEN NV_1773256818.jpg",
+            "assets/products/indumentaria-hombre/club-original-hoodie-men-811825-nv-1-ok-1acbc484e19d96e58517691075829644-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "XL",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W PERFORMANCE SKORT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W PERFORMANCE SKORT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 30,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "85% Polyester, 15% Elastane",
+        "secondaryFabric": "90.5% Polyester, 9.5% Elastane (Spandex) Closed Mesh With Wicking",
+        "thirdFabric": "85% Polyester, 15% Elastane (Spandex) Single Jersey With Wicking",
+        "features": [
+          "High Waistband With Elastic Inside",
+          "Box Pleats On Front And Back",
+          "Integrated Inner Pants",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "grape fruit",
+          "code": "pendiente",
+          "colorName": "Grape Fruit",
+          "colorHex": "#FC596C",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0159 W PERFORMANCE SKORT WOMEN GF_1773255890.jpg",
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-grape-fruit-1-e4cbaabc85a4c778c817690909398807-1024-1024.webp",
+            "assets/products/indumentaria-dama/generated-image-july-20-2026-12_10pm-489b785bc43c06ab5b17845605726602-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0157 W PERFORMANCE SKORT WOMEN_1773255827.png",
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-white-1-2a408f19383617b39c17690909398777-1024-1024.webp",
+            "assets/products/indumentaria-dama/generated-image-july-20-2026-12_15pm-7d0923baec03ba511d17845605726480-1024-1024.webp",
+            "assets/products/indumentaria-dama/generated-image-july-20-2026-12_11pm-51ac7d483118593d6f17845605728801-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#000000",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-fe61e62306029872c217690909401995-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-1-2e6263b813c4a0a11817690909398738-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-b-4a48305d028de3a9c717690909401621-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-performance-skort-women-814035-c-b56d19526f4ab6d27217690909402305-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W MOVE SKORT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W MOVE SKORT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 31,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "85% Polyester, 15% Elastane",
+        "secondaryFabric": "90.5% Polyester, 9.5% Elastane (Spandex) Closed Mesh With Wicking",
+        "thirdFabric": "85% Polyester, 15% Elastane (Spandex) Single Jersey With Wicking",
+        "features": [
+          "High Waist With Elastic Inside",
+          "Yoke At Front And Back",
+          "Integrated Inner Pants",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "navy",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0161 Move Skort Women NV_1773255916.png",
+            "assets/products/indumentaria-dama/w-move-skort-814295-nv-1-14d79ea35b43cdd55417690948526810-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-move-skort-814295-921e199ad52108b12217690948523598-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-move-skort-814295-b-b1d840b5b29112976517690948526869-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-move-skort-814295-a-dd71962be229c9d28b17690948524135-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0160 Move Skort Women WH_1773255903.png",
+            "assets/products/indumentaria-dama/w-move-skort-814295-white-1-f21eff621b2f4fc24f17690948526323-1024-1024.webp",
+            "assets/products/indumentaria-dama/skort-move-5055f1caf3f963753f17805676727391-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W PLAY SHORT 25",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W PLAY SHORT 25",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 32,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "fit": "Regular",
+        "mainFabric": "92% Polyester, 8% Elastane",
+        "features": [
+          "Elasticated Waistband With Drawcord Adjustment",
+          "Slip-In Pockets",
+          "Side Slits",
+          "Moisture Transfer Microfiber Technology"
+        ]
+      },
+      "variants": [
+        {
+          "id": "royal blue",
+          "code": "pendiente",
+          "colorName": "Royal Blue",
+          "colorHex": "#12407D",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0162 PLAY SHORTS ROYAL BLUE_1773255930.png",
+            "assets/products/indumentaria-dama/w-play-shorts-royal-blue-814874-a-418ed74b9a995a1ade17690951515685-1024-1024.webp",
+            "assets/products/indumentaria-dama/head-shorts-mujer-plkay-f5488b937963fa108b17805673738032-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#2B2B2B",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0163 W PLAY SHORTS  ROYAL BK 814874_1773255940.jpg",
+            "assets/products/indumentaria-dama/w-play-shorts-royal-bk-814874-a-38a40397c40ce4967d17690951515373-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "cyclame",
+          "code": "pendiente",
+          "colorName": "Cyclame",
+          "colorHex": "#D78AB5",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/814874_PLAY Shorts Women_CY_1_1773328447.png",
+            "assets/products/indumentaria-dama/814874_play-shorts-women_cy_2-ok-9e144833656c1785ef17144969410252-1024-1024.webp",
+            "assets/products/indumentaria-dama/sss-4bd29a640527a2f9b317805827757027-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W TECH TIGHTS",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W TECH TIGHTS",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 33,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#353638",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814634 W TECH TIGHT blk_1773328381.jpg",
+            "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-4-584494ab8308ecca6c17588099628470-1024-1024.webp",
+            "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-3-62520bd8e3c1d3019b17588099627372-1024-1024.webp",
+            "assets/products/indumentaria-dama/rs.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 0,
+              "inStock": false,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W SPIRIT II TANK TOP",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W SPIRIT II TANK TOP",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 34,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "ALIGHT LILAC (ZI)",
+          "code": "pendiente",
+          "colorName": "Alight Lilac (ZI)",
+          "colorHex": "#F6CCE0",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0164 Spirit II Tank Top Women ZI_1773255974.png",
+            "assets/products/indumentaria-dama/w-spirit-ii-tank-top-814435-zi-1-e8d005616c76ca3cce17690952547434-1024-1024.webp",
+            "assets/products/indumentaria-dama/musuclosa-spirit-3e9f34d01e50b390ba17805665623550-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0165 Spirit II Tank Top Women WH_1773256215.png",
+            "assets/products/indumentaria-dama/w-spirit-ii-tank-top-814435-white-1-b790d3c8fa4da07bb517690952547076-1024-1024.webp",
+            "assets/products/indumentaria-dama/musuclosa-spirit-3e9f34d01e50b390ba17805665623550-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "XWZI",
+          "code": "pendiente",
+          "colorName": "XWZI",
+          "colorHex": "#E8E3EB",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/062-0166 W SPIRIT II TANK TOP 814435 XWZI_1773256226.jpg",
+            "assets/products/indumentaria-dama/musuclosa-spirit-3e9f34d01e50b390ba17805665623550-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB LUCY T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB LUCY T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 35,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "GREY MELANGE",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#BBBBBB",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_GM_1_1773328075.jpg",
+            "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_gm_2-07ec9cffca84c97b3517134579458552-1024-1024.webp",
+            "assets/products/indumentaria-dama/ewff-76f23b29eaf821912717805736298063-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "RED",
+          "code": "pendiente",
+          "colorName": "Red",
+          "colorHex": "#D90021",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_RD_1_1773328077.jpg",
+            "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_rd_2-d63d2a152eb686080b17134579631959-1024-1024.webp",
+            "assets/products/indumentaria-dama/ewff-76f23b29eaf821912717805736298063-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_WH_1_1773328078.jpg",
+            "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_wh_2-b862d1e6521d4e1a5417134579772335-1024-1024.webp",
+            "assets/products/indumentaria-dama/ewff-76f23b29eaf821912717805736298063-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 22 TECH T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 22 TECH T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 36,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "black ",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#1B191A",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814431_CLUB_22_Tech_T-Shirt_Women_BK_1_1773328161.jpg",
+            "assets/products/indumentaria-dama/images.jpg",
+            "assets/products/indumentaria-dama/63060503_o_a3.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/814431_CLUB_22_Tech_T-Shirt_Women_WHNV_1_1773328157.jpg",
+            "assets/products/indumentaria-dama/head-club-22-tech-maglietta-da-tennis-donna-white-dark-blue-814431-whdb_B.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB LARA T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB LARA T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 37,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "GREY MELANGE",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#bbbbbb",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814529_CLUB_LARA_T-Shirt_Women_GM_1_1773328012.jpg",
+            "assets/products/indumentaria-dama/814529_club_lara_t-shirt_women_gm_2-97d388667cda38487e17134597528048-1024-1024.webp",
+            "assets/products/indumentaria-dama/head-club-lara-maglietta-da-tennis-donna-grey-melange-814529-gm_A.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "RED",
+          "code": "pendiente",
+          "colorName": "Red",
+          "colorHex": "#EB0736",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/436776 club lara red_1773328015.jpg",
+            "assets/products/indumentaria-dama/436776-club-lara-red-back-d33b5a0788440b324a17134599538532-1024-1024.webp",
+            "assets/products/indumentaria-dama/sasasaa-cb213f2fa8b9cec9e917805731566568-1024-1024 (1).webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/814529_CLUB_LARA_T-Shirt_Women_WH_1_1773328017.jpg",
+            "assets/products/indumentaria-dama/814529_club_lara_t-shirt_women_whrd_2-3b156dff8ca413ae3417134597899285-1024-1024.webp",
+            "assets/products/indumentaria-dama/697a1c67736b1-660329-500x500.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W TIE-BREAK T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W TIE-BREAK T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 38,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "ALIGHT LILAC (ZI)",
+          "code": "pendiente",
+          "colorName": "Alight Lilac (ZI)",
+          "colorHex": "#FBD2E6",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0169 Tie-Break T-Shirt Women ZI_1773256303.png",
+            "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-zi-1-5f3d8bfe9d7edd257e17690954549577-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-b-90d6a0c1ef520a029817690954553297-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0170 Tie-Break T-Shirt Women WH_1773256305.png",
+            "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-white-1-34a914d3126081e56417690954550039-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 25 TECH T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 25 TECH T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 39,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0171 CLUB 25 TECH T-SHIRT WOMEN_1773256312.png",
+            "assets/products/indumentaria-dama/w-club-25-tech-t-shirt-814725-wh-1-5efa6012e6cc16014c17690956139774-1024-1024.webp",
+            "assets/products/indumentaria-dama/tshirt-head-club-tech-blanca-24e32d2b3f6d81539c17805715944275-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "NAVY WHITE",
+          "code": "pendiente",
+          "colorName": "Navy White",
+          "colorHex": "#2D3945",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0171 CLUB 25 TECH T-SHIRT WOMEN NAVY WHITE_1773256309.jpg",
+            "assets/products/indumentaria-dama/w-club-25-tech-t-shirt-814725-nvwh-1-116630b58200fd45ec17690956139944-1024-1024.webp",
+            "assets/products/indumentaria-dama/814725-nvwh_A.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB ORIGINAL T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB ORIGINAL T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 40,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "GREY",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#bbbbbb",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0175 GM Club Original T-Shirt Women_1773256322.jpg",
+            "assets/products/indumentaria-dama/91jGD1V7asL._AC_SY879_.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "MAGENTA",
+          "code": "pendiente",
+          "colorName": "Magenta",
+          "colorHex": "#F30952",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0173 MA Club Original T-Shirt Women_1773256315.jpg",
+            "assets/products/indumentaria-dama/w-club-original-t-shirt-814845-ma-1-46dd87c04da0dab3a117690957436855-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/062-0174 Club Original T-Shirt Women WH_1773256319.png",
+            "assets/products/indumentaria-dama/w-club-original-t-shirt-814845-wh-1-d8ed3a43599f454c7917690957431996-1024-1024.webp",
+            "assets/products/indumentaria-dama/untitled-1-0f720cd8d676485d3917805705848661-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W LARA 25 T-SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W LARA 25 T-SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 41,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "MAGENTA",
+          "code": "pendiente",
+          "colorName": "Magenta",
+          "colorHex": "#F30952",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0177 MA LARA T-SHORT WOMEN_1773256340.jpg",
+            "assets/products/indumentaria-dama/viejo-436776-club-lara-mag-back-5c9af97cddc6a9a42c17690959060599-1024-1024.webp",
+            "assets/products/indumentaria-dama/tshirt-lara-e7a1cebf3ce2f5562917805683237012-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0176 WH LARA T-SHIRT_1773256332.jpg",
+            "assets/products/indumentaria-dama/w-lara-t-shirt-814395-white-1-2d8696a2062864e7e017690959060566-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 22 TECH POLO SHIRT",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 22 TECH POLO SHIRT",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 42,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#1F1B1C",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_BK_1_1773328125.jpg",
+            "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-black-814421-bk_A-600x600.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_WH_1_1773328123.jpg",
+            "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-white-814421-wh_A.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 0,
+              "inStock": false,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 0,
+              "inStock": false,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB ROSIE HOODIE",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB ROSIE HOODIE",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 43,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#1F1B1C",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814489_CLUB_ROSIE_Hoodie_Women_BK_1_1773328274.jpg",
+            "assets/products/indumentaria-dama/814489_club_rosie_hoodie_women_bk_2-4d798de5bed0e6926417134628563427-1024-1024.webp",
+            "assets/products/indumentaria-dama/fewfw-81d493e144b45497d117805835834404-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 0,
+              "inStock": false,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB GRETA HOODIE FZ",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB GRETA HOODIE FZ",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 44,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "GREY",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#bbbb",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/814499_CLUB_GRETA_Hoodie_FZ_Women_GM_1_1773328276.jpg",
+            "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_gm_2-e05fe0360533b8ca2f17134654759360-1024-1024.webp",
+            "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_768-d88f757df3eec358e917134655064617-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 25 ORIGINAL HOODIE",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 25 ORIGINAL HOODIE",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 45,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#1B1A1E",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0179 CLUB ORIGINAL HOODIE WOMEN_1773256351.jpg",
+            "assets/products/indumentaria-dama/814489_club_rosie_hoodie_women_bk_2-2901a394b5d9e6e83b17690961076712-1024-1024.webp",
+            "assets/products/indumentaria-dama/rosie-a5214397493abe45f817805724563314-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 25 ORIGINAL HOODIE FZ",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 25 ORIGINAL HOODIE FZ",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 46,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "Grey Melange",
+          "code": "pendiente",
+          "colorName": "Grey Melange",
+          "colorHex": "#bbbb",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0178 CLUB ORIGINAL HOODIE FX WOMEN_1773256348.jpg",
+            "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_gm_2-e05fe0360533b8ca2f17134654759360-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "W CLUB 25 DRESS",
+      "category": "indumentaria",
+      "subcategory": null,
+      "gender": "dama",
+      "name": "W CLUB 25 DRESS",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 47,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "NAVY",
+          "code": "pendiente",
+          "colorName": "Navy",
+          "colorHex": "#233342",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0168 Club 25 Dress Women NV_1773256299.jpg",
+            "assets/products/indumentaria-dama/w-club-25-dress-814745-nv-1-d28d181b5ef71d9f0717690953427965-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-club-25-dress-814745-nv-2-3268e67cc3c606375517690953427978-1024-1024.webp",
+            "assets/products/indumentaria-dama/vestido-club25-0073fd7c4fb2446f6117805663656562-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0167 Club 25 Dress Women WH_1773256241.png",
+            "assets/products/indumentaria-dama/w-club-25-dress-814745-wh-1-fb0bb052a489cf817917690953427537-1024-1024.webp",
+            "assets/products/indumentaria-dama/w-club-25-dress-814745-wh-2-894a633c9ff0a00e3c17690953427783-1024-1024.webp",
+            "assets/products/indumentaria-dama/vestido-club25-0073fd7c4fb2446f6117805663656562-1024-1024.webp"
+          ],
+          "sizes": [
+            {
+              "size": "XS",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "S",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            },
+            {
+              "size": "M",
+              "stock": 1,
+              "inStock": true,
+              "order": 2
+            },
+            {
+              "size": "L",
+              "stock": 1,
+              "inStock": true,
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SOCKS TENNIS 1P PERFOR CREW",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "SOCKS TENNIS 1P PERFOR CREW",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 48,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "WHITE GREY",
+          "code": "pendiente",
+          "colorName": "White grey",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0139 SOCKS TENNIS 1P PERFORMANCE CREW wh_1773325026.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HEAD TENNIS CREW 1P",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "HEAD TENNIS CREW 1P",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 49,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "Black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#070707",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0218 TENNIS CREW BK_1776280541.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "White",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0217 TENNIS CREW WH_1776280537.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PADEL SOCKS 1P",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "PADEL SOCKS 1P",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 50,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "Black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#070707",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0218 TENNIS CREW BK_1776280541.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "White",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0141 PADEL SOCKS WH_1773325041.webp"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 0,
+              "inStock": false,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SOCKS TENNIS 2P STRIPE",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "SOCKS TENNIS 2P STRIPE",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 51,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "QU/BK/R",
+          "code": "pendiente",
+          "colorName": "QU/BK/R",
+          "colorHex": "#cd1a1a",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0136 811509 - 2P STRIPE QUARTER BK-RD_1773325011.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "QU/BK/W",
+          "code": "pendiente",
+          "colorName": "QU/BK/W",
+          "colorHex": "#383030",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0135 SOCKS TENNIS 2P STRIPE QUARTER Black_1773325014.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 0,
+              "inStock": false,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "QUA/ WH",
+          "code": "pendiente",
+          "colorName": "QUA/ WH",
+          "colorHex": "#ffffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/062-0134 SOCKS TENNIS 2P STRIPE QUARTER WH_1773325017.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HEAD ALL SPORTS SNEAKERS 3P",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "HEAD ALL SPORTS SNEAKERS 3P",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 52,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0216 ALL SPORT BK OK_1776708103.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0215 ALL SPORT WH OK_1776708100.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SOCKS TENNIS 2P PERFORMANCE",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "SOCKS TENNIS 2P PERFORMANCE",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 53,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0138 SOCKS TENNIS 2P PERFORMANCE bk_1773325023.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/062-0137 SOCKS TENNIS 2P PERFORMANCE wh_1773325021.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SOCKS TENNIS 3P SNEAKER",
+      "category": "accesorios",
+      "subcategory": "medias",
+      "gender": null,
+      "name": "SOCKS TENNIS 3P SNEAKER",
+      "code": null,
+      "price": 0,
+      "enabled": true,
+      "stockMode": "size",
+      "order": 54,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/indumentaria-dama/062-0131 SNEAKER WH OK 3_1776708082.jpg",
+            "assets/products/indumentaria-dama/062-0131 SNEAKER WH OK_1776708082.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "BK/RED",
+          "code": "pendiente",
+          "colorName": "BK/RED",
+          "colorHex": "#9a2020",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/indumentaria-dama/WhatsApp Image 2026-04-20 at 2.59.31 PM (2)_1776710152.jpeg",
+            "assets/products/indumentaria-dama/WhatsApp Image 2026-04-20 at 2.59.31 PM_1776710152.jpeg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 0,
+              "inStock": false,
+              "order": 1
+            }
+          ]
+        },
+        {
+          "id": "BK/WH",
+          "code": "pendiente",
+          "colorName": "BK/WH",
+          "colorHex": "#242323",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/indumentaria-dama/062-0132 SNEAKER bk OK 3_1776708089.jpg",
+            "assets/products/indumentaria-dama/062-0132 SNEAKER bk OK_1776708089.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "34-38",
+              "stock": 1,
+              "inStock": true,
+              "order": 0
+            },
+            {
+              "size": "39-43",
+              "stock": 1,
+              "inStock": true,
+              "order": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

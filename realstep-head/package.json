@@ -1,0 +1,19 @@
+{
+  "name": "realstep-head-catalog",
+  "version": "1.1.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed-products-workbook": "node scripts/seed-products-workbook.mjs",
+    "import-products": "node scripts/import-products.mjs catalog/products.xlsx",
+    "check-products": "node scripts/import-products.mjs --check catalog/products.xlsx",
+    "compare-products": "node scripts/compare-products.mjs",
+    "test-importer": "node --test \"tests/importer/*.test.mjs\"",
+    "react:dev": "npm --prefix react-app run dev",
+    "react:build": "npm --prefix react-app run build",
+    "react:preview": "npm --prefix react-app run preview"
+  },
+  "devDependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

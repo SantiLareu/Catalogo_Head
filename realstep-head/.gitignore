@@ -1,0 +1,4 @@
+node_modules/
+generated/*.tmp
+generated/.*.tmp
+react-app/dist/
