@@ -1,0 +1,20 @@
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-img{min-height:380px}
+}
+
+@media(max-width:768px){
+  .list{
+    width:100%;
+    padding:0 12px 50px;
+    gap:18px;
+  }
+}
+
+@media(max-width:680px){
+  .top{height:64px;padding:0 14px}
+  .hero-copy{padding:55px 22px}
+  .hero-img{min-height:300px}
+  .catalog-placeholder{scroll-margin-top:64px}
+  footer{flex-direction:column;gap:10px}
+}

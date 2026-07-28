@@ -1,0 +1,23 @@
+.list{
+  display:grid;
+  gap:34px;
+  padding:0 4vw 80px;
+}
+
+.catalog-placeholder{
+  scroll-margin-top:72px;
+}
+
+.catalog-placeholder:focus{
+  outline:none;
+}
+
+.empty{
+  min-height:180px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--l);
+  background:var(--w);
+  color:var(--m);
+  text-align:center;
+}

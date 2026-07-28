@@ -2,10 +2,15 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 
-// Orden deliberado: variables compartidas, reset compartido y estilos de la shell.
-import '../../css/base/variables.css';
-import '../../css/base/reset.css';
-import './styles/shell.css';
+// Orden deliberado: base compartida, componentes y ajustes responsive al final.
+import './styles/variables.css';
+import './styles/reset.css';
+import './styles/header.css';
+import './styles/hero.css';
+import './styles/category-index.css';
+import './styles/catalog-placeholder.css';
+import './styles/footer.css';
+import './styles/responsive.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
