@@ -1,7 +1,7 @@
 import CategoryLink from './CategoryLink.jsx';
 
-function CategoryGroup({ category, isOpen, onToggle }) {
-  const submenuId = `category-submenu-${category.id}`;
+function CategoryGroup({ category, idPrefix, isOpen, onNavigate, onToggle }) {
+  const submenuId = `${idPrefix}-category-submenu-${category.id}`;
   const children = Array.isArray(category.children) ? category.children : [];
 
   return (
@@ -30,6 +30,7 @@ function CategoryGroup({ category, isOpen, onToggle }) {
             category={child}
             isChild
             key={child.id}
+            onNavigate={onNavigate}
             tabIndex={isOpen && child.enabled !== false ? 0 : -1}
           />
         ))}

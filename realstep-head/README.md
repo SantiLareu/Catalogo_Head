@@ -140,3 +140,8 @@ git switch -c rollback/pre-react pre-react-cutover
 Antes de cambiar de estado, confirmar siempre que no existan cambios locales
 sin guardar.
 
+## Ejecucion por Consola
+
+C:\Users\santl\OneDrive\Documents\catalogo_head\Catalogo_Head\realstep-head>
+
+npm run react:dev

@@ -220,7 +220,7 @@
       "id": "bolsos-mochilas",
       "label": "BOLSOS / MOCHILAS",
       "target": "categoria-bolsos-mochilas",
-      "enabled": false,
+      "enabled": true,
       "title": "Bolsos / Mochilas HEAD",
       "subtitle": "",
       "order": 5,
@@ -890,6 +890,26 @@
       "variants": []
     },
     {
+      "id": "Paleta Radical Pro 2024",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "Paleta Radical Pro 2024",
+      "code": "PENDIENTE",
+      "price": 272142,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 10,
+      "images": [
+        "assets/products/paletas/RADICAL PRO 2024 b.jpg",
+        "assets/products/paletas/RADICAL PRO 2024 a.jpg",
+        "assets/products/paletas/RADICAL PRO 2024 c.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
       "id": "Paleta Gravity Pro 2022 228162",
       "category": "paletas-padel",
       "subcategory": null,
@@ -899,7 +919,7 @@
       "price": 220050,
       "enabled": true,
       "stockMode": "none",
-      "order": 10,
+      "order": 11,
       "images": [
         "assets/products/paletas/228162-Gravity-Pro-2022-a.jpg",
         "assets/products/paletas/228162-Gravity-Pro-2022-b.jpg",
@@ -919,7 +939,7 @@
       "price": 250690,
       "enabled": true,
       "stockMode": "none",
-      "order": 11,
+      "order": 12,
       "images": [
         "assets/products/paletas/RADICAL MOTION 2024 a.jpg",
         "assets/products/paletas/RADICAL MOTION 2024 b.jpg",
@@ -939,7 +959,7 @@
       "price": 247500,
       "enabled": true,
       "stockMode": "none",
-      "order": 12,
+      "order": 13,
       "images": [
         "assets/products/paletas/one ultralight black a.jpg",
         "assets/products/paletas/one ultralight black b.jpg",
@@ -959,7 +979,7 @@
       "price": 196800,
       "enabled": true,
       "stockMode": "none",
-      "order": 13,
+      "order": 14,
       "images": [
         "assets/products/pelotas/padel-pro+-a.webp",
         "assets/products/pelotas/padel-pro+-b.webp"
@@ -978,7 +998,7 @@
       "price": 172800,
       "enabled": true,
       "stockMode": "none",
-      "order": 14,
+      "order": 15,
       "images": [
         "assets/products/pelotas/Team-a.webp",
         "assets/products/pelotas/Team-b.webp",
@@ -998,7 +1018,7 @@
       "price": 16150,
       "enabled": true,
       "stockMode": "size",
-      "order": 15,
+      "order": 16,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1174,10 +1194,10 @@
       "gender": "hombre",
       "name": "CLUB ORIGINAL T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 18288,
       "enabled": true,
       "stockMode": "size",
-      "order": 16,
+      "order": 17,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1356,10 +1376,10 @@
       "gender": "hombre",
       "name": "SLICE 25 T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 18895,
       "enabled": true,
       "stockMode": "size",
-      "order": 17,
+      "order": 18,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1463,10 +1483,10 @@
       "gender": "hombre",
       "name": "TOPSPIN 25 T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 20200,
       "enabled": true,
       "stockMode": "size",
-      "order": 18,
+      "order": 19,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1568,10 +1588,10 @@
       "gender": "hombre",
       "name": "CLUB 25 TECH T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 20744,
       "enabled": true,
       "stockMode": "size",
-      "order": 19,
+      "order": 20,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1675,10 +1695,10 @@
       "gender": "hombre",
       "name": "PLAY TECH T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 20,
+      "order": 21,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1819,10 +1839,10 @@
       "gender": "hombre",
       "name": "CARL T-SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 21,
+      "order": 22,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2004,10 +2024,10 @@
       "gender": "hombre",
       "name": "CLUB 25 TECH POLO SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 20744,
       "enabled": true,
       "stockMode": "size",
-      "order": 22,
+      "order": 23,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2113,10 +2133,10 @@
       "gender": "hombre",
       "name": "SLICE POLO SHIRT MEN",
       "code": null,
-      "price": 0,
+      "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 23,
+      "order": 24,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2220,10 +2240,10 @@
       "gender": "hombre",
       "name": "MOTION SHORTS MEN",
       "code": null,
-      "price": 0,
+      "price": 18570,
       "enabled": true,
       "stockMode": "size",
-      "order": 24,
+      "order": 25,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2323,10 +2343,10 @@
       "gender": "hombre",
       "name": "CLUB 25 SHORTS MEN",
       "code": null,
-      "price": 0,
+      "price": 24030,
       "enabled": true,
       "stockMode": "size",
-      "order": 25,
+      "order": 26,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2466,10 +2486,10 @@
       "gender": "hombre",
       "name": "PLAY SHORTS MEN",
       "code": null,
-      "price": 0,
+      "price": 26485,
       "enabled": true,
       "stockMode": "size",
-      "order": 26,
+      "order": 27,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2604,82 +2624,13 @@
       ]
     },
     {
-      "id": "CLUB FYNN HOODIE FZ MEN",
-      "category": "indumentaria",
-      "subcategory": null,
-      "gender": "hombre",
-      "name": "CLUB FYNN HOODIE FZ MEN",
-      "code": null,
-      "price": 0,
-      "enabled": true,
-      "stockMode": "size",
-      "order": 27,
-      "images": [],
-      "sizes": [],
-      "specifications": {
-        "fit": "Regular",
-        "mainFabric": "60% Cotton, 40% Polyester",
-        "features": [
-          "1-Way Sab Zipper Center Front",
-          "Line Hood",
-          "Hood with Drawcord Adjustment",
-          "Rib At Bottom And Sleeve Hems",
-          "Slip-In Pockets",
-          "Head Print On Front Panel"
-        ]
-      },
-      "variants": [
-        {
-          "id": "grey melange",
-          "code": "pendiente",
-          "colorName": "Grey Melange",
-          "colorHex": "#808080",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/indumentaria-hombre/811459_CLUB_FYNN_Hoodie_FZ_Men_GM_1_1773327490.jpg",
-            "assets/products/indumentaria-hombre/811459_club_fynn_hoodie_fz_men_gm_2-9b4d8a8a63cf0abc8517133123735616-1024-1024.webp",
-            "assets/products/indumentaria-hombre/811459-club-fynn-hoodie-fz-men-2238-96f85fefbccb97e62517133123464563-1024-1024.webp",
-            "assets/products/indumentaria-hombre/811459-club-fynn-hoodie-fz-men-2275-9f2cd71524d546275817133123552401-1024-1024.webp"
-          ],
-          "sizes": [
-            {
-              "size": "S",
-              "stock": 1,
-              "inStock": true,
-              "order": 0
-            },
-            {
-              "size": "M",
-              "stock": 1,
-              "inStock": true,
-              "order": 1
-            },
-            {
-              "size": "L",
-              "stock": 1,
-              "inStock": true,
-              "order": 2
-            },
-            {
-              "size": "XL",
-              "stock": 0,
-              "inStock": false,
-              "order": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "CLUB ORIGINAL HOODIE FZ MEN",
       "category": "indumentaria",
       "subcategory": null,
       "gender": "hombre",
       "name": "CLUB ORIGINAL HOODIE FZ MEN",
       "code": null,
-      "price": 0,
+      "price": 50510,
       "enabled": true,
       "stockMode": "size",
       "order": 28,
@@ -2748,7 +2699,7 @@
       "gender": "hombre",
       "name": "CLUB ORIGINAL HOODIE MEN",
       "code": null,
-      "price": 0,
+      "price": 46970,
       "enabled": true,
       "stockMode": "size",
       "order": 29,
@@ -2815,7 +2766,7 @@
       "gender": "dama",
       "name": "W PERFORMANCE SKORT",
       "code": null,
-      "price": 0,
+      "price": 35910,
       "enabled": true,
       "stockMode": "size",
       "order": 30,
@@ -2965,7 +2916,7 @@
       "gender": "dama",
       "name": "W MOVE SKORT",
       "code": null,
-      "price": 0,
+      "price": 35910,
       "enabled": true,
       "stockMode": "size",
       "order": 31,
@@ -3075,7 +3026,7 @@
       "gender": "dama",
       "name": "W PLAY SHORT 25",
       "code": null,
-      "price": 0,
+      "price": 33714,
       "enabled": true,
       "stockMode": "size",
       "order": 32,
@@ -3220,7 +3171,7 @@
       "gender": "dama",
       "name": "W TECH TIGHTS",
       "code": null,
-      "price": 0,
+      "price": 17170,
       "enabled": true,
       "stockMode": "size",
       "order": 33,
@@ -3278,7 +3229,7 @@
       "gender": "dama",
       "name": "W SPIRIT II TANK TOP",
       "code": null,
-      "price": 0,
+      "price": 16795,
       "enabled": true,
       "stockMode": "size",
       "order": 34,
@@ -3414,7 +3365,7 @@
       "gender": "dama",
       "name": "W CLUB LUCY T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 8960,
       "enabled": true,
       "stockMode": "size",
       "order": 35,
@@ -3551,7 +3502,7 @@
       "gender": "dama",
       "name": "W CLUB 22 TECH T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 9610,
       "enabled": true,
       "stockMode": "size",
       "order": 36,
@@ -3647,7 +3598,7 @@
       "gender": "dama",
       "name": "W CLUB LARA T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 11760,
       "enabled": true,
       "stockMode": "size",
       "order": 37,
@@ -3784,7 +3735,7 @@
       "gender": "dama",
       "name": "W TIE-BREAK T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 16794,
       "enabled": true,
       "stockMode": "size",
       "order": 38,
@@ -3880,7 +3831,7 @@
       "gender": "dama",
       "name": "W CLUB 25 TECH T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 18288,
       "enabled": true,
       "stockMode": "size",
       "order": 39,
@@ -3977,7 +3928,7 @@
       "gender": "dama",
       "name": "W CLUB ORIGINAL T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 21430,
       "enabled": true,
       "stockMode": "size",
       "order": 40,
@@ -4112,7 +4063,7 @@
       "gender": "dama",
       "name": "W LARA 25 T-SHIRT",
       "code": null,
-      "price": 0,
+      "price": 21710,
       "enabled": true,
       "stockMode": "size",
       "order": 41,
@@ -4208,7 +4159,7 @@
       "gender": "dama",
       "name": "W CLUB 22 TECH POLO SHIRT",
       "code": null,
-      "price": 0,
+      "price": 10544,
       "enabled": true,
       "stockMode": "size",
       "order": 42,
@@ -4297,130 +4248,16 @@
       ]
     },
     {
-      "id": "W CLUB ROSIE HOODIE",
-      "category": "indumentaria",
-      "subcategory": null,
-      "gender": "dama",
-      "name": "W CLUB ROSIE HOODIE",
-      "code": null,
-      "price": 0,
-      "enabled": true,
-      "stockMode": "size",
-      "order": 43,
-      "images": [],
-      "sizes": [],
-      "specifications": null,
-      "variants": [
-        {
-          "id": "BLACK",
-          "code": "pendiente",
-          "colorName": "Black",
-          "colorHex": "#1F1B1C",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/indumentaria-dama/814489_CLUB_ROSIE_Hoodie_Women_BK_1_1773328274.jpg",
-            "assets/products/indumentaria-dama/814489_club_rosie_hoodie_women_bk_2-4d798de5bed0e6926417134628563427-1024-1024.webp",
-            "assets/products/indumentaria-dama/fewfw-81d493e144b45497d117805835834404-1024-1024.webp"
-          ],
-          "sizes": [
-            {
-              "size": "XS",
-              "stock": 1,
-              "inStock": true,
-              "order": 0
-            },
-            {
-              "size": "S",
-              "stock": 1,
-              "inStock": true,
-              "order": 1
-            },
-            {
-              "size": "M",
-              "stock": 1,
-              "inStock": true,
-              "order": 2
-            },
-            {
-              "size": "L",
-              "stock": 0,
-              "inStock": false,
-              "order": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "W CLUB GRETA HOODIE FZ",
-      "category": "indumentaria",
-      "subcategory": null,
-      "gender": "dama",
-      "name": "W CLUB GRETA HOODIE FZ",
-      "code": null,
-      "price": 0,
-      "enabled": true,
-      "stockMode": "size",
-      "order": 44,
-      "images": [],
-      "sizes": [],
-      "specifications": null,
-      "variants": [
-        {
-          "id": "GREY",
-          "code": "pendiente",
-          "colorName": "Grey Melange",
-          "colorHex": "#bbbb",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/indumentaria-dama/814499_CLUB_GRETA_Hoodie_FZ_Women_GM_1_1773328276.jpg",
-            "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_gm_2-e05fe0360533b8ca2f17134654759360-1024-1024.webp",
-            "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_768-d88f757df3eec358e917134655064617-1024-1024.webp"
-          ],
-          "sizes": [
-            {
-              "size": "XS",
-              "stock": 1,
-              "inStock": true,
-              "order": 0
-            },
-            {
-              "size": "S",
-              "stock": 1,
-              "inStock": true,
-              "order": 1
-            },
-            {
-              "size": "M",
-              "stock": 1,
-              "inStock": true,
-              "order": 2
-            },
-            {
-              "size": "L",
-              "stock": 1,
-              "inStock": true,
-              "order": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "W CLUB 25 ORIGINAL HOODIE",
       "category": "indumentaria",
       "subcategory": null,
       "gender": "dama",
       "name": "W CLUB 25 ORIGINAL HOODIE",
       "code": null,
-      "price": 0,
+      "price": 46965,
       "enabled": true,
       "stockMode": "size",
-      "order": 45,
+      "order": 43,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4474,10 +4311,10 @@
       "gender": "dama",
       "name": "W CLUB 25 ORIGINAL HOODIE FZ",
       "code": null,
-      "price": 0,
+      "price": 50510,
       "enabled": true,
       "stockMode": "size",
-      "order": 46,
+      "order": 44,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4530,10 +4367,10 @@
       "gender": "dama",
       "name": "W CLUB 25 DRESS",
       "code": null,
-      "price": 0,
+      "price": 54335,
       "enabled": true,
       "stockMode": "size",
-      "order": 47,
+      "order": 45,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4629,10 +4466,10 @@
       "gender": null,
       "name": "SOCKS TENNIS 1P PERFOR CREW",
       "code": null,
-      "price": 0,
+      "price": 4605,
       "enabled": true,
       "stockMode": "size",
-      "order": 48,
+      "order": 46,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4672,10 +4509,10 @@
       "gender": null,
       "name": "HEAD TENNIS CREW 1P",
       "code": null,
-      "price": 0,
+      "price": 7372,
       "enabled": true,
       "stockMode": "size",
-      "order": 49,
+      "order": 47,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4741,10 +4578,10 @@
       "gender": null,
       "name": "PADEL SOCKS 1P",
       "code": null,
-      "price": 0,
+      "price": 7372,
       "enabled": true,
       "stockMode": "size",
-      "order": 50,
+      "order": 48,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4810,10 +4647,10 @@
       "gender": null,
       "name": "SOCKS TENNIS 2P STRIPE",
       "code": null,
-      "price": 0,
+      "price": 8180,
       "enabled": true,
       "stockMode": "size",
-      "order": 51,
+      "order": 49,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4905,10 +4742,10 @@
       "gender": null,
       "name": "HEAD ALL SPORTS SNEAKERS 3P",
       "code": null,
-      "price": 0,
+      "price": 8398,
       "enabled": true,
       "stockMode": "size",
-      "order": 52,
+      "order": 50,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4974,10 +4811,10 @@
       "gender": null,
       "name": "SOCKS TENNIS 2P PERFORMANCE",
       "code": null,
-      "price": 0,
+      "price": 8646,
       "enabled": true,
       "stockMode": "size",
-      "order": 53,
+      "order": 51,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5043,10 +4880,10 @@
       "gender": null,
       "name": "SOCKS TENNIS 3P SNEAKER",
       "code": null,
-      "price": 0,
+      "price": 9098,
       "enabled": true,
       "stockMode": "size",
-      "order": 54,
+      "order": 52,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5133,6 +4970,1360 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ANTIVIBRADOR LOGO JAR",
+      "category": "accesorios",
+      "subcategory": "antivibrador",
+      "gender": null,
+      "name": "ANTIVIBRADOR LOGO JAR",
+      "code": "PENDIENTE",
+      "price": 218865,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 53,
+      "images": [
+        "assets/products/accesorios/Presentation-Logo Jar Box_1776951489.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "ANTIVIBRADOR PRO DAMP",
+      "category": "accesorios",
+      "subcategory": "antivibrador",
+      "gender": null,
+      "name": "ANTIVIBRADOR PRO DAMP",
+      "code": "PENDIENTE",
+      "price": 238442,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 54,
+      "images": [
+        "assets/products/accesorios/285525 ANTIVIBRADOR PRO DAMP JAR BOX_1776966123.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "CUBREGRIP PRIME TOUR x3",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP PRIME TOUR x3",
+      "code": null,
+      "price": 10885,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 55,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BK",
+          "code": "pendiente",
+          "colorName": "BK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/CUBRE GRIP PRIME TOUR 3PCS PACK - 285621 BLK copia_1776956764.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "CUBREGRIP PRIME TOUR WH x12",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP PRIME TOUR WH x12",
+      "code": null,
+      "price": 34212,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 56,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "WH",
+          "code": "pendiente",
+          "colorName": "WH",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/285631 CUBREGRIP PRIME TOUR WHITE ok_1776959553.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "CUBREGRIP PADEL PRO 60 PCS",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP PADEL PRO 60 PCS",
+      "code": null,
+      "price": 186612,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 57,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "WH",
+          "code": "pendiente",
+          "colorName": "WH",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PADEL PRO 60 PCS 285121 WH_1776964259.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "MUÑEQUERA CORTA X 2",
+      "category": "accesorios",
+      "subcategory": "munequeras",
+      "gender": null,
+      "name": "MUÑEQUERA CORTA X 2",
+      "code": null,
+      "price": 6812,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 58,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Si no tienes a mano una toalla, esta muñequera de 2,5'' te ayuda a quitarte el sudor de la cara por mucho que se endurezca el partido. Se ofrece en ocho colores diferentes y está elaborada con un 90 % de nailon y un 10 % de elastano que te ofrecen la elasticidad necesaria."
+        ]
+      },
+      "variants": [
+        {
+          "id": "orange",
+          "code": "pendiente",
+          "colorName": "Orange",
+          "colorHex": "#FB6208",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/281669 nube_1776951553.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/105275_1773833995.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/281670 nube_1776951563.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "grey",
+          "code": "pendiente",
+          "colorName": "Grey",
+          "colorHex": "#6C757D",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/accesorios/066-0037 GREY SHORTS_1773323824_1776967761.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "MUÑEQUERA LARGA X 2",
+      "category": "accesorios",
+      "subcategory": "munequeras",
+      "gender": null,
+      "name": "MUÑEQUERA LARGA X 2",
+      "code": null,
+      "price": 7792,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 59,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Si no tienes a mano una toalla, esta muñequera de 5'' te ayuda a quitarte el sudor de la cara por mucho que se endurezca el partido. Se ofrece en ocho colores diferentes y está elaborada con un 90 % de nailon y un 10 % de elastano que te ofrecen la elasticidad necesaria. "
+        ]
+      },
+      "variants": [
+        {
+          "id": "orange",
+          "code": "pendiente",
+          "colorName": "Orange",
+          "colorHex": "#FB6208",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/281685 nube_1776967078.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "black",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/281675 (1) nube_1776967073.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "white",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/281688 nube_1776967083.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "grey",
+          "code": "pendiente",
+          "colorName": "Grey",
+          "colorHex": "#6C757D",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/accesorios/281676 nube_1776967086.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "GRIP DUAL ABSORBING",
+      "category": "accesorios",
+      "subcategory": "grips",
+      "gender": null,
+      "name": "GRIP DUAL ABSORBING",
+      "code": "PENDIENTE",
+      "price": 7775,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 60,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "MX",
+          "code": "pendiente",
+          "colorName": "MX",
+          "colorHex": null,
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "GRIP HYDROSORB PRO",
+      "category": "accesorios",
+      "subcategory": "grips",
+      "gender": null,
+      "name": "GRIP HYDROSORB PRO",
+      "code": null,
+      "price": 10575,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 61,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "El grip de recambio de más alta calidad de la familia HYDROSORB se llama HYDROSORB PRO, es más delgado para sentir perfectamente la raqueta y tiene más perforaciones para absorber mejor el sudor. Además tiene el sistema Twin-Channel con dos materiales que aseguran la amortiguación y el flujo de aire, mientras que una superficie muy adherente de elastómeros procura un agarre perfecto. Este grip de recambio está disponible en blanco y negro y es muy popular entre los jugadores de torneo. Es perfecto si se desea una gran sensación y un agarre firme y confortable."
+        ]
+      },
+      "variants": [
+        {
+          "id": "BK",
+          "code": "pendiente",
+          "colorName": "BK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/GRIP HYDROSORB PRO BLK - 285303_nube_1776954787.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "WH",
+          "code": "pendiente",
+          "colorName": "WH",
+          "colorHex": "#ffff",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/GRIP HYDROSORB PRO WTH - 285303_nube_1776954781.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "GRIP HYDROSORB COM",
+      "category": "accesorios",
+      "subcategory": "grips",
+      "gender": null,
+      "name": "GRIP HYDROSORB COM",
+      "code": null,
+      "price": 11352,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 62,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Unidades por pack: 1.",
+          "Peso ligero de solo 20 gramos para un mejor manejo y control.",
+          "Espesor de 2.1 mm que proporciona mayor amortiguación y confort."
+        ]
+      },
+      "variants": [
+        {
+          "id": "BK",
+          "code": "pendiente",
+          "colorName": "BK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/GRIP HYDROSORB COMFORT BLK 285313_nube_1776955670.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "MASTER 15LNT SET x12M",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "MASTER 15LNT SET x12M",
+      "code": "PENDIENTE",
+      "price": 5598,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 63,
+      "images": [
+        "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776965018.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "MASTER 15 LSI",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "MASTER 15 LSI",
+      "code": "PENDIENTE",
+      "price": 5598,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 64,
+      "images": [
+        "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966633.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Espesor: 1.3 mm",
+          "Largo: 12 m",
+          "Calibre: 1.30",
+          "Fabricada en nailon."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "MASTER 16 LSI",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "MASTER 16 LSI",
+      "code": "PENDIENTE",
+      "price": 5598,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 65,
+      "images": [
+        "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966641.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Espesor de 1.28 mm para un juego preciso y controlado.",
+          "Color Haze Crush Silver para un estilo único y elegante."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "MASTER 16 REEL X 200M",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "MASTER 16 REEL X 200M",
+      "code": null,
+      "price": 60618,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 66,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Calibre: 1.30.",
+          "Cuerda de nailon de 1,30 mm de diámetro para un control preciso en cada golpe.",
+          "Diseño optimizado para mayor durabilidad y resistencia.",
+          "Proporciona una sensación suave y cómoda al jugar.",
+          "Ideal para jugadores intermedios y avanzados que buscan efectos."
+        ]
+      },
+      "variants": [
+        {
+          "id": "YELLOW",
+          "code": "pendiente",
+          "colorName": "YELLOW",
+          "colorHex": "#F5F227",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/MASTER REEL - 281033_1776967568.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "SILVER",
+          "code": "pendiente",
+          "colorName": "SILVER",
+          "colorHex": "#E0DEDE",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/45609_1778681955.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "SONIC PRO 16 REEL X200M",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "SONIC PRO 16 REEL X200M",
+      "code": "PENDIENTE",
+      "price": 155510,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 67,
+      "images": [
+        "assets/products/accesorios/head-sonic-pro-1-30-matassa-200-m-black-281128-16bk_A_1773834711.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "SONIC PRO 17 REEL X200M",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "SONIC PRO 17 REEL X200M",
+      "code": "PENDIENTE",
+      "price": 155510,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 68,
+      "images": [
+        "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HAWK TOUCH (120 M REEL)",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "HAWK TOUCH (120 M REEL)",
+      "code": "PENDIENTE",
+      "price": 171060,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 69,
+      "images": [
+        "assets/products/accesorios/head-hawk-touch-130-matassa-tennis-da-120-m-anthracite-281214-16an_A_2_1773835045.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "CALIBRE: 1.25",
+          "LONGITUD: 120M (SUFICIENTE PARA 9 RAQUETAS DE TENIS)"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "LYNX (REEL 200m) AN 17",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "Lynx (reel 200m) AN 17",
+      "code": "PENDIENTE",
+      "price": 220824,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 70,
+      "images": [
+        "assets/products/accesorios/CUERDA LYNX REEL 200M - 281794 AN_1776966679.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "LYNX TOUR (200M REEL) 17",
+      "category": "accesorios",
+      "subcategory": "cuerdas-tenis",
+      "gender": null,
+      "name": "LYNX TOUR (200M REEL) 17",
+      "code": null,
+      "price": 220824,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 71,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Largo: 12 m",
+          "Calibre: 1.25 mm",
+          "Fabricada en poliéster."
+        ]
+      },
+      "variants": [
+        {
+          "id": "YELLOW",
+          "code": "pendiente",
+          "colorName": "YELLOW",
+          "colorHex": "#F5F227",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/CUERDA LYNX TOUR REEL 200M 17 CP - 281799_1776966716.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/165561-1_1773834447.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "PROMOTION CAP",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "PROMOTION CAP",
+      "code": null,
+      "price": 24882,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 72,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "ANGR",
+          "code": "pendiente",
+          "colorName": "ANGR",
+          "colorHex": "#969393",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PROMOTION CAP 287299 ANGR_1776966300.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BLUE",
+          "code": "pendiente",
+          "colorName": "BLUE",
+          "colorHex": "#12407D",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/PROMOTION CAP 287299 bl_1776965775.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "NAVY",
+          "code": "pendiente",
+          "colorName": "NAVY",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/PROMOTION CAP 287299 navy_1776965780.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "RED",
+          "code": "pendiente",
+          "colorName": "RED",
+          "colorHex": "#D90021",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/accesorios/PROMOTION CAP 287299 red_1776965784.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "PRO PLAYER VISOR",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "PRO PLAYER VISOR",
+      "code": null,
+      "price": 31102,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 73,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "AQUA",
+          "code": "pendiente",
+          "colorName": "AQUA",
+          "colorHex": "#B7EBEB",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER VISOR - 287135 AQ_1776966391.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BEIGE",
+          "code": "pendiente",
+          "colorName": "BEIGE",
+          "colorHex": "#EBD4B7",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER VISOR - 287135 WG_1776966398.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "PRO PLAYER CAP",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "PRO PLAYER CAP",
+      "code": null,
+      "price": 32657,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 74,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "AQUA",
+          "code": "pendiente",
+          "colorName": "AQUA",
+          "colorHex": "#B7EBEB",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER CAP - 287115 AQ_1776966364.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER CAP - 287115 BLK_1776966355.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "NAVY",
+          "code": "pendiente",
+          "colorName": "NAVY",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER CAP - 287115 NV_1776966371.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BEIGE",
+          "code": "pendiente",
+          "colorName": "BEIGE",
+          "colorHex": "#EBD4B7",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER CAP - 287115 WG_1776966376.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "PERFORMANCE CAP",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "PERFORMANCE CAP",
+      "code": null,
+      "price": 34212,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 75,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PERFORMANCE CAP - 287104 BK_1776966335.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "WHITE",
+          "code": "pendiente",
+          "colorName": "WHITE",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/PERFORMANCE CAP - 287104 WH_1776966340.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "FIVE PANEL TOUR CAP",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "FIVE PANEL TOUR CAP",
+      "code": null,
+      "price": 38877,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 76,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/FIVE PANEL TOUR CAP - 287834 BK_1776966321.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "DELTA FLEXFIT CAP",
+      "category": "accesorios",
+      "subcategory": "gorras",
+      "gender": null,
+      "name": "DELTA FLEXFIT CAP",
+      "code": null,
+      "price": 65314,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 77,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/DELTA FLEXFIT CAP - 287814 BK_1776966309.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "KIDS TOUR BACKPACK 14L",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "KIDS TOUR BACKPACK 14L",
+      "code": null,
+      "price": 55984,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 78,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "1 main compartment",
+          "1 racquet compartment for up to 2 racquets",
+          "1 accessory zipper pocket"
+        ]
+      },
+      "variants": [
+        {
+          "id": "BLACK",
+          "code": "pendiente",
+          "colorName": "BLACK",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/bolso-mochila/260764 KIDS TOUR BACKPACK 14L - BKWH_1776455618.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "KIDS TOUR BACKPACK 14L MONSTER",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "KIDS TOUR BACKPACK 14L MONSTER",
+      "code": "PENDIENTE",
+      "price": 55984,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 79,
+      "images": [
+        "assets/products/bolso-mochila/260774 KIDS TOUR BACKPACK 14L MONSTER_1776687209.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "1 main compartment",
+          "1 racquet compartment for up to 2 racquets",
+          "1 accessory zipper pocket"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "BASE RACQUET BAG L SG",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "BASE RACQUET BAG L SG",
+      "code": "PENDIENTE",
+      "price": 91750,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 80,
+      "images": [
+        "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG_1776454259.jpg",
+        "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG A_1776454259.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Posee 3 compartimientos.",
+          "Con correa de hombro ajustable.",
+          "Hecho en poliéster."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "TOUR BACKPACK 25L FO",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR BACKPACK 25L FO",
+      "code": "PENDIENTE",
+      "price": 116632,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 81,
+      "images": [
+        "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 2_1776451334.jpg",
+        "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO_1776451334.jpg",
+        "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 1_1776451334.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Diseño de la tela: Liso",
+          "Mochila reforzada hecha de poliéster.",
+          "Sistema de cerrado: cierre.",
+          "Tiene 3 compartimentos y bolsillo para botellas.",
+          "Capacidad: 25L"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "RETRO TOTE BAG 25TH LTD",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "RETRO TOTE BAG 25TH LTD",
+      "code": "PENDIENTE",
+      "price": 132182,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 82,
+      "images": [
+        "assets/products/bolso-mochila/261855 RETRO TOTE BAG 25 LTD_1776969211.jpg",
+        "assets/products/bolso-mochila/paletero-head-retro-tote-bag-25th-ltd-2-e58a1ce8e25fb6884617818759097085-1024-1024.webp"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Material: 100%PU",
+          "Medidas: 46x31x22 centimetros",
+          "Capacidad: 22L"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "PRO PADEL BAG L NV",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRO PADEL BAG L NV",
+      "code": "PENDIENTE",
+      "price": 155510,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 83,
+      "images": [
+        "assets/products/bolso-mochila/267565_1773838927.jpg",
+        "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 3_1776693072.jpg",
+        "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 1_1776693072.jpg",
+        "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 2_1776693072.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Nuevo bolsillo para accesorios",
+          "Espacio con compartimento principal y compartimento para zapatillas",
+          "Dos compartimentos exteriores para palas",
+          "Tecnología de control climático CCT+ para proteger las palas",
+          "Sistema de transporte de mochila"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "TOUR RACQUET BAG XL FO",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR RACQUET BAG XL FO",
+      "code": "PENDIENTE",
+      "price": 165000,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 84,
+      "images": [
+        "assets/products/bolso-mochila/267534_1773838960.jpg",
+        "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 2_1777388891.jpg",
+        "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 1_1777388891.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Tiene 12 compartimentos.",
+          "Con correa de hombro ajustable.",
+          "Hecho de nylon/poliéster.",
+          "Con dimensiones de 41 cm de altura, 29 cm de ancho y 11 cm de largo, su estructura mantiene un perfil equilibrado y funcional. Su peso ligero de 690 gramos facilita el movimiento sin comprometer la capacidad de carga total del modelo Tour XL"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "RETRO PADEL BAG 25TH LTD",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "RETRO PADEL BAG 25TH LTD",
+      "code": "PENDIENTE",
+      "price": 178835,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 85,
+      "images": [
+        "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD 2_1776968835.jpg",
+        "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD_1776968667.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Capacidad para 6 raquetas que permite transportar todo el equipo necesario para disputar varios partidos en un solo día.",
+          "Correa de hombro ajustable fabricada en poliéster que permite adaptar el soporte a la estatura del usuario para el peso."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "PRO X RACQUET BAG L BK",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRO X RACQUET BAG L BK",
+      "code": "PENDIENTE",
+      "price": 185056,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 86,
+      "images": [
+        "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK_1776455382.jpg",
+        "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK a_1776455382.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Dimensiones: 80 x 33 x 33 cm",
+          "Dos compartimentos principales para hasta 9 raquetas y equipo; el compartimento CCT+ protege hasta 4 raquetas de las inclemencias del tiempo.",
+          "Bolsillo exterior para accesorios a cada lado.",
+          "Correas de mochila acolchadas y ajustables que se ajustan a la parte inferior de la bolsa"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "TOUR RACQUET BAG L NEON",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR RACQUET BAG L NEON",
+      "code": "PENDIENTE",
+      "price": 186612,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 87,
+      "images": [
+        "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON_1776689985.jpg",
+        "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON a_1776689985.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Volumen 65L",
+          "Composición exterior",
+          "70% rPET / 30% PU",
+          "Composición interior",
+          "70% Polyester, 30% TPE",
+          "Dimensiones",
+          "76.5*33*32",
+          "Con capacidad para hasta 9 raquetas, la bolsa cuenta con dos compartimentos principales espaciosos, uno de ellos equipado con la tecnología de control climático CCT+, que protege las raquetas de temperaturas extremas. HEAD ha diseñado esta bolsa tras escuchar las necesidades reales de los jugadores, incorporando dos nuevos bolsillos externos grandes para accesorios (uno a cada lado), así como un bolsillo externo específico para el móvil, de acceso rápido y cómodo. Entre otras características, incluye un compartimento integrado para zapatillas y un bolsillo interior con cremallera para objetos personales. Gracias al sistema de transporte tipo mochila y a las asas superiores, puedes llevar la TOUR RACQUET BAG L NEON al hombro, en la espalda o en la mano."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "PRO X RACQUET BAG XL BK",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRO X RACQUET BAG XL BK",
+      "code": "PENDIENTE",
+      "price": 208382,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 88,
+      "images": [
+        "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL_1776451592.jpg",
+        "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 2_1776451589.jpg",
+        "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 1_1776451589.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "· Nuevo diseño prémium en tejidos de primera calidad ",
+          "· Estructura reforzada para unos niveles superiores de estabilidad y protección ",
+          "· Compartimentos exteriores más grandes ",
+          "· Nueva correa de asa ",
+          "· Espacio para hasta 12 raquetas",
+          "· La tecnología CCT+ protege las raquetas de los cambios de temperatura"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "TOUR RACQUET BAG XL NEON",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR RACQUET BAG XL NEON",
+      "code": "PENDIENTE",
+      "price": 209938,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 89,
+      "images": [
+        "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON_1776687124.jpg",
+        "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON a_1776687124.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "El raquetero Head Tour XL Neon se constituye como un equipamiento de almacenamiento diseñado específicamente para la organización y protección de implementos deportivos. Este componente integra un sistema de compartimentación eficiente, cuya estructura técnica permite la conservación de hasta 12 unidades de raquetas de tenis. La configuración del accesorio incluye una correa de hombro ajustable, elemento que facilita la ergonometría y distribución del esfuerzo durante su traslado. El producto destaca por el uso de materiales de alto rendimiento, seleccionados bajo criterios de resistencia y durabilidad frente a las condiciones de uso intensivo. La integración de estos polímeros técnicos asegura la integridad del material deportivo almacenado, optimizando el espacio interno de manera funcional. Este modelo se presenta en una edición exclusiva de acabado negro, manteniendo una estética técnica uniforme que prioriza la operatividad estructural del conjunto en entornos de práctica deportiva profesional."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "COELLO PRO X PADEL DUFFLE BAG L 261805",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "COELLO PRO X PADEL DUFFLE BAG L 261805",
+      "code": "PENDIENTE",
+      "price": 225488,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 90,
+      "images": [
+        "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L_1776695983.jpg",
+        "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L a_1776695982.jpg",
+        "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L b_1776695983.jpg",
+        "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L c_1776695983.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Material: Poliéster/PU/TPE/Nylon",
+          "Medidas: 60 (Largo) x 32 (alto) x 31,5 (ancho)",
+          "Capacidad: 60L",
+          "Estilo exclusivo y elegante, con toques personales, del \"Rey Coello\". Desarrollado en colaboración con el número 1 del mundo, el bolso paletero COELLO PRO X PADEL DUFFLE BAG L estrena color y ahora se presenta en negro. Fabricado con tejidos que contienen botellas de PET recicladas, este bolso está pensado tanto para quienes valoran el estilo como para quienes apuestan por un consumo más responsable. ",
+          "Los detalles personales marcan la diferencia: el rojo, uno de los colores favoritos de Coello, se utiliza en el interior del bolso y en detalles en el exterior, como el logo de la corona en las correas.",
+          "Los fans de Coello disfrutarán de un bolso que combina un diseño distintivo con una funcionalidad moderna. Ofrece espacio para hasta seis paletas e incluye un compartimento para paletas con tecnología de control climático CCT+, que las protege frente a temperaturas extremas. Organizar tu equipamiento, el calzado y el resto de pertenencias es muy sencillo gracias a los bolsillos para accesorios, la bolsa extraíble para ropa sucia y los grandes compartimentos exteriores en ambos lados. También dispone de un compartimento para zapatillas."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "COELLO PRO X PADEL DUFFLE BAG L 261906",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "COELLO PRO X PADEL DUFFLE BAG L 261906",
+      "code": "PENDIENTE",
+      "price": 225488,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 91,
+      "images": [
+        "assets/products/bolso-mochila/D_NQ_NP_2X_935521-MLA110345733438_052026-F.webp",
+        "assets/products/bolso-mochila/D_NQ_NP_2X_996848-MLA111279153073_052026-F.webp"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Sistema de transporte Sistema de transporte 2 en 1 Te permite llevar la bolsa tanto al hombro como a la espalda, ofreciendo opciones versátiles y cómodas para transportarla. Climate Control CCT+ Equipada con la avanzada tecnología Climate Control Plus para proteger tus raquetas de temperaturas extremas y asegura que siempre rindan al máximo. Capacidad Capacidad para seis raquetas Pensada para hasta seis raquetas, ofreciendo espacio adicional para ropa o material. Compartimentos Dos compartimentos para raquetas Incluye dos compartimentos para raquetas, con espacio para las raquetas y equipo extra. Bolsillos para accesorios Cinco bolsillos para accesorios Dispone de cinco bolsillos abiertos que ofrecen un espacio amplio y acceso rápido a tu equipamiento. Bolsillos con cierre para accesorios Cinco bolsillos con cierre para accesorios Incluye cinco bolsillos con cierre para máximo almacenamiento y para que organices tus objetos de menor tamaño. Compartimento para zapatillas Un compartimento para zapatillas Incluye un compartimento exclusivo para guardar tus zapatillas por separado, manteniéndolas alejadas del resto de tu equipo. Volumen Capacidad media 60 L Con capacidad media, esta bolsa tiene espacio suficiente para raquetas, ropa, zapatillas y accesorios, y es ideal para jugadores que buscan un equilibrio entre almacenamiento y comodidad."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "PALETERO HEAD PRO X PADEL DUFFLE BAG L BKDG",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "PALETERO HEAD PRO X PADEL DUFFLE BAG L BKDG",
+      "code": "PENDIENTE",
+      "price": 202165,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 92,
+      "images": [
+        "assets/products/bolso-mochila/D_NQ_NP_2X_881169-MLA113036555379_062026-F.webp",
+        "assets/products/bolso-mochila/D_NQ_NP_2X_750946-MLA113037416577_062026-F.webp",
+        "assets/products/bolso-mochila/D_NQ_NP_2X_973323-MLA113036584545_062026-F.webp",
+        "assets/products/bolso-mochila/D_NQ_NP_2X_848570-MLA113037416579_062026-F.webp"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "El Paletero Head Pro X L en negro y gris oscuro posee un diseño tipo duffle, moderno y funcional, con capacidad para transportar equipo de forma organizada. Fabricado con materiales de alta calidad como poliéster, PU y R-PET, este modelo destaca por su resistencia y elaboración a partir de botellas de plástico recicladas. Su diseño es impermeable y duradero, brindando protección ante condiciones climáticas adversas. Dispone de un amplio compartimento principal para ropa y accesorios, junto a un compartimento específico con tecnología CCT+ que protege las palas de pádel contra los cambios de temperatura. Incluye bolsillos adicionales para objetos personales y un compartimento independiente para calzado. Cuenta con un sistema de correas acolchadas y asas ajustables que permiten transportarlo al hombro o como mochila. Su estética en negro y gris oscuro proporciona un estilo sobrio y sofisticado para cada entrenamiento o partido."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "TOUR TRAVEL BAG 110L BK",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR TRAVEL BAG 110L BK",
+      "code": "PENDIENTE",
+      "price": 272142,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 93,
+      "images": [
+        "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK_1776687233.jpg",
+        "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK a_1776687233.jpg",
+        "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK b_1776687233.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Amplio compartimento principal.",
+          "2 bolsillos frontales.",
+          "4 bolsillos interiores con cierre para accesorios.",
+          "2 bolsillos exteriores con cierre para accesorios.",
+          "Compartimento exterior con cierre.",
+          "Construcción reforzada para mayor estabilidad.",
+          "Asa telescópica plegable.",
+          "Asas superiores para un transporte cómodo.",
+          "Protección reforzada en la base y los bordes.",
+          "Diseño moderno y funcional.",
+          "Capacidad: 110 L",
+          "Volumen: 125 L",
+          "Dimensiones: 77 × 42 × 40 cm",
+          "Material: 100 % poliuretano (PU)",
+          "Color: Negro"
+        ]
+      },
+      "variants": []
     }
   ]
 }

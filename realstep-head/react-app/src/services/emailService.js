@@ -154,7 +154,7 @@ export function buildEmailHtml({
             </table>
             <div style="margin:22px 0 0 auto;max-width:330px;background:#f5f5f5;padding:18px;">
               <p>Total de unidades: <strong>${totals.units}</strong></p>
-              <p>Total estimado:
+              <p>Valor total:
                 <strong>${escapeHtml(formatMoney(totals.total))}</strong>
               </p>
             </div>

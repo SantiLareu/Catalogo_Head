@@ -18,7 +18,13 @@ function getParentForHash(categories, hash) {
   );
 }
 
-function CategoryIndex({ categories }) {
+function CategoryIndex({
+  categories,
+  id = 'category-index',
+  idPrefix = 'catalog',
+  onNavigate,
+  variant = 'page'
+}) {
   const [openGroups, setOpenGroups] = useState(() => {
     const parent = getParentForHash(categories, window.location.hash);
     return parent ? { [parent.id]: true } : {};
@@ -49,7 +55,11 @@ function CategoryIndex({ categories }) {
   };
 
   return (
-    <nav className="category-index-section" id="category-index" aria-label="Categorías">
+    <nav
+      className={`category-index-section category-index-section--${variant}`}
+      id={id}
+      aria-label="Categorías"
+    >
       <div className="category-index-list">
         {categories.map((category) => {
           const children = Array.isArray(category.children) ? category.children : [];
@@ -58,11 +68,13 @@ function CategoryIndex({ categories }) {
             <CategoryGroup
               category={category}
               isOpen={Boolean(openGroups[category.id])}
+              idPrefix={idPrefix}
               key={category.id}
+              onNavigate={onNavigate}
               onToggle={handleToggle}
             />
           ) : (
-            <CategoryLink category={category} key={category.id} />
+            <CategoryLink category={category} key={category.id} onNavigate={onNavigate} />
           );
         })}
       </div>

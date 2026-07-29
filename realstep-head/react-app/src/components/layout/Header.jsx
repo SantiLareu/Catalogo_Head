@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import CartDrawer from '../cart/CartDrawer.jsx';
+import CategoryMenu, { MenuIcon } from '../categories/CategoryMenu.jsx';
 import CheckoutModal, {
   createEmptyCheckoutForm
 } from '../checkout/CheckoutModal.jsx';
@@ -9,12 +10,14 @@ import { scrollToHashTarget } from '../../utils/navigation.js';
 
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
-function Header() {
+function Header({ categories }) {
   const { units } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
   const [checkoutForm, setCheckoutForm] = useState(createEmptyCheckoutForm);
   const cartButtonRef = useRef(null);
+  const categoryMenuButtonRef = useRef(null);
   const continueButtonRef = useRef(null);
   const handleHomeClick = (event) => {
     event.preventDefault();
@@ -33,6 +36,17 @@ function Header() {
 
       <div className="actions">
         <button
+          className="menu-toggle"
+          type="button"
+          aria-label="Abrir menú de categorías"
+          aria-expanded={categoryMenuOpen}
+          aria-controls="header-category-menu"
+          onClick={() => setCategoryMenuOpen((open) => !open)}
+          ref={categoryMenuButtonRef}
+        >
+          <MenuIcon />
+        </button>
+        <button
           className="cart"
           type="button"
           aria-label={`Abrir pedido, ${units} ${units === 1 ? 'unidad' : 'unidades'}`}
@@ -44,6 +58,13 @@ function Header() {
           <span aria-hidden="true">{units}</span>
         </button>
       </div>
+      {categoryMenuOpen ? (
+        <CategoryMenu
+          categories={categories}
+          onClose={() => setCategoryMenuOpen(false)}
+          openerRef={categoryMenuButtonRef}
+        />
+      ) : null}
       {cartOpen ? (
         <CartDrawer
           continueRef={continueButtonRef}

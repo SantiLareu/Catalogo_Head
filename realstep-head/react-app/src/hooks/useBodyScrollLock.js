@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react';
 
-function useBodyScrollLock(active) {
+function useBodyScrollLock(active, { inertRoot = true } = {}) {
   useLayoutEffect(() => {
     if (!active) return undefined;
 
@@ -18,8 +18,10 @@ function useBodyScrollLock(active) {
       scrollBehavior: document.documentElement.style.scrollBehavior
     };
 
-    root?.setAttribute('inert', '');
-    root?.setAttribute('aria-hidden', 'true');
+    if (inertRoot) {
+      root?.setAttribute('inert', '');
+      root?.setAttribute('aria-hidden', 'true');
+    }
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollY}px`;
     document.body.style.left = '0';
@@ -28,9 +30,11 @@ function useBodyScrollLock(active) {
     document.body.style.overflow = 'hidden';
 
     return () => {
-      if (!previousInert) root?.removeAttribute('inert');
-      if (previousAriaHidden == null) root?.removeAttribute('aria-hidden');
-      else root?.setAttribute('aria-hidden', previousAriaHidden);
+      if (inertRoot) {
+        if (!previousInert) root?.removeAttribute('inert');
+        if (previousAriaHidden == null) root?.removeAttribute('aria-hidden');
+        else root?.setAttribute('aria-hidden', previousAriaHidden);
+      }
       Object.assign(document.body.style, {
         position: styles.position,
         top: styles.top,
@@ -43,7 +47,7 @@ function useBodyScrollLock(active) {
       window.scrollTo(0, scrollY);
       document.documentElement.style.scrollBehavior = styles.scrollBehavior;
     };
-  }, [active]);
+  }, [active, inertRoot]);
 }
 
 export default useBodyScrollLock;

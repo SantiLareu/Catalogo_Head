@@ -43,7 +43,7 @@ function App() {
 
   return (
     <CartProvider products={catalog.products}>
-      <Header />
+      <Header categories={categories} />
       <main>
         <Hero />
         <CategoryIndex categories={categories} />

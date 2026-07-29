@@ -1,6 +1,6 @@
 import { scrollToHashTarget } from '../../utils/navigation.js';
 
-function CategoryLink({ category, isChild = false, tabIndex }) {
+function CategoryLink({ category, isChild = false, onNavigate, tabIndex }) {
   const isEnabled = category.enabled !== false;
   const className = `${isChild ? 'category-index-subitem' : 'category-index-item'} ${
     isEnabled ? 'enabled' : 'disabled'
@@ -8,7 +8,14 @@ function CategoryLink({ category, isChild = false, tabIndex }) {
 
   const handleClick = () => {
     if (isEnabled) {
-      scrollToHashTarget(`#${category.target}`);
+      if (onNavigate) {
+        onNavigate(category);
+        window.requestAnimationFrame(() => {
+          scrollToHashTarget(`#${category.target}`);
+        });
+      } else {
+        scrollToHashTarget(`#${category.target}`);
+      }
     }
   };
 
