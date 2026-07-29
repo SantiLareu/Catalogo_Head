@@ -1,7 +1,7 @@
 export const companyConfig = {
   companyName: 'Real Step',
   catalogName: 'HEAD Calzado',
-  orderEmail: 'santlareu71@gmail.com',
+  orderEmail: 'martin@marquevich.com',
   storageKey: 'realstep-head-cart'
 };
 
