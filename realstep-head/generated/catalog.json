@@ -190,7 +190,7 @@
       "id": "raquetas-squash",
       "label": "RAQUETAS SQUASH",
       "target": "categoria-raquetas-squash",
-      "enabled": false,
+      "enabled": true,
       "title": "Raquetas de Squash HEAD",
       "subtitle": "",
       "order": 3,
@@ -205,7 +205,7 @@
       "id": "raquetas-tenis",
       "label": "RAQUETAS TENIS",
       "target": "categoria-raquetas-tenis",
-      "enabled": false,
+      "enabled": true,
       "title": "Raquetas de Tenis HEAD",
       "subtitle": "",
       "order": 4,
@@ -250,7 +250,7 @@
       "id": "pelotas-squash",
       "label": "PELOTAS SQUASH",
       "target": "categoria-pelotas-squash",
-      "enabled": false,
+      "enabled": true,
       "title": "Pelotas de Squash HEAD",
       "subtitle": "",
       "order": 7,
@@ -265,7 +265,7 @@
       "id": "ski",
       "label": "SKI",
       "target": "categoria-ski",
-      "enabled": false,
+      "enabled": true,
       "title": "Ski HEAD",
       "subtitle": "",
       "order": 8,
@@ -280,7 +280,7 @@
       "id": "pop",
       "label": "POP",
       "target": "categoria-pop",
-      "enabled": false,
+      "enabled": true,
       "title": "POP HEAD",
       "subtitle": "",
       "order": 9,
@@ -4595,7 +4595,7 @@
           "thumbnail": null,
           "order": 0,
           "images": [
-            "assets/products/indumentaria-dama/062-0218 TENNIS CREW BK_1776280541.jpg"
+            "assets/products/indumentaria-dama/062-0142 PADEL SOCKS BK_1773325043.webp"
           ],
           "sizes": [
             {
@@ -5068,6 +5068,42 @@
       ]
     },
     {
+      "id": "CUBREGRIP PADEL XTREME SOFT MX",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP PADEL XTREME SOFT MX",
+      "code": null,
+      "price": 183300,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 57,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Es un overgrip de alto rendimiento con un exclusivo suave y cómodo identificador. Gracias a su material y a sus orificios extra grandes proporciona una mayor sensibilidad y una altísima capacidad de absorción.",
+          "Garantiza un contacto ideal entre la mano y la raqueta, proporcionándote un agarre sólido y la máxima sensación de sequedad.",
+          "Perforado"
+        ]
+      },
+      "variants": [
+        {
+          "id": "MX",
+          "code": "pendiente",
+          "colorName": "MultiColors",
+          "colorHex": "#FFB6C1",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/xtreme-soft-box-285425-9022759053eb31ba6617779156078838-1024-1024.webp"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
       "id": "CUBREGRIP PADEL PRO 60 PCS",
       "category": "accesorios",
       "subcategory": "cubre-grips",
@@ -5077,7 +5113,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 57,
+      "order": 58,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5107,7 +5143,7 @@
       "price": 6812,
       "enabled": true,
       "stockMode": "none",
-      "order": 58,
+      "order": 59,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5180,7 +5216,7 @@
       "price": 7792,
       "enabled": true,
       "stockMode": "none",
-      "order": 59,
+      "order": 60,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5253,7 +5289,7 @@
       "price": 7775,
       "enabled": true,
       "stockMode": "none",
-      "order": 60,
+      "order": 61,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5283,7 +5319,7 @@
       "price": 10575,
       "enabled": true,
       "stockMode": "none",
-      "order": 61,
+      "order": 62,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5330,7 +5366,7 @@
       "price": 11352,
       "enabled": true,
       "stockMode": "none",
-      "order": 62,
+      "order": 63,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5366,7 +5402,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 63,
+      "order": 64,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776965018.jpg"
       ],
@@ -5384,7 +5420,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 64,
+      "order": 65,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966633.jpg"
       ],
@@ -5409,7 +5445,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 65,
+      "order": 66,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966641.jpg"
       ],
@@ -5432,7 +5468,7 @@
       "price": 60618,
       "enabled": true,
       "stockMode": "none",
-      "order": 66,
+      "order": 67,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5483,7 +5519,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 67,
+      "order": 68,
       "images": [
         "assets/products/accesorios/head-sonic-pro-1-30-matassa-200-m-black-281128-16bk_A_1773834711.jpg"
       ],
@@ -5501,7 +5537,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 68,
+      "order": 69,
       "images": [
         "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg"
       ],
@@ -5519,7 +5555,7 @@
       "price": 171060,
       "enabled": true,
       "stockMode": "none",
-      "order": 69,
+      "order": 70,
       "images": [
         "assets/products/accesorios/head-hawk-touch-130-matassa-tennis-da-120-m-anthracite-281214-16an_A_2_1773835045.jpg"
       ],
@@ -5542,7 +5578,7 @@
       "price": 220824,
       "enabled": true,
       "stockMode": "none",
-      "order": 70,
+      "order": 71,
       "images": [
         "assets/products/accesorios/CUERDA LYNX REEL 200M - 281794 AN_1776966679.jpg"
       ],
@@ -5560,7 +5596,7 @@
       "price": 220824,
       "enabled": true,
       "stockMode": "none",
-      "order": 71,
+      "order": 72,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5609,7 +5645,7 @@
       "price": 24882,
       "enabled": true,
       "stockMode": "none",
-      "order": 72,
+      "order": 73,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5678,7 +5714,7 @@
       "price": 31102,
       "enabled": true,
       "stockMode": "none",
-      "order": 73,
+      "order": 74,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5721,7 +5757,7 @@
       "price": 32657,
       "enabled": true,
       "stockMode": "none",
-      "order": 74,
+      "order": 75,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5790,7 +5826,7 @@
       "price": 34212,
       "enabled": true,
       "stockMode": "none",
-      "order": 75,
+      "order": 76,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5833,7 +5869,7 @@
       "price": 38877,
       "enabled": true,
       "stockMode": "none",
-      "order": 76,
+      "order": 77,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5863,7 +5899,7 @@
       "price": 65314,
       "enabled": true,
       "stockMode": "none",
-      "order": 77,
+      "order": 78,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5893,7 +5929,7 @@
       "price": 55984,
       "enabled": true,
       "stockMode": "none",
-      "order": 78,
+      "order": 79,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5929,7 +5965,7 @@
       "price": 55984,
       "enabled": true,
       "stockMode": "none",
-      "order": 79,
+      "order": 80,
       "images": [
         "assets/products/bolso-mochila/260774 KIDS TOUR BACKPACK 14L MONSTER_1776687209.jpg"
       ],
@@ -5953,7 +5989,7 @@
       "price": 91750,
       "enabled": true,
       "stockMode": "none",
-      "order": 80,
+      "order": 81,
       "images": [
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG_1776454259.jpg",
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG A_1776454259.jpg"
@@ -5978,7 +6014,7 @@
       "price": 116632,
       "enabled": true,
       "stockMode": "none",
-      "order": 81,
+      "order": 82,
       "images": [
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 2_1776451334.jpg",
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO_1776451334.jpg",
@@ -6006,7 +6042,7 @@
       "price": 132182,
       "enabled": true,
       "stockMode": "none",
-      "order": 82,
+      "order": 83,
       "images": [
         "assets/products/bolso-mochila/261855 RETRO TOTE BAG 25 LTD_1776969211.jpg",
         "assets/products/bolso-mochila/paletero-head-retro-tote-bag-25th-ltd-2-e58a1ce8e25fb6884617818759097085-1024-1024.webp"
@@ -6031,7 +6067,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 83,
+      "order": 84,
       "images": [
         "assets/products/bolso-mochila/267565_1773838927.jpg",
         "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 3_1776693072.jpg",
@@ -6060,7 +6096,7 @@
       "price": 165000,
       "enabled": true,
       "stockMode": "none",
-      "order": 84,
+      "order": 85,
       "images": [
         "assets/products/bolso-mochila/267534_1773838960.jpg",
         "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 2_1777388891.jpg",
@@ -6087,7 +6123,7 @@
       "price": 178835,
       "enabled": true,
       "stockMode": "none",
-      "order": 85,
+      "order": 86,
       "images": [
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD 2_1776968835.jpg",
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD_1776968667.jpg"
@@ -6111,7 +6147,7 @@
       "price": 185056,
       "enabled": true,
       "stockMode": "none",
-      "order": 86,
+      "order": 87,
       "images": [
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK_1776455382.jpg",
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK a_1776455382.jpg"
@@ -6137,7 +6173,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 87,
+      "order": 88,
       "images": [
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON_1776689985.jpg",
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON a_1776689985.jpg"
@@ -6167,7 +6203,7 @@
       "price": 208382,
       "enabled": true,
       "stockMode": "none",
-      "order": 88,
+      "order": 89,
       "images": [
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL_1776451592.jpg",
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 2_1776451589.jpg",
@@ -6196,7 +6232,7 @@
       "price": 209938,
       "enabled": true,
       "stockMode": "none",
-      "order": 89,
+      "order": 90,
       "images": [
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON_1776687124.jpg",
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON a_1776687124.jpg"
@@ -6219,7 +6255,7 @@
       "price": 225488,
       "enabled": true,
       "stockMode": "none",
-      "order": 90,
+      "order": 91,
       "images": [
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L_1776695983.jpg",
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L a_1776695982.jpg",
@@ -6249,7 +6285,7 @@
       "price": 225488,
       "enabled": true,
       "stockMode": "none",
-      "order": 91,
+      "order": 92,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_935521-MLA110345733438_052026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_996848-MLA111279153073_052026-F.webp"
@@ -6272,7 +6308,7 @@
       "price": 202165,
       "enabled": true,
       "stockMode": "none",
-      "order": 92,
+      "order": 93,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_881169-MLA113036555379_062026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_750946-MLA113037416577_062026-F.webp",
@@ -6297,7 +6333,7 @@
       "price": 272142,
       "enabled": true,
       "stockMode": "none",
-      "order": 93,
+      "order": 94,
       "images": [
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK_1776687233.jpg",
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK a_1776687233.jpg",
@@ -6323,6 +6359,1243 @@
           "Color: Negro"
         ]
       },
+      "variants": []
+    },
+    {
+      "id": "RADICAL 135 X 2024",
+      "category": "raquetas-squash",
+      "subcategory": null,
+      "gender": null,
+      "name": "RADICAL 135 X 2024",
+      "code": "PENDIENTE",
+      "price": 171060,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 95,
+      "images": [
+        "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 tienda_1776449126.jpg",
+        "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 c tienda_1776449126.jpg",
+        "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 b tienda_1776449126.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Actualizada con la nueva tecnología Auxetic 2.0 para una mayor sensibilidad y respuesta, la raqueta de squash RADICAL 135 X de gran tamaño ofrece la conexión definitiva entre el jugador y la raqueta. Avalada por Leonel Cárdenas y perfecta para jugadores de torneos que buscan potencia con control, esta raqueta presenta un diseño contemporáneo y asimétrico que se adapta a su rendimiento moderno. Los llamativos toques de naranja se combinan con fibra de carbono transparente, que varía ligeramente en cada raqueta, otorgándole una identidad única.",
+          "Potencia controlada para jugadores avanzados",
+          "Nueva tecnología Auxetic 2.0 para una mayor sensibilidad y respuesta",
+          "Diseño moderno y asimétrico",
+          "El elemento de fibra de carbono transparente en el marco le da a la raqueta una identidad única",
+          "Avalada por Leonel Cárdenas",
+          "Grafeno en el Interior",
+          "Se refiere al uso que hace Head del grafeno, el material más resistente y ligero del mundo, en la construcción de sus raquetas de tenis para mejorar el rendimiento. El grafeno se coloca estratégicamente para optimizar la distribución del peso de la raqueta, mejorar la transferencia de energía, proporcionar mayor estabilidad y mejorar la potencia y el control. Head ha desarrollado varias versiones de esta tecnología, como Graphene XT, Graphene Touch, Graphene 360 ​​y Graphene 360+, cada una con avances en la forma en que se integra el grafeno para lograr diferentes características de juego."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "RADICAL 120 SB 2024",
+      "category": "raquetas-squash",
+      "subcategory": null,
+      "gender": null,
+      "name": "RADICAL 120 SB 2024",
+      "code": "PENDIENTE",
+      "price": 186612,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 96,
+      "images": [
+        "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 tienda_1776447381.jpg",
+        "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 c tienda_1776447381.jpg",
+        "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 b tienda_1776447381.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La raqueta de squash RADICAL 120 SLIMBODY 2024, la más ligera de la gama RADICAL, incorpora la nueva tecnología Auxetic 2.0 para una mayor sensibilidad y respuesta, logrando una conexión óptima entre el jugador y la raqueta. Avalada por Amanda Sobhy, esta raqueta está diseñada para jugadores avanzados y técnicos que priorizan la precisión. Su perfil delgado la hace aerodinámica y fácil de manejar, facilitando la recuperación de la pelota cerca de la pared. Su diseño asimétrico, con vibrantes detalles en naranja, le aporta un toque de estilo moderno y calidad.",
+          "Ligera y fácil de manejar para jugadores experimentados",
+          "Perfil delgado y aerodinámico que facilita la recuperación de la pelota cerca de la pared",
+          "• Nueva tecnología Auxetic 2.0 para una mayor sensibilidad y respuesta",
+          "• Diseño moderno y asimétrico",
+          "• Avalada por Amanda Sobhy",
+          ".",
+          "Grafeno en el Interior",
+          "Se refiere al uso que hace Head del grafeno, el material más resistente y ligero del mundo, en la construcción de sus raquetas de tenis para mejorar el rendimiento. El grafeno se coloca estratégicamente para optimizar la distribución del peso de la raqueta, mejorar la transferencia de energía, proporcionar mayor estabilidad y mejorar la potencia y el control. Head ha desarrollado varias versiones de esta tecnología, como Graphene XT, Graphene Touch, Graphene 360 ​​y Graphene 360+, cada una con avances en la integración del grafeno para lograr diferentes características de juego.",
+          ".",
+          "Adaptive Fan Pattern (AFP)"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "RADICAL 135 SB 2024",
+      "category": "raquetas-squash",
+      "subcategory": null,
+      "gender": null,
+      "name": "RADICAL 135 SB 2024",
+      "code": "PENDIENTE",
+      "price": 186612,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 97,
+      "images": [
+        "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_2_1776448469.jpg",
+        "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_3_1776448469.jpg",
+        "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_4_1776448469.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "For the ultimate connection between player and racquet, the RADICAL 135 SLIMBODY SQUASH RACQUET has been upgraded with new Auxetic 2.0 technology that enhances the feel and feedback at ball impact. Recommended by Rui Soares, and designed for players who are seeking control and maneuverability, this racquet has a thin, aerodynamic beam that allows you to retrieve balls that are close to the wall. It is heavier than the RADICAL 120 SLIMBODY 2024, which gives you more control and accuracy. The racquet's asymmetrical design - which includes bold pops of orange – contributes to its modern appeal. ",
+          ".",
+          "Control and maneuverability for advanced tournament players",
+          "Thin, aerodynamic beam helps you to retrieve balls close to the wall",
+          "New Auxetic 2.0 technology for enhanced feel and feedback",
+          "Modern and asymmetrical design",
+          "Endorsed by Rui Soares",
+          "Graphene Inside",
+          ".",
+          "Refers to Head's use of Graphene, the world's strongest and lightest material, within the construction of their tennis rackets to improve performance. The Graphene is strategically placed to optimize the racket's weight distribution, enhance energy transfer, provide greater stability, and improve power and control. Head has developed several versions of this technology, such as Graphene XT, Graphene Touch, Graphene 360, and Graphene 360+, each with advancements in how Graphene is integrated to achieve different playing characteristics.",
+          "Adaptive Fan Pattern (AFP)"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Tour Pro (MM TRADE)",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "TOUR PRO (MM TRADE)",
+      "code": "PENDIENTE",
+      "price": 65314,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 98,
+      "images": [
+        "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Si buscas una raqueta con mayor potencia y comodidad, prueba la Tour Pro. La tecnología Nano Titanium proporciona potencia y estabilidad adicionales en cada golpe. Su cabeza extragrande ofrece un punto dulce más amplio y mayor potencia. La Tour Pro cuenta con un marco tipo O-Beam para mayor durabilidad y comodidad.",
+          "Weight (unstrung)",
+          "280 g / 9.9 oz",
+          "String Pattern",
+          "16/19",
+          "Head Size",
+          "709 cm² / 110 in²",
+          "Balance",
+          "320 mm / 1 in HL",
+          "Length",
+          "685 mm / 27.0 in",
+          "Beam",
+          "22 mm",
+          "Technologies",
+          "DampPlus",
+          "The unique DAMPPlus insert isolates impact vibrations from the grip for exceptoinal comfort."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "IG Extreme XCEED",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "IG EXTREME XCEED",
+      "code": "PENDIENTE",
+      "price": 164840,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 99,
+      "images": [
+        "assets/products/raqueta-tenis/IG EXTREME XCEED - 232115_1776437310.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La Raqueta HEAD IG Extreme XCEED es la opción más liviana y accesible de la línea XCEED, entregada lista para jugar de fábrica. Con tan solo 260g encordada, es extremadamente fácil de maniobrar y reduce la fatiga en partidos o clases largas. La tecnología Innegra —compuesto híbrido de grafito y la fibra de alta performance más liviana del mundo— aporta durabilidad y amortigua las vibraciones del impacto, cuidando el brazo de jugadores que recién se inician. El aro de 100 in² ofrece un punto dulce generoso que facilita el juego para principiantes e intermedios. El patrón abierto 16×19 genera buen efecto y profundidad de pelota sin requerir técnica depurada. Llega encordada y lista para usar desde el primer día. Especificaciones: Aro 100 in² · 260g encordada · Patrón 16×19 · Composición Grafito + Innegra · Liviana y manejable."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "IG Gravity XCEED",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "IG GRAVITY XCEED",
+      "code": "PENDIENTE",
+      "price": 164840,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 100,
+      "images": [
+        "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236_1776440008.jpg",
+        "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236 a_1776440008.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Aprender a jugar al tenis es aún más divertido con la IG GRAVITY XCEED. Perfecta para principiantes, esta raqueta luce un diseño moderno y llamativo, y es ligera y fácil de manejar. Su construcción completa en grafito proporciona jugabilidad equilibrada y comodidad.",
+          ".",
+          "Ligera y fácil de manejar para jugadores principiantes",
+          "Construcción completa en grafito",
+          "Rendimiento equilibrado y comodidad",
+          "Diseño llamativo",
+          "Weight (unstrung)",
+          "295 g / 10.4 oz",
+          "String Pattern",
+          "16/19",
+          "Tamaño de cabeza",
+          "645 cm² / 100 in²",
+          "Equilibrio",
+          "320 mm / 1 in HL",
+          "Longitud",
+          "685 mm / 27.0 in",
+          "Beam",
+          "23/26/23 mm",
+          "Tecnologías",
+          "Innegra™",
+          "Innegra™Innegra™",
+          ".",
+          "Innegra™",
+          ".",
+          "Innegra™ is today the worlds lightest high performance fibre. Its extreme toughness together with HEADs advanced carbon composite technology leads to a novel ultra tough hybrid composite."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "IG Challenge TEAM L (st)",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "IG CHALLENGE TEAM L (ST)",
+      "code": "PENDIENTE",
+      "price": 171060,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 101,
+      "images": [
+        "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776187934.jpg",
+        "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776187934.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La IG CHALLENGE TEAM L es la raqueta de tenis más ligera de la serie CHALLENGE, por lo que es fácil de manejar. De tamaño extragrande y con un punto dulce mayor, esta raqueta está pensada para los jugadores principiantes que quieren generar efecto y potencia. Como el resto de raquetas de la serie CHALLENGE, esta raqueta tiene un diseño original y una construcción integral de grafito, por lo que te ofrece comodidad y jugabilidad en todos los terrenos.",
+          ".",
+          "Ligera y fácil de manejar para jugadores principiantes.",
+          "De tamaño extragrande y con un punto dulce mayor para generar efecto y potencia.",
+          "Estructura integral de grafito",
+          "Comodidad y jugabilidad en todos los terrenos.",
+          "Diseño llamativo ",
+          ".",
+          ".",
+          "Peso sin encordar: 260 gramos",
+          ".",
+          "Tamaño de la cabeza: 690 cm2",
+          ".",
+          "Equilibrio: 645mm",
+          ".",
+          "Haz: 23/26/23 mm",
+          ".",
+          "Patrón de cuerdas 16/19",
+          ".",
+          "Longitud: 685 mm",
+          ".",
+          "Tamaño de agarre: 0.5"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "IG Challenge TEAM L (stealth)",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "IG CHALLENGE TEAM L (STEALTH)",
+      "code": "PENDIENTE",
+      "price": 171060,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 102,
+      "images": [
+        "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776190127.jpg",
+        "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776190127.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La IG CHALLENGE TEAM L es la raqueta de tenis más ligera de la serie CHALLENGE, por lo que es fácil de manejar. De tamaño extragrande y con un punto dulce mayor, esta raqueta está pensada para los jugadores principiantes que quieren generar efecto y potencia. Como el resto de raquetas de la serie CHALLENGE, esta raqueta tiene un diseño original y una construcción integral de grafito, por lo que te ofrece comodidad y jugabilidad en todos los terrenos.",
+          ".",
+          "Ligera y fácil de manejar para jugadores principiantes.",
+          "De tamaño extragrande y con un punto dulce mayor para generar efecto y potencia.",
+          "Estructura integral de grafito",
+          "Comodidad y jugabilidad en todos los terrenos.",
+          "Diseño llamativo ",
+          ".",
+          ".",
+          "Peso sin encordar: 260 gramos",
+          ".",
+          "Tamaño de la cabeza: 690 cm2",
+          ".",
+          "Equilibrio: 645mm",
+          ".",
+          "Haz: 23/26/23 mm",
+          ".",
+          "Patrón de cuerdas 16/19",
+          ".",
+          "Longitud: 685 mm",
+          ".",
+          "Tamaño de agarre: 0.5"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "IG Challenge MP (red)",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "IG CHALLENGE MP (RED)",
+      "code": "PENDIENTE",
+      "price": 178835,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 103,
+      "images": [
+        "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 tienda_1776187950.jpg",
+        "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 a tienda_1776187950.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Perfil del jugador",
+          ".",
+          "Pensada para jugadores intermedios / amateurs competitivos",
+          ".",
+          "Ofrece un buen equilibrio entre potencia y control",
+          ".",
+          "Muy usada como raqueta de progreso",
+          ".",
+          "Especificaciones técnicas principales",
+          ".",
+          ".",
+          ".",
+          "Tamaño de cabeza: 645 cm² / 100 in²",
+          ".",
+          "Peso sin encordar: 295 g",
+          ".",
+          "Equilibrio: 320 mm",
+          ".",
+          "Largo: 685 mm / 27”",
+          ".",
+          "Patrón de encordado: 16 × 19",
+          ".",
+          "Perfil del marco: 23 / 26 / 23 mm",
+          ".",
+          "Material: Grafito",
+          ".",
+          "Tecnología: Innegra™ (reduce vibraciones y mejora estabilidad)",
+          ".",
+          "Color: Negro / Rojo",
+          ".",
+          "Categoría: Adulto – Unisex",
+          ".",
+          "Uso recomendado: Entrenamiento y juego regular"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Instinct MP 2022",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "INSTINCT MP 2022",
+      "code": "PENDIENTE",
+      "price": 225488,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 104,
+      "images": [
+        "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 2_1776188605.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 1_1776188605.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 4_1776188605.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 5_1776188605.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 7_1776188606.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "El INSTINCT MP proporciona alto rendimiento y comodidad sin esfuerzo para jugadores de nivel intermedio a avanzado, ahora con un nuevo diseño y la innovadora tecnología Graphene 360+ para una mayor flexibilidad y una sensación de impacto limpia. El secreto de la facilidad de ejecución reside en la sección transversal especialmente diseñada, que proporciona más estabilidad y un punto dulce más grande para una potencia sin esfuerzo. ¡Un gran cuadro a un precio extremadamente competitivo!",
+          ".",
+          ".",
+          ".",
+          "Categoría : Rendimiento",
+          "Patrón de cuerdas: 16/19",
+          "Longitud: 27 pulgadas/68,58 cm",
+          "Peso: 10,6 oz/300g",
+          "Tamaño de la cabeza: 100 pulg²/645 cm²",
+          "Punto de equilibrio: 12,59 pulgadas/32 cm/1 punto HL",
+          "Ancho del haz: 23 mm/26 mm/23 mm",
+          "Característica : Todo terreno",
+          "Color azul",
+          "Marca: cabeza",
+          "Tipo de producto : Raqueta de tenis"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Boom TEAM 2024",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "BOOM TEAM 2024",
+      "code": "PENDIENTE",
+      "price": 259700,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 105,
+      "images": [
+        "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_1 nube_1776187909.jpg",
+        "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_2 nube_1776187909.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Concéntrese en divertirse más con la BOOM TEAM 2024. La potencia explosiva se combina con la sensación mejorada y sensacional de la nueva tecnología Auxetic 2.0 para que no tenga que pensar en nada más que en disfrutar el momento. Golpear pelotas de tenis es un placer con esta raqueta que no querrá parar nunca. La divertida BOOM TEAM 2024, que tiene un marco más tolerante para una mayor jugabilidad, mejorará su potencia y confianza, mientras que el diseño es fresco y moderno.",
+          ".",
+          "Poder explosivo",
+          "Para jugadores intermedios",
+          "Sensación mejorada y sensacional",
+          "Conexión máxima entre jugador y raqueta",
+          "Marco más tolerante para mayor jugabilidad.",
+          "Diseño fresco y moderno.",
+          ".",
+          "IPC 800",
+          ".",
+          "PATRON DE CUERDAS 16/19",
+          ".",
+          "LONGITUD 685 mm",
+          ".",
+          "PESO 275 gramos ",
+          ".",
+          "TAMAÑO DE CABEZA 660 cm²",
+          ".",
+          "BALANCE 330 mm",
+          ".",
+          "HAZ 25"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "SQUARED 232606",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "SQUARED 232606",
+      "code": "PENDIENTE",
+      "price": 264366,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 106,
+      "images": [
+        "assets/products/raqueta-tenis/323583_1781105225.jpeg",
+        "assets/products/raqueta-tenis/323578_1781105225.jpeg",
+        "assets/products/raqueta-tenis/372051_1781105225.jpeg",
+        "assets/products/raqueta-tenis/372059_1781105225.jpeg",
+        "assets/products/raqueta-tenis/372056_1781105225.jpeg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La SQUARED es tan innovadora que ha establecido una nueva categoría en el mercado: una raqueta con balance ultrabajo para jugadores de todos los niveles y edades que buscan la fusión perfecta entre potencia y confort. SQUARED ofrece potencia², manejabilidad² y confort². Es la raqueta con el balance más hacia el puño que HEAD ha producido nunca; tiene una excelente sensación de recogida y es fácil de manejar, permitiéndote golpear con confianza para ejecutar una técnica limpia y precisa. Está demostrado que reduce la actividad muscular durante los golpes, por lo que SQUARED es especialmente adecuada para jugadores que buscan una raqueta respetuosa con el brazo. Mientras que la mayoría de las raquetas solo tienen un tubo, la SQUARED está fabricada con tecnología de doble tubo de última generación. El tubo exterior está hecho de fibra de carbono Torayca™ T800S de Toray y proporciona potencia, mientras que el tubo interior está relleno de espuma para maximizar el confort, el cuidado del brazo y una sensación de impacto nítida. HEAD ha escuchado lo que los jugadores quieren de sus raquetas. Da un gran golpe con una raqueta que cuenta con el patrón de encordado 16x18 más potente de HEAD, junto con un taladrado direccional que mejora el confort y la sensación de impacto nítida. Inspirada en las industrias automovilística y del ciclismo, la SQUARED presenta un moderno y elegante color gris. Para un aspecto aún más exclusivo, incorpora un efecto holográfico que aporta mayor sofisticación al gris y cambia de magenta a verde azulado (teal). La raqueta con el balance más hacia el puño jamás creada por HEAD Para jugadores de todos los niveles y edades que buscan el máximo nivel de potencia y confort Fácil de realizar golpes potentes y ejecutar una técnica limpia y precisa, ayudando a reducir la fatiga muscular Demostrado que reduce la actividad muscular durante los golpes, lo que la hace especialmente adecuada para jugadores que buscan una raqueta respetuosa con el brazo Tecnología de doble tubo de última generación Power Tube: tubo de fibra de carbono T800 de última generación para potencia y estabilidad Comfort Tube: segundo tubo relleno de espuma para maximizar el confort, el cuidado del brazo y una sensación de impacto nítida El Comfort Tube conecta directamente el grip con las cuerdas principales, creando una sensación muy conectada y cómoda El patrón de encordado 16x18 más potente de HEAD Taladrado direccional para mayor confort y sensación de impacto nítida Diseño exclusivo en gris moderno y elegante con efecto holográfico El característico diseño asimétrico de HEAD está moldeado en la raqueta El tubo exterior tiene un acabado mate premium y el tubo interior destaca con un acabado brillante"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Speed TEAM 2026",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "SPEED TEAM 2026",
+      "code": "PENDIENTE",
+      "price": 275252,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 107,
+      "images": [
+        "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg",
+        "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg",
+        "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 b_1776437201.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Con su cabeza de 677 cm² o 105 in², la raqueta extragrande SPEED TEAM 2026 es la más potente de la serie superventas SPEED y se encuentra en el centro del ‘Tennis Tour Racquet Compass’ de HEAD. El tamaño de la cabeza ofrece un punto dulce mayor y una mayor tolerancia. Este modelo, fácil de manejar y con una mezcla ideal de potencia y control, está diseñado para jugadores principiantes y de nivel intermedio. La SPEED TEAM 2026, avalada por Jannik Sinner, cuenta con un patrón de encordado de 16x19 que te permite jugar rápido y preciso. Con esta raqueta, podrás hacer de todo. El corazón viene provisto de la tecnología de vanguardia Hy-Bor, una combinación de materiales que se utiliza principalmente en la industria aeroespacial de alta tecnología, y que se ha añadido para mejorar la estabilidad y la sensación de impacto. Las innovaciones también incluyen la tecnología Auxetic 2.0, que ofrece una sensación de mayor conexión con la pelota. Los colores metálicos y el acabado mate dan un toque original y contemporáneo a los icónicos diseños en blanco y negro de la serie SPEED. ",
+          ".",
+          "· Para jugadores de nivel intermedio y principiantes que buscan una raqueta manejable y de gran tamaño con el equilibrio perfecto entre control y potencia ",
+          "· La raqueta más potente de la serie superventas SPEED ",
+          "· Cabeza de 677 cm² o 105 in² para un punto dulce más grande y una mayor tolerancia ",
+          "· La serie SPEED está en el centro del ‘Tennis Tour Racquet Compass’ de HEAD",
+          "· Potencia precisa con el patrón de encordado SPEED 16x19",
+          "· El material Hybrid mejora la sensación de estabilidad percibida y la sensación de impacto sólida característica ",
+          "· Tecnología Auxetic 2.0 para una sensación más conectada con la pelota ",
+          "· Perforación direccional y power grommets para el movimiento de las cuerdas que permiten un alto nivel de potencia y tacto ",
+          "· Recomendada por Jannik Sinner ",
+          "· Colores metálicos y un acabado mate para una nueva versión del diseño icónico en blanco y negro de la serie SPEED",
+          "Weight (unstrung)",
+          "270 g / 9.5 oz",
+          "String Pattern",
+          "16/19",
+          "Tamaño de cabeza",
+          "677 cm² / 105 in²",
+          "Equilibrio",
+          "325 mm / 0.8 in HL",
+          "Longitud",
+          "692 mm / 27.2 in",
+          "Beam",
+          "24 mm",
+          "Tecnologías",
+          "Hy-Bor",
+          ".",
+          "Juega con confianza y potencia gracias a la nueva tecnología Hy-Bor. Fabricada con materiales de última generación, Hy-Bor ofrece una resistencia a la compresión excepcional que maximiza la estabilidad percibida.",
+          ".",
+          "Auxetic 2.0",
+          ".",
+          "Siente cada golpe y consigue más confianza en tu juego con la tecnología HEAD Auxetic 2.0. Responde activamente, proporcionando una respuesta súper precisa y en tiempo real.",
+          ".",
+          "Graphene Inside",
+          ".",
+          "Graphene fortalece el marco, proporciona una mayor estabilidad y optimiza la transferencia de energía de la raqueta a la pelota. Cuando compre su próxima raqueta, asegúrese de que tenga GRAFENO EN EL INTERIOR.",
+          ".",
+          "Power Grommets",
+          ".",
+          "El uso de power grommets de mayor tamaño maximiza el movimiento de las cuerdas para una potencia superior.",
+          ".",
+          "Directional Drilling",
+          ".",
+          "La perforación direccional combina una potencia y un punto dulce superiores, lo que garantiza una sensación fastuosa al golpear.",
+          ".",
+          "Speed Pattern",
+          ".",
+          "El patrón de encordado especial para favorecer la velocidad proporciona el nivel perfecto de potencia controlada.",
+          ".",
+          "Speed Beam",
+          ".",
+          "La sección transversal aerodinámica del perfil del modelo Speed maximiza la velocidad y la potencia del swing."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "BOOM MP 2024",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "BOOM MP 2024",
+      "code": "PENDIENTE",
+      "price": 298577,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 108,
+      "images": [
+        "assets/products/raqueta-tenis/BOOM MP 2024_1776188236.jpg",
+        "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 g_1776188235.jpg",
+        "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 c_1776188235.jpg",
+        "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 d_1776188235.jpg",
+        "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 f_1776188235.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Lleva tu juego al siguiente nivel mientras disfrutas al máximo con la nueva BOOM MP 2024. Esta raqueta combina potencia y un sensacional tacto mejorado gracias a la nueva tecnología Auxetic 2.0. Con la raqueta BOOM MP 2024, los jugadores de nivel intermedio y avanzado no tendrán que preocuparse por nada que no sea disfrutar de cada momento y golpear su siguiente pelota. Con una variada selección de diseños, seguro que encontrarás la raqueta BOOM MP 2024 ideal para tu estilo.",
+          ".",
+          "Potencia explosiva",
+          "Para jugadores ambiciosos de nivel intermedio y avanzado",
+          "Sensacional tacto mejorado",
+          "Conexión total entre jugador y raqueta",
+          "Mayor estabilidad gracias a su peso superior• Varios diseños modernos y originales",
+          ".",
+          "ARO 100",
+          "PESO 295 GR",
+          "PATRON 16/19",
+          "BALANCE 315 mm",
+          "LONGITUD 685 mm",
+          "CPI 600",
+          "GRIP 3/8"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "PRESTIGE MP 2023",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRESTIGE MP 2023",
+      "code": "PENDIENTE",
+      "price": 298578,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 109,
+      "images": [
+        "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg",
+        "assets/products/raqueta-tenis/236123_Prestige_MP_2023_10 nube_1776442320.jpg",
+        "assets/products/raqueta-tenis/236123_Prestige_MP_2023_4 nube_1776442318.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Puedes jugar un tenis ofensivo disfrutando de toda la precisión y el control que ofrece la raqueta PRESTIGE MP 2023, con una cabeza y un punto dulce de mayor tamaño. La nueva tecnología Auxetic 2.0 ofrece un tacto sensacional, mientras que los elementos de carbono visibles en el corazón y la punta, que varían ligeramente con cada modelo, confieren a tu raqueta una imagen única. Su diseño original, distintivo y de primera calidad incluye también un lacado especial de doble cara en rojo en el bloque central de color.",
+          ".",
+          "Para jugadores ofensivos",
+          "Niveles máximos de control y precisión",
+          "Sensacional tacto mejorado",
+          "Conexión total entre jugador y raqueta",
+          "Nuevo diseño distintivo con elementos de carbono visibles",
+          "Lacado especial de doble cara en rojo",
+          "Weight (unstrung)",
+          "310 g / 10.9 oz",
+          "String Pattern",
+          "18/19",
+          "Tamaño de cabeza",
+          "640 cm² / 99 in²",
+          "Equilibrio",
+          "320 mm / 1 in HL",
+          "Longitud",
+          "685 mm / 27.0 in",
+          "Beam",
+          "21,5mm",
+          "Tecnologías",
+          "Auxetic 2.0",
+          "Siente cada golpe y consigue más confianza en tu juego con la tecnología HEAD Auxetic 2.0. Responde activamente, proporcionando una respuesta súper precisa y en tiempo real.",
+          ".",
+          "Graphene Inside",
+          "Graphene fortalece el marco, proporciona una mayor estabilidad y optimiza la transferencia de energía de la raqueta a la pelota. Cuando compre su próxima raqueta, asegúrese de que tenga GRAFENO EN EL INTERIOR.",
+          ".",
+          "Elongated Shaft",
+          "El árbol es alargado con una flexión clásica y unas sensaciones que se aprecian en competición desde 1987.",
+          ".",
+          "Box Beam",
+          "La sección transversal del perfil cuadrangular estabiliza el marco para proporcionar el máximo control.",
+          ".",
+          "Full Cap",
+          "El refuerzo completo produce las sensaciones marca de la casa en el golpeo, así como su sonido inconfundible."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Prestige MP L 2023",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRESTIGE MP L 2023",
+      "code": "PENDIENTE",
+      "price": 298578,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 110,
+      "images": [
+        "assets/products/raqueta-tenis/265506_1773835504.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Es la raqueta más ligera de la serie PRESTIGE y se ha mejorado con la nueva tecnología Auxetic 2.0 para ofrecer un tacto sensacional. A los jugadores ambiciosos en busca de un marco más ligero, y un equilibrio óptimo entre precisión y potencia, les encantará la raqueta PRESTIGE MP L, antes conocida como PRESTIGE S. Los elementos de carbono visibles en el corazón y la punta son ligeramente distintos con cada versión, lo que confiere a tu raqueta una imagen única. Su diseño original, distintivo y de primera calidad incluye también un lacado especial de doble cara en rojo en el bloque central de color.",
+          ".",
+          "La raqueta más ligera de la serie PRESTIGE",
+          "Mezcla de precisión y potencia",
+          "Sensacional tacto mejorado",
+          "Conexión total entre jugador y raqueta",
+          "Nuevo diseño distintivo con elementos de carbono visibles",
+          "Lacado especial de doble cara en rojo",
+          "Weight (unstrung)",
+          "300 g / 10.6 oz",
+          "String Pattern",
+          "16/19",
+          "Tamaño de cabeza",
+          "640 cm² / 99 in²",
+          "Equilibrio",
+          "315 mm / 1 in HL",
+          "Longitud",
+          "685 mm / 27.0 in",
+          "Beam",
+          "21,5mm",
+          "Tecnologías",
+          "Auxetic 2.0",
+          "Siente cada golpe y consigue más confianza en tu juego con la tecnología HEAD Auxetic 2.0. Responde activamente, proporcionando una respuesta súper precisa y en tiempo real.",
+          ".",
+          "Graphene Inside",
+          "Graphene fortalece el marco, proporciona una mayor estabilidad y optimiza la transferencia de energía de la raqueta a la pelota. Cuando compre su próxima raqueta, asegúrese de que tenga GRAFENO EN EL INTERIOR.",
+          ".",
+          "Box Beam",
+          "La sección transversal del perfil cuadrangular estabiliza el marco para proporcionar el máximo control.",
+          ".",
+          "Full Cap",
+          "El refuerzo completo produce las sensaciones marca de la casa en el golpeo, así como su sonido inconfundible.",
+          ".",
+          "Elongated Shaft",
+          "El árbol es alargado con una flexión clásica y unas sensaciones que se aprecian en competición desde 1987."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "Prestige Pro 2023",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "PRESTIGE PRO 2023",
+      "code": "PENDIENTE",
+      "price": 298578,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 111,
+      "images": [
+        "assets/products/raqueta-tenis/265506_1773835504.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La RAQUETA DE TENIS PRESTIGE PRO 2023, una versión original e innovadora de un clásico de HEAD, ofrece ahora el magnífico tacto de la nueva tecnología Auxetic 2.0, que ayuda a los jugadores de nivel avanzado a competir con control y precisión. El modelo PRO, antes conocidos como PRESTIGE MP, cuenta con elementos de carbono visibles en el corazón y la punta, que varían ligeramente en cada modelo, lo que confiere a tu raqueta una imagen única. Su diseño original, distintivo y de primera calidad incluye también un lacado especial de doble cara en rojo en el bloque central de color.",
+          ".",
+          "Niveles máximos de control y precisión",
+          "Para jugadores de nivel avanzado",
+          "Sensacional tacto mejorado",
+          "Conexión total entre jugador y raqueta",
+          "Nuevo diseño distintivo con elementos de carbono visibles",
+          "Lacado especial de doble cara en rojo",
+          "Weight (unstrung)",
+          "320 g / 11.3 oz",
+          "String Pattern",
+          "18/20",
+          "Tamaño de cabeza",
+          "630 cm² / 98 in²",
+          "Equilibrio",
+          "310 mm / 1.3 in HL",
+          "Longitud",
+          "685 mm / 27.0 in",
+          "Beam",
+          "20mm",
+          "Tecnologías",
+          "Auxetic 2.0",
+          "Siente cada golpe y consigue más confianza en tu juego con la tecnología HEAD Auxetic 2.0. Responde activamente, proporcionando una respuesta súper precisa y en tiempo real.",
+          ".",
+          "Graphene Inside",
+          "Graphene fortalece el marco, proporciona una mayor estabilidad y optimiza la transferencia de energía de la raqueta a la pelota. Cuando compre su próxima raqueta, asegúrese de que tenga GRAFENO EN EL INTERIOR.",
+          ".",
+          "Box Beam",
+          "La sección transversal del perfil cuadrangular estabiliza el marco para proporcionar el máximo control.",
+          ".",
+          "Full Cap",
+          "El refuerzo completo produce las sensaciones marca de la casa en el golpeo, así como su sonido inconfundible.",
+          ".",
+          "Elongated Shaft",
+          "El árbol es alargado con una flexión clásica y unas sensaciones que se aprecian en competición desde 1987."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "ARTHUR ASHE COMPETITION 2025",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "ARTHUR ASHE COMPETITION 2025",
+      "code": "PENDIENTE",
+      "price": 373222,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 112,
+      "images": [
+        "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025_1776189626.jpg",
+        "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025 b_1776189626.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "\"Pon un poco de historia del tenis en tu mano con la raqueta ARTHUR ASHE COMPETITION 2025, una versión de edición limitada del modelo BOOM MP. Cincuenta años después de que Arthur Ashe se convirtiera en el primer hombre negro en levantar el trofeo en las pistas de hierba de Londres, HEAD celebra su legado con esta raqueta especial. El diseño elegante, clásico e histórico se ha inspirado en la antigua raqueta icónica de Ashe, incluyendo un diseño de grip antiguo. Si te preguntabas con qué tipo de raqueta jugaría Arthur en 2025, aquí la tienes. Nuestro legado deportivo se combina con esta moderna pieza que luce la misma diversión explosiva que la BOOM MP de la colección general. Diseñada para jugadores ambiciosos de nivel intermedio y avanzado que buscan impulsar su potencia y confianza, la ARTHUR ASHE COMPETITION 2025 se ha fabricado con tecnología Auxetic 2.0 para un tacto mejorado y una conexión definitiva entre jugador y raqueta. Con este modelo de edición limitada, tan solo tendrás que preocuparte de disfrutar del momento y de golpear tu siguiente pelota. ",
+          ".",
+          "· Edición limitada para celebrar el 50 aniversario de Arthur Ashe, el primer hombre de color en ganar en las pistas de hierba de Londres ",
+          "· Diseño exclusivo, elegante y clásico inspirado en la vieja raqueta icónica de Arthur ",
+          "· Presenta un diseño de empuñadura antiguo",
+          "· Para jugadores ambiciosos de nivel intermedio y avanzado ",
+          "· Tecnología Auxetic 2.0 para un tacto mejorado y extraordinario ",
+          "· Conexión total entre jugador y raqueta\"",
+          "Weight (unstrung)",
+          "295 g / 10.4 oz",
+          "String Pattern",
+          "16/19",
+          "Tamaño de cabeza",
+          "645 cm² / 100 in²",
+          "Equilibrio",
+          "315 mm / 1 in HL",
+          "Longitud",
+          "685 mm / 27.0 in",
+          "Beam",
+          "24 mm",
+          "Tecnologías",
+          "Auxetic 2.0",
+          "Siente cada golpe y consigue más confianza en tu juego con la tecnología HEAD Auxetic 2.0. Responde activamente, proporcionando una respuesta súper precisa y en tiempo real.",
+          ".",
+          "Graphene Inside",
+          "Graphene fortalece el marco, proporciona una mayor estabilidad y optimiza la transferencia de energía de la raqueta a la pelota. Cuando compre su próxima raqueta, asegúrese de que tenga GRAFENO EN EL INTERIOR.",
+          ".",
+          "Uni Pattern",
+          "El patrón de encordado uniforme favorece una trayectoria correcta de la pelota en cada golpe.",
+          ".",
+          "Morph Beam",
+          "Nueva construcción del marco que une el perfil cuadrado del marco con la cabeza. Brinda el perfecto toque y confort en el juego.",
+          ".",
+          "Directional Drilling",
+          "La perforación direccional combina una potencia y un punto dulce superiores, lo que garantiza una sensación fastuosa al golpear.",
+          ".",
+          "Power Grommets",
+          "El uso de power grommets de mayor tamaño maximiza el movimiento de las cuerdas para una potencia superior."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "SQ PRIME Ball DYD x12",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "SQ PRIME BALL DYD X12",
+      "code": "PENDIENTE",
+      "price": 69980,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 113,
+      "images": [
+        "assets/products/raqueta-squash/327791_1773839444.jpg",
+        "assets/products/raqueta-squash/D_NQ_NP_2X_902365-MLA96290010386_102025-F_1773839482.webp"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Alta calidad, alto nivel de control, larga vida. La pelota de squash PRIME está diseñada para jugadores de alto nivel. Fácil de reconocer con sus dos puntos amarillos, se presenta en una caja para mostrador con 12."
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "JRS 4.5 GW BR80[I]",
+      "category": "ski",
+      "subcategory": null,
+      "gender": null,
+      "name": "JRS 4.5 GW BR80[I]",
+      "code": null,
+      "price": 106742,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 114,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "La fijación JRS 4.5 GW CA convierte el esquí en una experiencia inolvidable para los más pequeños. Solo hay que ponérsela y listo. Gracias a la innovadora forma de la suela y a los frenos más suaves, los niños se ponen y se quitan la fijación en segundos. Además, este sistema destaca por su ligereza, su flexión suave y su compatibilidad con todo tipo de botas de esquí (A/C/GW A/GW C).",
+          ".",
+          "Las fijaciones JRS forman parte de la serie E4SY de HEAD/TYROLIA, el nuevo estándar en equipamiento de esquí infantil, que ofrece conjuntos de esquí y fijación perfectamente combinados en cuanto a facilidad de manejo, flexión, peso y entrada en el esquí. Nuestras fijaciones JRS se pueden montar en todos los esquís con base JRS preinstalada.",
+          "Altura",
+          "27 mm",
+          "DIN / Rango de ajuste",
+          "0,75 - 4,5 mm",
+          "Puntera SX Kid con sistema TRP",
+          "Direccional completa",
+          "JRS",
+          "Talón SX Youth",
+          "Technologies",
+          "GripWalk",
+          "Compatible chaussures de ski adultes norme alpine (ISO 5355 TYPE A) et GripWalk (ISO 23223 TYPE A). Aucun réglage nécessaire.",
+          "TRP - Roller Pincer Toe System",
+          "El sistema Roller Pincer Toe (TRP) de TYROLIA, compuesto por cuatro rodillos, garantiza una liberación de 180° y un centrado preciso de la bota de esquí. El sistema TRP reduce la presión sobre las rodillas y los ligamentos, a la vez que mejora significativamente el rendimiento.",
+          "AFS - Anti Friction Slider",
+          "La placa antifricción de TYROLIA garantiza una liberación segura y un recentrado rápido y preciso de la bota. Para mayor seguridad y confianza.",
+          "EASY4",
+          "EASY4: el nuevo referente en equipamiento de esquí infantil.",
+          ".",
+          "Permite una integración perfecta de los sistemas de fijación de esquí en cuanto a facilidad de manejo, flexibilidad, peso y colocación de la bota."
+        ]
+      },
+      "variants": [
+        {
+          "id": "SB",
+          "code": "pendiente",
+          "colorName": "Solid Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/ski/jrs-4-5-gw-ca.webp"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "SW",
+          "code": "pendiente",
+          "colorName": "Solid White",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/ski/jrs-4-5-gw-ca (2).webp"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "PR 11 GW BR.85[G]",
+      "category": "ski",
+      "subcategory": null,
+      "gender": null,
+      "name": "PR 11 GW BR.85[G]",
+      "code": null,
+      "price": 168324,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 115,
+      "images": [],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Con el PR 11 GW, la diversión está asegurada. No importa si esquías por primera vez o eres un veterano. tous",
+          "TRP La tecnología PowerRail te proporciona una sensación de seguridad en el terreno, así como una mayor estabilidad y durabilidad. La mordaza TX, equipada con el sistema y un GripWalk AFS, dispone de un sistema de liberación Full Diagonal para reducir el riesgo de lesiones.",
+          "tous Sólo tienes que ponerte la bota, salir y disfrutar de tu día en las pistas. Nuestras fijaciones PowerRail se pueden montar en esquís con una base PR premontada."
+        ]
+      },
+      "variants": [
+        {
+          "id": "SB/W",
+          "code": "pendiente",
+          "colorName": "Solid Black / White",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/ski/head_100943_black_1.webp"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "HEAD Ball Pen",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD BALL PEN",
+      "code": "PENDIENTE",
+      "price": 1555,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 116,
+      "images": [
+        "assets/products/pop/287568 HEAD Ball Pen_1778598876.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Pencil black",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD PENCIL BLACK",
+      "code": "PENDIENTE",
+      "price": 1555,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 117,
+      "images": [
+        "assets/products/pop/287598 HEAD PENCIL_1778605897.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "New Logo Stencil",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "NEW LOGO STENCIL",
+      "code": "PENDIENTE",
+      "price": 4323,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 118,
+      "images": [
+        "assets/products/pop/152694_1774610624.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Wall Hook - 20cm",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD WALL HOOK - 20CM",
+      "code": "PENDIENTE",
+      "price": 9766,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 119,
+      "images": [
+        "assets/products/pop/gancho_1778607134.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Pen Pot",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD PEN POT",
+      "code": "PENDIENTE",
+      "price": 10885,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 120,
+      "images": [
+        "assets/products/pop/287224 HEAD PEN POT_1778606304.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Document Filo",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD DOCUMENT FILO",
+      "code": "PENDIENTE",
+      "price": 31102,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 121,
+      "images": [
+        "assets/products/pop/287520 DOCUMENT FILO_1778605264.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Ball Tube",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD BALL TUBE",
+      "code": "PENDIENTE",
+      "price": 38877,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 122,
+      "images": [
+        "assets/products/pop/287582 head ball tube_1778592280.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD NOTE PAD A5",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD NOTE PAD A5",
+      "code": "PENDIENTE",
+      "price": 38877,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 123,
+      "images": [
+        "assets/products/pop/287500 HEAD NOTE PAD A5_1778599016.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Umbrella small",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD UMBRELLA SMALL",
+      "code": "PENDIENTE",
+      "price": 62204,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 124,
+      "images": [
+        "assets/products/pop/287800 UMBRELLA SMALL_1778606925.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Corporate Floormat",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD CORPORATE FLOORMAT",
+      "code": "PENDIENTE",
+      "price": 77755,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 125,
+      "images": [
+        "assets/products/pop/287740 CORPORATE FLOORMAT_1778606609.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Collapsible Racquetholder",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD COLLAPSIBLE RACQUETHOLDER",
+      "code": "PENDIENTE",
+      "price": 183999,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 126,
+      "images": [
+        "assets/products/pop/Collapsible racquetholder_1778607116.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "WINDBREAKER 2007 18x2",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "WINDBREAKER 2007 18X2",
+      "code": "PENDIENTE",
+      "price": 189410,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 127,
+      "images": [
+        "assets/products/pop/198454_1774610813.jpg",
+        "assets/products/pop/289799_A.png"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Ball Trolley",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD BALL TROLLEY",
+      "code": "PENDIENTE",
+      "price": 259188,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 128,
+      "images": [
+        "assets/products/pop/237916_1774610515.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Cube",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD CUBE",
+      "code": "PENDIENTE",
+      "price": 279917,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 129,
+      "images": [
+        "assets/products/pop/287748 HEAD CUBE_1778606419.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "Mini Tennis Net 6.1 m",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "MINI TENNIS NET 6.1 M",
+      "code": "PENDIENTE",
+      "price": 326570,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 130,
+      "images": [
+        "assets/products/pop/299857_1774610591.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Padel Net",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD PADEL NET",
+      "code": "PENDIENTE",
+      "price": 351762,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 131,
+      "images": [
+        "assets/products/pop/padel net_1778607317.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD Coaching Starter Pack",
+      "category": "pop",
+      "subcategory": null,
+      "gender": null,
+      "name": "HEAD COACHING STARTER PACK",
+      "code": "PENDIENTE",
+      "price": 544282,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 132,
+      "images": [
+        "assets/products/pop/196472_1781029313.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
       "variants": []
     }
   ]
