@@ -73,7 +73,8 @@
   .hero-copy{padding:55px 22px}
   .hero-img{min-height:300px}
   .catalog-section{scroll-margin-top:64px}
-  footer{flex-direction:column;gap:10px}
+  footer{flex-direction:column;align-items:flex-start;gap:14px}
+  .footer-ownership{text-align:left}
 }
 
 @media(max-width:480px){

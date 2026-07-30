@@ -20,7 +20,7 @@ import {
 } from '../src/hooks/productSelectionReducer.js';
 
 const companyConfig = {
-  companyName: 'Real Step',
+  companyName: 'RealStep',
   catalogName: 'HEAD Calzado',
   orderEmail: 'owner@example.com'
 };
@@ -132,7 +132,7 @@ test('payload del cliente coincide con el contrato clásico', () => {
   });
   assert.equal(params.to_email, 'ana@example.com');
   assert.equal(params.reply_to, 'owner@example.com');
-  assert.equal(params.subject, 'Recibimos tu pedido HEAD Calzado - Real Step');
+  assert.equal(params.subject, 'Recibimos tu pedido HEAD Calzado - RealStep');
   assert.equal(params.customer_name, 'Ana <Cliente>');
   assert.match(params.email_html, /¡Recibimos tu pedido!/);
   assert.doesNotMatch(params.email_html, /<h2>Datos del cliente<\/h2>/);

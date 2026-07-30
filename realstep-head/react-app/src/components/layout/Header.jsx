@@ -4,6 +4,7 @@ import CategoryMenu, { MenuIcon } from '../categories/CategoryMenu.jsx';
 import CheckoutModal, {
   createEmptyCheckoutForm
 } from '../checkout/CheckoutModal.jsx';
+import { companyConfig } from '../../config/company.js';
 import catalog from '../../data/catalog.js';
 import useCart from '../../hooks/useCart.js';
 import { scrollToHashTarget } from '../../utils/navigation.js';
@@ -27,10 +28,10 @@ function Header({ categories }) {
   return (
     <header className="top">
       <a className="brand" href="#inicio" aria-label="Ir al inicio" onClick={handleHomeClick}>
-        <img src={logoUrl} alt="Real Step" className="brand-logo" />
+        <img src={logoUrl} alt={companyConfig.companyName} className="brand-logo" />
         <span className="brand-text">
-          <strong>REAL STEP</strong>
-          <small>Catálogo Mayorista</small>
+          <strong>{companyConfig.companyName.toUpperCase()}</strong>
+          <small>{companyConfig.catalogName}</small>
         </span>
       </a>
 

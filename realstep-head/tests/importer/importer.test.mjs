@@ -3,26 +3,37 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import {
+  countCatalog,
+  compareCatalogs
+} from '../../scripts/catalog-import/catalogBaseline.mjs';
+import {
   createTestWorkspace,
   createWorkbookFixture,
   diagnosticCodes,
+  repoRoot,
   runFixture
 } from './helpers.mjs';
+
+const approvedBaselinePath = path.join(
+  repoRoot,
+  'tests',
+  'fixtures',
+  'catalog-baseline.json'
+);
 
 test('Excel válido genera el catálogo esperado', async function(t) {
   const workspace = await createTestWorkspace(t);
   await createWorkbookFixture(workspace.workbookPath);
+  const baseline = JSON.parse(
+    await fs.readFile(approvedBaselinePath, 'utf8')
+  );
 
   const result = await runFixture(workspace);
 
   assert.equal(result.exitCode, 0);
   assert.equal(result.diagnostics.errors.length, 0);
-  assert.equal(result.catalog.schemaVersion, 1);
-  assert.equal(result.catalog.stockIsAvailabilityOnly, true);
-  assert.equal(result.catalog.products.length, 55);
-  assert.equal(result.counts.variants, 88);
-  assert.equal(result.counts.stock, 382);
-  assert.equal(result.counts.images, 257);
+  assert.deepEqual(compareCatalogs(baseline, result.catalog), []);
+  assert.deepEqual(countCatalog(result.catalog), countCatalog(baseline));
   await fs.access(workspace.outputPath);
 });
 

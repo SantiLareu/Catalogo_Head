@@ -1,6 +1,6 @@
 # Frontend React
 
-Aplicación React + Vite del catálogo Real Step. Importa
+Aplicación React + Vite del catálogo RealStep. Importa
 `../generated/catalog.json` y recursos compartidos desde `../assets/`.
 
 Detalles internos:

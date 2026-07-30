@@ -1,6 +1,6 @@
-# Real Step · Catálogo HEAD
+# RealStep · Catálogo HEAD
 
-Aplicación React del catálogo mayorista de Real Step con un pipeline de datos
+Aplicación React del catálogo mayorista de RealStep con un pipeline de datos
 basado en Excel. El frontend vive en `react-app/` y la raíz del repositorio
 contiene el catálogo, el importador y sus pruebas.
 
@@ -117,6 +117,24 @@ Publish directory: react-app/dist
 No debe publicarse la raíz completa: contiene el Excel y herramientas del
 pipeline. El build usa rutas relativas y puede alojarse bajo un subdirectorio.
 
+## Autoría y protección técnica
+
+Santiago Lareu es el autor, desarrollador y titular del software. RealStep es
+el cliente y licenciatario autorizado. Esta relación se centraliza en
+`react-app/src/config/company.js` y se refleja en el aviso legal del footer,
+los metadatos HTML, los atributos `data-*` de la raíz de React y el archivo
+público `ownership.json`.
+
+Vite copia automáticamente `react-app/public/ownership.json` y
+`react-app/public/_headers` a `react-app/dist`. El segundo configura en Netlify
+la protección contra iframes externos y cabeceras de seguridad que no
+interfieren con scripts, imágenes ni conexiones del catálogo.
+
+Estas medidas dificultan la reutilización no autorizada y ayudan a rastrear
+copias, pero no pueden impedir por completo que se extraiga el código frontend
+que recibe el navegador. Si en el futuro se agrega una firma criptográfica, su
+clave privada nunca deberá incluirse en `src`, `public`, `dist` ni Git.
+
 ## Rollback
 
 El estado anterior al corte está preservado en el tag:
@@ -145,3 +163,18 @@ sin guardar.
 C:\Users\santl\OneDrive\Documents\catalogo_head\Catalogo_Head\realstep-head>
 
 npm run react:dev
+
+## Cambios en el Excel
+El flujo normal, de ahora en adelante, queda así:
+
+npm run import-products
+npm run compare-catalog
+
+Si los cambios son correctos y los aprobás:
+
+npm run update-catalog-baseline
+npm run test-importer
+npm run test-react
+npm run react:build
+
+Como esos archivos aparecen modificados respecto de Git, cuando termines todas las validaciones conviene guardar el estado con un commit

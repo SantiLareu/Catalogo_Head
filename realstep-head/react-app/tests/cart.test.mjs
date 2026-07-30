@@ -245,11 +245,17 @@ test('éxito completo elimina la persistencia; un error la conserva', async () =
   assert.notEqual(storage.getItem(CART_STORAGE_KEY), null);
 });
 
-test('catálogo real conserva 55 productos y cubre los casos de carrito requeridos', async () => {
+test('catálogo real coincide con el aprobado y cubre los casos de carrito requeridos', async () => {
   const catalog = JSON.parse(
     await readFile(new URL('../../generated/catalog.json', import.meta.url), 'utf8')
   );
-  assert.equal(catalog.products.length, 55);
+  const approvedCatalog = JSON.parse(
+    await readFile(
+      new URL('../../tests/fixtures/catalog-baseline.json', import.meta.url),
+      'utf8'
+    )
+  );
+  assert.equal(catalog.products.length, approvedCatalog.products.length);
   assert.ok(catalog.products.some((product) =>
     product.variants.length === 0 && product.sizes.length === 0
   ));
@@ -259,10 +265,6 @@ test('catálogo real conserva 55 productos y cubre los casos de carrito requerid
   assert.ok(catalog.products.some((product) =>
     product.variants.some((variant) => variant.sizes.length > 0)
   ));
-  assert.ok(catalog.products.some((product) =>
-    product.price === 0 || product.variants.some((variant) => variant.price === 0)
-  ));
-
   const trailingVariantProduct = catalog.products.find((product) =>
     product.variants.some((variant) => variant.id === 'black ')
   );

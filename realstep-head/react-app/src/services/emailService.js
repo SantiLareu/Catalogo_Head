@@ -134,7 +134,8 @@ export function buildEmailHtml({
           <div style="background:#0a0a0a;padding:22px 26px;color:white;">
             <div style="font-size:28px;font-weight:900;">HEAD</div>
             <div style="font-size:12px;letter-spacing:1.5px;color:#bbb;">
-              REAL STEP · CATÁLOGO MAYORISTA
+              ${escapeHtml(companyConfig.companyName.toUpperCase())} ·
+              ${escapeHtml(companyConfig.catalogName.toUpperCase())}
             </div>
           </div>
           <div style="background:white;padding:28px 26px;">

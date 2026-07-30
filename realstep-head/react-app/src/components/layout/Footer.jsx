@@ -1,8 +1,25 @@
+import { companyConfig } from '../../config/company.js';
+
 function Footer() {
+  const { companyName, catalogName } = companyConfig;
+  const {
+    owner,
+    developer,
+    licensedTo,
+    copyrightYear,
+    rightsNotice
+  } = companyConfig.ownership;
+
   return (
     <footer>
-      <strong>REAL STEP</strong>
-      <span>Catálogo HEAD</span>
+      <div className="footer-brand">
+        <strong>{companyName.toUpperCase()}</strong>
+        <span>{catalogName}</span>
+      </div>
+      <small className="footer-ownership">
+        © {copyrightYear} {owner}. Sistema diseñado y desarrollado por {developer}.{' '}
+        Licenciado para uso exclusivo de {licensedTo}. {rightsNotice}
+      </small>
     </footer>
   );
 }

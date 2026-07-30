@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import {
+  countCatalog,
   compareCatalogs,
   compareCatalogFiles,
   formatCatalogDifference
@@ -38,13 +39,7 @@ test('snapshot canónico coincide con el catálogo aprobado', async function() {
     catalogPath: approvedCatalogPath
   });
   assert.deepEqual(result.differences, []);
-  assert.deepEqual(result.counts, {
-    products: 55,
-    variants: 88,
-    stock: 382,
-    images: 257,
-    specifications: 119
-  });
+  assert.deepEqual(result.counts, countCatalog(result.baseline));
 });
 
 test('diagnóstico identifica diferencia en producto', async function() {
@@ -216,7 +211,11 @@ test('importador funciona en una raíz temporal sin js/data', async function(t) 
     strict: false
   });
   assert.equal(result.exitCode, 0);
-  assert.equal(result.catalog.products.length, 55);
+  const baseline = JSON.parse(
+    await fs.readFile(approvedBaselinePath, 'utf8')
+  );
+  assert.deepEqual(compareCatalogs(baseline, result.catalog), []);
+  assert.deepEqual(countCatalog(result.catalog), countCatalog(baseline));
   await fs.access(isolatedOutput);
   await assert.rejects(fs.access(path.join(isolatedRoot, 'js', 'data')));
 });

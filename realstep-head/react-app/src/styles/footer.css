@@ -1,8 +1,25 @@
 footer{
   display:flex;
   justify-content:space-between;
+  align-items:center;
+  gap:24px;
   padding:28px 4vw;
   background:#111;
   color:#fff;
 }
 footer span{color:#aaa}
+
+.footer-brand{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  flex-shrink:0;
+}
+
+.footer-ownership{
+  max-width:720px;
+  color:#aaa;
+  font-size:.75rem;
+  line-height:1.5;
+  text-align:right;
+}
