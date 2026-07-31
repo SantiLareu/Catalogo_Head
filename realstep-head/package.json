@@ -10,9 +10,15 @@
     "update-catalog-baseline": "node scripts/update-catalog-baseline.mjs",
     "test-importer": "node --test \"tests/importer/*.test.mjs\"",
     "test-react": "node --test \"react-app/tests/*.test.mjs\"",
+    "test-integrity": "node --test \"tests/integrity/*.test.mjs\" \"react-app/tests/integrityVerifier.test.mjs\"",
     "react:test": "npm run test-react",
     "react:dev": "npm --prefix react-app run dev",
     "react:build": "npm --prefix react-app run build",
+    "react:build:signed": "node scripts/build-signed.mjs",
+    "generate-signing-keys": "node scripts/generate-signing-keys.mjs",
+    "integrity:manifest": "node scripts/generate-integrity-manifest.mjs",
+    "integrity:sign": "node scripts/sign-integrity-manifest.mjs",
+    "integrity:verify": "node scripts/verify-integrity.mjs",
     "react:preview": "npm --prefix react-app run preview"
   },
   "devDependencies": {

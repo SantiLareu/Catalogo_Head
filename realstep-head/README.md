@@ -100,9 +100,15 @@ dev, build, importación o tests.
 | `npm run update-catalog-baseline` | Reemplaza explícitamente el baseline aprobado. |
 | `npm run test-importer` | Ejecuta las pruebas del pipeline. |
 | `npm run test-react` | Ejecuta las pruebas del frontend. |
+| `npm run test-integrity` | Ejecuta pruebas criptográficas y del verificador React. |
 | `npm run react:test` | Alias compatible de `test-react`. |
 | `npm run react:dev` | Inicia Vite en desarrollo. |
 | `npm run react:build` | Genera `react-app/dist`. |
+| `npm run react:build:signed` | Genera, firma y verifica una publicación sin crear claves. |
+| `npm run generate-signing-keys -- --confirm` | Genera deliberadamente un par Ed25519. |
+| `npm run integrity:manifest` | Prepara archivos y genera el manifiesto de integridad. |
+| `npm run integrity:sign` | Firma un manifiesto existente con la clave privada configurada. |
+| `npm run integrity:verify` | Verifica firma, identidad y archivos publicados. |
 | `npm run react:preview` | Sirve localmente el build de producción. |
 
 ## Publicación
@@ -132,8 +138,21 @@ interfieren con scripts, imágenes ni conexiones del catálogo.
 
 Estas medidas dificultan la reutilización no autorizada y ayudan a rastrear
 copias, pero no pueden impedir por completo que se extraiga el código frontend
-que recibe el navegador. Si en el futuro se agrega una firma criptográfica, su
-clave privada nunca deberá incluirse en `src`, `public`, `dist` ni Git.
+que recibe el navegador. La clave privada de firma nunca deberá incluirse en
+`src`, `public`, `dist` ni Git.
+
+La Etapa 2 agrega un manifiesto SHA-256 firmado con Ed25519 para relacionar la
+identidad del software, la licencia y los archivos críticos de cada
+publicación. El build normal no genera claves ni firmas; el flujo firmado
+requiere una clave privada suministrada de forma explícita. La operación,
+custodia, rotación, recuperación ante pérdida o compromiso y las limitaciones
+están documentadas en
+[`docs/integrity-signing.md`](docs/integrity-signing.md).
+El manifiesto `formatVersion: 1` utiliza una canonicalización determinista
+interna del proyecto; no se presenta como una implementación de RFC 8785/JCS.
+El build firmado protege recursivamente todos los archivos regulares de la
+publicación, incluida la clave pública, y se prepara de forma transaccional
+antes de reemplazar `dist`.
 
 ## Rollback
 

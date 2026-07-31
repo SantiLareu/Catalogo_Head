@@ -5,10 +5,10 @@ function Footer() {
   const {
     owner,
     developer,
-    licensedTo,
     copyrightYear,
     rightsNotice
   } = companyConfig.ownership;
+  const { licensedTo } = companyConfig.license;
 
   return (
     <footer>

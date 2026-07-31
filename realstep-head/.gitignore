@@ -2,3 +2,9 @@ node_modules/
 generated/*.tmp
 generated/.*.tmp
 react-app/dist/
+.signing/
+*.private.pem
+*-private.pem
+integrity-manifest.sig.tmp
+.env.signing
+.env.*.local
