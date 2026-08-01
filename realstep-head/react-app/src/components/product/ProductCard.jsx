@@ -4,12 +4,14 @@ import { resolveProductImage } from '../../data/productImages.js';
 import { productSelectionActions } from '../../hooks/productSelectionReducer.js';
 import useProductSelection from '../../hooks/useProductSelection.js';
 import useCart from '../../hooks/useCart.js';
+import { getProductTargetId } from '../../utils/navigation.js';
 import Lightbox from '../lightbox/Lightbox.jsx';
 import ProductActions from './ProductActions.jsx';
 import ProductGallery from './ProductGallery.jsx';
 import ProductInfo from './ProductInfo.jsx';
 import QuantitySelector from './QuantitySelector.jsx';
 import SizeSelector from './SizeSelector.jsx';
+import Specifications from './Specifications.jsx';
 import VariantSelector from './VariantSelector.jsx';
 
 function ProductCard({ categories, product }) {
@@ -17,6 +19,8 @@ function ProductCard({ categories, product }) {
   const { state, dispatch, variant, images: imagePaths, sizes, code, price } =
     useProductSelection(product, resetVersion);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [specificationsOpen, setSpecificationsOpen] = useState(false);
+  const productRef = useRef(null);
   const openerRef = useRef(null);
   const variantControlRef = useRef(null);
   const sizeControlRef = useRef(null);
@@ -33,10 +37,29 @@ function ProductCard({ categories, product }) {
     [product.variants]
   );
   const imageCount = images.length;
+  const productTargetId = getProductTargetId(product.id);
+  const specificationsContentId = `${productTargetId}-specifications`;
 
   useEffect(() => {
     setLightboxOpen(false);
+    setSpecificationsOpen(false);
   }, [resetVersion]);
+
+  useEffect(() => {
+    setSpecificationsOpen(false);
+  }, [product.id]);
+
+  useEffect(() => {
+    if (!specificationsOpen) return undefined;
+    const closeWhenAnotherProductReceivesFocus = (event) => {
+      const focusedProduct = event.target?.closest?.('[data-product-id]');
+      if (focusedProduct && focusedProduct !== productRef.current) {
+        setSpecificationsOpen(false);
+      }
+    };
+    document.addEventListener('focusin', closeWhenAnotherProductReceivesFocus);
+    return () => document.removeEventListener('focusin', closeWhenAnotherProductReceivesFocus);
+  }, [specificationsOpen]);
 
   const selectImage = (imageIndex) =>
     dispatch({ type: productSelectionActions.SET_IMAGE, imageIndex, imageCount });
@@ -87,7 +110,15 @@ function ProductCard({ categories, product }) {
   };
 
   return (
-    <article className={`product product--${product.category || 'general'}`} data-product-id={product.id}>
+    <article
+      className={`product product--${product.category || 'general'} ${
+        specificationsOpen ? 'product--specifications-open' : ''
+      }`}
+      data-product-id={product.id}
+      id={productTargetId}
+      ref={productRef}
+      tabIndex="-1"
+    >
       <ProductGallery
         images={images}
         imageIndex={state.imageIndex}
@@ -105,7 +136,6 @@ function ProductCard({ categories, product }) {
         description={product.description}
         name={product.name}
         price={price}
-        specifications={specifications}
         controls={
           <>
             <VariantSelector
@@ -135,6 +165,13 @@ function ProductCard({ categories, product }) {
             <ProductActions onAdd={addToCart} />
           </>
         }
+      />
+
+      <Specifications
+        contentId={specificationsContentId}
+        expanded={specificationsOpen}
+        onToggle={() => setSpecificationsOpen((open) => !open)}
+        specifications={specifications}
       />
 
       {lightboxOpen && images.length > 0 ? (
