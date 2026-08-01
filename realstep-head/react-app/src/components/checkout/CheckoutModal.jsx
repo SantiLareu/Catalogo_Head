@@ -46,9 +46,14 @@ function CheckoutModal({
   onCustomerChange,
   onSuccess,
   openerRef,
-  products
 }) {
-  const { completeCheckout, lines: cart, refreshCart, showToast } = useCart();
+  const {
+    checkCatalog,
+    completeCheckout,
+    lines: cart,
+    products,
+    showToast
+  } = useCart();
   const [sending, setSending] = useState(false);
   const [ownerSent, setOwnerSent] = useState(false);
   const [status, setStatus] = useState({ type: 'idle', message: '' });
@@ -64,16 +69,30 @@ function CheckoutModal({
   useFocusTrap(modalRef, true, close);
 
   useEffect(() => {
-    const report = refreshCart();
-    if (report.checkoutBlocked) {
-      setStatus({
-        type: 'error',
-        message: 'El catálogo fue actualizado. Volvé al pedido y revisá los artículos señalados.'
-      });
-    }
+    let active = true;
+    setStatus({ type: 'checking', message: 'Comprobando catálogo…' });
+    void checkCatalog().then((validation) => {
+      if (!active) return;
+      if (!validation.valid) {
+        setStatus({
+          type: 'error',
+          message: 'No pudimos comprobar la disponibilidad actual. Intentá nuevamente.'
+        });
+      } else if (validation.reconciliation.checkoutBlocked) {
+        setStatus({
+          type: 'error',
+          message: 'El catálogo fue actualizado. Volvé al pedido y revisá los artículos señalados.'
+        });
+      } else {
+        setStatus({ type: 'idle', message: '' });
+      }
+    });
     formRef.current?.elements.name?.focus({ preventScroll: true });
-    return () => openerRef.current?.focus({ preventScroll: true });
-  }, [openerRef, refreshCart]);
+    return () => {
+      active = false;
+      openerRef.current?.focus({ preventScroll: true });
+    };
+  }, [checkCatalog, openerRef]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -84,21 +103,34 @@ function CheckoutModal({
     }
     if (submittingRef.current || cart.length === 0) return;
 
-    const reconciliation = refreshCart();
-    if (reconciliation.checkoutBlocked) {
+    submittingRef.current = true;
+    setSending(true);
+    setStatus({ type: 'checking', message: 'Comprobando catálogo…' });
+
+    const validation = await checkCatalog({ force: true });
+    if (!validation.valid) {
+      setStatus({
+        type: 'error',
+        message: 'No pudimos comprobar la disponibilidad actual. Intentá nuevamente.'
+      });
+      submittingRef.current = false;
+      setSending(false);
+      return;
+    }
+    if (validation.reconciliation.checkoutBlocked) {
       setStatus({
         type: 'error',
         message: 'El catálogo fue actualizado. Volvé al pedido y revisá los artículos señalados.'
       });
+      submittingRef.current = false;
+      setSending(false);
       return;
     }
 
-    submittingRef.current = true;
-    setSending(true);
     setStatus({ type: 'progress', message: 'Enviando pedido…' });
 
     try {
-      const orderLines = buildOrderLines(cart, products);
+      const orderLines = buildOrderLines(cart, validation.catalog.products);
       await runCheckoutTransaction({
         send: () => sendOrderEmails({
           customer,

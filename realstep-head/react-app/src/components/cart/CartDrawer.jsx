@@ -8,7 +8,7 @@ import CartItem from './CartItem.jsx';
 import CartSummary from './CartSummary.jsx';
 
 function CartDrawer({ continueRef, onClose, onContinue, openerRef }) {
-  const { lines, reconciliation, refreshCart } = useCart();
+  const { catalogValidation, checkCatalog, lines, reconciliation } = useCart();
   const drawerRef = useRef(null);
   const closeRef = useRef(null);
   const close = useCallback(() => onClose(), [onClose]);
@@ -17,10 +17,9 @@ function CartDrawer({ continueRef, onClose, onContinue, openerRef }) {
   useFocusTrap(drawerRef, true, close);
 
   useEffect(() => {
-    refreshCart();
     closeRef.current?.focus({ preventScroll: true });
     return () => openerRef.current?.focus({ preventScroll: true });
-  }, [openerRef, refreshCart]);
+  }, [openerRef]);
 
   return createPortal(
     <aside
@@ -41,6 +40,17 @@ function CartDrawer({ continueRef, onClose, onContinue, openerRef }) {
           <p className="cart-reconciliation-alert" role="alert">
             El catálogo fue actualizado. Algunos artículos de tu pedido requieren revisión.
           </p>
+        ) : null}
+        {catalogValidation.checking ? (
+          <p className="cart-validation-status" role="status">Comprobando catálogo…</p>
+        ) : null}
+        {catalogValidation.unavailable ? (
+          <div className="cart-validation-error" role="alert">
+            <p>{catalogValidation.message}</p>
+            <button type="button" onClick={() => void checkCatalog({ force: true })}>
+              REINTENTAR
+            </button>
+          </div>
         ) : null}
         <div className="items">
           {lines.length === 0 ? (

@@ -6,7 +6,7 @@ Aplicación React/Vite para explorar un catálogo mayorista, seleccionar variant
 
 ## Estado actual
 
-Están implementados el importador Excel/JSON, el catálogo interactivo, buscador por datos estructurados, galería y lightbox, ficha técnica desplegable a ancho completo, carrito persistido, reconciliación contra el catálogo vigente, checkout, envío por EmailJS y firma/integridad del build.
+Están implementados el importador Excel/JSON, el catálogo interactivo, buscador por datos estructurados, galería y lightbox, ficha técnica desplegable a ancho completo, carrito persistido, reconciliación contra el catálogo publicado sin requerir una recarga, checkout, envío por EmailJS y firma/integridad del build.
 
 Son soluciones **transitorias** el carrito en `localStorage`, su reconciliación frontend y EmailJS desde el navegador. No existen todavía backend autoritativo, API, PostgreSQL, Prisma ni persistencia duradera de pedidos. No es un ecommerce con pago online; las solicitudes quedan sujetas a confirmación comercial.
 
@@ -211,6 +211,8 @@ No trabajar en paralelo sobre cambios no sincronizados. Los agentes de IA no deb
 
 - EmailJS construye y envía el pedido desde el navegador.
 - `localStorage` puede ser manipulado; la reconciliación protege consistencia, no seguridad.
+- La comprobación transitoria descarga `catalog.json` con `cache: 'no-store'` antes de acciones relevantes, al recuperar visibilidad o foco y siempre antes del envío. Comparte solicitudes simultáneas, limita las comprobaciones normales a una por minuto y bloquea el envío si no puede validar una respuesta correcta.
+- `catalog.json` se genera automáticamente desde `generated/catalog.json` durante el build y queda incluido en el manifiesto firmado; no debe editarse ni copiarse manualmente.
 - No hay backend, base de datos, autenticación, autorización ni persistencia duradera.
 - No existe idempotencia server-side ni control propio de rate limiting.
 - La privacidad, retención y eliminación de datos personales están pendientes de diseño.

@@ -12,7 +12,7 @@ import { scrollToHashTarget } from '../../utils/navigation.js';
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
 function Header({ categories, products }) {
-  const { refreshCart, showToast, units } = useCart();
+  const { catalogValidation, checkCatalog, showToast, units } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
@@ -24,13 +24,19 @@ function Header({ categories, products }) {
     event.preventDefault();
     scrollToHashTarget('#inicio');
   };
-  const openCart = () => {
-    refreshCart();
+  const openCart = async () => {
+    if (catalogValidation.checking) return;
+    await checkCatalog();
     setCartOpen(true);
   };
-  const continueToCheckout = () => {
-    const report = refreshCart();
-    if (report.checkoutBlocked) {
+  const continueToCheckout = async () => {
+    if (catalogValidation.checking) return;
+    const validation = await checkCatalog();
+    if (!validation.valid) {
+      showToast('No pudimos comprobar la disponibilidad actual. Intentá nuevamente.');
+      return;
+    }
+    if (validation.reconciliation.checkoutBlocked) {
       showToast('Revisá los artículos señalados antes de continuar');
       return;
     }
@@ -70,10 +76,11 @@ function Header({ categories, products }) {
           type="button"
           aria-label={`Abrir pedido, ${units} ${units === 1 ? 'unidad' : 'unidades'}`}
           aria-haspopup="dialog"
+          disabled={catalogValidation.checking}
           onClick={openCart}
           ref={cartButtonRef}
         >
-          Pedido
+          {catalogValidation.checking ? 'Comprobando catálogo…' : 'Pedido'}
           <span aria-hidden="true">{units}</span>
         </button>
       </div>
@@ -105,7 +112,6 @@ function Header({ categories, products }) {
             setCheckoutOpen(false);
           }}
           openerRef={continueButtonRef}
-          products={products}
         />
       ) : null}
     </header>

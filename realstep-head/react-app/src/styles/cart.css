@@ -16,6 +16,9 @@
 .items{flex:1;overflow:auto;padding:20px 24px}
 .items .empty{text-align:center;padding:50px 12px;color:var(--m)}
 .cart-reconciliation-alert{margin:0;padding:14px 24px;background:#fff3cd;color:#664d03;font-weight:800}
+.cart-validation-status{margin:0;padding:14px 24px;background:#eef4ff;color:#173b72;font-weight:800}
+.cart-validation-error{margin:0;padding:14px 24px;background:#fde8e8;color:#851616;font-weight:800}
+.cart-validation-error button{margin-left:10px;min-height:36px;border:1px solid currentColor;background:#fff;color:inherit;font-weight:900}
 .cart-item--review{border-left:4px solid #b45309}
 .cart-item-issues{margin-top:10px;padding:10px;background:#fff3cd;color:#664d03;font-size:12px;font-weight:700}
 .cart-item-issues p{margin:0 0 6px}

@@ -45,7 +45,7 @@ function App() {
   }, [validTargetIds]);
 
   return (
-    <CartProvider products={catalog.products}>
+    <CartProvider initialCatalog={catalog}>
       <Header categories={categories} products={catalog.products} />
       <main>
         <Hero />

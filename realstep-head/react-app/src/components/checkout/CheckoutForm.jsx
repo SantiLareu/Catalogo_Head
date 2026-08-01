@@ -60,10 +60,9 @@ function CheckoutForm({
         Esta solicitud no procesa pagos ni confirma stock de manera definitiva.
       </p>
       <CheckoutStatus status={status} />
-      <CheckoutActions sending={sending} />
+      <CheckoutActions checkingCatalog={status.type === 'checking'} sending={sending} />
     </form>
   );
 }
 
 export default CheckoutForm;
-

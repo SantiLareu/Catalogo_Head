@@ -126,7 +126,7 @@ Los estados usados aquí son: **implementado**, **parcialmente implementado**, *
 | Subsistema | Estado | Archivos principales | Pruebas | Limitaciones relevantes |
 |---|---|---|---|---|
 | Importación desde Excel | Implementado | `catalog/products.xlsx`, `scripts/import-products.mjs`, `scripts/catalog-import/` | `tests/importer/` | El Excel debe respetar el esquema; hay códigos/SKU pendientes y advertencias de datos. |
-| Catálogo React | Implementado | `react-app/src/App.jsx`, `react-app/src/components/catalog/`, `react-app/src/components/product/` | `react-app/tests/productSelection.test.mjs`, `navigation.test.mjs` | Consume un JSON estático; no consulta stock autoritativo en tiempo real. |
+| Catálogo React | Implementado | `react-app/src/App.jsx`, `react-app/src/components/catalog/`, `react-app/src/components/product/`, `react-app/vite.config.js` | `react-app/tests/productSelection.test.mjs`, `navigation.test.mjs`, `publishedCatalog.test.mjs` | El build publica `catalog.json` para refrescar la consistencia del carrito; sigue sin existir stock autoritativo en tiempo real. |
 | Categorías y navegación | Implementado | `react-app/src/components/catalog/`, `react-app/src/components/layout/` | `navigation.test.mjs` | La cobertura automatizada no sustituye pruebas manuales en dispositivos reales. |
 | Búsqueda de productos | Implementado | `react-app/src/data/productSearch.js`, `react-app/src/components/search/ProductSearch.jsx` | `react-app/tests/search.test.mjs` | Indexa datos estructurados del catálogo vigente; los códigos presentes solo dentro de nombres de imágenes no se consideran SKU. |
 | Productos, variantes, talles y precios | Implementado | `react-app/src/components/product/`, `react-app/src/hooks/productSelectionReducer.js`, `react-app/src/hooks/useProductSelection.js` | `productSelection.test.mjs` | Disponibilidad y precio dependen del catálogo publicado. |
@@ -137,7 +137,7 @@ Los estados usados aquí son: **implementado**, **parcialmente implementado**, *
 | Checkout | Implementado parcialmente / transitorio | `react-app/src/components/checkout/`, `react-app/src/services/emailService.js` | `checkout.test.mjs` | Valida en frontend; no persiste pedidos ni garantiza idempotencia duradera. |
 | Envío de pedidos | Transitorio | `react-app/src/services/emailService.js` | `checkout.test.mjs` | EmailJS opera desde el navegador; el correo no es una base de datos. |
 | Navegación responsive | Implementado | componentes de layout y estilos en `react-app/src/styles/` | `navigation.test.mjs` | Sin pruebas E2E, visuales ni de accesibilidad automatizadas. |
-| Reconciliación de carrito | Implementado como protección transitoria | `react-app/src/services/cartReconciliation.js`, `CartContext.jsx`, componentes de carrito/checkout | `cart.test.mjs`, `checkout.test.mjs` | Consistencia frontend, no seguridad; depende del JSON vigente. |
+| Reconciliación de carrito | Implementado como protección transitoria | `react-app/src/services/cartReconciliation.js`, `publishedCatalog.js`, `CartContext.jsx`, componentes de carrito/checkout | `cart.test.mjs`, `checkout.test.mjs`, `publishedCatalog.test.mjs` | Consistencia frontend, no seguridad; depende de que el hosting entregue el JSON publicado vigente. |
 | Firma e integridad | Implementado | `scripts/integrity/`, `react-app/src/security/integrityVerifier.js`, `react-app/src/main.jsx` | `tests/integrity/`, `react-app/tests/integrityVerifier.test.mjs` | La verificación en navegador es no bloqueante; el alojamiento final debe conservar archivos y headers. |
 | Backend, base de datos y autenticación | Planificado / pendiente de diseño | No existen módulos en el repositorio | No existen | No evaluables como implementación actual. |
 
@@ -145,7 +145,7 @@ Los estados usados aquí son: **implementado**, **parcialmente implementado**, *
 
 La reconciliación es una protección transitoria implementada en `react-app/src/services/cartReconciliation.js` e integrada en el contexto y las vistas del carrito.
 
-Las líneas persistidas conservan identificadores (`productId`, `variantId`), talle, cantidad y `priceSnapshot`. Los nombres, imágenes, precios vigentes y totales se vuelven a resolver desde `generated/catalog.json`; los textos y totales persistidos no se consideran autoridad.
+Las líneas persistidas conservan identificadores (`productId`, `variantId`), talle, cantidad y `priceSnapshot`. Los nombres, imágenes, precios vigentes y totales se vuelven a resolver desde el catálogo activo; los textos y totales persistidos no se consideran autoridad. Vite incorpora el JSON generado al bundle y además publica una copia automática como `catalog.json`, sin duplicación manual de datos.
 
 Estados de reconciliación:
 
@@ -158,7 +158,9 @@ Estados de reconciliación:
 
 Las líneas inválidas no se eliminan silenciosamente: se conservan, se marcan y el usuario puede quitarlas. Un cambio de precio actualiza el precio mostrado, requiere reconocimiento y los totales se recalculan con el catálogo vigente. El checkout queda bloqueado mientras existan líneas inválidas o cambios sin revisar.
 
-La reconciliación se ejecuta al hidratar el carrito, al abrirlo, al abrir el checkout y justo antes del envío. La operación repetida debe ser determinista y tolera estructuras antiguas o corruptas sin romper la aplicación.
+La reconciliación local se ejecuta al hidratar el carrito. Antes de abrir el carrito, continuar o abrir checkout, al recuperar visibilidad o foco y justo antes del envío, `react-app/src/services/publishedCatalog.js` consulta `catalog.json` con `fetch` y `cache: 'no-store'`. Las comprobaciones exitosas tienen una ventana mínima de 60 segundos, las solicitudes simultáneas comparten una promesa y el envío fuerza una consulta nueva. Solo un JSON con estructura mínima válida reemplaza el catálogo activo.
+
+Los estados de consulta son `idle`, `checking`, `current`, `changes_detected`, `unavailable` y `error`. Mientras se consulta se bloquea la acción correspondiente. Ante red caída, HTTP no exitoso o contenido inválido se conserva tanto el carrito como el último catálogo válido, se ofrece reintento y se bloquea el envío con un mensaje prudente. `catalog.json` forma parte de `dist/` y, por lo tanto, del manifiesto y la firma del build oficial.
 
 > Esta medida protege la consistencia de la interfaz, pero no equivale a validación de seguridad. `localStorage` y todo dato del navegador pueden ser modificados por el usuario. El backend futuro deberá volver a validar y recalcular todo.
 

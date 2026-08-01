@@ -2,7 +2,8 @@ import useCart from '../../hooks/useCart.js';
 import { formatMoney } from '../../utils/money.js';
 
 function CartSummary({ continueRef, onContinue }) {
-  const { lines, reconciliation, total, units } = useCart();
+  const { catalogValidation, lines, reconciliation, total, units } = useCart();
+  const blocked = reconciliation.checkoutBlocked || catalogValidation.checkoutBlocked;
   return (
     <div className="summary">
       <div><span>Unidades</span><strong>{units}</strong></div>
@@ -10,15 +11,17 @@ function CartSummary({ continueRef, onContinue }) {
       <button
         className="primary"
         type="button"
-        disabled={lines.length === 0 || reconciliation.checkoutBlocked}
+        disabled={lines.length === 0 || blocked}
         onClick={onContinue}
         ref={continueRef}
       >
-        CONTINUAR
+        {catalogValidation.checking ? 'Comprobando catálogo…' : 'CONTINUAR'}
       </button>
-      {reconciliation.checkoutBlocked && lines.length > 0 ? (
+      {blocked && lines.length > 0 && !catalogValidation.checking ? (
         <p className="summary-blocked" role="status">
-          Revisá o eliminá los artículos señalados para continuar.
+          {catalogValidation.unavailable
+            ? catalogValidation.message
+            : 'Revisá o eliminá los artículos señalados para continuar.'}
         </p>
       ) : null}
     </div>
