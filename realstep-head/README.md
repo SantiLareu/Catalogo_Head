@@ -6,7 +6,7 @@ Aplicación React/Vite para explorar un catálogo mayorista, seleccionar variant
 
 ## Estado actual
 
-Están implementados el importador Excel/JSON, el catálogo interactivo, galería y lightbox, carrito persistido, reconciliación contra el catálogo vigente, checkout, envío por EmailJS y firma/integridad del build.
+Están implementados el importador Excel/JSON, el catálogo interactivo, buscador por datos estructurados, galería y lightbox, ficha técnica desplegable a ancho completo, carrito persistido, reconciliación contra el catálogo vigente, checkout, envío por EmailJS y firma/integridad del build.
 
 Son soluciones **transitorias** el carrito en `localStorage`, su reconciliación frontend y EmailJS desde el navegador. No existen todavía backend autoritativo, API, PostgreSQL, Prisma ni persistencia duradera de pedidos. No es un ecommerce con pago online; las solicitudes quedan sujetas a confirmación comercial.
 
@@ -215,6 +215,17 @@ No trabajar en paralelo sobre cambios no sincronizados. Los agentes de IA no deb
 - No existe idempotencia server-side ni control propio de rate limiting.
 - La privacidad, retención y eliminación de datos personales están pendientes de diseño.
 - La verificación de integridad en React es actualmente no bloqueante.
+- Los códigos que solo aparecen dentro de nombres de archivos de imagen no se consideran códigos/SKU buscables; deben cargarse en el campo estructurado correspondiente del catálogo.
+
+### Contactos públicos del footer
+
+Los contactos se configuran en `react-app/src/config/company.js`, dentro de `companyConfig.contact`:
+
+- `instagramUrl`: URL HTTPS completa de Instagram;
+- `whatsappNumber`: número internacional solo con dígitos; para Argentina, sin `+`, espacios ni guiones;
+- `whatsappMessage`: mensaje inicial configurable y codificado en el enlace.
+
+Instagram y WhatsApp permanecen ocultos mientras su URL o número obligatorio esté vacío. No se deben inventar datos ni agregar botones sin destino.
 
 Nunca confiar en datos provenientes del navegador. El backend futuro deberá validar disponibilidad, cantidades y precios, recalcular totales y persistir antes de notificar.
 

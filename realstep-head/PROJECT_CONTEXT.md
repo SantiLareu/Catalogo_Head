@@ -128,8 +128,10 @@ Los estados usados aquí son: **implementado**, **parcialmente implementado**, *
 | Importación desde Excel | Implementado | `catalog/products.xlsx`, `scripts/import-products.mjs`, `scripts/catalog-import/` | `tests/importer/` | El Excel debe respetar el esquema; hay códigos/SKU pendientes y advertencias de datos. |
 | Catálogo React | Implementado | `react-app/src/App.jsx`, `react-app/src/components/catalog/`, `react-app/src/components/product/` | `react-app/tests/productSelection.test.mjs`, `navigation.test.mjs` | Consume un JSON estático; no consulta stock autoritativo en tiempo real. |
 | Categorías y navegación | Implementado | `react-app/src/components/catalog/`, `react-app/src/components/layout/` | `navigation.test.mjs` | La cobertura automatizada no sustituye pruebas manuales en dispositivos reales. |
+| Búsqueda de productos | Implementado | `react-app/src/data/productSearch.js`, `react-app/src/components/search/ProductSearch.jsx` | `react-app/tests/search.test.mjs` | Indexa datos estructurados del catálogo vigente; los códigos presentes solo dentro de nombres de imágenes no se consideran SKU. |
 | Productos, variantes, talles y precios | Implementado | `react-app/src/components/product/`, `react-app/src/hooks/productSelectionReducer.js`, `react-app/src/hooks/useProductSelection.js` | `productSelection.test.mjs` | Disponibilidad y precio dependen del catálogo publicado. |
 | Galería y lightbox | Implementado | `react-app/src/components/product/ProductGallery.jsx`, `react-app/src/components/lightbox/Lightbox.jsx` | Cobertura indirecta en pruebas React | No hay suite visual o E2E específica. |
+| Ficha técnica desplegable | Implementado | `react-app/src/components/product/ProductCard.jsx`, `Specifications.jsx`, `react-app/src/styles/product.css` | `react-app/tests/presentation.test.mjs` | Cerrada por defecto; al abrir ocupa el ancho de galería y panel y desactiva el sticky comercial. En móvil conserva el orden lógico. |
 | Carrito | Implementado | `react-app/src/context/CartContext.jsx`, `react-app/src/reducers/cartReducer.js`, `react-app/src/components/cart/` | `react-app/tests/cart.test.mjs` | No existe validación server-side. |
 | Persistencia local | Transitorio | `react-app/src/hooks/usePersistentCart.js`, `react-app/src/services/cartStorage.js` | `cart.test.mjs` | `localStorage` es editable, borrable y no sirve como autoridad. |
 | Checkout | Implementado parcialmente / transitorio | `react-app/src/components/checkout/`, `react-app/src/services/emailService.js` | `checkout.test.mjs` | Valida en frontend; no persiste pedidos ni garantiza idempotencia duradera. |
@@ -218,8 +220,11 @@ El build oficial destinado a publicación debe ser el firmado. `npm run react:bu
 | `software` | Técnico | `softwareId` y nombre del motor. |
 | `ownership` | Legal / técnico | Titular, desarrollador, `projectId`, año y aviso de derechos del software. |
 | `license` | Legal / instalación | `licenseId` y licenciatario. |
+| `contact` | Comercial / instalación | URL pública de Instagram, número internacional de WhatsApp y mensaje inicial. Los enlaces se ocultan cuando falta su dato obligatorio. |
 
 Modificar valores legales, de autoría, licencia o identidad de instalación requiere autorización explícita. Para múltiples marcas, se debe evolucionar hacia configuración separada sin duplicar el motor.
+
+Los contactos públicos se completan en `companyConfig.contact`. `instagramUrl` debe ser una URL HTTPS completa de Instagram. `whatsappNumber` debe contener solo dígitos en formato internacional; para Argentina, sin `+`, espacios ni guiones. `whatsappMessage` puede adaptarse por instalación. Con valores vacíos no se renderizan enlaces ni botones sin destino.
 
 ## 11. Datos del catálogo
 
