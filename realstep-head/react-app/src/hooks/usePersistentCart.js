@@ -1,12 +1,16 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react';
 import { cartActions, cartReducer } from '../reducers/cartReducer.js';
 import { readCart, removeCart, writeCart } from '../services/cartStorage.js';
+import { initializePriceSnapshots } from '../services/cartReconciliation.js';
 
 function usePersistentCart(products) {
   const [lines, dispatch] = useReducer(
     cartReducer,
     products,
-    (catalogProducts) => readCart(window.localStorage, catalogProducts)
+    (catalogProducts) => initializePriceSnapshots(
+      readCart(window.localStorage),
+      catalogProducts
+    )
   );
   const removeOnNextWriteRef = useRef(false);
 

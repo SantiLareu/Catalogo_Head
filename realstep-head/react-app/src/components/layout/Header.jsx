@@ -12,7 +12,7 @@ import { scrollToHashTarget } from '../../utils/navigation.js';
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
 function Header({ categories }) {
-  const { units } = useCart();
+  const { refreshCart, showToast, units } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
@@ -23,6 +23,19 @@ function Header({ categories }) {
   const handleHomeClick = (event) => {
     event.preventDefault();
     scrollToHashTarget('#inicio');
+  };
+  const openCart = () => {
+    refreshCart();
+    setCartOpen(true);
+  };
+  const continueToCheckout = () => {
+    const report = refreshCart();
+    if (report.checkoutBlocked) {
+      showToast('Revisá los artículos señalados antes de continuar');
+      return;
+    }
+    setCartOpen(false);
+    setCheckoutOpen(true);
   };
 
   return (
@@ -52,7 +65,7 @@ function Header({ categories }) {
           type="button"
           aria-label={`Abrir pedido, ${units} ${units === 1 ? 'unidad' : 'unidades'}`}
           aria-haspopup="dialog"
-          onClick={() => setCartOpen(true)}
+          onClick={openCart}
           ref={cartButtonRef}
         >
           Pedido
@@ -70,12 +83,8 @@ function Header({ categories }) {
         <CartDrawer
           continueRef={continueButtonRef}
           onClose={() => setCartOpen(false)}
-          onContinue={() => {
-            setCartOpen(false);
-            setCheckoutOpen(true);
-          }}
+          onContinue={continueToCheckout}
           openerRef={cartButtonRef}
-          products={catalog.products}
         />
       ) : null}
       {checkoutOpen ? (

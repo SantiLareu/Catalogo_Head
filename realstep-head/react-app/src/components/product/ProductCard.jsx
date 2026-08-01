@@ -78,6 +78,7 @@ function ProductCard({ categories, product }) {
     if (variant) line.variantId = variant.id;
     if (requiresSize) line.size = state.size;
     line.quantity = state.quantity;
+    line.priceSnapshot = price;
     addLine(line);
     showToast(
       `${product.name}${variant?.colorName ? ` color ${variant.colorName}` : ''}` +

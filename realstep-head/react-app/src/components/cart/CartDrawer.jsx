@@ -7,8 +7,8 @@ import { createLineKey } from '../../reducers/cartReducer.js';
 import CartItem from './CartItem.jsx';
 import CartSummary from './CartSummary.jsx';
 
-function CartDrawer({ continueRef, onClose, onContinue, openerRef, products }) {
-  const { lines } = useCart();
+function CartDrawer({ continueRef, onClose, onContinue, openerRef }) {
+  const { lines, reconciliation, refreshCart } = useCart();
   const drawerRef = useRef(null);
   const closeRef = useRef(null);
   const close = useCallback(() => onClose(), [onClose]);
@@ -17,9 +17,10 @@ function CartDrawer({ continueRef, onClose, onContinue, openerRef, products }) {
   useFocusTrap(drawerRef, true, close);
 
   useEffect(() => {
+    refreshCart();
     closeRef.current?.focus({ preventScroll: true });
     return () => openerRef.current?.focus({ preventScroll: true });
-  }, [openerRef]);
+  }, [openerRef, refreshCart]);
 
   return createPortal(
     <aside
@@ -36,15 +37,19 @@ function CartDrawer({ continueRef, onClose, onContinue, openerRef, products }) {
           <div><p className="ey">TU SELECCIÓN</p><h2 id="cart-title">Pedido</h2></div>
           <button className="close" type="button" aria-label="Cerrar pedido" onClick={close} ref={closeRef}>×</button>
         </div>
+        {reconciliation.hasChanges ? (
+          <p className="cart-reconciliation-alert" role="alert">
+            El catálogo fue actualizado. Algunos artículos de tu pedido requieren revisión.
+          </p>
+        ) : null}
         <div className="items">
           {lines.length === 0 ? (
             <div className="empty">
               <div><strong>Tu pedido está vacío.</strong><p>Elegí un modelo, talle y cantidad para continuar.</p></div>
             </div>
-          ) : lines.map((line) => {
-            const product = products.find((item) => item.id === line.productId);
-            return product ? <CartItem key={createLineKey(line)} line={line} product={product} /> : null;
-          })}
+          ) : reconciliation.entries.map((entry) => (
+            <CartItem entry={entry} key={createLineKey(entry.line)} />
+          ))}
         </div>
         <CartSummary continueRef={continueRef} onContinue={onContinue} />
       </div>

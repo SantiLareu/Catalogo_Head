@@ -15,6 +15,12 @@
 .close:focus-visible,.remove:focus-visible,.cart-item-quantity button:focus-visible{outline:3px solid #777;outline-offset:2px}
 .items{flex:1;overflow:auto;padding:20px 24px}
 .items .empty{text-align:center;padding:50px 12px;color:var(--m)}
+.cart-reconciliation-alert{margin:0;padding:14px 24px;background:#fff3cd;color:#664d03;font-weight:800}
+.cart-item--review{border-left:4px solid #b45309}
+.cart-item-issues{margin-top:10px;padding:10px;background:#fff3cd;color:#664d03;font-size:12px;font-weight:700}
+.cart-item-issues p{margin:0 0 6px}
+.cart-item-issues button{min-height:40px;border:1px solid #664d03;background:#fff;color:#664d03;font-weight:900}
+.summary-blocked{margin:10px 0 0;color:#851616;font-size:12px;font-weight:800}
 .item{padding:17px 0;border-bottom:1px solid var(--l)}
 .cart-item{display:grid;grid-template-columns:84px minmax(0,1fr);gap:16px}
 .cart-item-image{width:84px;height:84px;border:1px solid var(--l);object-fit:contain;background:#fafafa}

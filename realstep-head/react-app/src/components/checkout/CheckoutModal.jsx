@@ -48,7 +48,7 @@ function CheckoutModal({
   openerRef,
   products
 }) {
-  const { completeCheckout, lines: cart, showToast } = useCart();
+  const { completeCheckout, lines: cart, refreshCart, showToast } = useCart();
   const [sending, setSending] = useState(false);
   const [ownerSent, setOwnerSent] = useState(false);
   const [status, setStatus] = useState({ type: 'idle', message: '' });
@@ -64,9 +64,16 @@ function CheckoutModal({
   useFocusTrap(modalRef, true, close);
 
   useEffect(() => {
+    const report = refreshCart();
+    if (report.checkoutBlocked) {
+      setStatus({
+        type: 'error',
+        message: 'El catálogo fue actualizado. Volvé al pedido y revisá los artículos señalados.'
+      });
+    }
     formRef.current?.elements.name?.focus({ preventScroll: true });
     return () => openerRef.current?.focus({ preventScroll: true });
-  }, [openerRef]);
+  }, [openerRef, refreshCart]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -76,6 +83,15 @@ function CheckoutModal({
       return;
     }
     if (submittingRef.current || cart.length === 0) return;
+
+    const reconciliation = refreshCart();
+    if (reconciliation.checkoutBlocked) {
+      setStatus({
+        type: 'error',
+        message: 'El catálogo fue actualizado. Volvé al pedido y revisá los artículos señalados.'
+      });
+      return;
+    }
 
     submittingRef.current = true;
     setSending(true);

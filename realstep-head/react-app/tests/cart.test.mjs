@@ -14,6 +14,11 @@ import {
   sanitizeCart,
   writeCart
 } from '../src/services/cartStorage.js';
+import {
+  acknowledgeCurrentPrice,
+  initializePriceSnapshots,
+  reconcileCart
+} from '../src/services/cartReconciliation.js';
 
 const products = [
   { id: 'plain', price: 100, sizes: [], variants: [] },
@@ -170,14 +175,19 @@ test('sanea carrito válido y conserva ID de variante con espacio final', () => 
   assert.equal(result[2].variantId, 'black ');
 });
 
-test('descarta únicamente producto, variante y talle inexistentes', () => {
+test('conserva producto, variante y talle inexistentes para reconciliarlos', () => {
   const result = sanitizeCart([
     { productId: 'missing', quantity: 1 },
     { productId: 'variant', variantId: 'missing', size: 'M', quantity: 1 },
     { productId: 'variant', variantId: 'white', size: 'XL', quantity: 1 },
     { productId: 'plain', quantity: 1 }
   ], products);
-  assert.deepEqual(result, [{ productId: 'plain', quantity: 1 }]);
+  assert.deepEqual(result, [
+    { productId: 'missing', quantity: 1 },
+    { productId: 'variant', variantId: 'missing', size: 'M', quantity: 1 },
+    { productId: 'variant', variantId: 'white', size: 'XL', quantity: 1 },
+    { productId: 'plain', quantity: 1 }
+  ]);
 });
 
 test('normaliza cantidades no enteras, cero y negativas; descarta no numéricas', () => {
@@ -207,6 +217,105 @@ test('JSON corrupto no lanza y persistencia conserva clave y formato legacy', ()
   assert.equal(CART_STORAGE_KEY, 'realstep-head-cart');
   assert.equal(memory.get(CART_STORAGE_KEY), JSON.stringify(lines));
   assert.deepEqual(readCart(storage, products), lines);
+});
+
+test('producto vigente se reconcilia sin cambios', () => {
+  const lines = [{ productId: 'plain', quantity: 2, priceSnapshot: 100 }];
+  const report = reconcileCart(lines, products);
+  assert.equal(report.entries[0].status, 'available');
+  assert.equal(report.checkoutBlocked, false);
+  assert.equal(report.total, 200);
+});
+
+test('producto eliminado se conserva y bloquea checkout', () => {
+  const line = { productId: 'removed', quantity: 1, priceSnapshot: 50 };
+  const report = reconcileCart([line], products);
+  assert.equal(report.entries[0].status, 'product_removed');
+  assert.equal(report.entries[0].line, line);
+  assert.equal(report.checkoutBlocked, true);
+  assert.equal(report.total, 0);
+});
+
+test('variante eliminada se marca explícitamente', () => {
+  const report = reconcileCart([{
+    productId: 'variant',
+    variantId: 'removed',
+    size: 'M',
+    quantity: 1,
+    priceSnapshot: 300
+  }], products);
+  assert.deepEqual(report.entries[0].issues, ['variant_removed']);
+});
+
+test('talle sin stock se marca como size_unavailable', () => {
+  const report = reconcileCart([{
+    productId: 'direct',
+    size: 'L',
+    quantity: 1,
+    priceSnapshot: 200
+  }], products);
+  assert.deepEqual(report.entries[0].issues, ['size_unavailable']);
+  assert.equal(report.checkoutBlocked, true);
+});
+
+test('cantidad superior al stock disponible se marca como unavailable', () => {
+  const stockProducts = [{
+    id: 'limited',
+    price: 10,
+    sizes: [{ size: 'M', stock: 2, inStock: true }],
+    variants: []
+  }];
+  const report = reconcileCart([{
+    productId: 'limited',
+    size: 'M',
+    quantity: 3,
+    priceSnapshot: 10
+  }], stockProducts);
+  assert.deepEqual(report.entries[0].issues, ['unavailable']);
+});
+
+test('precio modificado usa valor vigente y requiere reconocimiento', () => {
+  const line = { productId: 'plain', quantity: 2, priceSnapshot: 90 };
+  const changed = reconcileCart([line], products);
+  assert.deepEqual(changed.entries[0].issues, ['price_changed']);
+  assert.equal(changed.total, 200);
+  assert.equal(changed.checkoutBlocked, true);
+
+  const acknowledged = acknowledgeCurrentPrice(line, products);
+  assert.equal(acknowledged.priceSnapshot, 100);
+  assert.equal(reconcileCart([acknowledged], products).checkoutBlocked, false);
+});
+
+test('carrito mixto conserva líneas y suma sólo precios vigentes resolubles', () => {
+  const lines = [
+    { productId: 'plain', quantity: 2, priceSnapshot: 100 },
+    { productId: 'removed', quantity: 3, priceSnapshot: 999 },
+    { productId: 'variant', variantId: 'black ', size: 'M', quantity: 1, priceSnapshot: 300 }
+  ];
+  const report = reconcileCart(lines, products);
+  assert.equal(report.entries.length, 3);
+  assert.equal(report.units, 6);
+  assert.equal(report.total, 550);
+  assert.equal(report.checkoutBlocked, true);
+  assert.deepEqual(report.entries[2].issues, ['price_changed']);
+});
+
+test('carrito legacy adopta una línea base vigente sin usarla como autoridad', () => {
+  const legacy = [{ productId: 'plain', quantity: 1 }];
+  const initialized = initializePriceSnapshots(legacy, products);
+  assert.deepEqual(initialized, [{ productId: 'plain', quantity: 1, priceSnapshot: 100 }]);
+  assert.equal(reconcileCart(initialized, products).total, 100);
+});
+
+test('reconciliación repetida es determinista', () => {
+  const lines = initializePriceSnapshots([{
+    productId: 'variant',
+    variantId: 'white',
+    size: 'M',
+    quantity: 2
+  }], products);
+  assert.deepEqual(reconcileCart(lines, products), reconcileCart(lines, products));
+  assert.deepEqual(initializePriceSnapshots(lines, products), lines);
 });
 
 test('carrito incompleto persiste y la cantidad editada se restaura', () => {

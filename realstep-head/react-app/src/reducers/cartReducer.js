@@ -3,6 +3,7 @@ export const cartActions = {
   ADD_LINE: 'ADD_LINE',
   REMOVE_LINE: 'REMOVE_LINE',
   SET_LINE_QUANTITY: 'SET_LINE_QUANTITY',
+  REPLACE_LINE: 'REPLACE_LINE',
   CLEAR_CART: 'CLEAR_CART'
 };
 
@@ -39,6 +40,10 @@ export function cartReducer(state, action) {
       return state.map((line) =>
         createLineKey(line) === key ? { ...line, quantity } : line
       );
+    }
+    case cartActions.REPLACE_LINE: {
+      const key = createLineKey(action.line);
+      return state.map((line) => createLineKey(line) === key ? action.replacement : line);
     }
     case cartActions.CLEAR_CART:
       return [];

@@ -1,7 +1,11 @@
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { getEffectivePrice, getVariantById } from '../data/catalogSelectors.js';
 import usePersistentCart from '../hooks/usePersistentCart.js';
 import { cartActions } from '../reducers/cartReducer.js';
+import {
+  acknowledgeCurrentPrice,
+  initializePriceSnapshots,
+  reconcileCart
+} from '../services/cartReconciliation.js';
 import { advanceResetVersion } from '../utils/resetVersion.js';
 
 export const CartContext = createContext(null);
@@ -25,32 +29,39 @@ export function CartProvider({ children, products }) {
     setResetVersion(advanceResetVersion);
   }, [clearPersistedCart]);
 
+  const refreshCart = useCallback(() => {
+    const refreshed = initializePriceSnapshots(lines, products);
+    if (refreshed.some((line, index) => line !== lines[index])) {
+      dispatch({ type: cartActions.HYDRATE_CART, lines: refreshed });
+    }
+    return reconcileCart(refreshed, products);
+  }, [lines, products]);
+
   const value = useMemo(() => {
-    const units = lines.reduce((sum, line) => sum + line.quantity, 0);
-    const total = lines.reduce((sum, line) => {
-      const product = products.find((item) => item.id === line.productId);
-      if (!product) return sum;
-      const variant = line.variantId == null
-        ? null
-        : getVariantById(product, line.variantId);
-      return sum + getEffectivePrice(product, variant) * line.quantity;
-    }, 0);
+    const reconciliation = reconcileCart(lines, products);
 
     return {
       lines,
+      reconciliation,
       resetVersion,
-      units,
-      total,
+      units: reconciliation.units,
+      total: reconciliation.total,
       toast,
       showToast,
       addLine: (line) => dispatch({ type: cartActions.ADD_LINE, line }),
       removeLine: (line) => dispatch({ type: cartActions.REMOVE_LINE, line }),
       setLineQuantity: (line, quantity) =>
         dispatch({ type: cartActions.SET_LINE_QUANTITY, line, quantity }),
+      acknowledgePrice: (line) => dispatch({
+        type: cartActions.REPLACE_LINE,
+        line,
+        replacement: acknowledgeCurrentPrice(line, products)
+      }),
+      refreshCart,
       clearCart: () => dispatch({ type: cartActions.CLEAR_CART }),
       completeCheckout
     };
-  }, [completeCheckout, lines, products, resetVersion, showToast, toast]);
+  }, [completeCheckout, lines, products, refreshCart, resetVersion, showToast, toast]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
