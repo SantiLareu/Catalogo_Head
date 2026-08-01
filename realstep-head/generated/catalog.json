@@ -366,8 +366,8 @@
         },
         {
           "size": "11",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
@@ -890,6 +890,85 @@
       "variants": []
     },
     {
+      "id": "Vibe 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "VIBE 2025",
+      "code": "PENDIENTE",
+      "price": 150845,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 10,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "GR/BK",
+          "code": "GR/BK",
+          "colorName": "Grey/Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/paletas/VIBE 2025 GRBK - 226145_1776182093.jpg",
+            "assets/products/paletas/VIBE 2025 GRBK - 226145 b_1776182093.jpg",
+            "assets/products/paletas/VIBE 2025 GRBK - 226145 d_1776182093.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "VIBE 2026",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "VIBE 2026",
+      "code": "PENDIENTE",
+      "price": 150845,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 11,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BL/YL",
+          "code": "BL/YL",
+          "colorName": "Blue/Yellow",
+          "colorHex": "#6B828A",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/paletas/VIBE 2026 - 226106_1781895228.jpg",
+            "assets/products/paletas/VIBE 2026 - 226106 a_1781895228.jpg",
+            "assets/products/paletas/VIBE 2026 - 226106 b_1781895228.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "GR/OR",
+          "code": "GR/OR",
+          "colorName": "Green/Orange",
+          "colorHex": "#778654",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/paletas/VIBE 2026 - 226116 a_1781895214.jpg",
+            "assets/products/paletas/VIBE 2026 - 226116_1781895214.jpg",
+            "assets/products/paletas/VIBE 2026 - 226116 b_1781895214.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
       "id": "Paleta Radical Pro 2024",
       "category": "paletas-padel",
       "subcategory": null,
@@ -899,7 +978,7 @@
       "price": 272142,
       "enabled": true,
       "stockMode": "none",
-      "order": 10,
+      "order": 12,
       "images": [
         "assets/products/paletas/RADICAL PRO 2024 b.jpg",
         "assets/products/paletas/RADICAL PRO 2024 a.jpg",
@@ -919,7 +998,7 @@
       "price": 220050,
       "enabled": true,
       "stockMode": "none",
-      "order": 11,
+      "order": 13,
       "images": [
         "assets/products/paletas/228162-Gravity-Pro-2022-a.jpg",
         "assets/products/paletas/228162-Gravity-Pro-2022-b.jpg",
@@ -939,11 +1018,30 @@
       "price": 250690,
       "enabled": true,
       "stockMode": "none",
-      "order": 12,
+      "order": 14,
       "images": [
         "assets/products/paletas/RADICAL MOTION 2024 a.jpg",
         "assets/products/paletas/RADICAL MOTION 2024 b.jpg",
         "assets/products/paletas/RADICAL MOTION 2024 c.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "EXTREME PRO 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "EXTREME PRO 2025",
+      "code": "PENDIENTE",
+      "price": 311020,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 15,
+      "images": [
+        "assets/products/paletas/extreme-pro-2025.webp",
+        "assets/products/paletas/extreme-pro-2025 (1).webp"
       ],
       "sizes": [],
       "specifications": null,
@@ -959,7 +1057,7 @@
       "price": 247500,
       "enabled": true,
       "stockMode": "none",
-      "order": 13,
+      "order": 16,
       "images": [
         "assets/products/paletas/one ultralight black a.jpg",
         "assets/products/paletas/one ultralight black b.jpg",
@@ -979,13 +1077,17 @@
       "price": 196800,
       "enabled": true,
       "stockMode": "none",
-      "order": 14,
+      "order": 17,
       "images": [
         "assets/products/pelotas/padel-pro+-a.webp",
         "assets/products/pelotas/padel-pro+-b.webp"
       ],
       "sizes": [],
-      "specifications": null,
+      "specifications": {
+        "features": [
+          "Pelotas de Padel"
+        ]
+      },
       "variants": []
     },
     {
@@ -998,14 +1100,62 @@
       "price": 172800,
       "enabled": true,
       "stockMode": "none",
-      "order": 15,
+      "order": 18,
       "images": [
         "assets/products/pelotas/Team-a.webp",
         "assets/products/pelotas/Team-b.webp",
         "assets/products/pelotas/Team-c.webp"
       ],
       "sizes": [],
-      "specifications": null,
+      "specifications": {
+        "features": [
+          "Pelotas de Padel"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "3B CHAMPIONSHIP",
+      "category": "pelotas",
+      "subcategory": null,
+      "gender": null,
+      "name": "3B CHAMPIONSHIP",
+      "code": "PENDIENTE",
+      "price": 198000,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 19,
+      "images": [
+        "assets/products/pelotas/239606_1774656460.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Pelotas de Tenis"
+        ]
+      },
+      "variants": []
+    },
+    {
+      "id": "3B HEAD PRO",
+      "category": "pelotas",
+      "subcategory": null,
+      "gender": null,
+      "name": "3B HEAD PRO",
+      "code": "PENDIENTE",
+      "price": 257520,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 20,
+      "images": [
+        "assets/products/pelotas/head pro_1782330042.jpg"
+      ],
+      "sizes": [],
+      "specifications": {
+        "features": [
+          "Pelotas de Tenis"
+        ]
+      },
       "variants": []
     },
     {
@@ -1018,7 +1168,7 @@
       "price": 16150,
       "enabled": true,
       "stockMode": "size",
-      "order": 16,
+      "order": 21,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1197,7 +1347,7 @@
       "price": 18288,
       "enabled": true,
       "stockMode": "size",
-      "order": 17,
+      "order": 22,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1379,7 +1529,7 @@
       "price": 18895,
       "enabled": true,
       "stockMode": "size",
-      "order": 18,
+      "order": 23,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1486,7 +1636,7 @@
       "price": 20200,
       "enabled": true,
       "stockMode": "size",
-      "order": 19,
+      "order": 24,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1591,7 +1741,7 @@
       "price": 20744,
       "enabled": true,
       "stockMode": "size",
-      "order": 20,
+      "order": 25,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1698,7 +1848,7 @@
       "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 21,
+      "order": 26,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -1824,8 +1974,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1842,7 +1992,7 @@
       "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 22,
+      "order": 27,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2027,7 +2177,7 @@
       "price": 20744,
       "enabled": true,
       "stockMode": "size",
-      "order": 23,
+      "order": 28,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2136,7 +2286,7 @@
       "price": 22115,
       "enabled": true,
       "stockMode": "size",
-      "order": 24,
+      "order": 29,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2243,7 +2393,7 @@
       "price": 18570,
       "enabled": true,
       "stockMode": "size",
-      "order": 25,
+      "order": 30,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2346,7 +2496,7 @@
       "price": 24030,
       "enabled": true,
       "stockMode": "size",
-      "order": 26,
+      "order": 31,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2489,7 +2639,7 @@
       "price": 26485,
       "enabled": true,
       "stockMode": "size",
-      "order": 27,
+      "order": 32,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2633,7 +2783,7 @@
       "price": 50510,
       "enabled": true,
       "stockMode": "size",
-      "order": 28,
+      "order": 33,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2702,7 +2852,7 @@
       "price": 46970,
       "enabled": true,
       "stockMode": "size",
-      "order": 29,
+      "order": 34,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2769,7 +2919,7 @@
       "price": 35910,
       "enabled": true,
       "stockMode": "size",
-      "order": 30,
+      "order": 35,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -2883,26 +3033,26 @@
           "sizes": [
             {
               "size": "XS",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2919,7 +3069,7 @@
       "price": 35910,
       "enabled": true,
       "stockMode": "size",
-      "order": 31,
+      "order": 36,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -3029,7 +3179,7 @@
       "price": 33714,
       "enabled": true,
       "stockMode": "size",
-      "order": 32,
+      "order": 37,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -3174,7 +3324,7 @@
       "price": 17170,
       "enabled": true,
       "stockMode": "size",
-      "order": 33,
+      "order": 38,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3232,7 +3382,7 @@
       "price": 16795,
       "enabled": true,
       "stockMode": "size",
-      "order": 34,
+      "order": 39,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3350,8 +3500,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3368,7 +3518,7 @@
       "price": 8960,
       "enabled": true,
       "stockMode": "size",
-      "order": 35,
+      "order": 40,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3505,7 +3655,7 @@
       "price": 9610,
       "enabled": true,
       "stockMode": "size",
-      "order": 36,
+      "order": 41,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3601,7 +3751,7 @@
       "price": 11760,
       "enabled": true,
       "stockMode": "size",
-      "order": 37,
+      "order": 42,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3738,7 +3888,7 @@
       "price": 16794,
       "enabled": true,
       "stockMode": "size",
-      "order": 38,
+      "order": 43,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3834,7 +3984,7 @@
       "price": 18288,
       "enabled": true,
       "stockMode": "size",
-      "order": 39,
+      "order": 44,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -3931,7 +4081,7 @@
       "price": 21430,
       "enabled": true,
       "stockMode": "size",
-      "order": 40,
+      "order": 45,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4066,7 +4216,7 @@
       "price": 21710,
       "enabled": true,
       "stockMode": "size",
-      "order": 41,
+      "order": 46,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4162,7 +4312,7 @@
       "price": 10544,
       "enabled": true,
       "stockMode": "size",
-      "order": 42,
+      "order": 47,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4257,7 +4407,7 @@
       "price": 46965,
       "enabled": true,
       "stockMode": "size",
-      "order": 43,
+      "order": 48,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4314,7 +4464,7 @@
       "price": 50510,
       "enabled": true,
       "stockMode": "size",
-      "order": 44,
+      "order": 49,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4370,7 +4520,7 @@
       "price": 54335,
       "enabled": true,
       "stockMode": "size",
-      "order": 45,
+      "order": 50,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4469,7 +4619,7 @@
       "price": 4605,
       "enabled": true,
       "stockMode": "size",
-      "order": 46,
+      "order": 51,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4512,7 +4662,7 @@
       "price": 7372,
       "enabled": true,
       "stockMode": "size",
-      "order": 47,
+      "order": 52,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4537,8 +4687,8 @@
             },
             {
               "size": "39-43",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             }
           ]
@@ -4581,7 +4731,7 @@
       "price": 7372,
       "enabled": true,
       "stockMode": "size",
-      "order": 48,
+      "order": 53,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4650,7 +4800,7 @@
       "price": 8180,
       "enabled": true,
       "stockMode": "size",
-      "order": 49,
+      "order": 54,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4745,7 +4895,7 @@
       "price": 8398,
       "enabled": true,
       "stockMode": "size",
-      "order": 50,
+      "order": 55,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4814,7 +4964,7 @@
       "price": 8646,
       "enabled": true,
       "stockMode": "size",
-      "order": 51,
+      "order": 56,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4883,7 +5033,7 @@
       "price": 9098,
       "enabled": true,
       "stockMode": "size",
-      "order": 52,
+      "order": 57,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -4981,7 +5131,7 @@
       "price": 218865,
       "enabled": true,
       "stockMode": "none",
-      "order": 53,
+      "order": 58,
       "images": [
         "assets/products/accesorios/Presentation-Logo Jar Box_1776951489.jpg"
       ],
@@ -4999,7 +5149,7 @@
       "price": 238442,
       "enabled": true,
       "stockMode": "none",
-      "order": 54,
+      "order": 59,
       "images": [
         "assets/products/accesorios/285525 ANTIVIBRADOR PRO DAMP JAR BOX_1776966123.jpg"
       ],
@@ -5017,7 +5167,7 @@
       "price": 10885,
       "enabled": true,
       "stockMode": "none",
-      "order": 55,
+      "order": 60,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5047,7 +5197,7 @@
       "price": 34212,
       "enabled": true,
       "stockMode": "none",
-      "order": 56,
+      "order": 61,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5077,7 +5227,7 @@
       "price": 183300,
       "enabled": true,
       "stockMode": "none",
-      "order": 57,
+      "order": 62,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5113,7 +5263,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 58,
+      "order": 63,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5143,7 +5293,7 @@
       "price": 6812,
       "enabled": true,
       "stockMode": "none",
-      "order": 59,
+      "order": 64,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5216,7 +5366,7 @@
       "price": 7792,
       "enabled": true,
       "stockMode": "none",
-      "order": 60,
+      "order": 65,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5285,23 +5435,62 @@
       "subcategory": "grips",
       "gender": null,
       "name": "GRIP DUAL ABSORBING",
-      "code": "PENDIENTE",
+      "code": null,
       "price": 7775,
       "enabled": true,
       "stockMode": "none",
-      "order": 61,
+      "order": 66,
       "images": [],
       "sizes": [],
       "specifications": null,
       "variants": [
         {
-          "id": "MX",
-          "code": "pendiente",
-          "colorName": "MX",
-          "colorHex": null,
+          "id": "BK",
+          "code": "BK",
+          "colorName": "Black",
+          "colorHex": "#090909",
           "price": null,
           "thumbnail": null,
           "order": 0,
+          "images": [
+            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "RD",
+          "code": "RD",
+          "colorName": "Red",
+          "colorHex": "#D90021",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "WH",
+          "code": "WH",
+          "colorName": "White",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BL",
+          "code": "BL",
+          "colorName": "Blue",
+          "colorHex": "#12407D",
+          "price": null,
+          "thumbnail": null,
+          "order": 3,
           "images": [
             "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
           ],
@@ -5319,7 +5508,7 @@
       "price": 10575,
       "enabled": true,
       "stockMode": "none",
-      "order": 62,
+      "order": 67,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5366,7 +5555,7 @@
       "price": 11352,
       "enabled": true,
       "stockMode": "none",
-      "order": 63,
+      "order": 68,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5402,7 +5591,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 64,
+      "order": 69,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776965018.jpg"
       ],
@@ -5420,7 +5609,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 65,
+      "order": 70,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966633.jpg"
       ],
@@ -5445,7 +5634,7 @@
       "price": 5598,
       "enabled": true,
       "stockMode": "none",
-      "order": 66,
+      "order": 71,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966641.jpg"
       ],
@@ -5468,7 +5657,7 @@
       "price": 60618,
       "enabled": true,
       "stockMode": "none",
-      "order": 67,
+      "order": 72,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5519,7 +5708,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 68,
+      "order": 73,
       "images": [
         "assets/products/accesorios/head-sonic-pro-1-30-matassa-200-m-black-281128-16bk_A_1773834711.jpg"
       ],
@@ -5537,7 +5726,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 69,
+      "order": 74,
       "images": [
         "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg"
       ],
@@ -5555,7 +5744,7 @@
       "price": 171060,
       "enabled": true,
       "stockMode": "none",
-      "order": 70,
+      "order": 75,
       "images": [
         "assets/products/accesorios/head-hawk-touch-130-matassa-tennis-da-120-m-anthracite-281214-16an_A_2_1773835045.jpg"
       ],
@@ -5578,7 +5767,7 @@
       "price": 220824,
       "enabled": true,
       "stockMode": "none",
-      "order": 71,
+      "order": 76,
       "images": [
         "assets/products/accesorios/CUERDA LYNX REEL 200M - 281794 AN_1776966679.jpg"
       ],
@@ -5596,7 +5785,7 @@
       "price": 220824,
       "enabled": true,
       "stockMode": "none",
-      "order": 72,
+      "order": 77,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5645,7 +5834,7 @@
       "price": 24882,
       "enabled": true,
       "stockMode": "none",
-      "order": 73,
+      "order": 78,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5714,7 +5903,7 @@
       "price": 31102,
       "enabled": true,
       "stockMode": "none",
-      "order": 74,
+      "order": 79,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5757,7 +5946,7 @@
       "price": 32657,
       "enabled": true,
       "stockMode": "none",
-      "order": 75,
+      "order": 80,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5826,7 +6015,7 @@
       "price": 34212,
       "enabled": true,
       "stockMode": "none",
-      "order": 76,
+      "order": 81,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5869,7 +6058,7 @@
       "price": 38877,
       "enabled": true,
       "stockMode": "none",
-      "order": 77,
+      "order": 82,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5899,7 +6088,7 @@
       "price": 65314,
       "enabled": true,
       "stockMode": "none",
-      "order": 78,
+      "order": 83,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5929,7 +6118,7 @@
       "price": 55984,
       "enabled": true,
       "stockMode": "none",
-      "order": 79,
+      "order": 84,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5965,7 +6154,7 @@
       "price": 55984,
       "enabled": true,
       "stockMode": "none",
-      "order": 80,
+      "order": 85,
       "images": [
         "assets/products/bolso-mochila/260774 KIDS TOUR BACKPACK 14L MONSTER_1776687209.jpg"
       ],
@@ -5989,7 +6178,7 @@
       "price": 91750,
       "enabled": true,
       "stockMode": "none",
-      "order": 81,
+      "order": 86,
       "images": [
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG_1776454259.jpg",
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG A_1776454259.jpg"
@@ -6014,7 +6203,7 @@
       "price": 116632,
       "enabled": true,
       "stockMode": "none",
-      "order": 82,
+      "order": 87,
       "images": [
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 2_1776451334.jpg",
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO_1776451334.jpg",
@@ -6042,7 +6231,7 @@
       "price": 132182,
       "enabled": true,
       "stockMode": "none",
-      "order": 83,
+      "order": 88,
       "images": [
         "assets/products/bolso-mochila/261855 RETRO TOTE BAG 25 LTD_1776969211.jpg",
         "assets/products/bolso-mochila/paletero-head-retro-tote-bag-25th-ltd-2-e58a1ce8e25fb6884617818759097085-1024-1024.webp"
@@ -6067,7 +6256,7 @@
       "price": 155510,
       "enabled": true,
       "stockMode": "none",
-      "order": 84,
+      "order": 89,
       "images": [
         "assets/products/bolso-mochila/267565_1773838927.jpg",
         "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 3_1776693072.jpg",
@@ -6096,7 +6285,7 @@
       "price": 165000,
       "enabled": true,
       "stockMode": "none",
-      "order": 85,
+      "order": 90,
       "images": [
         "assets/products/bolso-mochila/267534_1773838960.jpg",
         "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 2_1777388891.jpg",
@@ -6123,7 +6312,7 @@
       "price": 178835,
       "enabled": true,
       "stockMode": "none",
-      "order": 86,
+      "order": 91,
       "images": [
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD 2_1776968835.jpg",
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD_1776968667.jpg"
@@ -6147,7 +6336,7 @@
       "price": 185056,
       "enabled": true,
       "stockMode": "none",
-      "order": 87,
+      "order": 92,
       "images": [
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK_1776455382.jpg",
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK a_1776455382.jpg"
@@ -6173,7 +6362,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 88,
+      "order": 93,
       "images": [
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON_1776689985.jpg",
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON a_1776689985.jpg"
@@ -6203,7 +6392,7 @@
       "price": 208382,
       "enabled": true,
       "stockMode": "none",
-      "order": 89,
+      "order": 94,
       "images": [
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL_1776451592.jpg",
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 2_1776451589.jpg",
@@ -6232,7 +6421,7 @@
       "price": 209938,
       "enabled": true,
       "stockMode": "none",
-      "order": 90,
+      "order": 95,
       "images": [
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON_1776687124.jpg",
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON a_1776687124.jpg"
@@ -6255,7 +6444,7 @@
       "price": 225488,
       "enabled": true,
       "stockMode": "none",
-      "order": 91,
+      "order": 96,
       "images": [
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L_1776695983.jpg",
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L a_1776695982.jpg",
@@ -6285,7 +6474,7 @@
       "price": 225488,
       "enabled": true,
       "stockMode": "none",
-      "order": 92,
+      "order": 97,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_935521-MLA110345733438_052026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_996848-MLA111279153073_052026-F.webp"
@@ -6308,7 +6497,7 @@
       "price": 202165,
       "enabled": true,
       "stockMode": "none",
-      "order": 93,
+      "order": 98,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_881169-MLA113036555379_062026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_750946-MLA113037416577_062026-F.webp",
@@ -6333,7 +6522,7 @@
       "price": 272142,
       "enabled": true,
       "stockMode": "none",
-      "order": 94,
+      "order": 99,
       "images": [
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK_1776687233.jpg",
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK a_1776687233.jpg",
@@ -6371,7 +6560,7 @@
       "price": 171060,
       "enabled": true,
       "stockMode": "none",
-      "order": 95,
+      "order": 100,
       "images": [
         "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 tienda_1776449126.jpg",
         "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 c tienda_1776449126.jpg",
@@ -6402,7 +6591,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 96,
+      "order": 101,
       "images": [
         "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 tienda_1776447381.jpg",
         "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 c tienda_1776447381.jpg",
@@ -6436,7 +6625,7 @@
       "price": 186612,
       "enabled": true,
       "stockMode": "none",
-      "order": 97,
+      "order": 102,
       "images": [
         "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_2_1776448469.jpg",
         "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_3_1776448469.jpg",
@@ -6470,7 +6659,7 @@
       "price": 65314,
       "enabled": true,
       "stockMode": "none",
-      "order": 98,
+      "order": 103,
       "images": [
         "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg"
       ],
@@ -6507,7 +6696,7 @@
       "price": 164840,
       "enabled": true,
       "stockMode": "none",
-      "order": 99,
+      "order": 104,
       "images": [
         "assets/products/raqueta-tenis/IG EXTREME XCEED - 232115_1776437310.jpg"
       ],
@@ -6529,7 +6718,7 @@
       "price": 164840,
       "enabled": true,
       "stockMode": "none",
-      "order": 100,
+      "order": 105,
       "images": [
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236_1776440008.jpg",
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236 a_1776440008.jpg"
@@ -6576,7 +6765,7 @@
       "price": 171060,
       "enabled": true,
       "stockMode": "none",
-      "order": 101,
+      "order": 106,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776187934.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776187934.jpg"
@@ -6620,7 +6809,7 @@
       "price": 171060,
       "enabled": true,
       "stockMode": "none",
-      "order": 102,
+      "order": 107,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776190127.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776190127.jpg"
@@ -6664,7 +6853,7 @@
       "price": 178835,
       "enabled": true,
       "stockMode": "none",
-      "order": 103,
+      "order": 108,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 tienda_1776187950.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 a tienda_1776187950.jpg"
@@ -6719,7 +6908,7 @@
       "price": 225488,
       "enabled": true,
       "stockMode": "none",
-      "order": 104,
+      "order": 109,
       "images": [
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 2_1776188605.jpg",
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 1_1776188605.jpg",
@@ -6759,7 +6948,7 @@
       "price": 259700,
       "enabled": true,
       "stockMode": "none",
-      "order": 105,
+      "order": 110,
       "images": [
         "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_1 nube_1776187909.jpg",
         "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_2 nube_1776187909.jpg"
@@ -6803,7 +6992,7 @@
       "price": 264366,
       "enabled": true,
       "stockMode": "none",
-      "order": 106,
+      "order": 111,
       "images": [
         "assets/products/raqueta-tenis/323583_1781105225.jpeg",
         "assets/products/raqueta-tenis/323578_1781105225.jpeg",
@@ -6829,7 +7018,7 @@
       "price": 275252,
       "enabled": true,
       "stockMode": "none",
-      "order": 107,
+      "order": 112,
       "images": [
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg",
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg",
@@ -6904,7 +7093,7 @@
       "price": 298577,
       "enabled": true,
       "stockMode": "none",
-      "order": 108,
+      "order": 113,
       "images": [
         "assets/products/raqueta-tenis/BOOM MP 2024_1776188236.jpg",
         "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 g_1776188235.jpg",
@@ -6944,7 +7133,7 @@
       "price": 298578,
       "enabled": true,
       "stockMode": "none",
-      "order": 109,
+      "order": 114,
       "images": [
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg",
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_10 nube_1776442320.jpg",
@@ -7002,7 +7191,7 @@
       "price": 298578,
       "enabled": true,
       "stockMode": "none",
-      "order": 110,
+      "order": 115,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7058,7 +7247,7 @@
       "price": 298578,
       "enabled": true,
       "stockMode": "none",
-      "order": 111,
+      "order": 116,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7114,7 +7303,7 @@
       "price": 373222,
       "enabled": true,
       "stockMode": "none",
-      "order": 112,
+      "order": 117,
       "images": [
         "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025_1776189626.jpg",
         "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025 b_1776189626.jpg"
@@ -7174,7 +7363,7 @@
       "price": 69980,
       "enabled": true,
       "stockMode": "none",
-      "order": 113,
+      "order": 118,
       "images": [
         "assets/products/raqueta-squash/327791_1773839444.jpg",
         "assets/products/raqueta-squash/D_NQ_NP_2X_902365-MLA96290010386_102025-F_1773839482.webp"
@@ -7197,7 +7386,7 @@
       "price": 106742,
       "enabled": true,
       "stockMode": "none",
-      "order": 114,
+      "order": 119,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7265,7 +7454,7 @@
       "price": 168324,
       "enabled": true,
       "stockMode": "none",
-      "order": 115,
+      "order": 120,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7301,7 +7490,7 @@
       "price": 1555,
       "enabled": true,
       "stockMode": "none",
-      "order": 116,
+      "order": 121,
       "images": [
         "assets/products/pop/287568 HEAD Ball Pen_1778598876.jpg"
       ],
@@ -7319,7 +7508,7 @@
       "price": 1555,
       "enabled": true,
       "stockMode": "none",
-      "order": 117,
+      "order": 122,
       "images": [
         "assets/products/pop/287598 HEAD PENCIL_1778605897.jpg"
       ],
@@ -7337,7 +7526,7 @@
       "price": 4323,
       "enabled": true,
       "stockMode": "none",
-      "order": 118,
+      "order": 123,
       "images": [
         "assets/products/pop/152694_1774610624.jpg"
       ],
@@ -7355,7 +7544,7 @@
       "price": 9766,
       "enabled": true,
       "stockMode": "none",
-      "order": 119,
+      "order": 124,
       "images": [
         "assets/products/pop/gancho_1778607134.jpg"
       ],
@@ -7373,7 +7562,7 @@
       "price": 10885,
       "enabled": true,
       "stockMode": "none",
-      "order": 120,
+      "order": 125,
       "images": [
         "assets/products/pop/287224 HEAD PEN POT_1778606304.jpg"
       ],
@@ -7389,9 +7578,9 @@
       "name": "HEAD DOCUMENT FILO",
       "code": "PENDIENTE",
       "price": 31102,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
-      "order": 121,
+      "order": 126,
       "images": [
         "assets/products/pop/287520 DOCUMENT FILO_1778605264.jpg"
       ],
@@ -7409,7 +7598,7 @@
       "price": 38877,
       "enabled": true,
       "stockMode": "none",
-      "order": 122,
+      "order": 127,
       "images": [
         "assets/products/pop/287582 head ball tube_1778592280.jpg"
       ],
@@ -7427,7 +7616,7 @@
       "price": 38877,
       "enabled": true,
       "stockMode": "none",
-      "order": 123,
+      "order": 128,
       "images": [
         "assets/products/pop/287500 HEAD NOTE PAD A5_1778599016.jpg"
       ],
@@ -7445,7 +7634,7 @@
       "price": 62204,
       "enabled": true,
       "stockMode": "none",
-      "order": 124,
+      "order": 129,
       "images": [
         "assets/products/pop/287800 UMBRELLA SMALL_1778606925.jpg"
       ],
@@ -7463,7 +7652,7 @@
       "price": 77755,
       "enabled": true,
       "stockMode": "none",
-      "order": 125,
+      "order": 130,
       "images": [
         "assets/products/pop/287740 CORPORATE FLOORMAT_1778606609.jpg"
       ],
@@ -7481,7 +7670,7 @@
       "price": 183999,
       "enabled": true,
       "stockMode": "none",
-      "order": 126,
+      "order": 131,
       "images": [
         "assets/products/pop/Collapsible racquetholder_1778607116.jpg"
       ],
@@ -7499,7 +7688,7 @@
       "price": 189410,
       "enabled": true,
       "stockMode": "none",
-      "order": 127,
+      "order": 132,
       "images": [
         "assets/products/pop/198454_1774610813.jpg",
         "assets/products/pop/289799_A.png"
@@ -7518,7 +7707,7 @@
       "price": 259188,
       "enabled": true,
       "stockMode": "none",
-      "order": 128,
+      "order": 133,
       "images": [
         "assets/products/pop/237916_1774610515.jpg"
       ],
@@ -7536,7 +7725,7 @@
       "price": 279917,
       "enabled": true,
       "stockMode": "none",
-      "order": 129,
+      "order": 134,
       "images": [
         "assets/products/pop/287748 HEAD CUBE_1778606419.jpg"
       ],
@@ -7554,7 +7743,7 @@
       "price": 326570,
       "enabled": true,
       "stockMode": "none",
-      "order": 130,
+      "order": 135,
       "images": [
         "assets/products/pop/299857_1774610591.jpg"
       ],
@@ -7572,7 +7761,7 @@
       "price": 351762,
       "enabled": true,
       "stockMode": "none",
-      "order": 131,
+      "order": 136,
       "images": [
         "assets/products/pop/padel net_1778607317.jpg"
       ],
@@ -7590,7 +7779,7 @@
       "price": 544282,
       "enabled": true,
       "stockMode": "none",
-      "order": 132,
+      "order": 137,
       "images": [
         "assets/products/pop/196472_1781029313.jpg"
       ],
