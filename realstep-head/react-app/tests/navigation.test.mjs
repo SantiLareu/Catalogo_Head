@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
   getCatalogTargetIds,
+  getProductTargetId,
   resolveCatalogHash
 } from '../src/utils/navigation.js';
 
@@ -33,6 +34,17 @@ test('hash válido se conserva literalmente', () => {
     resolveCatalogHash('#categoria-indumentaria-hombre', targets),
     '#categoria-indumentaria-hombre'
   );
+  assert.equal(resolveCatalogHash('#contacto', targets), '#contacto');
+});
+
+test('productos se incorporan como destinos sin modificar sus IDs originales', () => {
+  const productId = 'Vibe 2025 ';
+  const target = getProductTargetId(productId);
+  const productTargets = getCatalogTargetIds(categories, [{ id: productId }]);
+  assert.equal(target, 'producto-Vibe_202025_20');
+  assert.ok(productTargets.has(target));
+  assert.equal(resolveCatalogHash(`#${target}`, productTargets), `#${target}`);
+  assert.equal(productId, 'Vibe 2025 ');
 });
 
 test('hash inválido o corrupto vuelve a inicio', () => {

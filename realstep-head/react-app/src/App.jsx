@@ -15,7 +15,10 @@ import {
 
 function App() {
   const categories = Array.isArray(catalog.categories) ? catalog.categories : [];
-  const validTargetIds = useMemo(() => getCatalogTargetIds(categories), [categories]);
+  const validTargetIds = useMemo(
+    () => getCatalogTargetIds(categories, catalog.products),
+    [categories]
+  );
 
   useEffect(() => {
     const previousScrollRestoration = window.history.scrollRestoration;
@@ -43,7 +46,7 @@ function App() {
 
   return (
     <CartProvider products={catalog.products}>
-      <Header categories={categories} />
+      <Header categories={categories} products={catalog.products} />
       <main>
         <Hero />
         <CategoryIndex categories={categories} />

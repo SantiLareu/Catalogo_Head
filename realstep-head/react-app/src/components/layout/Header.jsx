@@ -4,14 +4,14 @@ import CategoryMenu, { MenuIcon } from '../categories/CategoryMenu.jsx';
 import CheckoutModal, {
   createEmptyCheckoutForm
 } from '../checkout/CheckoutModal.jsx';
+import ProductSearch from '../search/ProductSearch.jsx';
 import { companyConfig } from '../../config/company.js';
-import catalog from '../../data/catalog.js';
 import useCart from '../../hooks/useCart.js';
 import { scrollToHashTarget } from '../../utils/navigation.js';
 
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
-function Header({ categories }) {
+function Header({ categories, products }) {
   const { refreshCart, showToast, units } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -48,7 +48,12 @@ function Header({ categories }) {
         </span>
       </a>
 
+      <ProductSearch categories={categories} products={products} />
+
       <div className="actions">
+        <a className="contact-link contact-link--desktop" href="#contacto">
+          Contacto
+        </a>
         <button
           className="menu-toggle"
           type="button"
@@ -100,7 +105,7 @@ function Header({ categories }) {
             setCheckoutOpen(false);
           }}
           openerRef={continueButtonRef}
-          products={catalog.products}
+          products={products}
         />
       ) : null}
     </header>

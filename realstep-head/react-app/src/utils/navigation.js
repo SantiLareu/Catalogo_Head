@@ -10,8 +10,12 @@ export function normalizeHash(hash) {
   }
 }
 
-export function getCatalogTargetIds(categories = []) {
-  const targets = new Set(['inicio', 'category-index']);
+export function getProductTargetId(productId) {
+  return `producto-${encodeURIComponent(String(productId)).replace(/%/g, '_')}`;
+}
+
+export function getCatalogTargetIds(categories = [], products = []) {
+  const targets = new Set(['inicio', 'category-index', 'contacto']);
 
   const visit = (items) => {
     for (const category of items) {
@@ -23,6 +27,9 @@ export function getCatalogTargetIds(categories = []) {
   };
 
   visit(categories);
+  for (const product of products) {
+    if (product?.id != null) targets.add(getProductTargetId(product.id));
+  }
   return targets;
 }
 
