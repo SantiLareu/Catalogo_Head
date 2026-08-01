@@ -64,6 +64,9 @@ function CategoryMenu({ categories, onClose, openerRef }) {
           onNavigate={close}
           variant="menu"
         />
+        <a className="category-menu-contact" href="#contacto" onClick={close}>
+          Contacto
+        </a>
       </aside>
     </div>
   );

@@ -1,8 +1,13 @@
 export const companyConfig = {
   companyName: 'RealStep',
   catalogName: 'HEAD Mayorista',
-  orderEmail: 'martin@marquevich.com',
+  orderEmail: 'santlareu71@gmail.com',
   storageKey: 'realstep-head-cart',
+  contact: {
+    instagramUrl: 'https://www.instagram.com/realstep.oficial/',
+    whatsappNumber: '5492235440976',
+    whatsappMessage: 'Hola, estoy consultando desde el catálogo mayorista de RealStep.'
+  },
   software: {
     softwareId: 'santiago-lareu-catalog-engine'
   },
