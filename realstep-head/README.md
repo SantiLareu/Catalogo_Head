@@ -1,199 +1,235 @@
-# RealStep · Catálogo HEAD
+# Catálogo mayorista RealStep / HEAD
 
-Aplicación React del catálogo mayorista de RealStep con un pipeline de datos
-basado en Excel. El frontend vive en `react-app/` y la raíz del repositorio
-contiene el catálogo, el importador y sus pruebas.
+Aplicación React/Vite para explorar un catálogo mayorista, seleccionar variantes y talles, preparar un carrito y enviar una solicitud de pedido. El catálogo se genera desde Excel y el build oficial puede firmarse con Ed25519 y verificarse mediante hashes SHA-256.
 
-## Arquitectura
+> **Antes de realizar cambios estructurales, leer [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md).** Allí se documentan la arquitectura, las decisiones vigentes, el estado real, las restricciones y el roadmap.
 
-```text
-catalog/products.xlsx
-        ↓
-scripts/import-products.mjs
-        ↓
-generated/catalog.json
-        ↓
-react-app/
-        ↓
-react-app/dist
+## Estado actual
+
+Están implementados el importador Excel/JSON, el catálogo interactivo, galería y lightbox, carrito persistido, reconciliación contra el catálogo vigente, checkout, envío por EmailJS y firma/integridad del build.
+
+Son soluciones **transitorias** el carrito en `localStorage`, su reconciliación frontend y EmailJS desde el navegador. No existen todavía backend autoritativo, API, PostgreSQL, Prisma ni persistencia duradera de pedidos. No es un ecommerce con pago online; las solicitudes quedan sujetas a confirmación comercial.
+
+## Requisitos previos
+
+- Git.
+- Node.js y npm compatibles con las dependencias actuales.
+- Acceso al repositorio.
+- Clave privada Ed25519 solo si se debe generar un build oficial firmado.
+
+El proyecto no declara actualmente una versión de Node mediante `engines`. Verificar las versiones instaladas:
+
+```bash
+node --version
+npm --version
 ```
-
-- `catalog/products.xlsx`: única fuente manual de datos comerciales.
-- `generated/catalog.json`: artefacto determinista generado por el importador y
-  única fuente de catálogo consumida por React.
-- `tests/fixtures/catalog-baseline.json`: snapshot canónico del último catálogo
-  comercial aprobado. No debe editarse manualmente.
-- `react-app/`: código fuente de la única interfaz.
-- `react-app/dist/`: build estático publicable; no se versiona.
-
-## Requisitos
-
-- Node.js.
-- npm.
-- Microsoft Excel o una aplicación compatible con archivos `.xlsx`.
 
 ## Instalación
 
-Desde la raíz:
+Desde la raíz `realstep-head`:
 
-```powershell
-npm install
-npm --prefix react-app install
+```bash
+npm ci
+npm --prefix react-app ci
 ```
+
+Hay un lockfile en la raíz para el importador y otro en `react-app` para el frontend; ambos deben instalarse.
 
 ## Desarrollo
 
-```powershell
+```bash
 npm run react:dev
 ```
 
-La importación del Excel es deliberadamente explícita: desarrollo y build no
-modifican el catálogo automáticamente.
+Vite mostrará la URL local. Para un build normal de comprobación:
 
-## Actualización del catálogo
+```bash
+npm run react:build
+npm run react:preview
+```
 
-1. Editar `catalog/products.xlsx`.
-2. Generar el JSON:
+El build normal no agrega firma. El build destinado a publicación debe ser el firmado.
 
-   ```powershell
-   npm run import-products
-   ```
+## Estructura resumida
 
-3. Validar Excel y comprobar que el JSON esté actualizado:
-
-   ```powershell
-   npm run check-products
-   ```
-
-4. Revisar diferencias contra el último catálogo aprobado:
-
-   ```powershell
-   npm run compare-catalog
-   ```
-
-5. Revisar los cambios comerciales en Excel y JSON.
-6. Solo después de su aprobación, actualizar deliberadamente el baseline:
-
-   ```powershell
-   npm run update-catalog-baseline
-   ```
-
-7. Ejecutar pruebas y build:
-
-   ```powershell
-   npm run test-importer
-   npm run test-react
-   npm run react:build
-   ```
-
-Excel, JSON y baseline deben versionarse juntos cuando se aprueba un cambio
-comercial. `update-catalog-baseline` nunca es ejecutado automáticamente por
-dev, build, importación o tests.
+```text
+catalog/                 Excel fuente y documentación del esquema
+generated/               JSON generado y baseline aprobado
+assets/                  imágenes fuente del catálogo
+scripts/catalog-import/  importador y validadores
+scripts/integrity/       firma, manifiesto, verificación y publicación
+react-app/src/           aplicación React
+react-app/public/        catálogo/assets públicos, headers y clave pública
+react-app/tests/         pruebas del frontend
+tests/                   pruebas del importador y de integridad
+docs/                    documentación técnica específica
+.signing/                clave privada local ignorada por Git
+```
 
 ## Scripts
 
-| Comando | Función |
-|---|---|
-| `npm run import-products` | Valida Excel y genera `generated/catalog.json`. |
-| `npm run check-products` | Valida Excel y verifica el JSON actual sin escribir. |
-| `npm run compare-catalog` | Compara JSON contra el baseline canónico. |
-| `npm run update-catalog-baseline` | Reemplaza explícitamente el baseline aprobado. |
-| `npm run test-importer` | Ejecuta las pruebas del pipeline. |
-| `npm run test-react` | Ejecuta las pruebas del frontend. |
-| `npm run test-integrity` | Ejecuta pruebas criptográficas y del verificador React. |
-| `npm run react:test` | Alias compatible de `test-react`. |
-| `npm run react:dev` | Inicia Vite en desarrollo. |
-| `npm run react:build` | Genera `react-app/dist`. |
-| `npm run react:build:signed` | Genera, firma y verifica una publicación sin crear claves. |
-| `npm run generate-signing-keys -- --confirm` | Genera deliberadamente un par Ed25519. |
-| `npm run integrity:manifest` | Prepara archivos y genera el manifiesto de integridad. |
-| `npm run integrity:sign` | Firma un manifiesto existente con la clave privada configurada. |
-| `npm run integrity:verify` | Verifica firma, identidad y archivos publicados. |
-| `npm run react:preview` | Sirve localmente el build de producción. |
+Todos los comandos siguientes existen en el `package.json` raíz.
 
-## Publicación
+| Comando | Propósito | ¿Modifica archivos? | Uso habitual |
+|---|---|---:|---|
+| `npm run import-products` | Genera `generated/catalog.json` desde el Excel. | Sí | Después de validar cambios del catálogo. |
+| `npm run check-products` | Valida el Excel y compara en memoria contra el JSON. | No | Preflight y comprobación posterior a la importación. |
+| `npm run compare-catalog` | Compara JSON generado y baseline. | No | Revisar impacto antes de aprobar. |
+| `npm run update-catalog-baseline` | Actualiza el baseline aprobado. | Sí | Solo tras revisión consciente. |
+| `npm run test-importer` | Ejecuta pruebas del importador. | No, salvo temporales de prueba | Cambios de catálogo o importador. |
+| `npm run test-react` | Ejecuta pruebas del frontend. | No | Cambios React, carrito, checkout o servicios. |
+| `npm run test-integrity` | Ejecuta pruebas de firma e integridad. | No, salvo temporales de prueba | Cambios de build, firma o publicación. |
+| `npm run react:test` | Alias de `test-react`. | No | Compatibilidad. |
+| `npm run react:dev` | Inicia Vite en desarrollo. | No | Desarrollo local. |
+| `npm run react:build` | Genera un build Vite normal. | Sí | Comprobación local; no publicar como build oficial. |
+| `npm run react:build:signed` | Construye, firma, verifica y publica `react-app/dist`. | Sí | Build oficial; requiere clave privada. |
+| `npm run generate-signing-keys` | Inicia la generación de claves Ed25519. | Sí, con confirmación | Solo creación o rotación deliberada. |
+| `npm run integrity:manifest` | Genera el manifiesto de hashes. | Sí | Operación técnica de integridad. |
+| `npm run integrity:sign` | Firma el manifiesto. | Sí | Operación técnica con clave privada. |
+| `npm run integrity:verify` | Verifica firma y archivos del build. | No | Después de cada build firmado. |
+| `npm run react:preview` | Sirve localmente el build. | No | Revisión previa a publicación. |
 
-Configuración para hosting estático:
+`react-app/package.json` también ofrece `dev`, `build`, `preview` y `test`; se recomienda usar los aliases de la raíz.
 
-```text
-Build command: npm run react:build
-Publish directory: react-app/dist
-```
+## Actualizar productos o stock
 
-No debe publicarse la raíz completa: contiene el Excel y herramientas del
-pipeline. El build usa rutas relativas y puede alojarse bajo un subdirectorio.
+1. Editar `catalog/products.xlsx`.
+2. Ejecutar el preflight sin escritura:
 
-## Autoría y protección técnica
+   ```bash
+   npm run check-products
+   ```
 
-Santiago Lareu es el autor, desarrollador y titular del software. RealStep es
-el cliente y licenciatario autorizado. Esta relación se centraliza en
-`react-app/src/config/company.js` y se refleja en el aviso legal del footer,
-los metadatos HTML, los atributos `data-*` de la raíz de React y el archivo
-público `ownership.json`.
+   Tras editar el Excel puede informar que `generated/catalog.json` está desactualizado; corregir primero cualquier error de esquema o datos.
 
-Vite copia automáticamente `react-app/public/ownership.json` y
-`react-app/public/_headers` a `react-app/dist`. El segundo configura en Netlify
-la protección contra iframes externos y cabeceras de seguridad que no
-interfieren con scripts, imágenes ni conexiones del catálogo.
+3. Regenerar y volver a comprobar:
 
-Estas medidas dificultan la reutilización no autorizada y ayudan a rastrear
-copias, pero no pueden impedir por completo que se extraiga el código frontend
-que recibe el navegador. La clave privada de firma nunca deberá incluirse en
-`src`, `public`, `dist` ni Git.
+   ```bash
+   npm run import-products
+   npm run check-products
+   npm run compare-catalog
+   ```
 
-La Etapa 2 agrega un manifiesto SHA-256 firmado con Ed25519 para relacionar la
-identidad del software, la licencia y los archivos críticos de cada
-publicación. El build normal no genera claves ni firmas; el flujo firmado
-requiere una clave privada suministrada de forma explícita. La operación,
-custodia, rotación, recuperación ante pérdida o compromiso y las limitaciones
-están documentadas en
-[`docs/integrity-signing.md`](docs/integrity-signing.md).
-El manifiesto `formatVersion: 1` utiliza una canonicalización determinista
-interna del proyecto; no se presenta como una implementación de RFC 8785/JCS.
-El build firmado protege recursivamente todos los archivos regulares de la
-publicación, incluida la clave pública, y se prepara de forma transaccional
-antes de reemplazar `dist`.
+4. Revisar todas las diferencias. Si se aprueban, actualizar el baseline:
 
-## Rollback
+   ```bash
+   npm run update-catalog-baseline
+   ```
 
-El estado anterior al corte está preservado en el tag:
+5. Validar y generar el artefacto oficial:
 
-```text
-pre-react-cutover
-```
+   ```bash
+   npm run test-importer
+   npm run test-react
+   npm run test-integrity
+   npm run react:build:signed
+   npm run integrity:verify
+   git diff --check
+   ```
 
-Para inspeccionarlo sin modificar ramas:
+No editar manualmente `generated/catalog.json` ni aprobar el baseline sin comprender el diff. Ver también [`catalog/README.md`](catalog/README.md).
 
-```powershell
-git switch --detach pre-react-cutover
-```
+## Pruebas
 
-Para preparar una rama de recuperación:
-
-```powershell
-git switch -c rollback/pre-react pre-react-cutover
-```
-
-Antes de cambiar de estado, confirmar siempre que no existan cambios locales
-sin guardar.
-
-## Ejecucion por Consola
-
-C:\Users\santl\OneDrive\Documents\catalogo_head\Catalogo_Head\realstep-head>
-
-npm run react:dev
-
-## Cambios en el Excel
-El flujo normal, de ahora en adelante, queda así:
-
-npm run import-products
-npm run compare-catalog
-
-Si los cambios son correctos y los aprobás:
-
-npm run update-catalog-baseline
+```bash
 npm run test-importer
 npm run test-react
-npm run react:build
+npm run test-integrity
+git diff --check
+```
 
-Como esos archivos aparecen modificados respecto de Git, cuando termines todas las validaciones conviene guardar el estado con un commit
+Todas las suites pertinentes deben aprobar. No existen todavía suites E2E, visuales, de accesibilidad o rendimiento dedicadas.
+
+## Build firmado e integridad
+
+```bash
+npm run react:build:signed
+npm run integrity:verify
+```
+
+El resultado queda en `react-app/dist`. El proceso usa Ed25519, un manifiesto con hashes SHA-256 y una estrategia transaccional de publicación. La explicación completa está en [`docs/integrity-signing.md`](docs/integrity-signing.md).
+
+### Advertencia sobre `.signing`
+
+La clave privada predeterminada vive en `.signing/ed25519-private.pem` y está ignorada por Git. Nunca debe copiarse a commits, prompts, logs, documentación o archivos compartidos. Una computadora nueva no la recibe al clonar: debe restaurarse manualmente desde un respaldo seguro. No regenerar ni rotar la clave, y no usar `--force`, sin una decisión explícita.
+
+## Publicación en Netlify
+
+1. Ejecutar pruebas.
+2. Ejecutar el build firmado y su verificación.
+3. Publicar **únicamente** `react-app/dist`.
+
+Nunca publicar la raíz del repositorio. Si Netlify ejecuta el build, debe usar el flujo firmado y recibir la clave por un mecanismo secreto seguro. Si no dispone de la clave, desplegar el `dist` firmado previamente sin reconstruirlo. Verificar en el dominio publicado que Netlify aplique los headers provenientes de `react-app/public/_headers`.
+
+## Trabajar desde otra computadora
+
+Antes de empezar:
+
+```bash
+git status
+git pull --ff-only
+```
+
+Para una computadora nueva:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd <CARPETA_DEL_REPOSITORIO>/realstep-head
+npm ci
+npm --prefix react-app ci
+npm run test-importer
+npm run test-react
+npm run test-integrity
+npm run react:build
+```
+
+En Windows PowerShell, una ruta se cambia con:
+
+```powershell
+Set-Location C:\ruta\al\repositorio\realstep-head
+```
+
+En Linux, incluido CachyOS:
+
+```bash
+cd /ruta/al/repositorio/realstep-head
+```
+
+Al terminar, ejecutar las pruebas pertinentes y luego:
+
+```bash
+git diff --check
+git status
+git add <archivos-revisados>
+git commit -m "Describir el cambio en español"
+git push
+```
+
+No trabajar en paralelo sobre cambios no sincronizados. Los agentes de IA no deben hacer commit, push ni despliegue sin una orden expresa.
+
+## Limitaciones actuales
+
+- EmailJS construye y envía el pedido desde el navegador.
+- `localStorage` puede ser manipulado; la reconciliación protege consistencia, no seguridad.
+- No hay backend, base de datos, autenticación, autorización ni persistencia duradera.
+- No existe idempotencia server-side ni control propio de rate limiting.
+- La privacidad, retención y eliminación de datos personales están pendientes de diseño.
+- La verificación de integridad en React es actualmente no bloqueante.
+
+Nunca confiar en datos provenientes del navegador. El backend futuro deberá validar disponibilidad, cantidades y precios, recalcular totales y persistir antes de notificar.
+
+## Próximos pasos
+
+La dirección aprobada es un backend Node.js con PostgreSQL, persistencia autoritativa del pedido, idempotencia, concurrencia controlada y correo desde servidor. Prisma, el esquema, los proveedores, los roles y las políticas de privacidad todavía no están implementados o cerrados. Consultar el roadmap y las decisiones pendientes en [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md).
+
+## Contribución
+
+- Revisar `git status` antes de modificar.
+- No tocar Excel, baseline, firma, licencia o configuración legal si la tarea no lo requiere.
+- No instalar dependencias sin justificarlo.
+- Mantener cambios pequeños, cohesivos y compatibles.
+- Ejecutar las pruebas pertinentes y `git diff --check`.
+- Informar archivos modificados, pruebas y limitaciones.
+- Escribir los mensajes de commit en español.
+
+No hacer commit, push ni despliegue cuando la tarea no lo autorice expresamente.
