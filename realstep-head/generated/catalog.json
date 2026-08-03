@@ -5225,7 +5225,7 @@
       "name": "CUBREGRIP PADEL XTREME SOFT MX",
       "code": null,
       "price": 183300,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 62,
       "images": [],
@@ -6360,7 +6360,7 @@
       "name": "TOUR RACQUET BAG L NEON",
       "code": "PENDIENTE",
       "price": 186612,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 93,
       "images": [
@@ -6763,7 +6763,7 @@
       "name": "IG CHALLENGE TEAM L (ST)",
       "code": "PENDIENTE",
       "price": 171060,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 106,
       "images": [
@@ -7705,7 +7705,7 @@
       "name": "HEAD BALL TROLLEY",
       "code": "PENDIENTE",
       "price": 259188,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 133,
       "images": [
