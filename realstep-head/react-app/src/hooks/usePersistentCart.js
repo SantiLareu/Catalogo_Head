@@ -3,13 +3,14 @@ import { cartActions, cartReducer } from '../reducers/cartReducer.js';
 import { readCart, removeCart, writeCart } from '../services/cartStorage.js';
 import { initializePriceSnapshots } from '../services/cartReconciliation.js';
 
-function usePersistentCart(products) {
+function usePersistentCart(catalog) {
   const [lines, dispatch] = useReducer(
     cartReducer,
-    products,
-    (catalogProducts) => initializePriceSnapshots(
+    catalog,
+    (initialCatalog) => initializePriceSnapshots(
       readCart(window.localStorage),
-      catalogProducts
+      initialCatalog.products,
+      initialCatalog.stockIsAvailabilityOnly
     )
   );
   const removeOnNextWriteRef = useRef(false);

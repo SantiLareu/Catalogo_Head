@@ -17,7 +17,7 @@ const CATALOG_UNAVAILABLE_MESSAGE =
 export function CartProvider({ children, initialCatalog }) {
   const [activeCatalog, setActiveCatalog] = useState(initialCatalog);
   const products = activeCatalog.products;
-  const [lines, dispatch, clearPersistedCart] = usePersistentCart(initialCatalog.products);
+  const [lines, dispatch, clearPersistedCart] = usePersistentCart(initialCatalog);
   const [toast, setToast] = useState('');
   const [resetVersion, setResetVersion] = useState(0);
   const [catalogStatus, setCatalogStatus] = useState('idle');
@@ -44,8 +44,8 @@ export function CartProvider({ children, initialCatalog }) {
   }, []);
 
   const reconciliation = useMemo(
-    () => reconcileCart(lines, products),
-    [lines, products]
+    () => reconcileCart(lines, products, activeCatalog.stockIsAvailabilityOnly),
+    [activeCatalog.stockIsAvailabilityOnly, lines, products]
   );
   const units = reconciliation.units;
 
@@ -69,17 +69,26 @@ export function CartProvider({ children, initialCatalog }) {
     pendingPulseRef.current = true;
   }, [clearPersistedCart]);
 
-  const reconcileWithProducts = useCallback((currentProducts) => {
-    const refreshed = initializePriceSnapshots(lines, currentProducts);
+  const reconcileWithCatalog = useCallback((currentCatalog) => {
+    const currentProducts = currentCatalog.products;
+    const refreshed = initializePriceSnapshots(
+      lines,
+      currentProducts,
+      currentCatalog.stockIsAvailabilityOnly
+    );
     if (refreshed.some((line, index) => line !== lines[index])) {
       dispatch({ type: cartActions.HYDRATE_CART, lines: refreshed });
     }
-    return reconcileCart(refreshed, currentProducts);
+    return reconcileCart(
+      refreshed,
+      currentProducts,
+      currentCatalog.stockIsAvailabilityOnly
+    );
   }, [lines]);
 
   const refreshCart = useCallback(
-    () => reconcileWithProducts(products),
-    [products, reconcileWithProducts]
+    () => reconcileWithCatalog(activeCatalog),
+    [activeCatalog, reconcileWithCatalog]
   );
 
   const checkCatalog = useCallback(async ({ force = false } = {}) => {
@@ -91,16 +100,16 @@ export function CartProvider({ children, initialCatalog }) {
       return {
         ...result,
         valid: true,
-        reconciliation: reconcileWithProducts(result.catalog.products)
+        reconciliation: reconcileWithCatalog(result.catalog)
       };
     }
     setCatalogStatus(result.status);
     return {
       ...result,
       valid: false,
-      reconciliation: reconcileWithProducts(products)
+      reconciliation: reconcileWithCatalog(activeCatalog)
     };
-  }, [products, reconcileWithProducts]);
+  }, [activeCatalog, reconcileWithCatalog]);
 
   useEffect(() => {
     const checkWhenVisible = () => {
@@ -150,7 +159,11 @@ export function CartProvider({ children, initialCatalog }) {
       acknowledgePrice: (line) => dispatch({
         type: cartActions.REPLACE_LINE,
         line,
-        replacement: acknowledgeCurrentPrice(line, products)
+        replacement: acknowledgeCurrentPrice(
+          line,
+          products,
+          activeCatalog.stockIsAvailabilityOnly
+        )
       }),
       refreshCart,
       checkCatalog,
@@ -161,7 +174,7 @@ export function CartProvider({ children, initialCatalog }) {
       completeCheckout,
       subscribePulse
     };
-  }, [catalogStatus, checkCatalog, completeCheckout, lines, products, refreshCart, resetVersion, showToast, subscribePulse, toast]);
+  }, [activeCatalog.stockIsAvailabilityOnly, catalogStatus, checkCatalog, completeCheckout, lines, products, refreshCart, resetVersion, showToast, subscribePulse, toast]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

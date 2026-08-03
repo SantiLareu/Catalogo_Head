@@ -101,6 +101,7 @@ test('construye líneas sin variante y con variante+talle, preservando ID litera
   assert.equal(lines[1].variantId, 'black ');
   assert.equal(lines[1].variantName, 'Black & White');
   assert.equal(lines[1].size, 'M');
+  assert.equal(lines[1].code, 'REM-1');
   assert.equal(lines[1].unitPrice, 250);
 });
 

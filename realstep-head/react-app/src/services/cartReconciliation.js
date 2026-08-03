@@ -12,16 +12,17 @@ export const cartIssueMessages = {
   price_changed: 'El precio cambió. Revisá y aceptá el precio vigente para continuar.'
 };
 
-function getSizeIssue(size, quantity) {
+function getSizeIssue(size, quantity, stockIsAvailabilityOnly) {
   if (!size) return 'size_unavailable';
   if (Number.isFinite(size.stock)) {
     if (size.stock <= 0 || size.inStock === false) return 'size_unavailable';
+    if (stockIsAvailabilityOnly === true) return null;
     return size.stock >= quantity ? null : 'unavailable';
   }
   return size.inStock === true ? null : 'size_unavailable';
 }
 
-function reconcileLine(line, productById) {
+function reconcileLine(line, productById, stockIsAvailabilityOnly) {
   const product = productById.get(line.productId) || null;
   const issues = [];
   let variant = null;
@@ -42,7 +43,11 @@ function reconcileLine(line, productById) {
       const sizes = getEffectiveSizes(product, variant);
       if (line.size != null || sizes.length > 0) {
         const size = sizes.find((candidate) => candidate.size === line.size);
-        const sizeIssue = getSizeIssue(size, line.quantity);
+        const sizeIssue = getSizeIssue(
+          size,
+          line.quantity,
+          stockIsAvailabilityOnly
+        );
         if (sizeIssue) issues.push(sizeIssue);
       }
 
@@ -68,9 +73,15 @@ function reconcileLine(line, productById) {
   };
 }
 
-export function reconcileCart(lines = [], products = []) {
+export function reconcileCart(
+  lines = [],
+  products = [],
+  stockIsAvailabilityOnly = false
+) {
   const productById = new Map(products.map((product) => [product.id, product]));
-  const entries = lines.map((line) => reconcileLine(line, productById));
+  const entries = lines.map((line) =>
+    reconcileLine(line, productById, stockIsAvailabilityOnly)
+  );
   const units = lines.reduce((sum, line) => sum + line.quantity, 0);
   const total = entries.reduce(
     (sum, entry) => sum + (Number.isFinite(entry.currentPrice)
@@ -88,8 +99,12 @@ export function reconcileCart(lines = [], products = []) {
   };
 }
 
-export function initializePriceSnapshots(lines = [], products = []) {
-  const report = reconcileCart(lines, products);
+export function initializePriceSnapshots(
+  lines = [],
+  products = [],
+  stockIsAvailabilityOnly = false
+) {
+  const report = reconcileCart(lines, products, stockIsAvailabilityOnly);
   return report.entries.map(({ line, currentPrice, issues }) => {
     if (
       Number.isFinite(line.priceSnapshot) ||
@@ -100,8 +115,12 @@ export function initializePriceSnapshots(lines = [], products = []) {
   });
 }
 
-export function acknowledgeCurrentPrice(line, products = []) {
-  const report = reconcileCart([line], products);
+export function acknowledgeCurrentPrice(
+  line,
+  products = [],
+  stockIsAvailabilityOnly = false
+) {
+  const report = reconcileCart([line], products, stockIsAvailabilityOnly);
   const currentPrice = report.entries[0]?.currentPrice;
   return Number.isFinite(currentPrice) ? { ...line, priceSnapshot: currentPrice } : line;
 }

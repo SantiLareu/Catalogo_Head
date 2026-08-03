@@ -151,6 +151,28 @@ test('detecta cambios remotos y los reconcilia sin eliminar líneas', async (t) 
     }], result.catalog.products);
     assert.deepEqual(report.entries[0].issues, ['variant_removed']);
   });
+
+  await t.test('availability-only mantiene válida cantidad 10 disponible', async () => {
+    const availabilityCatalog = {
+      ...catalog([product({ sizes: [{ size: '40', stock: 1, inStock: true }] })]),
+      stockIsAvailabilityOnly: true
+    };
+    const client = createPublishedCatalogClient({
+      initialCatalog: catalog(),
+      fetchImpl: async () => response(availabilityCatalog),
+      url: '/catalog.json'
+    });
+    const result = await client.check();
+    const report = reconcileCart([{
+      productId: 'shoe',
+      size: '40',
+      quantity: 10,
+      priceSnapshot: 100
+    }], result.catalog.products, result.catalog.stockIsAvailabilityOnly);
+    assert.equal(result.status, 'changes_detected');
+    assert.deepEqual(report.entries[0].issues, []);
+    assert.equal(report.checkoutBlocked, false);
+  });
 });
 
 test('mantiene compatibilidad con una línea legacy', async () => {

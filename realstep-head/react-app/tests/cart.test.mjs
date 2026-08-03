@@ -274,6 +274,60 @@ test('cantidad superior al stock disponible se marca como unavailable', () => {
   assert.deepEqual(report.entries[0].issues, ['unavailable']);
 });
 
+test('stock de disponibilidad permite cantidad 10 cuando el talle está disponible', () => {
+  const availabilityProducts = [{
+    id: 'availability',
+    price: 10,
+    stockMode: 'size',
+    sizes: [{ size: 'M', stock: 1, inStock: true }],
+    variants: []
+  }];
+  const report = reconcileCart([{
+    productId: 'availability',
+    size: 'M',
+    quantity: 10,
+    priceSnapshot: 10
+  }], availabilityProducts, true);
+  assert.deepEqual(report.entries[0].issues, []);
+  assert.equal(report.checkoutBlocked, false);
+  assert.equal(report.units, 10);
+});
+
+test('stock de disponibilidad agotado bloquea cualquier cantidad', () => {
+  const availabilityProducts = [{
+    id: 'availability',
+    price: 10,
+    stockMode: 'size',
+    sizes: [{ size: 'M', stock: 0, inStock: false }],
+    variants: []
+  }];
+  const report = reconcileCart([{
+    productId: 'availability',
+    size: 'M',
+    quantity: 10,
+    priceSnapshot: 10
+  }], availabilityProducts, true);
+  assert.deepEqual(report.entries[0].issues, ['size_unavailable']);
+  assert.equal(report.checkoutBlocked, true);
+});
+
+test('stock_mode none conserva cantidad 10 con availability-only', () => {
+  const noStockProducts = [{
+    id: 'unlimited',
+    price: 10,
+    stockMode: 'none',
+    sizes: [],
+    variants: []
+  }];
+  const report = reconcileCart([{
+    productId: 'unlimited',
+    quantity: 10,
+    priceSnapshot: 10
+  }], noStockProducts, true);
+  assert.deepEqual(report.entries[0].issues, []);
+  assert.equal(report.checkoutBlocked, false);
+});
+
 test('precio modificado usa valor vigente y requiere reconocimiento', () => {
   const line = { productId: 'plain', quantity: 2, priceSnapshot: 90 };
   const changed = reconcileCart([line], products);
@@ -305,6 +359,28 @@ test('carrito legacy adopta una línea base vigente sin usarla como autoridad', 
   const initialized = initializePriceSnapshots(legacy, products);
   assert.deepEqual(initialized, [{ productId: 'plain', quantity: 1, priceSnapshot: 100 }]);
   assert.equal(reconcileCart(initialized, products).total, 100);
+});
+
+test('línea legacy availability-only con cantidad 10 adopta el precio vigente', () => {
+  const availabilityProducts = [{
+    id: 'availability',
+    price: 25,
+    stockMode: 'size',
+    sizes: [{ size: 'M', stock: 1, inStock: true }],
+    variants: []
+  }];
+  const legacy = [{ productId: 'availability', size: 'M', quantity: 10 }];
+  const initialized = initializePriceSnapshots(legacy, availabilityProducts, true);
+  assert.deepEqual(initialized, [{
+    productId: 'availability',
+    size: 'M',
+    quantity: 10,
+    priceSnapshot: 25
+  }]);
+  assert.equal(
+    reconcileCart(initialized, availabilityProducts, true).checkoutBlocked,
+    false
+  );
 });
 
 test('reconciliación repetida es determinista', () => {
@@ -386,4 +462,19 @@ test('catálogo real coincide con el aprobado y cubre los casos de carrito reque
     quantity: 2
   }], catalog.products);
   assert.equal(restored[0].variantId, 'black ');
+
+  const motion = catalog.products.find((product) =>
+    product.id === 'MOTION T-SHIRT MEN'
+  );
+  const black = getVariantById(motion, 'black');
+  const motionReport = reconcileCart([{
+    productId: motion.id,
+    variantId: black.id,
+    size: 'M',
+    quantity: 10,
+    priceSnapshot: motion.price
+  }], catalog.products, catalog.stockIsAvailabilityOnly);
+  assert.equal(black.sizes.find((item) => item.size === 'M').stock, 1);
+  assert.deepEqual(motionReport.entries[0].issues, []);
+  assert.equal(motionReport.checkoutBlocked, false);
 });
