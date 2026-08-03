@@ -23,6 +23,9 @@ export function CartProvider({ children, initialCatalog }) {
   const [catalogStatus, setCatalogStatus] = useState('idle');
   const catalogClientRef = useRef(null);
   const timerRef = useRef(null);
+  const pulseListenersRef = useRef(new Set());
+  const pendingPulseRef = useRef(false);
+  const previousUnitsRef = useRef(null);
   if (!catalogClientRef.current) {
     catalogClientRef.current = createPublishedCatalogClient({ initialCatalog });
   }
@@ -35,9 +38,35 @@ export function CartProvider({ children, initialCatalog }) {
 
   useEffect(() => () => window.clearTimeout(timerRef.current), []);
 
+  const subscribePulse = useCallback((listener) => {
+    pulseListenersRef.current.add(listener);
+    return () => pulseListenersRef.current.delete(listener);
+  }, []);
+
+  const reconciliation = useMemo(
+    () => reconcileCart(lines, products),
+    [lines, products]
+  );
+  const units = reconciliation.units;
+
+  useEffect(() => {
+    if (previousUnitsRef.current === null) {
+      previousUnitsRef.current = units;
+      return;
+    }
+    if (pendingPulseRef.current) {
+      pendingPulseRef.current = false;
+      previousUnitsRef.current = units;
+      pulseListenersRef.current.forEach((listener) => listener());
+    } else if (units !== previousUnitsRef.current) {
+      previousUnitsRef.current = units;
+    }
+  }, [units]);
+
   const completeCheckout = useCallback(() => {
     clearPersistedCart();
     setResetVersion(advanceResetVersion);
+    pendingPulseRef.current = true;
   }, [clearPersistedCart]);
 
   const reconcileWithProducts = useCallback((currentProducts) => {
@@ -87,7 +116,6 @@ export function CartProvider({ children, initialCatalog }) {
   }, [checkCatalog]);
 
   const value = useMemo(() => {
-    const reconciliation = reconcileCart(lines, products);
     const catalogChecking = catalogStatus === 'checking';
     const catalogUnavailable = catalogStatus === 'unavailable' || catalogStatus === 'error';
 
@@ -107,10 +135,18 @@ export function CartProvider({ children, initialCatalog }) {
       },
       toast,
       showToast,
-      addLine: (line) => dispatch({ type: cartActions.ADD_LINE, line }),
-      removeLine: (line) => dispatch({ type: cartActions.REMOVE_LINE, line }),
-      setLineQuantity: (line, quantity) =>
-        dispatch({ type: cartActions.SET_LINE_QUANTITY, line, quantity }),
+      addLine: (line) => {
+        pendingPulseRef.current = true;
+        dispatch({ type: cartActions.ADD_LINE, line });
+      },
+      removeLine: (line) => {
+        pendingPulseRef.current = true;
+        dispatch({ type: cartActions.REMOVE_LINE, line });
+      },
+      setLineQuantity: (line, quantity) => {
+        pendingPulseRef.current = true;
+        dispatch({ type: cartActions.SET_LINE_QUANTITY, line, quantity });
+      },
       acknowledgePrice: (line) => dispatch({
         type: cartActions.REPLACE_LINE,
         line,
@@ -118,10 +154,14 @@ export function CartProvider({ children, initialCatalog }) {
       }),
       refreshCart,
       checkCatalog,
-      clearCart: () => dispatch({ type: cartActions.CLEAR_CART }),
-      completeCheckout
+      clearCart: () => {
+        pendingPulseRef.current = true;
+        dispatch({ type: cartActions.CLEAR_CART });
+      },
+      completeCheckout,
+      subscribePulse
     };
-  }, [catalogStatus, checkCatalog, completeCheckout, lines, products, refreshCart, resetVersion, showToast, toast]);
+  }, [catalogStatus, checkCatalog, completeCheckout, lines, products, refreshCart, resetVersion, showToast, subscribePulse, toast]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

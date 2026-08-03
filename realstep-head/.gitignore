@@ -8,3 +8,5 @@ react-app/dist/
 integrity-manifest.sig.tmp
 .env.signing
 .env.*.local
+# Local Pi runtime state
+.atl/

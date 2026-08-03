@@ -6,4 +6,15 @@
   --m:#6d6d6d;
   --a:#ff3028;
   --sh:0 22px 60px rgba(0,0,0,.16);
+
+  /* Tokens de movimiento */
+  --motion-duration-instant: 100ms;
+  --motion-duration-fast: 160ms;
+  --motion-duration-normal: 220ms;
+  --motion-duration-slow: 320ms;
+
+  --motion-ease-standard: cubic-bezier(.2, 0, 0, 1);
+  --motion-ease-enter: cubic-bezier(0, 0, .2, 1);
+  --motion-ease-exit: cubic-bezier(.4, 0, 1, 1);
+  --motion-ease-emphasized: cubic-bezier(.2, 0, 0, 1.2);
 }

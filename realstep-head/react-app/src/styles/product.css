@@ -9,9 +9,16 @@
   background:#fff;
   box-shadow:var(--sh);
   scroll-margin-top:88px;
+  transition:
+    box-shadow var(--motion-duration-normal) var(--motion-ease-standard),
+    transform var(--motion-duration-normal) var(--motion-ease-standard);
 }
 .product:focus{outline:none}
 .product:focus-visible{outline:3px solid #111;outline-offset:4px}
+.product:hover{
+  box-shadow:0 28px 72px rgba(0,0,0,.18);
+  transform:translateY(-1px);
+}
 .product--search-highlight{animation:product-search-highlight 1.8s ease-out}
 @keyframes product-search-highlight{
   0%,35%{box-shadow:0 0 0 4px #111,0 14px 34px #0003}
@@ -50,6 +57,33 @@
   height:100%;
   object-fit:contain;
 }
+.gallery-image--current{
+  animation:gallery-image-enter var(--motion-duration-normal,220ms) var(--motion-ease-standard,linear);
+}
+.gallery-image--leaving{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:1;
+  pointer-events:none;
+  animation:gallery-image-leave var(--motion-duration-normal,220ms) var(--motion-ease-standard,linear) forwards;
+}
+@keyframes gallery-image-enter{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes gallery-image-leave{
+  from{opacity:1}
+  to{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery-image--current,
+  .gallery-image--leaving{
+    animation:none;
+  }
+}
 .gallery-nav{
   position:absolute;
   top:50%;
@@ -66,7 +100,9 @@
   font-size:34px;
   line-height:1;
   transform:translateY(-50%);
-  transition:background .2s,transform .2s;
+  transition:
+    background var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
 }
 .gallery-nav:hover{background:rgba(17,17,17,.78);transform:translateY(-50%) scale(1.04)}
 .gallery-nav:focus-visible{outline:3px solid #fff;outline-offset:2px}
@@ -101,6 +137,7 @@
   background:#fff;
   padding:4px;
   scroll-snap-align:start;
+  transition:border-color var(--motion-duration-fast) var(--motion-ease-standard);
 }
 .thumb.active{border:2px solid #111;padding:3px}
 .thumb:focus-visible{outline:3px solid #777;outline-offset:2px}
@@ -128,7 +165,17 @@
   letter-spacing:.08em;
 }
 .sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.size{min-height:64px;border:1px solid var(--l);background:#fff;font-weight:900}
+.size{
+  min-height:64px;
+  border:1px solid var(--l);
+  background:#fff;
+  font-weight:900;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-ease-standard),
+    background var(--motion-duration-fast) var(--motion-ease-standard),
+    color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+.size:not(:disabled):hover{border-color:#111}
 .size.sel{border:2px solid #111}
 .size:disabled{background:#e8e8e8;color:#999;cursor:not-allowed;text-decoration:line-through}
 .size small{display:block;font-size:9px;margin-top:3px}
@@ -144,7 +191,16 @@
   display:grid;
   place-items:center;
 }
-.qty button{font-size:22px}
+.qty button{
+  font-size:22px;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-ease-standard),
+    background var(--motion-duration-fast) var(--motion-ease-standard);
+}
+.qty button:not(:disabled):hover{
+  border-color:#111;
+  background:#f7f7f7;
+}
 .qval{font-weight:900}
 .primary{
   width:100%;
@@ -154,7 +210,14 @@
   background:#111;
   color:#fff;
   font-weight:900;
+  cursor:pointer;
+  transition:
+    background var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard),
+    opacity var(--motion-duration-fast) var(--motion-ease-standard);
 }
+.primary:not(:disabled):hover{background:#1d1d1d}
+.primary:not(:disabled):active{transform:scale(.985)}
 .primary:disabled{cursor:not-allowed;opacity:.55}
 .variant-selector{margin-top:24px}
 .variant-selector .label{margin:0 0 10px}
@@ -175,6 +238,7 @@
   background-position:center;
   background-size:cover;
   box-shadow:inset 0 0 0 3px #fff;
+  transition:border-color var(--motion-duration-fast) var(--motion-ease-standard);
 }
 .variant-swatch:hover{border-color:#666}
 .variant-swatch:focus-visible{outline:3px solid #777;outline-offset:3px}
@@ -217,6 +281,7 @@
   letter-spacing:.06em;
   text-align:left;
   text-transform:uppercase;
+  transition:background var(--motion-duration-fast) var(--motion-ease-standard);
 }
 .product-specifications-toggle:hover{background:#eee}
 .product-specifications-toggle:focus-visible{outline:3px solid #777;outline-offset:3px}
@@ -249,3 +314,5 @@
   color:var(--m);
   text-align:center;
 }
+
+

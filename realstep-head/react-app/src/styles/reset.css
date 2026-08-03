@@ -4,3 +4,15 @@ body{margin:0;font-family:Inter,Arial,sans-serif;background:#ececec;color:#111}
 button,input,textarea{font:inherit}
 button{cursor:pointer}
 main{max-width:1500px;margin:auto}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}

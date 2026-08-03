@@ -7,12 +7,14 @@ import CheckoutModal, {
 import ProductSearch from '../search/ProductSearch.jsx';
 import { companyConfig } from '../../config/company.js';
 import useCart from '../../hooks/useCart.js';
+import { useCartBadgeAnimation } from '../../hooks/useCartBadgeAnimation.js';
 import { scrollToHashTarget } from '../../utils/navigation.js';
 
 const logoUrl = new URL('../../../../assets/Real_Step_logo.jpeg', import.meta.url).href;
 
 function Header({ categories, products }) {
   const { catalogValidation, checkCatalog, showToast, units } = useCart();
+  const cartBadge = useCartBadgeAnimation();
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
@@ -81,7 +83,13 @@ function Header({ categories, products }) {
           ref={cartButtonRef}
         >
           {catalogValidation.checking ? 'Comprobando catálogo…' : 'Pedido'}
-          <span aria-hidden="true">{units}</span>
+          <span
+            aria-hidden="true"
+            className={cartBadge.className}
+            style={!cartBadge.rendered ? { display: 'none' } : undefined}
+          >
+            {units}
+          </span>
         </button>
       </div>
       {categoryMenuOpen ? (
