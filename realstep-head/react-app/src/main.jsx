@@ -11,6 +11,7 @@ import './styles/header.css';
 import './styles/search.css';
 import './styles/hero.css';
 import './styles/category-index.css';
+import './styles/category-editorial-cover.css';
 import './styles/product.css';
 import './styles/lightbox.css';
 import './styles/cart.css';

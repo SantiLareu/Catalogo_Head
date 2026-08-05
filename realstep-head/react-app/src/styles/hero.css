@@ -36,6 +36,3 @@
   object-fit:cover;
   mix-blend-mode:screen;
 }
-.heading{padding:70px 4vw 28px}
-.heading h2{margin:.1em 0;font-size:clamp(38px,6vw,80px);letter-spacing:-.05em}
-.heading p:last-child{color:var(--m)}

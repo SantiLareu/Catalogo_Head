@@ -1,6 +1,33 @@
 .list{display:grid;gap:34px;padding:0 4vw 80px}
 .catalog-section{scroll-margin-top:72px}
 .catalog-section:focus{outline:none}
+.catalog-section > .heading{
+  position:relative;
+  padding:clamp(112px,11vw,176px) 4vw clamp(58px,6vw,88px);
+}
+.catalog-section > .heading::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:4vw;
+  left:4vw;
+  border-top:1px solid var(--l);
+}
+.catalog-section > .heading h2{
+  max-width:12ch;
+  margin:.12em 0 0;
+  font-size:clamp(56px,8vw,118px);
+  line-height:.88;
+  letter-spacing:-.065em;
+  text-wrap:balance;
+}
+.catalog-section > .heading p:last-child:not(.ey){
+  max-width:680px;
+  margin:26px 0 0;
+  color:var(--m);
+  font-size:clamp(16px,1.5vw,20px);
+  line-height:1.6;
+}
 .product{
   display:grid;
   grid-template-columns:minmax(0,760px) minmax(330px,1fr);

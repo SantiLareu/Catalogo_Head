@@ -8,6 +8,12 @@ import {
   normalizeInstagramUrl
 } from '../src/config/contactLinks.js';
 import { normalizeSpecifications } from '../src/data/catalogSelectors.js';
+import {
+  assertEditorialCoverMode,
+  categoryEditorialCovers,
+  getCategoryEditorialCover,
+  resolveEditorialImageUrl
+} from '../src/config/categoryEditorialCovers.js';
 
 test('normaliza ficha con campos textiles y lista de características', () => {
   const specifications = normalizeSpecifications({
@@ -20,6 +26,87 @@ test('normaliza ficha con campos textiles y lista de características', () => {
   ]);
   assert.deepEqual(specifications[2].values, ['Secado rápido', 'Protección UV']);
   assert.deepEqual(normalizeSpecifications(null), []);
+});
+
+test('configura portadas para todas las categorías principales previstas', () => {
+  assert.deepEqual(Object.keys(categoryEditorialCovers).sort(), [
+    'accesorios-medias',
+    'bolsos-mochilas',
+    'calzado',
+    'indumentaria-dama',
+    'indumentaria-hombre',
+    'paletas-padel',
+    'pelotas',
+    'pelotas-squash',
+    'pop',
+    'raquetas-squash',
+    'raquetas-tenis',
+    'ski',
+    'snowboard'
+  ]);
+  assert.equal(categoryEditorialCovers['accesorios-medias'].mode, 'prepend');
+  assert.ok(Object.entries(categoryEditorialCovers).every(([id, cover]) =>
+    id === 'accesorios-medias' || cover.mode === 'replace'
+  ));
+  assert.ok(Object.values(categoryEditorialCovers).every((cover) =>
+    cover.image === null || cover.image.startsWith('editorial/')
+  ));
+});
+
+test('resuelve imágenes editoriales contra la base de publicación', () => {
+  assert.equal(
+    resolveEditorialImageUrl(
+      'editorial/calzado.jpg',
+      'https://catalog.example/realstep/'
+    ),
+    'https://catalog.example/realstep/editorial/calzado.jpg'
+  );
+  assert.equal(resolveEditorialImageUrl(null, 'https://catalog.example/realstep/'), null);
+  assert.throws(
+    () => resolveEditorialImageUrl('/editorial/calzado.jpg', 'https://catalog.example/realstep/'),
+    /relativa a la base/
+  );
+});
+
+test('rechaza modos editoriales inválidos sin degradación silenciosa', () => {
+  assert.equal(assertEditorialCoverMode('replace', 'calzado'), 'replace');
+  assert.equal(assertEditorialCoverMode('prepend', 'accesorios-medias'), 'prepend');
+  assert.throws(
+    () => assertEditorialCoverMode('otro', 'calzado'),
+    /Modo de portada editorial inválido/
+  );
+});
+
+test('portada omite imagen nula y aplica src y alt cuando están configurados', async () => {
+  const cover = await readFile(
+    new URL('../src/components/catalog/CategoryEditorialCover.jsx', import.meta.url),
+    'utf8'
+  );
+  assert.match(cover, /\{image \? \(/);
+  assert.match(cover, /<img alt=\{imageAlt\} src=\{image\} \/>/);
+  assert.match(cover, /category-editorial-cover--without-image/);
+});
+
+test('composición replace y prepend conserva sección, ancla y productos', async () => {
+  const section = await readFile(
+    new URL('../src/components/catalog/CatalogSection.jsx', import.meta.url),
+    'utf8'
+  );
+  assert.match(section, /editorialCover\?\.mode === 'replace'/);
+  assert.match(section, /\{editorialCover \? <CategoryEditorialCover/);
+  assert.match(section, /\{replacesHeading \? null : <CategoryHeading/);
+  assert.match(section, /id=\{category\.target\}/);
+  assert.match(section, /data-catalog-category=\{category\.id\}/);
+  assert.match(section, /tabIndex="-1"/);
+  assert.match(section, /products\.map/);
+  assert.match(section, /<ProductCard/);
+});
+
+test('no agrega portadas a subcategorías no solicitadas', () => {
+  assert.equal(
+    getCategoryEditorialCover('accesorios-antivibrador', 'https://catalog.example/realstep/'),
+    null
+  );
 });
 
 test('la ficha queda cerrada por defecto y como hermana posterior del panel', async () => {

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { getCategoryEditorialCover } from '../../config/categoryEditorialCovers.js';
 import { buildCatalogSections } from '../../data/catalogSelectors.js';
 import CatalogSection from './CatalogSection.jsx';
 
@@ -14,6 +15,7 @@ function CatalogSections({ categories, products }) {
         <CatalogSection
           category={category}
           categories={categories}
+          editorialCover={getCategoryEditorialCover(category.id)}
           key={category.id}
           products={sectionProducts}
         />
