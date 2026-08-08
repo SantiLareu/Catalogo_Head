@@ -61,12 +61,12 @@ export async function verifyPublishedIntegrity(
   {
     fetchImpl = globalThis.fetch,
     cryptoImpl = globalThis.crypto,
-    baseUrl = new URL(/* @vite-ignore */ '../../', import.meta.url)
+    baseUrl
   } = {}
 ) {
   if (!fetchImpl || !cryptoImpl?.subtle) return 'unavailable';
 
-  const publicationBase = normalizeBaseUrl(baseUrl);
+  const publicationBase = normalizeBaseUrl(baseUrl ?? resolveDefaultBaseUrl());
   const artifactUrls = [
     new URL('integrity-manifest.json', publicationBase),
     new URL('integrity-manifest.sig', publicationBase),
@@ -249,6 +249,20 @@ function normalizeBaseUrl(baseUrl) {
   base.hash = '';
   if (!base.pathname.endsWith('/')) base.pathname += '/';
   return base;
+}
+
+function resolveDefaultBaseUrl() {
+  // En el navegador, `import.meta.url` apunta al bundle compilado y `../../`
+  // queda fuera del subpath de la publicación (por ejemplo, GitHub Pages sirve
+  // el catálogo bajo `/Catalogo_Head/`). `document.baseURI` siempre refleja el
+  // directorio real del documento cargado, así que es la fuente correcta tanto
+  // para subpaths como para dominios personalizados.
+  if (typeof document !== 'undefined' && typeof document.baseURI === 'string') {
+    return new URL(document.baseURI);
+  }
+  // Fallback seguro para entornos sin DOM (tests Node, SSR, scripts CLI).
+  // Conserva el comportamiento histórico basado en `import.meta.url`.
+  return new URL(/* @vite-ignore */ '../../', import.meta.url);
 }
 
 function isProtectedPathSyntaxValid(value) {

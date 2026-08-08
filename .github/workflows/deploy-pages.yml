@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -40,11 +40,19 @@ jobs:
       - name: Ejecutar tests de build
         run: npm run test:build
 
-      - name: Generar build
-        run: npm run build
+      - name: Ejecutar tests de integridad
+        run: npm run test-integrity
+
+      - name: Generar build firmado
+        env:
+          SIGNING_PRIVATE_KEY_PEM: ${{ secrets.SIGNING_PRIVATE_KEY_PEM }}
+        run: npm run react:build:signed
 
       - name: Verificar build
         run: npm run verify:build
+
+      - name: Verificar integridad de la publicación
+        run: npm run integrity:verify
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
