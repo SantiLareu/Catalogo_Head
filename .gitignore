@@ -1,0 +1,12 @@
+node_modules/
+generated/*.tmp
+generated/.*.tmp
+dist/
+.signing/
+*.private.pem
+*-private.pem
+integrity-manifest.sig.tmp
+.env.signing
+.env.*.local
+# Local Pi runtime state
+.atl/

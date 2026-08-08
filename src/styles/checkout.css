@@ -1,0 +1,41 @@
+.modal{
+  position:fixed;inset:0;z-index:60;visibility:hidden;opacity:0;transition:.2s;
+  display:grid;place-items:center;padding:20px
+}
+.modal.open{visibility:visible;opacity:1}
+.mcard{
+  position:relative;width:min(840px,96vw);max-height:92vh;overflow:auto;
+  overscroll-behavior:contain;background:#fff
+}
+.form{padding:24px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.grid label{display:grid;gap:7px;font-size:12px;font-weight:800}
+.grid input,.grid textarea{min-width:0;padding:12px;border:1px solid var(--l);font:inherit}
+.grid input:focus-visible,.grid textarea:focus-visible{outline:3px solid #777;outline-offset:1px}
+.wide{grid-column:1/-1}
+.preview{margin:22px 0;padding:18px;background:#eee;line-height:1.7}
+.checkout-preview h3{margin:0 0 14px}
+.checkout-preview-scroll{max-width:100%;overflow-x:auto}
+.checkout-preview table{width:100%;min-width:620px;border-collapse:collapse;background:#fff;font-size:13px}
+.checkout-preview th,.checkout-preview td{padding:10px;border-bottom:1px solid var(--l);text-align:left;vertical-align:top}
+.checkout-preview th:nth-child(n+2),.checkout-preview td:nth-child(n+2){text-align:right}
+.checkout-preview small{display:block;color:var(--m)}
+.checkout-preview-totals{display:flex;justify-content:space-between;gap:18px;margin-top:14px}
+.note{color:var(--m);font-size:12px}
+.checkout-status{margin:16px 0;padding:12px;border-left:4px solid #555;background:#f3f3f3}
+.checkout-status--error{border-color:#b22;background:#fff1f1;color:#851616}
+.checkout-status p{margin:0}
+.checkout-status-changes{margin:10px 0 0;padding-left:20px}
+.checkout-status-changes li{margin:6px 0;overflow-wrap:anywhere}
+.checkout-status-prompt{margin-top:12px!important;font-weight:800}
+.checkout-actions .primary{margin-top:8px}
+.close:disabled{cursor:not-allowed;opacity:.45}
+@media(max-width:680px){
+  .modal{padding:8px}
+  .mcard{width:100%;max-height:calc(100dvh - 16px)}
+  .form{padding:18px 16px}
+  .grid{grid-template-columns:1fr}
+  .wide{grid-column:auto}
+  .checkout-preview{padding:14px}
+  .checkout-preview-totals{flex-direction:column;gap:4px}
+}
