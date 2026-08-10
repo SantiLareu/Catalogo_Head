@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { CartProvider } from './context/CartContext.jsx';
 import useCart from './hooks/useCart.js';
 import Toast from './components/feedback/Toast.jsx';
@@ -26,13 +26,18 @@ function CatalogApplication() {
     () => getCatalogTargetIds(categories, products),
     [categories, products]
   );
+  const validTargetIdsRef = useRef(validTargetIds);
+  useEffect(() => {
+    validTargetIdsRef.current = validTargetIds;
+  }, [validTargetIds]);
 
   useEffect(() => {
-    const previousScrollRestoration = window.history.scrollRestoration;
-    window.history.scrollRestoration = 'manual';
 
     const navigateToCurrentHash = (behavior = 'smooth') => {
-      const resolvedHash = resolveCatalogHash(window.location.hash, validTargetIds);
+      const resolvedHash = resolveCatalogHash(
+        window.location.hash,
+        validTargetIdsRef.current
+      );
       if (window.location.hash !== resolvedHash) {
         window.history.replaceState(null, '', resolvedHash);
       }
@@ -40,16 +45,17 @@ function CatalogApplication() {
         scrollToHashTarget(resolvedHash, false, behavior);
       });
     };
-    const handleHashNavigation = () => navigateToCurrentHash('smooth');
+    const handleHashNavigation = () => {
+      navigateToCurrentHash('smooth');
+    };
 
-    navigateToCurrentHash('auto');
+    navigateToCurrentHash('instant');
     window.addEventListener('hashchange', handleHashNavigation);
 
     return () => {
       window.removeEventListener('hashchange', handleHashNavigation);
-      window.history.scrollRestoration = previousScrollRestoration;
     };
-  }, [validTargetIds]);
+  }, []);
 
   return (
     <>

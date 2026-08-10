@@ -2,13 +2,32 @@ import { useEffect, useRef } from 'react';
 
 function ThumbnailRail({ images, imageIndex, name, onSelect }) {
   const activeRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    activeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const container = containerRef.current;
+    const active = activeRef.current;
+    if (!container || !active) return;
+
+    // Centrar el thumbnail activo dentro del contenedor horizontal
+    // manipulando ÚNICAMENTE container.scrollLeft.
+    // Nunca usamos APIs que desplacen la ventana raíz: pueden arrastrar
+    // window.scrollY cuando el thumb activo está fuera del viewport.
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    const desiredScrollLeft =
+      container.scrollLeft +
+      (activeRect.left - containerRect.left) -
+      containerRect.width / 2 +
+      activeRect.width / 2;
+
+    if (desiredScrollLeft !== container.scrollLeft) {
+      container.scrollLeft = desiredScrollLeft;
+    }
   }, [imageIndex]);
 
   return (
-    <div className="thumbs" aria-label={`Imágenes de ${name}`}>
+    <div className="thumbs" aria-label={`Imágenes de ${name}`} ref={containerRef}>
       {images.map((image, index) => (
         <button
           className={`thumb ${index === imageIndex ? 'active' : ''}`}

@@ -36,6 +36,10 @@ void verifyPublishedIntegrity(companyConfig).then((status) => {
   rootElement.dataset.integrityStatus = status;
 });
 
+// Desactivar la restauración automática de scroll antes del primer paint
+// para que la posición inicial la controle React sin competir con el historial.
+window.history.scrollRestoration = 'manual';
+
 createRoot(rootElement).render(
   <StrictMode>
     <App />
