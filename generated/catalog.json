@@ -348,8 +348,8 @@
         },
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
@@ -897,7 +897,7 @@
       "name": "VIBE 2025",
       "code": "PENDIENTE",
       "price": 150845,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 10,
       "images": [],
@@ -3215,8 +3215,8 @@
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
