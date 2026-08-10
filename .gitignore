@@ -10,3 +10,5 @@ integrity-manifest.sig.tmp
 .env.*.local
 # Local Pi runtime state
 .atl/
+# Capturas de diagnóstico locales
+capturas_front/

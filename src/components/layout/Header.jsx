@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CartDrawer from '../cart/CartDrawer.jsx';
 import CategoryMenu, { MenuIcon } from '../categories/CategoryMenu.jsx';
 import CheckoutModal, {
@@ -22,6 +22,40 @@ function Header({ categories, products }) {
   const cartButtonRef = useRef(null);
   const categoryMenuButtonRef = useRef(null);
   const continueButtonRef = useRef(null);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const node = headerRef.current;
+    if (!node) return undefined;
+
+    const applyHeaderHeight = () => {
+      const height = node.getBoundingClientRect().height;
+      document.documentElement.style.setProperty(
+        '--header-height',
+        `${Math.round(height)}px`
+      );
+    };
+
+    applyHeaderHeight();
+
+    let rafId = null;
+    const observer = new ResizeObserver(() => {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+        applyHeaderHeight();
+      });
+    });
+    observer.observe(node);
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      observer.disconnect();
+    };
+  }, []);
   const handleHomeClick = (event) => {
     event.preventDefault();
     scrollToHashTarget('#inicio');
@@ -47,7 +81,7 @@ function Header({ categories, products }) {
   };
 
   return (
-    <header className="top">
+    <header className="top" ref={headerRef}>
       <a className="brand" href="#inicio" aria-label="Ir al inicio" onClick={handleHomeClick}>
         <img src={logoUrl} alt={companyConfig.companyName} className="brand-logo" />
         <span className="brand-text">
