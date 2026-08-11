@@ -77,6 +77,37 @@ test('construye URLs relativas a la base de publicación', () => {
   );
 });
 
+test('document.baseURI se aplica a las URLs de catálogo y versión bajo GitHub Pages y dominios personalizados', () => {
+  const originalDocument = globalThis.document;
+  globalThis.document = { baseURI: 'https://owner.github.io/Catalogo_Head/' };
+  try {
+    assert.equal(
+      getPublishedCatalogUrl(),
+      'https://owner.github.io/Catalogo_Head/catalog.json'
+    );
+    assert.equal(
+      getPublishedCatalogVersionUrl(),
+      'https://owner.github.io/Catalogo_Head/catalog-version.json'
+    );
+  } finally {
+    globalThis.document = originalDocument;
+  }
+
+  globalThis.document = { baseURI: 'https://catalog.example/' };
+  try {
+    assert.equal(
+      getPublishedCatalogUrl(),
+      'https://catalog.example/catalog.json'
+    );
+    assert.equal(
+      getPublishedCatalogVersionUrl(),
+      'https://catalog.example/catalog-version.json'
+    );
+  } finally {
+    globalThis.document = originalDocument;
+  }
+});
+
 test('misma versión consulta solo el manifest y no descarga catalog.json', async () => {
   const initial = catalog();
   const calls = [];

@@ -276,3 +276,142 @@ test('canonicalización Node y React es idéntica en string y UTF-8', () => {
     canonicalizeReact({ a: 1, b: 2 })
   );
 });
+
+function createBaseAwareFetch(resources, baseHref, calls) {
+  const basePathname = new URL(baseHref).pathname;
+  return async (url, options) => {
+    calls.push({ url: new URL(url), options });
+    const pathname = new URL(url).pathname;
+    let value = resources.get(pathname);
+    if (value === undefined && pathname.startsWith(basePathname)) {
+      const stripped = '/' + pathname.slice(basePathname.length);
+      value = resources.get(stripped);
+    }
+    if (value === undefined) return new Response(null, { status: 404 });
+    return new Response(value, { status: 200 });
+  };
+}
+
+function withDocument(baseUri, fn) {
+  const hadDocument = 'document' in globalThis;
+  const originalDocument = globalThis.document;
+  globalThis.document = { baseURI: baseUri };
+  try {
+    return fn();
+  } finally {
+    if (hadDocument) globalThis.document = originalDocument;
+    else delete globalThis.document;
+  }
+}
+
+function assertRuntimeUrls(calls, expectedBase) {
+  const urls = calls.map((call) => call.url.href).sort();
+  const base = expectedBase.endsWith('/') ? expectedBase : expectedBase + '/';
+  assert.deepEqual(urls, [
+    `${base}integrity-manifest.json`,
+    `${base}integrity-manifest.sig`,
+    `${base}ownership.json`,
+    `${base}signing-public-key.pem`
+  ]);
+  for (const call of calls) {
+    assert.equal(call.options?.cache, 'no-store');
+    assert.equal(call.url.origin, new URL(base).origin);
+    assert.ok(
+      call.url.pathname.startsWith(new URL(base).pathname),
+      `${call.url.pathname} debe estar dentro de ${base}`
+    );
+  }
+}
+
+test('runtime URL resolution: GitHub Pages usa document.baseURI con subpath /Catalogo_Head/', async () => {
+  const fixture = createBrowserFixture();
+  const base = 'https://owner.github.io/Catalogo_Head/';
+  const calls = [];
+  const result = await withDocument(base, () =>
+    verifyPublishedIntegrity(companyConfig, {
+      fetchImpl: createBaseAwareFetch(fixture.resources, base, calls)
+    })
+  );
+  assert.equal(result, 'verified');
+  assert.equal(calls.length, 4);
+  assertRuntimeUrls(calls, base);
+});
+
+test('runtime URL resolution: dominio personalizado respeta document.baseURI sin subpath', async () => {
+  const fixture = createBrowserFixture();
+  const base = 'https://catalog.example/';
+  const calls = [];
+  const result = await withDocument(base, () =>
+    verifyPublishedIntegrity(companyConfig, {
+      fetchImpl: createBaseAwareFetch(fixture.resources, base, calls)
+    })
+  );
+  assert.equal(result, 'verified');
+  assert.equal(calls.length, 4);
+  assertRuntimeUrls(calls, base);
+});
+
+test('runtime URL resolution: baseUrl explícito tiene prioridad sobre document.baseURI', async () => {
+  const fixture = createBrowserFixture();
+  const calls = [];
+  const result = await withDocument('https://owner.github.io/Catalogo_Head/', () =>
+    verifyPublishedIntegrity(companyConfig, {
+      fetchImpl: createBaseAwareFetch(
+        fixture.resources,
+        'https://catalog.example/',
+        calls
+      ),
+      baseUrl: new URL('https://catalog.example/')
+    })
+  );
+  assert.equal(result, 'verified');
+  assertRuntimeUrls(calls, 'https://catalog.example/');
+});
+
+test('runtime URL resolution: sin document usa el fallback de import.meta.url', async () => {
+  const fixture = createBrowserFixture();
+  const calls = [];
+  const hadDocument = 'document' in globalThis;
+  const originalDocument = globalThis.document;
+  delete globalThis.document;
+  try {
+    const fetchImpl = async (url) => {
+      calls.push({ url: new URL(url) });
+      // El fallback por import.meta.url apunta al árbol de fuentes del test,
+      // no a un sitio público. Lo importante es que la URL construida sea
+      // absoluta y que el verificador intente descargar cada artefacto una vez.
+      return new Response(null, { status: 404 });
+    };
+    const result = await verifyPublishedIntegrity(companyConfig, { fetchImpl });
+    assert.equal(result, 'unavailable');
+    assert.equal(calls.length, 3);
+    for (const call of calls) {
+      assert.ok(call.url.protocol === 'file:' || call.url.protocol.startsWith('http'));
+      assert.ok(call.url.pathname.endsWith('integrity-manifest.json') ||
+        call.url.pathname.endsWith('integrity-manifest.sig') ||
+        call.url.pathname.endsWith('signing-public-key.pem'));
+    }
+  } finally {
+    if (hadDocument) globalThis.document = originalDocument;
+  }
+});
+
+test('runtime URL resolution: resolveProtectedUrl usa el mismo origen y prefijo de baseURI', async () => {
+  const pagesBase = 'https://owner.github.io/Catalogo_Head/';
+  await withDocument(pagesBase, async () => {
+    const fixture = createBrowserFixture();
+    const calls = [];
+    const result = await verifyPublishedIntegrity(companyConfig, {
+      fetchImpl: createBaseAwareFetch(fixture.resources, pagesBase, calls)
+    });
+    assert.equal(result, 'verified');
+    const ownershipCall = calls.find(
+      (call) => call.url.pathname === '/Catalogo_Head/ownership.json'
+    );
+    assert.ok(ownershipCall, 'debe incluir la solicitud a /Catalogo_Head/ownership.json');
+    assert.equal(
+      ownershipCall.url.href,
+      'https://owner.github.io/Catalogo_Head/ownership.json'
+    );
+  });
+});
