@@ -896,7 +896,7 @@
       "gender": null,
       "name": "VIBE 2025",
       "code": "PENDIENTE",
-      "price": 150845,
+      "price": 300000,
       "enabled": true,
       "stockMode": "none",
       "order": 10,
@@ -1194,8 +1194,8 @@
           "sizes": [
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -1382,8 +1382,8 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
