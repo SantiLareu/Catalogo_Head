@@ -73,6 +73,7 @@ if (!exists(path.join(dist, 'index.html'))) {
 // 3. catalog.json existe
 const catalogPath = path.join(dist, 'catalog.json');
 const catalogVersionPath = path.join(dist, 'catalog-version.json');
+const appVersionPath = path.join(dist, 'app-version.json');
 if (!exists(catalogPath)) {
   fail('dist/catalog.json no existe');
 } else {
@@ -102,6 +103,48 @@ if (!exists(catalogVersionPath)) {
     }
   } catch (error) {
     fail('dist/catalog-version.json no es válido: ' + error.message);
+  }
+}
+
+// 4b. app-version.json identifica el build cargado y sus entrypoints listos
+if (!exists(appVersionPath)) {
+  fail('dist/app-version.json no existe');
+} else {
+  pass('dist/app-version.json existe');
+  try {
+    const manifest = JSON.parse(fs.readFileSync(appVersionPath, 'utf8'));
+    const indexHtml = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+    if (
+      manifest.schemaVersion !== 1 ||
+      !/^sha256-[a-f0-9]{64}$/.test(manifest.version) ||
+      !Array.isArray(manifest.files) ||
+      manifest.files.length === 0 ||
+      !indexHtml.includes(`name="realstep-app-version" content="${manifest.version}"`)
+    ) {
+      fail('dist/app-version.json no coincide con la versión embebida en index.html');
+    } else {
+      let validFiles = true;
+      for (const file of manifest.files) {
+        const filePath = path.resolve(dist, file.path);
+        const relative = path.relative(dist, filePath);
+        if (relative.startsWith('..') || path.isAbsolute(relative) || !exists(filePath)) {
+          validFiles = false;
+          break;
+        }
+        const contents = fs.readFileSync(filePath);
+        if (
+          contents.length !== file.size ||
+          crypto.createHash('sha256').update(contents).digest('hex') !== file.sha256
+        ) {
+          validFiles = false;
+          break;
+        }
+      }
+      if (validFiles) pass('dist/app-version.json corresponde a los entrypoints publicados');
+      else fail('dist/app-version.json referencia entrypoints ausentes o incorrectos');
+    }
+  } catch (error) {
+    fail('dist/app-version.json no es válido: ' + error.message);
   }
 }
 

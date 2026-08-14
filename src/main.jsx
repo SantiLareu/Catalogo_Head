@@ -3,6 +3,11 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { companyConfig } from './config/company.js';
 import { verifyPublishedIntegrity } from './security/integrityVerifier.js';
+import {
+  createPublishedAppClient,
+  getLoadedAppVersion,
+  startAppVersionPolling
+} from './services/publishedApp.js';
 
 // Orden deliberado: base compartida, componentes y ajustes responsive al final.
 import './styles/variables.css';
@@ -35,6 +40,12 @@ rootElement.dataset.integrityStatus = 'unavailable';
 void verifyPublishedIntegrity(companyConfig).then((status) => {
   rootElement.dataset.integrityStatus = status;
 });
+
+const appVersionClient = createPublishedAppClient({
+  loadedVersion: getLoadedAppVersion(),
+  isReloadSafe: () => !document.querySelector('[data-app-reload-blocking="true"]')
+});
+startAppVersionPolling({ client: appVersionClient });
 
 // Desactivar la restauración automática de scroll antes del primer paint
 // para que la posición inicial la controle React sin competir con el historial.

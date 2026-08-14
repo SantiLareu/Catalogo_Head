@@ -58,6 +58,9 @@ function Footer({ catalogVersion }) {
         <small className="footer-catalog-version">
           Catálogo: {getShortCatalogVersion(catalogVersion)}
         </small>
+        <small>
+          PRUEBA DE ACTUALIZACION
+        </small>
       </div>
     </footer>
   );

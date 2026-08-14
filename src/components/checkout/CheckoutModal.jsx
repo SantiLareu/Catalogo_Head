@@ -171,6 +171,7 @@ function CheckoutModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="checkout-title"
+      data-app-reload-blocking="true"
       ref={modalRef}
       tabIndex="-1"
     >
