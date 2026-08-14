@@ -21,7 +21,7 @@ import {
 } from '../../src/services/cartReconciliation.js';
 
 const products = [
-  { id: 'plain', price: 100, sizes: [], variants: [] },
+  { id: 'plain', price: 100, packDe: 1, sizes: [], variants: [] },
   {
     id: 'direct',
     price: 200,
@@ -50,6 +50,8 @@ const products = [
   },
   { id: 'free', price: 0, sizes: [], variants: [] }
 ];
+
+const packProduct = { id: 'pack', price: 5000, packDe: 6, sizes: [], variants: [] };
 
 test('claves distinguen producto, talle y variante+talle sin alterar IDs', () => {
   assert.notEqual(createLineKey({ productId: 'p' }), createLineKey({ productId: 'p', size: 'M' }));
@@ -130,6 +132,27 @@ test('no permite cantidades inferiores a uno ni no enteras', () => {
     line,
     quantity: 1.5
   }), [line]);
+});
+
+test('reducer sólo acepta múltiplos del pack al agregar o editar', () => {
+  const valid = { productId: 'pack', quantity: 6 };
+  assert.deepEqual(cartReducer([], {
+    type: actions.ADD_LINE,
+    line: valid,
+    packDe: 6
+  }), [valid]);
+  assert.deepEqual(cartReducer([valid], {
+    type: actions.SET_LINE_QUANTITY,
+    line: valid,
+    quantity: 12,
+    packDe: 6
+  }), [{ productId: 'pack', quantity: 12 }]);
+  assert.deepEqual(cartReducer([valid], {
+    type: actions.SET_LINE_QUANTITY,
+    line: valid,
+    quantity: 7,
+    packDe: 6
+  }), [valid]);
 });
 
 test('cantidad editada recalcula unidades y total', () => {
@@ -225,6 +248,22 @@ test('producto vigente se reconcilia sin cambios', () => {
   assert.equal(report.entries[0].status, 'available');
   assert.equal(report.checkoutBlocked, false);
   assert.equal(report.total, 200);
+});
+
+test('cantidad múltiplo es válida y conserva precio unitario por cantidad', () => {
+  const line = { productId: 'pack', quantity: 6, priceSnapshot: 5000 };
+  const report = reconcileCart([line], [...products, packProduct]);
+  assert.equal(report.entries[0].status, 'available');
+  assert.equal(report.total, 30000);
+  assert.equal(report.checkoutBlocked, false);
+});
+
+test('cantidad no múltiplo y cambio de packDe bloquean sin borrar la línea', () => {
+  const line = { productId: 'pack', quantity: 5, priceSnapshot: 5000 };
+  const report = reconcileCart([line], [...products, packProduct]);
+  assert.deepEqual(report.entries[0].issues, ['pack_invalid']);
+  assert.equal(report.entries[0].line, line);
+  assert.equal(report.checkoutBlocked, true);
 });
 
 test('producto eliminado se conserva y bloquea checkout', () => {
@@ -430,17 +469,16 @@ test('éxito completo elimina la persistencia; un error la conserva', async () =
   assert.notEqual(storage.getItem(CART_STORAGE_KEY), null);
 });
 
-test('catálogo real coincide con el aprobado y cubre los casos de carrito requeridos', async () => {
+test('catálogo real cubre los casos de carrito requeridos', async () => {
   const catalog = JSON.parse(
     await readFile(new URL('../../generated/catalog.json', import.meta.url), 'utf8')
   );
-  const approvedCatalog = JSON.parse(
-    await readFile(
-      new URL('../../tests/fixtures/catalog-baseline.json', import.meta.url),
-      'utf8'
-    )
+  assert.ok(catalog.products.length > 0);
+  assert.equal(
+    new Set(catalog.products.map((product) => product.id)).size,
+    catalog.products.length,
+    'Los productos del catálogo deben mantener IDs únicos.'
   );
-  assert.equal(catalog.products.length, approvedCatalog.products.length);
   assert.ok(catalog.products.some((product) =>
     product.variants.length === 0 && product.sizes.length === 0
   ));
@@ -463,18 +501,25 @@ test('catálogo real coincide con el aprobado y cubre los casos de carrito reque
   }], catalog.products);
   assert.equal(restored[0].variantId, 'black ');
 
-  const motion = catalog.products.find((product) =>
-    product.id === 'MOTION T-SHIRT MEN'
+  const availabilityProduct = catalog.products.find((product) =>
+    product.variants.some((variant) =>
+      variant.sizes.some((item) => item.stock === 1 && item.inStock === true)
+    )
   );
-  const black = getVariantById(motion, 'black');
-  const motionReport = reconcileCart([{
-    productId: motion.id,
-    variantId: black.id,
-    size: 'M',
-    quantity: 10,
-    priceSnapshot: motion.price
+  const availabilityVariant = availabilityProduct.variants.find((variant) =>
+    variant.sizes.some((item) => item.stock === 1 && item.inStock === true)
+  );
+  const availabilitySize = availabilityVariant.sizes.find((item) =>
+    item.stock === 1 && item.inStock === true
+  );
+  const requestedQuantity = (availabilityProduct.packDe || 1) * 10;
+  const availabilityReport = reconcileCart([{
+    productId: availabilityProduct.id,
+    variantId: availabilityVariant.id,
+    size: availabilitySize.size,
+    quantity: requestedQuantity,
+    priceSnapshot: availabilityVariant.price ?? availabilityProduct.price
   }], catalog.products, catalog.stockIsAvailabilityOnly);
-  assert.equal(black.sizes.find((item) => item.size === 'M').stock, 1);
-  assert.deepEqual(motionReport.entries[0].issues, []);
-  assert.equal(motionReport.checkoutBlocked, false);
+  assert.deepEqual(availabilityReport.entries[0].issues, []);
+  assert.equal(availabilityReport.checkoutBlocked, false);
 });

@@ -5,6 +5,8 @@ export const categoryEditorialCovers = {
     title: 'Paletas',
     subtitle: null,
     image: 'editorial/portada-paletas.png',
+    imageWidth: 1828,
+    imageHeight: 860,
     imageAlt: '',
     mode: 'replace'
   },
@@ -12,6 +14,8 @@ export const categoryEditorialCovers = {
     title: 'Calzado',
     subtitle: null,
     image: 'editorial/zapatilla-head-motion-pro-padel-273614-7.jpg',
+    imageWidth: 1000,
+    imageHeight: 1000,
     imageAlt: '',
     mode: 'replace'
   },
@@ -19,6 +23,8 @@ export const categoryEditorialCovers = {
     title: 'Indumentaria Hombre',
     subtitle: null,
     image: 'editorial/indumentaria-hombre.jpeg',
+    imageWidth: 1084,
+    imageHeight: 916,
     imageAlt: '',
     mode: 'replace'
   },
@@ -26,6 +32,8 @@ export const categoryEditorialCovers = {
     title: 'Indumentaria Dama',
     subtitle: null,
     image: 'editorial/Screenshot 2026-08-05 110753.png',
+    imageWidth: 1007,
+    imageHeight: 862,
     imageAlt: '',
     mode: 'replace'
   },
@@ -40,6 +48,8 @@ export const categoryEditorialCovers = {
     title: 'Raquetas Tenis',
     subtitle: null,
     image: 'editorial/portada-tenis.png',
+    imageWidth: 1679,
+    imageHeight: 937,
     imageAlt: '',
     mode: 'replace'
   },
@@ -47,6 +57,8 @@ export const categoryEditorialCovers = {
     title: 'Bolsos',
     subtitle: null,
     image: 'editorial/portada-bolsos.png',
+    imageWidth: 1672,
+    imageHeight: 941,
     imageAlt: '',
     mode: 'replace'
   },
@@ -54,6 +66,8 @@ export const categoryEditorialCovers = {
     title: 'Pelotas',
     subtitle: null,
     image: 'editorial/portada-pelotas.png',
+    imageWidth: 1774,
+    imageHeight: 887,
     imageAlt: '',
     mode: 'replace'
   },
@@ -89,6 +103,8 @@ export const categoryEditorialCovers = {
     title: 'Accesorios',
     subtitle: null,
     image: 'editorial/portada-accesorios.png',
+    imageWidth: 1959,
+    imageHeight: 803,
     imageAlt: '',
     mode: 'prepend'
   }

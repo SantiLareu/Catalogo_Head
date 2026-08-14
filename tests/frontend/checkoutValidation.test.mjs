@@ -22,6 +22,7 @@ const product = (overrides = {}) => ({
   name: 'Remera Motion',
   code: null,
   price: 100,
+  packDe: 1,
   enabled: true,
   sizes: [],
   variants: [variant()],
@@ -91,6 +92,23 @@ test('versión nueva sin impacto en las líneas permite continuar', async () => 
   });
   assert.equal(result.allowSend, true);
   assert.equal(result.changes.length, 0);
+});
+
+test('cantidad incompatible con pack vigente bloquea checkout', async () => {
+  const after = catalog([product({ packDe: 6 })]);
+  const result = await decide({ after, lines: [cartLine({ quantity: 5 })] });
+  assert.equal(result.allowSend, false);
+  assert.ok(result.changes.some(({ kind }) => kind === 'pack_invalid'));
+});
+
+test('cambio de packDe entre catálogos deja el carrito en revisión', async () => {
+  const before = catalog([product({ packDe: 1 })]);
+  const after = catalog([product({ packDe: 6 })]);
+  const lines = [cartLine({ quantity: 5 })];
+  const result = await decide({ before, after, lines });
+  assert.equal(result.allowSend, false);
+  assert.equal(result.reason, 'order_changed');
+  assert.ok(result.changes.some(({ kind }) => kind === 'pack_invalid'));
 });
 
 test('precio cambiado actualiza la línea, muestra anterior y nuevo y bloquea', async () => {

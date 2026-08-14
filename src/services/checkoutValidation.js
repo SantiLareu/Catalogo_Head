@@ -7,6 +7,7 @@ const issueLabels = {
   variant_removed: 'La variante seleccionada ya no está disponible.',
   size_unavailable: 'El talle seleccionado ya no está disponible.',
   unavailable: 'La combinación seleccionada ya no tiene disponibilidad.',
+  pack_invalid: 'La cantidad no respeta el pack de venta vigente.',
   price_changed: 'El precio vigente requiere aceptación.'
 };
 

@@ -77,6 +77,8 @@ function ProductGallery({
               key={imageIndex}
               src={images[imageIndex]}
               alt={`${name} imagen ${imageIndex + 1}`}
+              loading="lazy"
+              decoding="async"
               className="gallery-image gallery-image--current"
             />
           </button>
@@ -87,6 +89,7 @@ function ProductGallery({
             src={previousSrc}
             alt=""
             aria-hidden="true"
+            decoding="async"
             className="gallery-image gallery-image--leaving"
           />
         ) : null}

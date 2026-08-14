@@ -3,12 +3,14 @@ import {
   getEffectiveSizes,
   getVariantById
 } from '../data/catalogSelectors.js';
+import { getPackDe, isPackQuantity } from '../utils/packQuantity.js';
 
 export const cartIssueMessages = {
   product_removed: 'El producto ya no está disponible en el catálogo.',
   variant_removed: 'La variante seleccionada ya no está disponible.',
   size_unavailable: 'El talle seleccionado ya no está disponible.',
   unavailable: 'La combinación seleccionada no tiene stock suficiente.',
+  pack_invalid: 'La cantidad no respeta el pack de venta vigente.',
   price_changed: 'El precio cambió. Revisá y aceptá el precio vigente para continuar.'
 };
 
@@ -31,6 +33,8 @@ function reconcileLine(line, productById, stockIsAvailabilityOnly) {
   if (!product || product.enabled === false) {
     issues.push('product_removed');
   } else {
+    const packDe = getPackDe(product);
+    if (!isPackQuantity(line.quantity, packDe)) issues.push('pack_invalid');
     const variants = Array.isArray(product.variants) ? product.variants : [];
     if (line.variantId != null) {
       variant = getVariantById(product, line.variantId);

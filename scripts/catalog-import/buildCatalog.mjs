@@ -170,6 +170,11 @@ export function buildCatalog(sheets) {
         name: row.nombre,
         code: row.sku || null,
         price: row.precio,
+        packDe:
+          row.pack_de == null ||
+          (typeof row.pack_de === 'string' && row.pack_de.trim() === '')
+            ? 1
+            : row.pack_de,
         enabled: row.habilitado,
         stockMode: row.stock_mode,
         order: row.orden,

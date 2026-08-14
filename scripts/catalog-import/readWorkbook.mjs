@@ -26,7 +26,8 @@ export const SHEET_SCHEMAS = {
     'precio',
     'habilitado',
     'stock_mode',
-    'orden'
+    'orden',
+    'pack_de'
   ],
   Variantes: [
     'producto_id',

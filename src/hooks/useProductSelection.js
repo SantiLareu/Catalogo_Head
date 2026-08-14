@@ -12,6 +12,7 @@ import {
   productSelectionActions,
   productSelectionReducer
 } from './productSelectionReducer.js';
+import { getPackDe } from '../utils/packQuantity.js';
 
 function useProductSelection(product, resetVersion = 0) {
   const firstVariant = useMemo(() => getFirstVariant(product), [product]);
@@ -34,7 +35,8 @@ function useProductSelection(product, resetVersion = 0) {
       type: productSelectionActions.SYNC_PRODUCT,
       variantId: nextVariant?.id ?? null,
       sizes: getEffectiveSizes(product, nextVariant).map((item) => item.size),
-      imageCount: getEffectiveImages(product, nextVariant).length
+      imageCount: getEffectiveImages(product, nextVariant).length,
+      packDe: getPackDe(product)
     });
   }, [firstVariant, product]);
 

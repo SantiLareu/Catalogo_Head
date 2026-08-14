@@ -132,7 +132,14 @@ test('actualización del snapshot es explícita y determinista', async function(
   const workspace = await createTestWorkspace(t);
   const baselinePath = path.join(workspace.directory, 'baseline.json');
   await createWorkbookFixture(workspace.workbookPath);
-  await fs.copyFile(approvedCatalogPath, workspace.outputPath);
+  const imported = await runImport({
+    inputPath: workspace.workbookPath,
+    outputPath: workspace.outputPath,
+    repoRoot,
+    check: false,
+    strict: false
+  });
+  assert.equal(imported.exitCode, 0);
 
   await assert.rejects(
     runBaselineUpdate({

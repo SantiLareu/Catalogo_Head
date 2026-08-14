@@ -10,6 +10,7 @@ import { advanceResetVersion } from '../utils/resetVersion.js';
 import { createPublishedCatalogClient } from '../services/publishedCatalog.js';
 import { startCatalogPolling } from '../services/catalogPolling.js';
 import { shouldNotifyCatalogUpdate } from '../utils/catalogVersion.js';
+import { getPackDe } from '../utils/packQuantity.js';
 
 export const CartContext = createContext(null);
 
@@ -168,7 +169,8 @@ export function CartProvider({ children, initialCatalog, initialVersion }) {
       showToast,
       addLine: (line) => {
         pendingPulseRef.current = true;
-        dispatch({ type: cartActions.ADD_LINE, line });
+        const product = products.find((item) => item.id === line.productId);
+        dispatch({ type: cartActions.ADD_LINE, line, packDe: getPackDe(product) });
       },
       removeLine: (line) => {
         pendingPulseRef.current = true;
@@ -176,7 +178,13 @@ export function CartProvider({ children, initialCatalog, initialVersion }) {
       },
       setLineQuantity: (line, quantity) => {
         pendingPulseRef.current = true;
-        dispatch({ type: cartActions.SET_LINE_QUANTITY, line, quantity });
+        const product = products.find((item) => item.id === line.productId);
+        dispatch({
+          type: cartActions.SET_LINE_QUANTITY,
+          line,
+          quantity,
+          packDe: getPackDe(product)
+        });
       },
       acknowledgePrice: (line) => dispatch({
         type: cartActions.REPLACE_LINE,

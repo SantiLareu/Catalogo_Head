@@ -279,7 +279,7 @@ test('reset de éxito conserva literalmente la primera variante legacy', () => {
   }), {
     variantId: 'black ',
     size: null,
-    quantity: 1,
+    quantity: 0,
     imageIndex: 0
   });
 });

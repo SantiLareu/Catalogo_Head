@@ -38,7 +38,7 @@ function ThumbnailRail({ images, imageIndex, name, onSelect }) {
           onClick={() => onSelect(index)}
           ref={index === imageIndex ? activeRef : null}
         >
-          <img src={image} alt="" />
+          <img src={image} alt="" loading="lazy" decoding="async" />
         </button>
       ))}
     </div>

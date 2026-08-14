@@ -20,12 +20,22 @@ export function cartReducer(state, action) {
     case cartActions.HYDRATE_CART:
       return Array.isArray(action.lines) ? action.lines : [];
     case cartActions.ADD_LINE: {
+      const packDe = action.packDe || 1;
+      if (
+        !Number.isInteger(action.line?.quantity) ||
+        action.line.quantity < 1 ||
+        action.line.quantity % packDe !== 0
+      ) return state;
       const key = createLineKey(action.line);
       const index = state.findIndex((line) => createLineKey(line) === key);
       if (index < 0) return [...state, action.line];
+      const combinedQuantity = state[index].quantity + action.line.quantity;
+      if (!Number.isInteger(combinedQuantity) || combinedQuantity % packDe !== 0) {
+        return state;
+      }
       return state.map((line, lineIndex) =>
         lineIndex === index
-          ? { ...line, quantity: line.quantity + action.line.quantity }
+          ? { ...line, quantity: combinedQuantity }
           : line
       );
     }
@@ -36,7 +46,10 @@ export function cartReducer(state, action) {
     case cartActions.SET_LINE_QUANTITY: {
       const key = createLineKey(action.line);
       const quantity = Number(action.quantity);
-      if (!Number.isInteger(quantity) || quantity < 1) return state;
+      const packDe = action.packDe || 1;
+      if (!Number.isInteger(quantity) || quantity < 1 || quantity % packDe !== 0) {
+        return state;
+      }
       return state.map((line) =>
         createLineKey(line) === key ? { ...line, quantity } : line
       );

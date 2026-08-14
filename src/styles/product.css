@@ -229,6 +229,7 @@
   background:#f7f7f7;
 }
 .qval{font-weight:900}
+.pack-note{margin:8px 0 0;color:var(--m);font-size:12px;line-height:1.4}
 .primary{
   width:100%;
   min-height:52px;
@@ -341,5 +342,4 @@
   color:var(--m);
   text-align:center;
 }
-
 

@@ -13,7 +13,14 @@ function Hero() {
         <h1>HEAD</h1>
       </div>
       <div className="hero-img">
-        <img src={heroImageUrl} alt="" />
+        <img
+          src={heroImageUrl}
+          alt=""
+          width="1920"
+          height="1080"
+          decoding="async"
+          fetchPriority="high"
+        />
       </div>
     </section>
   );

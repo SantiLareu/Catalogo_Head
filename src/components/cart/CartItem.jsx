@@ -4,6 +4,11 @@ import useCart from '../../hooks/useCart.js';
 import { resolveCartItemPresentation } from '../../services/cartItemPresentation.js';
 import { cartIssueMessages } from '../../services/cartReconciliation.js';
 import { formatMoney } from '../../utils/money.js';
+import {
+  getPackDe,
+  nextPackQuantity,
+  previousPackQuantity
+} from '../../utils/packQuantity.js';
 
 function CartItem({ entry }) {
   const { acknowledgePrice, removeLine, setLineQuantity } = useCart();
@@ -15,6 +20,7 @@ function CartItem({ entry }) {
   }, [presentation]);
   const image = resolveProductImage(presentation.imagePath);
   const displayName = presentation.name;
+  const packDe = getPackDe(entry.product);
   const details = [
     presentation.variantName ? `Color ${presentation.variantName}` : null,
     line.size ? `Talle ${line.size}` : null,
@@ -54,8 +60,11 @@ function CartItem({ entry }) {
               <button
                 type="button"
                 aria-label={`Disminuir cantidad de ${displayName}`}
-                disabled={line.quantity <= 1}
-                onClick={() => setLineQuantity(line, line.quantity - 1)}
+                disabled={line.quantity <= packDe}
+                onClick={() => setLineQuantity(
+                  line,
+                  previousPackQuantity(line.quantity, packDe)
+                )}
               >
                 −
               </button>
@@ -63,7 +72,10 @@ function CartItem({ entry }) {
               <button
                 type="button"
                 aria-label={`Aumentar cantidad de ${displayName}`}
-                onClick={() => setLineQuantity(line, line.quantity + 1)}
+                onClick={() => setLineQuantity(
+                  line,
+                  nextPackQuantity(line.quantity, packDe)
+                )}
               >
                 +
               </button>

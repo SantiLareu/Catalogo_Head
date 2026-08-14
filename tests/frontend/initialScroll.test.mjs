@@ -1,12 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
-
-const exec = promisify(execFile);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
 
@@ -28,23 +24,33 @@ async function safeReadFile(filePath) {
   }
 }
 
-async function grepHits(pattern, directory) {
+const searchableExtensions = new Set(['.jsx', '.js', '.json', '.css']);
+
+async function textHits(pattern, directory) {
+  const hits = [];
+
   try {
-    const result = await exec(
-      'grep',
-      ['-RE', '--include=*.jsx', '--include=*.js', '--include=*.json', '--include=*.css', pattern, directory],
-      { maxBuffer: 8 * 1024 * 1024 }
-    );
-    return result.stdout.trim();
+    const entries = await readdir(directory, { withFileTypes: true });
+    for (const entry of entries) {
+      const entryPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        hits.push(...await textHits(pattern, entryPath));
+        continue;
+      }
+      if (!entry.isFile() || !searchableExtensions.has(path.extname(entry.name))) continue;
+      const lines = (await readFile(entryPath, 'utf8')).split(/\r?\n/);
+      lines.forEach((line, index) => {
+        if (pattern.test(line)) {
+          hits.push(`${entryPath}:${index + 1}:${line}`);
+        }
+      });
+    }
   } catch (error) {
-    if (error.code === 1) {
-      return '';
-    }
-    if (error.code === 2 && /No such file or directory/.test(error.stderr || '')) {
-      return '';
-    }
+    if (error.code === 'ENOENT') return [];
     throw error;
   }
+
+  return hits;
 }
 
 test('#inicio apunta al Hero correcto', async () => {
@@ -76,14 +82,11 @@ test('#inicio apunta al Hero correcto', async () => {
     );
   }
 
-  const heroHits = await grepHits('id=["\']inicio["\']', path.join(repoRoot, 'src'));
-  const heroHitLines = heroHits
-    .split('\n')
-    .filter((line) => line.length > 0);
+  const heroHitLines = await textHits(/id=["']inicio["']/, path.join(repoRoot, 'src'));
   assert.equal(
     heroHitLines.length,
     1,
-    `Debe existir exactamente un id="inicio" en src/; hits encontrados:\n${heroHits}`
+    `Debe existir exactamente un id="inicio" en src/; hits encontrados:\n${heroHitLines.join('\n')}`
   );
   assert.match(
     heroHitLines[0],
@@ -103,10 +106,7 @@ test('No hay IDs inicio duplicados en el repositorio', async () => {
   const allHits = [];
   for (const directory of directories) {
     try {
-      const hits = await grepHits('id=["\']inicio["\']', directory);
-      for (const line of hits.split('\n')) {
-        if (line.length > 0) allHits.push(line);
-      }
+      allHits.push(...await textHits(/id=["']inicio["']/, directory));
     } catch (error) {
       if (error.code !== 'ENOENT') throw error;
     }
@@ -300,10 +300,13 @@ test('ThumbnailRail no desplaza la ventana vertical al montar o cambiar imagen',
 
 test('No queda instrumentación temporal en src/', async () => {
   const srcDir = path.join(repoRoot, 'src');
-  const hits = await grepHits('TEMP SCROLL DEBUG|scroll-debug|ENABLE_THUMB_SCROLL', srcDir);
+  const hits = await textHits(
+    /TEMP SCROLL DEBUG|scroll-debug|ENABLE_THUMB_SCROLL/,
+    srcDir
+  );
   assert.equal(
-    hits.trim(),
-    '',
-    `No debe quedar instrumentación temporal en src/. Hits:\n${hits}`
+    hits.length,
+    0,
+    `No debe quedar instrumentación temporal en src/. Hits:\n${hits.join('\n')}`
   );
 });

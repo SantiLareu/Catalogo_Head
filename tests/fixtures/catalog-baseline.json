@@ -8,7 +8,7 @@
       "target": "categoria-calzado",
       "enabled": true,
       "title": "Calzado HEAD",
-      "subtitle": "Stock independiente por talle.",
+      "subtitle": "",
       "order": 0,
       "filter": {
         "category": "calzado",
@@ -183,6 +183,21 @@
             "gender": null
           },
           "dataSource": "accesoriosGorras"
+        },
+        {
+          "id": "accesorios-presurizadores",
+          "label": "PRESURIZADORES",
+          "target": "categoria-accesorios-presurizadores",
+          "enabled": true,
+          "title": "PRESURIZADORES",
+          "subtitle": "",
+          "order": 7,
+          "filter": {
+            "category": "accesorios",
+            "subcategory": "presurizadores",
+            "gender": null
+          },
+          "dataSource": "accesoriosPresurizadores"
         }
       ]
     },
@@ -331,6 +346,7 @@
       "name": "ACE-M1 GREY / BLACK / RED",
       "code": "06/1-0157",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 0,
@@ -388,6 +404,7 @@
       "name": "ACE-M2 WHITE / ORANGE / NAVY",
       "code": "PENDIENTE",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 1,
@@ -423,8 +440,8 @@
         },
         {
           "size": "11",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
@@ -445,6 +462,7 @@
       "name": "DEUCE-M2 GREY / BLACK / ORANGE",
       "code": "PENDIENTE",
       "price": 54000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 2,
@@ -500,6 +518,7 @@
       "name": "DEUCE-M1 BLUE / NAVY / RED",
       "code": "PENDIENTE",
       "price": 54000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 3,
@@ -511,14 +530,14 @@
       "sizes": [
         {
           "size": "7",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 0
         },
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
@@ -557,6 +576,7 @@
       "name": "SMASH-M1 BLACK / GREY / WHITE",
       "code": "PENDIENTE",
       "price": 54000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 4,
@@ -580,14 +600,14 @@
         },
         {
           "size": "9",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 3
         },
         {
@@ -614,6 +634,7 @@
       "name": "SMASH-M2 NAVY / GREY",
       "code": "PENDIENTE",
       "price": 54000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 5,
@@ -671,6 +692,7 @@
       "name": "DROP-W1 PINK/ORANGE/LIME",
       "code": "PENDIENTE",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 6,
@@ -680,20 +702,20 @@
       "sizes": [
         {
           "size": "5",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 0
         },
         {
           "size": "6",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
           "size": "7",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 2
         },
         {
@@ -726,6 +748,7 @@
       "name": "DROP-W2 WHITE/BLUE",
       "code": "PENDIENTE",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 7,
@@ -783,6 +806,7 @@
       "name": "SLICE-W1 NAVY/BLUE",
       "code": "PENDIENTE",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 8,
@@ -800,20 +824,20 @@
         },
         {
           "size": "6",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
           "size": "7",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 2
         },
         {
           "size": "8",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 3
         },
         {
@@ -824,8 +848,8 @@
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         }
       ],
@@ -840,6 +864,7 @@
       "name": "SLICE-W2 BLACK / PINK",
       "code": "PENDIENTE",
       "price": 52000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 9,
@@ -857,20 +882,20 @@
         },
         {
           "size": "6",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
           "size": "7",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 2
         },
         {
           "size": "8",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 3
         },
         {
@@ -881,8 +906,8 @@
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         }
       ],
@@ -896,7 +921,8 @@
       "gender": null,
       "name": "VIBE 2025",
       "code": "PENDIENTE",
-      "price": 150845,
+      "price": 160000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 10,
@@ -928,7 +954,8 @@
       "gender": null,
       "name": "VIBE 2026",
       "code": "PENDIENTE",
-      "price": 150845,
+      "price": 160000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 11,
@@ -976,6 +1003,7 @@
       "name": "Paleta Radical Pro 2024",
       "code": "PENDIENTE",
       "price": 272142,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 12,
@@ -995,8 +1023,9 @@
       "gender": null,
       "name": "Paleta Gravity Pro 2022 228162",
       "code": "PENDIENTE",
-      "price": 220050,
-      "enabled": true,
+      "price": 200050,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
       "order": 13,
       "images": [
@@ -1016,7 +1045,8 @@
       "name": "Paleta Radical Motion 2024 222044",
       "code": "PENDIENTE",
       "price": 250690,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
       "order": 14,
       "images": [
@@ -1035,7 +1065,8 @@
       "gender": null,
       "name": "EXTREME PRO 2025",
       "code": "PENDIENTE",
-      "price": 311020,
+      "price": 323790,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 15,
@@ -1055,6 +1086,7 @@
       "name": "Paleta One Ultralight Black 225024",
       "code": "PENDIENTE",
       "price": 247500,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 16,
@@ -1075,7 +1107,8 @@
       "name": "Caja Pelotas 3B Pro+ x24",
       "code": "PENDIENTE",
       "price": 196800,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
       "order": 17,
       "images": [
@@ -1098,7 +1131,8 @@
       "name": "Caja Pelotas 3B Team x24",
       "code": "PENDIENTE",
       "price": 172800,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
       "order": 18,
       "images": [
@@ -1122,6 +1156,7 @@
       "name": "3B CHAMPIONSHIP",
       "code": "PENDIENTE",
       "price": 198000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 19,
@@ -1144,7 +1179,8 @@
       "name": "3B HEAD PRO",
       "code": "PENDIENTE",
       "price": 257520,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
       "order": 20,
       "images": [
@@ -1166,6 +1202,7 @@
       "name": "MOTION T-SHIRT MEN",
       "code": null,
       "price": 16150,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 21,
@@ -1345,6 +1382,7 @@
       "name": "CLUB ORIGINAL T-SHIRT MEN",
       "code": null,
       "price": 18288,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 22,
@@ -1527,6 +1565,7 @@
       "name": "SLICE 25 T-SHIRT MEN",
       "code": null,
       "price": 18895,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 23,
@@ -1634,6 +1673,7 @@
       "name": "TOPSPIN 25 T-SHIRT MEN",
       "code": null,
       "price": 20200,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 24,
@@ -1739,6 +1779,7 @@
       "name": "CLUB 25 TECH T-SHIRT MEN",
       "code": null,
       "price": 20744,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 25,
@@ -1846,6 +1887,7 @@
       "name": "PLAY TECH T-SHIRT MEN",
       "code": null,
       "price": 22115,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 26,
@@ -1990,6 +2032,7 @@
       "name": "CARL T-SHIRT MEN",
       "code": null,
       "price": 22115,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 27,
@@ -2040,8 +2083,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2119,8 +2162,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2175,6 +2218,7 @@
       "name": "CLUB 25 TECH POLO SHIRT MEN",
       "code": null,
       "price": 20744,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 28,
@@ -2284,6 +2328,7 @@
       "name": "SLICE POLO SHIRT MEN",
       "code": null,
       "price": 22115,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 29,
@@ -2391,6 +2436,7 @@
       "name": "MOTION SHORTS MEN",
       "code": null,
       "price": 18570,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 30,
@@ -2494,6 +2540,7 @@
       "name": "CLUB 25 SHORTS MEN",
       "code": null,
       "price": 24030,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 31,
@@ -2531,8 +2578,8 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -2637,6 +2684,7 @@
       "name": "PLAY SHORTS MEN",
       "code": null,
       "price": 26485,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 32,
@@ -2781,6 +2829,7 @@
       "name": "CLUB ORIGINAL HOODIE FZ MEN",
       "code": null,
       "price": 50510,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 33,
@@ -2850,6 +2899,7 @@
       "name": "CLUB ORIGINAL HOODIE MEN",
       "code": null,
       "price": 46970,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 34,
@@ -2917,6 +2967,7 @@
       "name": "W PERFORMANCE SKORT",
       "code": null,
       "price": 35910,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 35,
@@ -3067,6 +3118,7 @@
       "name": "W MOVE SKORT",
       "code": null,
       "price": 35910,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 36,
@@ -3103,8 +3155,8 @@
           "sizes": [
             {
               "size": "XS",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -3177,6 +3229,7 @@
       "name": "W PLAY SHORT 25",
       "code": null,
       "price": 33714,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 37,
@@ -3322,6 +3375,7 @@
       "name": "W TECH TIGHTS",
       "code": null,
       "price": 17170,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 38,
@@ -3380,6 +3434,7 @@
       "name": "W SPIRIT II TANK TOP",
       "code": null,
       "price": 16795,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 39,
@@ -3516,6 +3571,7 @@
       "name": "W CLUB LUCY T-SHIRT",
       "code": null,
       "price": 8960,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 40,
@@ -3653,6 +3709,7 @@
       "name": "W CLUB 22 TECH T-SHIRT",
       "code": null,
       "price": 9610,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 41,
@@ -3749,6 +3806,7 @@
       "name": "W CLUB LARA T-SHIRT",
       "code": null,
       "price": 11760,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 42,
@@ -3886,6 +3944,7 @@
       "name": "W TIE-BREAK T-SHIRT",
       "code": null,
       "price": 16794,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 43,
@@ -3982,6 +4041,7 @@
       "name": "W CLUB 25 TECH T-SHIRT",
       "code": null,
       "price": 18288,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 44,
@@ -4079,6 +4139,7 @@
       "name": "W CLUB ORIGINAL T-SHIRT",
       "code": null,
       "price": 21430,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 45,
@@ -4214,6 +4275,7 @@
       "name": "W LARA 25 T-SHIRT",
       "code": null,
       "price": 21710,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 46,
@@ -4310,6 +4372,7 @@
       "name": "W CLUB 22 TECH POLO SHIRT",
       "code": null,
       "price": 10544,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 47,
@@ -4405,6 +4468,7 @@
       "name": "W CLUB 25 ORIGINAL HOODIE",
       "code": null,
       "price": 46965,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 48,
@@ -4462,6 +4526,7 @@
       "name": "W CLUB 25 ORIGINAL HOODIE FZ",
       "code": null,
       "price": 50510,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 49,
@@ -4518,6 +4583,7 @@
       "name": "W CLUB 25 DRESS",
       "code": null,
       "price": 54335,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "size",
       "order": 50,
@@ -4617,6 +4683,7 @@
       "name": "SOCKS TENNIS 1P PERFOR CREW",
       "code": null,
       "price": 4605,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 51,
@@ -4644,8 +4711,8 @@
             },
             {
               "size": "39-43",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             }
           ]
@@ -4660,6 +4727,7 @@
       "name": "HEAD TENNIS CREW 1P",
       "code": null,
       "price": 7372,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 52,
@@ -4729,6 +4797,7 @@
       "name": "PADEL SOCKS 1P",
       "code": null,
       "price": 7372,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 53,
@@ -4798,6 +4867,7 @@
       "name": "SOCKS TENNIS 2P STRIPE",
       "code": null,
       "price": 8180,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 54,
@@ -4893,6 +4963,7 @@
       "name": "HEAD ALL SPORTS SNEAKERS 3P",
       "code": null,
       "price": 8398,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 55,
@@ -4962,6 +5033,7 @@
       "name": "SOCKS TENNIS 2P PERFORMANCE",
       "code": null,
       "price": 8646,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 56,
@@ -5031,6 +5103,7 @@
       "name": "SOCKS TENNIS 3P SNEAKER",
       "code": null,
       "price": 9098,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "size",
       "order": 57,
@@ -5129,6 +5202,7 @@
       "name": "ANTIVIBRADOR LOGO JAR",
       "code": "PENDIENTE",
       "price": 218865,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 58,
@@ -5147,6 +5221,7 @@
       "name": "ANTIVIBRADOR PRO DAMP",
       "code": "PENDIENTE",
       "price": 238442,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
       "order": 59,
@@ -5158,6 +5233,68 @@
       "variants": []
     },
     {
+      "id": "CUBREGRIP SUPER COMP",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP SUPER COMP",
+      "code": null,
+      "price": 8080,
+      "packDe": 12,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 60,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BK",
+          "code": "BK",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/CUBRE GRIP SUPER COMP 285088 -NUBE_1776953375.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "CUBREGRIP PADEL PRO",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP PADEL PRO",
+      "code": null,
+      "price": 9890,
+      "packDe": 12,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 61,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BK",
+          "code": "BK",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/PADEL PRO X3 - 285111 nube_1776955712.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
       "id": "CUBREGRIP PRIME TOUR x3",
       "category": "accesorios",
       "subcategory": "cubre-grips",
@@ -5165,9 +5302,10 @@
       "name": "CUBREGRIP PRIME TOUR x3",
       "code": null,
       "price": 10885,
+      "packDe": 12,
       "enabled": true,
       "stockMode": "none",
-      "order": 60,
+      "order": 62,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5195,9 +5333,10 @@
       "name": "CUBREGRIP PRIME TOUR WH x12",
       "code": null,
       "price": 34212,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
-      "order": 61,
+      "order": 63,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5218,52 +5357,17 @@
       ]
     },
     {
-      "id": "CUBREGRIP PADEL XTREME SOFT MX",
-      "category": "accesorios",
-      "subcategory": "cubre-grips",
-      "gender": null,
-      "name": "CUBREGRIP PADEL XTREME SOFT MX",
-      "code": null,
-      "price": 183300,
-      "enabled": false,
-      "stockMode": "none",
-      "order": 62,
-      "images": [],
-      "sizes": [],
-      "specifications": {
-        "features": [
-          "Es un overgrip de alto rendimiento con un exclusivo suave y cómodo identificador. Gracias a su material y a sus orificios extra grandes proporciona una mayor sensibilidad y una altísima capacidad de absorción.",
-          "Garantiza un contacto ideal entre la mano y la raqueta, proporcionándote un agarre sólido y la máxima sensación de sequedad.",
-          "Perforado"
-        ]
-      },
-      "variants": [
-        {
-          "id": "MX",
-          "code": "pendiente",
-          "colorName": "MultiColors",
-          "colorHex": "#FFB6C1",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/accesorios/xtreme-soft-box-285425-9022759053eb31ba6617779156078838-1024-1024.webp"
-          ],
-          "sizes": []
-        }
-      ]
-    },
-    {
       "id": "CUBREGRIP PADEL PRO 60 PCS",
       "category": "accesorios",
       "subcategory": "cubre-grips",
       "gender": null,
       "name": "CUBREGRIP PADEL PRO 60 PCS",
       "code": null,
-      "price": 186612,
+      "price": 197800,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 63,
+      "order": 64,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5280,8 +5384,84 @@
             "assets/products/accesorios/PADEL PRO 60 PCS 285121 WH_1776964259.jpg"
           ],
           "sizes": []
+        },
+        {
+          "id": "BK",
+          "code": "pendiente",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/PADEL PRO 60 PCS 285121 BK_1776964248.jpg"
+          ],
+          "sizes": []
         }
       ]
+    },
+    {
+      "id": "CUBREGRIP EXTREME SOFT 60PCS",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP EXTREME SOFT 60PCS",
+      "code": null,
+      "price": 197800,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 65,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "WH",
+          "code": "pendiente",
+          "colorName": "White",
+          "colorHex": "#FFFF",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/accesorios/XTREME SOFT BOX 285425 WH_1776957457.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "MX",
+          "code": "pendiente",
+          "colorName": "MultiColors",
+          "colorHex": "#FFB6C1",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/accesorios/XTREME SOFT BOX 285425_1776954385.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "CUBREGRIP EXTREME SOFT BOX",
+      "category": "accesorios",
+      "subcategory": "cubre-grips",
+      "gender": null,
+      "name": "CUBREGRIP EXTREME SOFT BOX",
+      "code": "PENDIENTE",
+      "price": 197800,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 66,
+      "images": [
+        "assets/products/accesorios/XTREME SOFT DISPLAY BOX -70 GRIPS - 285712_1776954412.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
     },
     {
       "id": "MUÑEQUERA CORTA X 2",
@@ -5291,9 +5471,10 @@
       "name": "MUÑEQUERA CORTA X 2",
       "code": null,
       "price": 6812,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "none",
-      "order": 64,
+      "order": 67,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5364,9 +5545,10 @@
       "name": "MUÑEQUERA LARGA X 2",
       "code": null,
       "price": 7792,
+      "packDe": 6,
       "enabled": true,
       "stockMode": "none",
-      "order": 65,
+      "order": 68,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5437,9 +5619,10 @@
       "name": "GRIP DUAL ABSORBING",
       "code": null,
       "price": 7775,
+      "packDe": 12,
       "enabled": true,
       "stockMode": "none",
-      "order": 66,
+      "order": 69,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5506,9 +5689,10 @@
       "name": "GRIP HYDROSORB PRO",
       "code": null,
       "price": 10575,
+      "packDe": 12,
       "enabled": true,
       "stockMode": "none",
-      "order": 67,
+      "order": 70,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5553,9 +5737,10 @@
       "name": "GRIP HYDROSORB COM",
       "code": null,
       "price": 11352,
+      "packDe": 12,
       "enabled": true,
       "stockMode": "none",
-      "order": 68,
+      "order": 71,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5589,9 +5774,10 @@
       "name": "MASTER 15LNT SET x12M",
       "code": "PENDIENTE",
       "price": 5598,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 69,
+      "order": 72,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776965018.jpg"
       ],
@@ -5607,9 +5793,10 @@
       "name": "MASTER 15 LSI",
       "code": "PENDIENTE",
       "price": 5598,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 70,
+      "order": 73,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966633.jpg"
       ],
@@ -5632,9 +5819,10 @@
       "name": "MASTER 16 LSI",
       "code": "PENDIENTE",
       "price": 5598,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 71,
+      "order": 74,
       "images": [
         "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966641.jpg"
       ],
@@ -5655,9 +5843,10 @@
       "name": "MASTER 16 REEL X 200M",
       "code": null,
       "price": 60618,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 72,
+      "order": 75,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5706,9 +5895,10 @@
       "name": "SONIC PRO 16 REEL X200M",
       "code": "PENDIENTE",
       "price": 155510,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 73,
+      "order": 76,
       "images": [
         "assets/products/accesorios/head-sonic-pro-1-30-matassa-200-m-black-281128-16bk_A_1773834711.jpg"
       ],
@@ -5724,9 +5914,10 @@
       "name": "SONIC PRO 17 REEL X200M",
       "code": "PENDIENTE",
       "price": 155510,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 74,
+      "order": 77,
       "images": [
         "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg"
       ],
@@ -5742,9 +5933,10 @@
       "name": "HAWK TOUCH (120 M REEL)",
       "code": "PENDIENTE",
       "price": 171060,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 75,
+      "order": 78,
       "images": [
         "assets/products/accesorios/head-hawk-touch-130-matassa-tennis-da-120-m-anthracite-281214-16an_A_2_1773835045.jpg"
       ],
@@ -5765,9 +5957,10 @@
       "name": "Lynx (reel 200m) AN 17",
       "code": "PENDIENTE",
       "price": 220824,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 76,
+      "order": 79,
       "images": [
         "assets/products/accesorios/CUERDA LYNX REEL 200M - 281794 AN_1776966679.jpg"
       ],
@@ -5783,9 +5976,10 @@
       "name": "LYNX TOUR (200M REEL) 17",
       "code": null,
       "price": 220824,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 77,
+      "order": 80,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -5832,9 +6026,10 @@
       "name": "PROMOTION CAP",
       "code": null,
       "price": 24882,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 78,
+      "order": 81,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5901,9 +6096,10 @@
       "name": "PRO PLAYER VISOR",
       "code": null,
       "price": 31102,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 79,
+      "order": 82,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -5933,6 +6129,19 @@
             "assets/products/accesorios/PRO PLAYER VISOR - 287135 WG_1776966398.jpg"
           ],
           "sizes": []
+        },
+        {
+          "id": "NAVY",
+          "code": "pendiente",
+          "colorName": "NAVY",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/accesorios/PRO PLAYER VISOR - 287135 NAVY_1776966394.jpg"
+          ],
+          "sizes": []
         }
       ]
     },
@@ -5944,9 +6153,10 @@
       "name": "PRO PLAYER CAP",
       "code": null,
       "price": 32657,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 80,
+      "order": 83,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -6013,9 +6223,10 @@
       "name": "PERFORMANCE CAP",
       "code": null,
       "price": 34212,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 81,
+      "order": 84,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -6056,9 +6267,10 @@
       "name": "FIVE PANEL TOUR CAP",
       "code": null,
       "price": 38877,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 82,
+      "order": 85,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -6086,9 +6298,10 @@
       "name": "DELTA FLEXFIT CAP",
       "code": null,
       "price": 65314,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 83,
+      "order": 86,
       "images": [],
       "sizes": [],
       "specifications": null,
@@ -6116,9 +6329,10 @@
       "name": "KIDS TOUR BACKPACK 14L",
       "code": null,
       "price": 55984,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
-      "order": 84,
+      "order": 87,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -6152,9 +6366,10 @@
       "name": "KIDS TOUR BACKPACK 14L MONSTER",
       "code": "PENDIENTE",
       "price": 55984,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 85,
+      "order": 88,
       "images": [
         "assets/products/bolso-mochila/260774 KIDS TOUR BACKPACK 14L MONSTER_1776687209.jpg"
       ],
@@ -6169,6 +6384,63 @@
       "variants": []
     },
     {
+      "id": "Base Backpack 17L",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "BASE BACKPACK 17L",
+      "code": "PENDIENTE",
+      "price": 64300,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 89,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BK",
+          "code": "BK",
+          "colorName": "Black",
+          "colorHex": "#090909",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/bolso-mochila/261235 BASE BACKPACK 17L 1_1776452376.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "NV",
+          "code": "NV",
+          "colorName": "Navy",
+          "colorHex": "#000080",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/bolso-mochila/261335 BASE BACKPACK 17L - NV_1776454358.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "SG",
+          "code": "SG",
+          "colorName": "Light Green",
+          "colorHex": "#BBD6A1",
+          "price": null,
+          "thumbnail": null,
+          "order": 2,
+          "images": [
+            "assets/products/bolso-mochila/261435 BASE BACKPACK 17L - SG_1776453888.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
       "id": "BASE RACQUET BAG L SG",
       "category": "bolsos-mochilas",
       "subcategory": null,
@@ -6176,9 +6448,10 @@
       "name": "BASE RACQUET BAG L SG",
       "code": "PENDIENTE",
       "price": 91750,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 86,
+      "order": 90,
       "images": [
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG_1776454259.jpg",
         "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG A_1776454259.jpg"
@@ -6194,6 +6467,52 @@
       "variants": []
     },
     {
+      "id": "Team Padel Bag L",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "TEAM PADEL BAG L",
+      "code": "PENDIENTE",
+      "price": 97260,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 91,
+      "images": [],
+      "sizes": [],
+      "specifications": null,
+      "variants": [
+        {
+          "id": "BKCC",
+          "code": "BKCC",
+          "colorName": "BKCC",
+          "colorHex": "#FD9F94",
+          "price": null,
+          "thumbnail": null,
+          "order": 0,
+          "images": [
+            "assets/products/bolso-mochila/team-padel-bag-l-bkcc_1776450608.jpg",
+            "assets/products/bolso-mochila/team-padel-bag-l-bkcc (1)_1776450605.jpg"
+          ],
+          "sizes": []
+        },
+        {
+          "id": "BLBK",
+          "code": "BLBK",
+          "colorName": "BLBK",
+          "colorHex": "#0B3476",
+          "price": null,
+          "thumbnail": null,
+          "order": 1,
+          "images": [
+            "assets/products/bolso-mochila/team-padel-bag-l-blbk_1776450736.jpg",
+            "assets/products/bolso-mochila/team-padel-bag-l-blbk (1)_1776450736.jpg"
+          ],
+          "sizes": []
+        }
+      ]
+    },
+    {
       "id": "TOUR BACKPACK 25L FO",
       "category": "bolsos-mochilas",
       "subcategory": null,
@@ -6201,9 +6520,10 @@
       "name": "TOUR BACKPACK 25L FO",
       "code": "PENDIENTE",
       "price": 116632,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 87,
+      "order": 92,
       "images": [
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 2_1776451334.jpg",
         "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO_1776451334.jpg",
@@ -6229,9 +6549,10 @@
       "name": "RETRO TOTE BAG 25TH LTD",
       "code": "PENDIENTE",
       "price": 132182,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 88,
+      "order": 93,
       "images": [
         "assets/products/bolso-mochila/261855 RETRO TOTE BAG 25 LTD_1776969211.jpg",
         "assets/products/bolso-mochila/paletero-head-retro-tote-bag-25th-ltd-2-e58a1ce8e25fb6884617818759097085-1024-1024.webp"
@@ -6254,9 +6575,10 @@
       "name": "PRO PADEL BAG L NV",
       "code": "PENDIENTE",
       "price": 155510,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 89,
+      "order": 94,
       "images": [
         "assets/products/bolso-mochila/267565_1773838927.jpg",
         "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 3_1776693072.jpg",
@@ -6283,9 +6605,10 @@
       "name": "TOUR RACQUET BAG XL FO",
       "code": "PENDIENTE",
       "price": 165000,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 90,
+      "order": 95,
       "images": [
         "assets/products/bolso-mochila/267534_1773838960.jpg",
         "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 2_1777388891.jpg",
@@ -6310,9 +6633,10 @@
       "name": "RETRO PADEL BAG 25TH LTD",
       "code": "PENDIENTE",
       "price": 178835,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 91,
+      "order": 96,
       "images": [
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD 2_1776968835.jpg",
         "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD_1776968667.jpg"
@@ -6334,9 +6658,10 @@
       "name": "PRO X RACQUET BAG L BK",
       "code": "PENDIENTE",
       "price": 185056,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 92,
+      "order": 97,
       "images": [
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK_1776455382.jpg",
         "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK a_1776455382.jpg"
@@ -6360,9 +6685,10 @@
       "name": "TOUR RACQUET BAG L NEON",
       "code": "PENDIENTE",
       "price": 186612,
+      "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 93,
+      "order": 98,
       "images": [
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON_1776689985.jpg",
         "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON a_1776689985.jpg"
@@ -6390,9 +6716,10 @@
       "name": "PRO X RACQUET BAG XL BK",
       "code": "PENDIENTE",
       "price": 208382,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 94,
+      "order": 99,
       "images": [
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL_1776451592.jpg",
         "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 2_1776451589.jpg",
@@ -6412,6 +6739,27 @@
       "variants": []
     },
     {
+      "id": "COELLO PRO X PADEL BACKPACK 30L",
+      "category": "bolsos-mochilas",
+      "subcategory": null,
+      "gender": null,
+      "name": "COELLO PRO X PADEL BACKPACK 30L",
+      "code": "PENDIENTE",
+      "price": 197810,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 100,
+      "images": [
+        "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L_1776695394.jpg",
+        "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L a_1776695394.jpg",
+        "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L b_1776695394.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
       "id": "TOUR RACQUET BAG XL NEON",
       "category": "bolsos-mochilas",
       "subcategory": null,
@@ -6419,9 +6767,10 @@
       "name": "TOUR RACQUET BAG XL NEON",
       "code": "PENDIENTE",
       "price": 209938,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 95,
+      "order": 101,
       "images": [
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON_1776687124.jpg",
         "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON a_1776687124.jpg"
@@ -6442,9 +6791,10 @@
       "name": "COELLO PRO X PADEL DUFFLE BAG L 261805",
       "code": "PENDIENTE",
       "price": 225488,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 96,
+      "order": 102,
       "images": [
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L_1776695983.jpg",
         "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L a_1776695982.jpg",
@@ -6472,9 +6822,10 @@
       "name": "COELLO PRO X PADEL DUFFLE BAG L 261906",
       "code": "PENDIENTE",
       "price": 225488,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 97,
+      "order": 103,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_935521-MLA110345733438_052026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_996848-MLA111279153073_052026-F.webp"
@@ -6495,9 +6846,10 @@
       "name": "PALETERO HEAD PRO X PADEL DUFFLE BAG L BKDG",
       "code": "PENDIENTE",
       "price": 202165,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 98,
+      "order": 104,
       "images": [
         "assets/products/bolso-mochila/D_NQ_NP_2X_881169-MLA113036555379_062026-F.webp",
         "assets/products/bolso-mochila/D_NQ_NP_2X_750946-MLA113037416577_062026-F.webp",
@@ -6520,9 +6872,10 @@
       "name": "TOUR TRAVEL BAG 110L BK",
       "code": "PENDIENTE",
       "price": 272142,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 99,
+      "order": 105,
       "images": [
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK_1776687233.jpg",
         "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK a_1776687233.jpg",
@@ -6558,9 +6911,10 @@
       "name": "RADICAL 135 X 2024",
       "code": "PENDIENTE",
       "price": 171060,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 100,
+      "order": 106,
       "images": [
         "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 tienda_1776449126.jpg",
         "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 c tienda_1776449126.jpg",
@@ -6589,9 +6943,10 @@
       "name": "RADICAL 120 SB 2024",
       "code": "PENDIENTE",
       "price": 186612,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 101,
+      "order": 107,
       "images": [
         "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 tienda_1776447381.jpg",
         "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 c tienda_1776447381.jpg",
@@ -6623,9 +6978,10 @@
       "name": "RADICAL 135 SB 2024",
       "code": "PENDIENTE",
       "price": 186612,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 102,
+      "order": 108,
       "images": [
         "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_2_1776448469.jpg",
         "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_3_1776448469.jpg",
@@ -6657,9 +7013,10 @@
       "name": "TOUR PRO (MM TRADE)",
       "code": "PENDIENTE",
       "price": 65314,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 103,
+      "order": 109,
       "images": [
         "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg"
       ],
@@ -6694,9 +7051,10 @@
       "name": "IG EXTREME XCEED",
       "code": "PENDIENTE",
       "price": 164840,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 104,
+      "order": 110,
       "images": [
         "assets/products/raqueta-tenis/IG EXTREME XCEED - 232115_1776437310.jpg"
       ],
@@ -6716,9 +7074,10 @@
       "name": "IG GRAVITY XCEED",
       "code": "PENDIENTE",
       "price": 164840,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 105,
+      "order": 111,
       "images": [
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236_1776440008.jpg",
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236 a_1776440008.jpg"
@@ -6763,9 +7122,10 @@
       "name": "IG CHALLENGE TEAM L (ST)",
       "code": "PENDIENTE",
       "price": 171060,
+      "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 106,
+      "order": 112,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776187934.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776187934.jpg"
@@ -6807,9 +7167,10 @@
       "name": "IG CHALLENGE TEAM L (STEALTH)",
       "code": "PENDIENTE",
       "price": 171060,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 107,
+      "order": 113,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776190127.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776190127.jpg"
@@ -6851,9 +7212,10 @@
       "name": "IG CHALLENGE MP (RED)",
       "code": "PENDIENTE",
       "price": 178835,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 108,
+      "order": 114,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 tienda_1776187950.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 a tienda_1776187950.jpg"
@@ -6906,9 +7268,10 @@
       "name": "INSTINCT MP 2022",
       "code": "PENDIENTE",
       "price": 225488,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 109,
+      "order": 115,
       "images": [
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 2_1776188605.jpg",
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 1_1776188605.jpg",
@@ -6946,9 +7309,10 @@
       "name": "BOOM TEAM 2024",
       "code": "PENDIENTE",
       "price": 259700,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 110,
+      "order": 116,
       "images": [
         "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_1 nube_1776187909.jpg",
         "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_2 nube_1776187909.jpg"
@@ -6990,9 +7354,10 @@
       "name": "SQUARED 232606",
       "code": "PENDIENTE",
       "price": 264366,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 111,
+      "order": 117,
       "images": [
         "assets/products/raqueta-tenis/323583_1781105225.jpeg",
         "assets/products/raqueta-tenis/323578_1781105225.jpeg",
@@ -7016,9 +7381,10 @@
       "name": "SPEED TEAM 2026",
       "code": "PENDIENTE",
       "price": 275252,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 112,
+      "order": 118,
       "images": [
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg",
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg",
@@ -7091,9 +7457,10 @@
       "name": "BOOM MP 2024",
       "code": "PENDIENTE",
       "price": 298577,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 113,
+      "order": 119,
       "images": [
         "assets/products/raqueta-tenis/BOOM MP 2024_1776188236.jpg",
         "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 g_1776188235.jpg",
@@ -7131,9 +7498,10 @@
       "name": "PRESTIGE MP 2023",
       "code": "PENDIENTE",
       "price": 298578,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 114,
+      "order": 120,
       "images": [
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg",
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_10 nube_1776442320.jpg",
@@ -7189,9 +7557,10 @@
       "name": "PRESTIGE MP L 2023",
       "code": "PENDIENTE",
       "price": 298578,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 115,
+      "order": 121,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7245,9 +7614,10 @@
       "name": "PRESTIGE PRO 2023",
       "code": "PENDIENTE",
       "price": 298578,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 116,
+      "order": 122,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7301,9 +7671,10 @@
       "name": "ARTHUR ASHE COMPETITION 2025",
       "code": "PENDIENTE",
       "price": 373222,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 117,
+      "order": 123,
       "images": [
         "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025_1776189626.jpg",
         "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025 b_1776189626.jpg"
@@ -7361,9 +7732,10 @@
       "name": "SQ PRIME BALL DYD X12",
       "code": "PENDIENTE",
       "price": 69980,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 118,
+      "order": 124,
       "images": [
         "assets/products/raqueta-squash/327791_1773839444.jpg",
         "assets/products/raqueta-squash/D_NQ_NP_2X_902365-MLA96290010386_102025-F_1773839482.webp"
@@ -7384,9 +7756,10 @@
       "name": "JRS 4.5 GW BR80[I]",
       "code": null,
       "price": 106742,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 119,
+      "order": 125,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7452,9 +7825,10 @@
       "name": "PR 11 GW BR.85[G]",
       "code": null,
       "price": 168324,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 120,
+      "order": 126,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7488,9 +7862,10 @@
       "name": "HEAD BALL PEN",
       "code": "PENDIENTE",
       "price": 1555,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 121,
+      "order": 127,
       "images": [
         "assets/products/pop/287568 HEAD Ball Pen_1778598876.jpg"
       ],
@@ -7506,9 +7881,10 @@
       "name": "HEAD PENCIL BLACK",
       "code": "PENDIENTE",
       "price": 1555,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 122,
+      "order": 128,
       "images": [
         "assets/products/pop/287598 HEAD PENCIL_1778605897.jpg"
       ],
@@ -7524,9 +7900,10 @@
       "name": "NEW LOGO STENCIL",
       "code": "PENDIENTE",
       "price": 4323,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 123,
+      "order": 129,
       "images": [
         "assets/products/pop/152694_1774610624.jpg"
       ],
@@ -7542,9 +7919,10 @@
       "name": "HEAD WALL HOOK - 20CM",
       "code": "PENDIENTE",
       "price": 9766,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
-      "order": 124,
+      "order": 130,
       "images": [
         "assets/products/pop/gancho_1778607134.jpg"
       ],
@@ -7560,9 +7938,10 @@
       "name": "HEAD PEN POT",
       "code": "PENDIENTE",
       "price": 10885,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 125,
+      "order": 131,
       "images": [
         "assets/products/pop/287224 HEAD PEN POT_1778606304.jpg"
       ],
@@ -7578,9 +7957,10 @@
       "name": "HEAD DOCUMENT FILO",
       "code": "PENDIENTE",
       "price": 31102,
+      "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 126,
+      "order": 132,
       "images": [
         "assets/products/pop/287520 DOCUMENT FILO_1778605264.jpg"
       ],
@@ -7596,9 +7976,10 @@
       "name": "HEAD BALL TUBE",
       "code": "PENDIENTE",
       "price": 38877,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
-      "order": 127,
+      "order": 133,
       "images": [
         "assets/products/pop/287582 head ball tube_1778592280.jpg"
       ],
@@ -7614,9 +7995,10 @@
       "name": "HEAD NOTE PAD A5",
       "code": "PENDIENTE",
       "price": 38877,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 128,
+      "order": 134,
       "images": [
         "assets/products/pop/287500 HEAD NOTE PAD A5_1778599016.jpg"
       ],
@@ -7632,9 +8014,10 @@
       "name": "HEAD UMBRELLA SMALL",
       "code": "PENDIENTE",
       "price": 62204,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 129,
+      "order": 135,
       "images": [
         "assets/products/pop/287800 UMBRELLA SMALL_1778606925.jpg"
       ],
@@ -7650,9 +8033,10 @@
       "name": "HEAD CORPORATE FLOORMAT",
       "code": "PENDIENTE",
       "price": 77755,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 130,
+      "order": 136,
       "images": [
         "assets/products/pop/287740 CORPORATE FLOORMAT_1778606609.jpg"
       ],
@@ -7668,9 +8052,10 @@
       "name": "HEAD COLLAPSIBLE RACQUETHOLDER",
       "code": "PENDIENTE",
       "price": 183999,
-      "enabled": true,
+      "packDe": 1,
+      "enabled": false,
       "stockMode": "none",
-      "order": 131,
+      "order": 137,
       "images": [
         "assets/products/pop/Collapsible racquetholder_1778607116.jpg"
       ],
@@ -7686,9 +8071,10 @@
       "name": "WINDBREAKER 2007 18X2",
       "code": "PENDIENTE",
       "price": 189410,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 132,
+      "order": 138,
       "images": [
         "assets/products/pop/198454_1774610813.jpg",
         "assets/products/pop/289799_A.png"
@@ -7705,9 +8091,10 @@
       "name": "HEAD BALL TROLLEY",
       "code": "PENDIENTE",
       "price": 259188,
+      "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 133,
+      "order": 139,
       "images": [
         "assets/products/pop/237916_1774610515.jpg"
       ],
@@ -7723,9 +8110,10 @@
       "name": "HEAD CUBE",
       "code": "PENDIENTE",
       "price": 279917,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 134,
+      "order": 140,
       "images": [
         "assets/products/pop/287748 HEAD CUBE_1778606419.jpg"
       ],
@@ -7741,9 +8129,10 @@
       "name": "MINI TENNIS NET 6.1 M",
       "code": "PENDIENTE",
       "price": 326570,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 135,
+      "order": 141,
       "images": [
         "assets/products/pop/299857_1774610591.jpg"
       ],
@@ -7759,9 +8148,10 @@
       "name": "HEAD PADEL NET",
       "code": "PENDIENTE",
       "price": 351762,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 136,
+      "order": 142,
       "images": [
         "assets/products/pop/padel net_1778607317.jpg"
       ],
@@ -7777,11 +8167,71 @@
       "name": "HEAD COACHING STARTER PACK",
       "code": "PENDIENTE",
       "price": 544282,
+      "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 137,
+      "order": 143,
       "images": [
         "assets/products/pop/196472_1781029313.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "EXTREME ONE 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "EXTREME ONE 2025",
+      "code": "PENDIENTE",
+      "price": 310000,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 144,
+      "images": [
+        "assets/products/paletas/pala-head-extreme-one-2025-1600x1600.webp",
+        "assets/products/paletas/pala-head-extreme-one-2025-es-1-1600x1600.webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "EXTREME MOTION 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "EXTREME MOTION 2025",
+      "code": "PENDIENTE",
+      "price": 282000,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 145,
+      "images": [
+        "assets/products/paletas/D_NQ_NP_2X_838157-MLA99533125854_122025-F.webp",
+        "assets/products/paletas/D_NQ_NP_2X_789689-MLA96058403379_102025-F.webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "HEAD X100 BASK PRESURIZADORES",
+      "category": "accesorios",
+      "subcategory": "presurizadores",
+      "gender": null,
+      "name": "HEAD X100 BASK PRESURIZADORES",
+      "code": "PENDIENTE",
+      "price": 585115,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 146,
+      "images": [
+        "assets/products/accesorios/head-pressurizers-head-x100-basket-01 nube_1776951275.jpg"
       ],
       "sizes": [],
       "specifications": null,

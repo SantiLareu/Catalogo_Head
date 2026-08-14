@@ -213,6 +213,7 @@ function Lightbox({ imageIndex, images, name, onClose, onNext, onPrevious, origi
           ref={viewportRef}
         >
           <img
+            decoding="async"
             className="lightbox-image"
             src={images[imageIndex]}
             alt={`${name} imagen ${imageIndex + 1}`}

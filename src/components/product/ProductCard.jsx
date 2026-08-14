@@ -5,6 +5,7 @@ import { productSelectionActions } from '../../hooks/productSelectionReducer.js'
 import useProductSelection from '../../hooks/useProductSelection.js';
 import useCart from '../../hooks/useCart.js';
 import { getProductTargetId } from '../../utils/navigation.js';
+import { getPackDe, isPackQuantity } from '../../utils/packQuantity.js';
 import Lightbox from '../lightbox/Lightbox.jsx';
 import ProductActions from './ProductActions.jsx';
 import ProductGallery from './ProductGallery.jsx';
@@ -37,6 +38,7 @@ function ProductCard({ categories, product }) {
     [product.variants]
   );
   const imageCount = images.length;
+  const packDe = getPackDe(product);
   const productTargetId = getProductTargetId(product.id);
   const specificationsContentId = `${productTargetId}-specifications`;
 
@@ -92,8 +94,8 @@ function ProductCard({ categories, product }) {
       return;
     }
 
-    if (!Number.isInteger(state.quantity) || state.quantity < 1) {
-      showToast('La cantidad debe ser al menos 1');
+    if (!isPackQuantity(state.quantity, packDe)) {
+      showToast(`La cantidad debe ser un múltiplo de ${packDe}`);
       return;
     }
 
@@ -155,11 +157,12 @@ function ProductCard({ categories, product }) {
             />
             <QuantitySelector
               onDecrease={() =>
-                dispatch({ type: productSelectionActions.DECREMENT_QUANTITY })
+                dispatch({ type: productSelectionActions.DECREMENT_QUANTITY, packDe })
               }
               onIncrease={() =>
-                dispatch({ type: productSelectionActions.INCREMENT_QUANTITY })
+                dispatch({ type: productSelectionActions.INCREMENT_QUANTITY, packDe })
               }
+              packDe={packDe}
               quantity={state.quantity}
             />
             <ProductActions onAdd={addToCart} />

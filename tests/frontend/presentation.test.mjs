@@ -77,13 +77,18 @@ test('rechaza modos editoriales inválidos sin degradación silenciosa', () => {
   );
 });
 
-test('portada omite imagen nula y aplica src y alt cuando están configurados', async () => {
+test('portada omite imagen nula y difiere imágenes configuradas con dimensiones estables', async () => {
   const cover = await readFile(
     new URL('../../src/components/catalog/CategoryEditorialCover.jsx', import.meta.url),
     'utf8'
   );
   assert.match(cover, /\{image \? \(/);
-  assert.match(cover, /<img alt=\{imageAlt\} src=\{image\} \/>/);
+  assert.match(cover, /alt=\{imageAlt\}/);
+  assert.match(cover, /src=\{image\}/);
+  assert.match(cover, /width=\{imageWidth\}/);
+  assert.match(cover, /height=\{imageHeight\}/);
+  assert.match(cover, /loading="lazy"/);
+  assert.match(cover, /decoding="async"/);
   assert.match(cover, /category-editorial-cover--without-image/);
 });
 

@@ -14,7 +14,7 @@ export function createInitialProductSelection(variantId = null) {
   return {
     variantId,
     size: null,
-    quantity: 1,
+    quantity: 0,
     imageIndex: 0
   };
 }
@@ -30,11 +30,12 @@ export function productSelectionReducer(state, action) {
         ...state,
         variantId: action.variantId,
         size: null,
-        quantity: 1,
+        quantity: 0,
         imageIndex: 0
       };
     case productSelectionActions.SELECT_SIZE:
-      return { ...state, size: action.size, quantity: 1 };
+      if (state.size === action.size) return state;
+      return { ...state, size: action.size, quantity: 0 };
     case productSelectionActions.SET_IMAGE:
       return { ...state, imageIndex: circularIndex(action.imageIndex, action.imageCount) };
     case productSelectionActions.NEXT_IMAGE:
@@ -42,10 +43,14 @@ export function productSelectionReducer(state, action) {
     case productSelectionActions.PREVIOUS_IMAGE:
       return { ...state, imageIndex: circularIndex(state.imageIndex - 1, action.imageCount) };
     case productSelectionActions.INCREMENT_QUANTITY:
-      return { ...state, quantity: state.quantity + 1 };
+      return { ...state, quantity: state.quantity + (action.packDe || 1) };
     case productSelectionActions.DECREMENT_QUANTITY:
-      return { ...state, quantity: Math.max(1, state.quantity - 1) };
+      return {
+        ...state,
+        quantity: Math.max(0, state.quantity - (action.packDe || 1))
+      };
     case productSelectionActions.SYNC_PRODUCT: {
+      const packDe = action.packDe || 1;
       const variantChanged = state.variantId !== action.variantId;
       const sizeStillExists = state.size == null || action.sizes.includes(state.size);
       const imageIndex = Math.min(
@@ -56,7 +61,12 @@ export function productSelectionReducer(state, action) {
         ...state,
         variantId: action.variantId,
         size: variantChanged || !sizeStillExists ? null : state.size,
-        quantity: variantChanged || !sizeStillExists ? 1 : state.quantity,
+        quantity:
+          variantChanged ||
+          !sizeStillExists ||
+          state.quantity % packDe !== 0
+            ? 0
+            : state.quantity,
         imageIndex: variantChanged ? 0 : imageIndex
       };
 

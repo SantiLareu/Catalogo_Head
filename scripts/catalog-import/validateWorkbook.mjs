@@ -479,6 +479,22 @@ function validateProductRows(rows, diagnostics) {
       }
     );
 
+    if (!isBlank(row.pack_de)) {
+      if (
+        typeof row.pack_de !== 'number' ||
+        !Number.isFinite(row.pack_de) ||
+        !Number.isInteger(row.pack_de) ||
+        row.pack_de < 1
+      ) {
+        diagnostics.error(
+          rowLocation(row, 'pack_de'),
+          'PRODUCT_PACK_INVALID',
+          'pack_de del producto "' + row.producto_id +
+            '" debe ser un entero positivo mayor o igual que 1.'
+        );
+      }
+    }
+
     if (!VALID_STOCK_MODES.has(row.stock_mode)) {
       diagnostics.error(
         rowLocation(row, 'stock_mode'),

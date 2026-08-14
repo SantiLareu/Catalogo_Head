@@ -6,6 +6,7 @@ import {
   countCatalog,
   compareCatalogs
 } from '../../scripts/catalog-import/catalogBaseline.mjs';
+import { buildCatalog } from '../../scripts/catalog-import/buildCatalog.mjs';
 import {
   createTestWorkspace,
   createWorkbookFixture,
@@ -35,6 +36,56 @@ test('Excel válido genera el catálogo esperado', async function(t) {
   assert.deepEqual(compareCatalogs(baseline, result.catalog), []);
   assert.deepEqual(countCatalog(result.catalog), countCatalog(baseline));
   await fs.access(workspace.outputPath);
+});
+
+test('pack_de vacío, 1 y 6 generan packDe consistente', () => {
+  const productRow = (id, packDe, order) => ({
+    producto_id: id,
+    nombre: id,
+    categoria: 'test',
+    subcategoria: null,
+    genero: null,
+    sku: id,
+    precio: 100,
+    pack_de: packDe,
+    habilitado: false,
+    stock_mode: 'none',
+    orden: order
+  });
+  const catalog = buildCatalog({
+    Categorias: [],
+    Productos: [
+      productRow('empty', '', 0),
+      productRow('one', 1, 1),
+      productRow('six', 6, 2)
+    ],
+    Variantes: [],
+    Imagenes: [],
+    Stock: [],
+    Caracteristicas: []
+  });
+
+  assert.deepEqual(catalog.products.map((product) => product.packDe), [1, 1, 6]);
+});
+
+test('rechaza pack_de cero, negativo, decimal y texto identificando el producto', async function(t) {
+  for (const [name, value] of [['cero', 0], ['negativo', -1], ['decimal', 1.5], ['texto', 'seis']]) {
+    await t.test(name, async function() {
+      const workspace = await createTestWorkspace(t);
+      let productId;
+      await createWorkbookFixture(workspace.workbookPath, function(workbook) {
+        const sheet = workbook.getWorksheet('Productos');
+        productId = sheet.getCell('A2').value;
+        sheet.getCell('K2').value = value;
+      });
+
+      const result = await runFixture(workspace);
+
+      assert.equal(result.exitCode, 1);
+      assert.ok(diagnosticCodes(result).includes('PRODUCT_PACK_INVALID'));
+      assert.match(result.diagnostics.errors[0].message, new RegExp(String(productId)));
+    });
+  }
 });
 
 test('rechaza un producto duplicado', async function(t) {

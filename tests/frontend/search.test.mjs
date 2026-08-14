@@ -94,7 +94,26 @@ test('el catálogo real se indexa y encuentra nombre y código de variante', asy
     'utf8'
   ));
   const realIndex = buildProductSearchIndex(catalog.products, catalog.categories);
-  assert.ok(searchProducts(realIndex, 'radical').length > 0);
-  assert.ok(searchProducts(realIndex, '222044').length > 0);
-  assert.ok(searchProducts(realIndex, 'medias').length > 0);
+  const namedProduct = catalog.products.find((product) =>
+    product.enabled !== false && typeof product.name === 'string' && product.name.trim()
+  );
+  const productWithCodedVariant = catalog.products.find((product) =>
+    product.enabled !== false && product.variants.some((variant) =>
+      typeof variant.code === 'string' && variant.code.trim() && variant.code !== 'PENDIENTE'
+    )
+  );
+  const codedVariant = productWithCodedVariant.variants.find((variant) =>
+    typeof variant.code === 'string' && variant.code.trim() && variant.code !== 'PENDIENTE'
+  );
+
+  assert.ok(namedProduct, 'El catálogo debe contener al menos un producto buscable por nombre.');
+  assert.ok(productWithCodedVariant, 'El catálogo debe contener una variante con código buscable.');
+  assert.ok(
+    searchProducts(realIndex, namedProduct.name)
+      .some((result) => result.productId === namedProduct.id)
+  );
+  assert.ok(
+    searchProducts(realIndex, codedVariant.code)
+      .some((result) => result.productId === productWithCodedVariant.id)
+  );
 });

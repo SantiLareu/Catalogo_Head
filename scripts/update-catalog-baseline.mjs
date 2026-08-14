@@ -12,6 +12,12 @@ const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDirectory, '..');
 
 export async function runBaselineUpdate(options = {}) {
+  if (!options.dryRun && options.confirm !== true) {
+    throw new Error(
+      'La actualización del baseline requiere confirmación explícita.'
+    );
+  }
+
   const root = path.resolve(options.repoRoot || repoRoot);
   const inputPath = path.resolve(
     options.inputPath || path.join(root, 'catalog', 'products.xlsx')
@@ -60,6 +66,16 @@ async function main() {
     'ATENCIÓN: este comando reemplaza el snapshot canónico y solo debe ' +
     'usarse después de aprobar un cambio comercial.'
   );
+
+  if (!process.argv.slice(2).includes('--confirm')) {
+    console.error(
+      'No se actualizó el baseline: falta confirmación explícita. ' +
+      'Ejecutá npm run update-catalog-baseline -- --confirm para aprobarlo.'
+    );
+    process.exitCode = 1;
+    return;
+  }
+
   const preview = await runBaselineUpdate({ dryRun: true });
   if (preview.exitCode !== 0) {
     console.error(

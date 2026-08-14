@@ -32,6 +32,11 @@ El catálogo JavaScript anterior fue retirado y no forma parte del pipeline.
 El importador rechaza fórmulas. Todos los valores del workbook deben ser
 literales. Los IDs se preservan exactamente, incluidos los espacios finales.
 
+En `Productos`, `pack_de` es opcional: vacío equivale a `1`. Cuando está
+informado debe ser un entero positivo y se publica siempre como `packDe`. El
+precio continúa siendo unitario; las cantidades comprables avanzan en múltiplos
+de ese valor.
+
 ## Versión determinista
 
 `npm run import-products` genera conjuntamente el catálogo y un manifiesto con

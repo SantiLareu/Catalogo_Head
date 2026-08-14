@@ -84,7 +84,7 @@ test('variante eliminada cae a la primera válida y reinicia dependencias', () =
     variantId: 'black',
     sizes: ['M'],
     imageCount: 2
-  }), { variantId: 'black', size: null, quantity: 1, imageIndex: 0 });
+  }), { variantId: 'black', size: null, quantity: 0, imageIndex: 0 });
 });
 
 test('imagen removida limita imageIndex sin perder una selección válida', () => {
