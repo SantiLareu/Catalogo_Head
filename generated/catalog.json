@@ -1025,7 +1025,7 @@
       "code": "PENDIENTE",
       "price": 200050,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 13,
       "images": [
@@ -1067,7 +1067,7 @@
       "code": "PENDIENTE",
       "price": 323790,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 15,
       "images": [
@@ -1243,8 +1243,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2524,8 +2524,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -4705,8 +4705,8 @@
           "sizes": [
             {
               "size": "34-38",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -4915,8 +4915,8 @@
           "sizes": [
             {
               "size": "34-38",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -5612,11 +5612,11 @@
       ]
     },
     {
-      "id": "GRIP DUAL ABSORBING",
+      "id": "GRIP DUAL ABSORBING ALL COLORS",
       "category": "accesorios",
       "subcategory": "grips",
       "gender": null,
-      "name": "GRIP DUAL ABSORBING",
+      "name": "GRIP DUAL ABSORBING ALL COLORS",
       "code": null,
       "price": 7775,
       "packDe": 12,
@@ -5628,52 +5628,13 @@
       "specifications": null,
       "variants": [
         {
-          "id": "BK",
-          "code": "BK",
-          "colorName": "Black",
+          "id": "BK/RD/WH/BL",
+          "code": "BK/RD/WH/BL",
+          "colorName": "BK/RD/WH/BL",
           "colorHex": "#090909",
           "price": null,
           "thumbnail": null,
           "order": 0,
-          "images": [
-            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
-          ],
-          "sizes": []
-        },
-        {
-          "id": "RD",
-          "code": "RD",
-          "colorName": "Red",
-          "colorHex": "#D90021",
-          "price": null,
-          "thumbnail": null,
-          "order": 1,
-          "images": [
-            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
-          ],
-          "sizes": []
-        },
-        {
-          "id": "WH",
-          "code": "WH",
-          "colorName": "White",
-          "colorHex": "#FFFF",
-          "price": null,
-          "thumbnail": null,
-          "order": 2,
-          "images": [
-            "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
-          ],
-          "sizes": []
-        },
-        {
-          "id": "BL",
-          "code": "BL",
-          "colorName": "Blue",
-          "colorHex": "#12407D",
-          "price": null,
-          "thumbnail": null,
-          "order": 3,
           "images": [
             "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg"
           ],
@@ -7958,7 +7919,7 @@
       "code": "PENDIENTE",
       "price": 31102,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 132,
       "images": [
@@ -8207,7 +8168,7 @@
       "code": "PENDIENTE",
       "price": 282000,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 145,
       "images": [
@@ -8232,6 +8193,27 @@
       "order": 146,
       "images": [
         "assets/products/accesorios/head-pressurizers-head-x100-basket-01 nube_1776951275.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "SPEED PRO 2023",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "SPEED PRO 2023",
+      "code": "PENDIENTE",
+      "price": 280230,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 147,
+      "images": [
+        "assets/products/paletas/221013_Speed_Pro_2023 TIENDA_1776184687.jpg",
+        "assets/products/paletas/221013 Speed Pro 2023_3-1TIENDA_1776184687.jpg",
+        "assets/products/paletas/221013 Speed Pro 2023_TIENDA_1776184687.jpg"
       ],
       "sizes": [],
       "specifications": null,
