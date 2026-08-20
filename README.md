@@ -1,584 +1,641 @@
-# RealStep / HEAD — Catálogo mayorista
+# Catálogo RealStep / HEAD
 
-Aplicación React/Vite para explorar un catálogo mayorista, seleccionar
-variantes y talles, preparar un carrito y enviar una solicitud de pedido.
-El catálogo se genera desde un Excel y el build oficial puede firmarse con
-Ed25519 y verificarse mediante hashes SHA-256.
+Catálogo mayorista estático para RealStep / HEAD. Los datos comerciales se
+mantienen en `catalog/products.xlsx`, un importador Node.js genera el catálogo
+JSON y React/Vite construye la aplicación publicada en GitHub Pages. El carrito
+se conserva en el navegador y el checkout vigente envía el pedido mediante
+EmailJS. Las pestañas abiertas detectan automáticamente cambios de catálogo y
+de aplicación.
 
-> **Antes de realizar cambios estructurales, leer [`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md).**
-> Allí se documentan la arquitectura, las decisiones vigentes, el estado real,
-> las restricciones y el roadmap.
+> **Regla principal:** los datos comerciales se editan en Excel. No editar a
+> mano los JSON generados, las versiones, el baseline ni los artefactos de
+> firma.
 
-## 1. Descripción del proyecto
+Para decisiones arquitectónicas y restricciones permanentes, consultar
+[`PROJECT_CONTEXT.md`](PROJECT_CONTEXT.md) y [`AGENTS.md`](AGENTS.md).
 
-### Objetivo
+## 1. Requisitos
 
-El proyecto es un catálogo mayorista interactivo para la marca **HEAD**,
-operado por la empresa **RealStep**. Permite:
-
-- explorar el catálogo por categoría, producto, variante y talle;
-- buscar por nombre, código, color u otros campos estructurados;
-- ver la galería y la ficha técnica de cada producto;
-- preparar un carrito persistido y reconciliado contra el catálogo vigente;
-- enviar la solicitud de pedido por correo electrónico a través de EmailJS;
-- verificar criptográficamente la integridad del build publicado.
-
-No es un ecommerce con pago en línea: la solicitud queda sujeta a confirmación
-comercial. El catálogo vigente no incluye inventario transaccional exacto
-(la configuración declara `stockIsAvailabilityOnly: true`).
-
-### Tecnologías
-
-| Capa | Tecnología |
-|---|---|
-| Lenguaje | JavaScript ES Modules (`type: module` en `package.json`) |
-| Frontend | React 19, Vite 8, `@vitejs/plugin-react` 8 |
-| Importador | Node.js, `exceljs` 4.4 |
-| Carrito | `localStorage` (transitorio, no autoritativo) |
-| Envío de pedidos | `@emailjs/browser` (transitorio, no autoritativo) |
-| Firma | Ed25519 vía `node:crypto` |
-| Hashing | SHA-256 |
-| Tests | `node --test` (nativo, no Jest/Vitest) |
-| Hosting previsto | Netlify para `dist/` (objetivo a evaluar); GitHub Pages es un objetivo futuro |
-
-### Arquitectura general
-
-```text
-catalog/products.xlsx
-        │
-        ▼
-scripts/catalog-import/ + scripts/import-products.mjs
-        │
-        ▼
-generated/catalog.json
-        │
-        ▼
-React 19 + Vite (src/, public/, public/editorial/)
-        │
-        ├── catálogo, selección y galería
-        ├── carrito persistido en localStorage
-        └── checkout con EmailJS (transitorio)
-                    │
-                    ▼
-            public/catalog.json (autoritativo del frontend)
-                    │
-                    ▼
-            ReactSecurityVerifier (verifyPublishedIntegrity)
-
-scripts/integrity/
-        │
-        ▼
-dist/integrity-manifest.json + dist/integrity-manifest.sig
-        │
-        ▼
-publicación de dist/ en Netlify
-```
-
-## 2. Estructura del proyecto
-
-Después del refactor estructural no existe ninguna carpeta `react-app/`.
-Todo el proyecto vive en la raíz del repositorio.
-
-```text
-.
-├── .agents/                  # Skills y CODEX_CONTEXT para agentes de IA
-├── .atl/                     # State local del runtime Pi (ignorado por Git)
-├── .gitignore                # Exclusiones de node_modules, dist, .signing, etc.
-├── .signing/                 # Clave privada Ed25519 (local, ignorada por Git)
-├── AGENTS.md                 # Instrucciones permanentes para agentes de IA
-├── NOTICE                    # Información legal del repositorio
-├── PROJECT_CONTEXT.md        # Contexto técnico, decisiones, roadmap
-├── README.md                 # Este archivo
-├── assets/                   # Imágenes fuente del catálogo (no bundleables)
-├── catalog/                  # Excel fuente + README del pipeline
-├── dist/                     # Build (ignorado por Git). Lo único a publicar.
-├── docs/                     # Documentación técnica
-│   ├── integrity-signing.md
-│   └── auditorias/           # Auditorías históricas fechadas
-├── generated/                # catalog.json (artefacto generado)
-├── index.html                # Entry point de Vite
-├── node_modules/             # Dependencias (ignorado por Git)
-├── package.json              # Único, raíz
-├── package-lock.json         # Único, raíz
-├── public/                   # Assets públicos bundleados 1:1 a dist/
-│   ├── _headers
-│   ├── ownership.json
-│   ├── signing-public-key.pem
-│   └── editorial/
-├── scripts/                  # Importador, integridad, verificación de build
-│   ├── import-products.mjs
-│   ├── compare-catalog.mjs
-│   ├── update-catalog-baseline.mjs
-│   ├── build-signed.mjs
-│   ├── generate-signing-keys.mjs
-│   ├── generate-integrity-manifest.mjs
-│   ├── sign-integrity-manifest.mjs
-│   ├── verify-integrity.mjs
-│   ├── verify-build.mjs      # Verificación post-build
-│   ├── catalog-import/
-│   └── integrity/
-├── src/                      # Aplicación React
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── components/           # 31 .jsx organizados por dominio
-│   ├── config/
-│   ├── context/
-│   ├── data/
-│   ├── hooks/
-│   ├── reducers/
-│   ├── security/             # integrityVerifier.js
-│   ├── services/
-│   ├── styles/
-│   └── utils/
-├── tests/                    # Suites de tests
-│   ├── importer/             # Suite del importador Excel
-│   ├── integrity/            # Suite del sistema de firma
-│   ├── frontend/             # Suite del frontend (carrito, checkout, etc.)
-│   ├── build/                # Suite estática de paths de assets
-│   └── fixtures/             # catalog-baseline.json
-└── vite.config.js            # Configuración de Vite
-```
-
-`dist/` es el único directorio que debe publicarse como sitio estático.
-`assets/` permanece fuera del bundle por decisión de diseño (Vite solo
-bundlea lo que `import.meta.glob` y `public/` incluyen); `editorial/` está
-duplicado en `public/editorial/` para ser bundleado por Vite.
-
-## 3. Requisitos
-
-- Node.js 20.x o superior (probado con Node 24.18).
-- npm 10.x o superior.
+- Node.js y npm. El repositorio no declara una versión mínima en `package.json`;
+  la publicación automática usa Node.js 24.
 - Git.
-- Clave privada Ed25519 solo si se debe generar un build oficial firmado.
+- Excel u otra herramienta compatible con `.xlsx` para editar el catálogo sin
+  cambiar nombres de hojas, encabezados ni tipos de celda.
+- Una clave privada Ed25519 sólo para ejecutar localmente un build firmado. No
+  hace falta para desarrollo, importación ni build local normal.
 
-El proyecto no declara versión de Node en `engines`. Verificar versiones
-instaladas:
+Comprobar el entorno e instalar dependencias desde la raíz:
 
-```bash
+```powershell
 node --version
 npm --version
-```
-
-## 4. Instalación
-
-Desde un clon limpio, en la raíz del repositorio:
-
-```bash
+git --version
 npm install
 ```
 
-Hay un único `package.json` y un único `package-lock.json` en la raíz que
-cubre importador y frontend. No es necesario ejecutar `npm ci` en
-subcarpetas.
+En CI se usa `npm ci` para instalar exactamente el lockfile. Hay un único
+`package.json` y un único `package-lock.json`, ambos en la raíz.
 
-No es necesario clonar claves, secretos ni `.env`. La clave privada
-Ed25519 vive fuera del repositorio y debe restaurarse manualmente si se
-quiere ejecutar el flujo firmado (ver §8).
+## 2. Estructura del proyecto
 
-### Trabajar desde otra computadora
+| Ruta | Función |
+|---|---|
+| `catalog/products.xlsx` | Única fuente manual de productos, categorías, precios, stock y relaciones comerciales. |
+| `catalog/README.md` | Contrato resumido del workbook y del pipeline. |
+| `generated/` | `catalog.json` y `catalog-version.json`, generados por el importador. |
+| `assets/products/` | Imágenes fuente de productos referenciadas desde la hoja `Imagenes`. |
+| `assets/` | Logo, hero e imágenes bundleadas por Vite. Cualquier cambio aquí modifica la versión de la app. |
+| `public/` | Archivos copiados literalmente a `dist/`: favicon, icono Apple, portadas editoriales, headers y metadatos públicos. |
+| `src/` | Aplicación React: componentes, estilos, carrito, checkout, configuración y servicios de actualización. |
+| `scripts/catalog-import/` | Lectura, validación y construcción determinista del catálogo. |
+| `scripts/integrity/` | Firma, hashing y verificación de la publicación. |
+| `tests/` | Tests del importador, frontend, build e integridad; incluye el baseline aprobado. |
+| `.github/workflows/deploy-pages.yml` | Build firmado y deploy automático a GitHub Pages al hacer push a `main`. |
+| `dist/` | Build local generado e ignorado por Git. No se commitea. |
 
-Antes de empezar:
+## 3. Flujo normal de trabajo
 
-```bash
+### ¿Qué quiero cambiar?
+
+| Cambio | Archivos habituales | Resultado esperado | Validación mínima |
+|---|---|---|---|
+| Stock, precios, disponibilidad o datos de productos | `catalog/products.xlsx` | Cambian `generated/catalog.json` y `generated/catalog-version.json`. | `check-products`, `import-products`, `compare-catalog`, `test-importer`, `test-react`, build. |
+| Producto nuevo | Excel; normalmente imágenes en `assets/products/` | Producto, relaciones e imágenes aparecen en el JSON. | Flujo completo de catálogo y revisión visual. |
+| Imagen de producto | Archivo en `assets/products/` + hoja `Imagenes` | La imagen se valida, bundlea y queda asociada al producto o variante. | Flujo de catálogo, `test:build`, build y `verify:build`. |
+| Categoría o subcategoría | Hojas `Categorias`, `Productos` y, si corresponde, `Listas` | Cambia la jerarquía y sus filtros. | Flujo completo de catálogo y revisión visual/navegación. |
+| `pack_de` | Hoja `Productos` | La cantidad se compra en múltiplos del pack; el precio sigue siendo unitario. | Flujo de catálogo + `test-react`. |
+| React, CSS o lógica de UI | `src/` | Cambia la aplicación y su `app-version`. | `test-react`, `test:build`, build y `verify:build`. |
+| Logo, hero, favicon o portada editorial | `assets/`, `public/` y, para portadas, `src/config/categoryEditorialCovers.js` | Cambian assets y `app-version`. | `test-react`, `test:build`, build, `verify:build` y revisión visual. |
+| Carrito o checkout | `src/context/`, `src/reducers/`, `src/services/`, `src/components/cart/`, `src/components/checkout/` | Cambia lógica sensible y contratos persistidos. | `test-react`, `test-integrity`, `test:build`, build, `verify:build` y prueba manual. |
+
+Antes de tocar archivos:
+
+```powershell
 git status
 git pull --ff-only
 ```
 
-Para una computadora nueva:
+No hacer pull si hay cambios locales sin revisar: primero commit, stash o
+resolución consciente de esos cambios.
 
-```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <CARPETA_DEL_REPOSITORIO>
-npm install
-npm run test-importer
-npm run test-react
-npm run test-integrity
-npm run test:build
-npm run verify:build
-npm run build
-```
+## 4. Actualizar el Excel y el catálogo
 
-En Windows PowerShell:
+`catalog/products.xlsx` contiene estas hojas obligatorias y encabezados
+exactos:
+
+| Hoja | Contenido |
+|---|---|
+| `Categorias` | `categoria_id`, jerarquía mediante `parent_id`, navegación, filtros, textos, estado y orden. |
+| `Productos` | ID, nombre, categoría/subcategoría, género, SKU, precio, estado, modo de stock, orden y `pack_de`. |
+| `Variantes` | Variante, SKU, color, precio opcional, thumbnail y orden. |
+| `Imagenes` | Relación producto/variante, ruta y orden. |
+| `Stock` | Producto/variante, talle, valor de stock y orden. |
+| `Caracteristicas` | Clave, etiqueta, valor y orden de la ficha técnica. |
+| `Listas` | Valores auxiliares permitidos, entre ellos talles y modos de stock. |
+
+El importador rechaza fórmulas, encabezados alterados, IDs duplicados,
+relaciones huérfanas, órdenes duplicados dentro del mismo alcance, tipos
+inválidos y rutas de imagen inexistentes. Los IDs se preservan literalmente,
+incluidos espacios finales: no corregirlos ni normalizarlos sin una migración
+aprobada.
+
+### Productos, variantes y precios
+
+- El precio de `Productos.precio` es obligatorio, numérico y no negativo.
+- `Variantes.precio` es opcional; si está vacío, la variante usa el precio del
+  producto.
+- Un producto habilitado con precio `0` genera una advertencia.
+- Una variante activa necesita SKU, nombre de color e imágenes propias.
+- `habilitado` y `habilitada` son booleanos literales, no textos como `"sí"`.
+
+### Stock y disponibilidad
+
+- `stock_mode` admite `none` o `size`.
+- `none`: el producto no debe tener filas en `Stock`.
+- `size`: el producto, o cada variante si las hay, debe tener filas por talle.
+- El talle debe existir en `Listas`.
+- El valor de stock debe ser un entero mayor o igual que cero.
+- El catálogo actual publica `stockIsAvailabilityOnly: true`: `0` significa no
+  disponible y un valor positivo significa disponible. No representa inventario
+  cuantitativo reservable.
+
+### `pack_de`
+
+- Vive en la hoja `Productos`.
+- Vacío equivale a `1`.
+- Si se informa, debe ser un entero positivo mayor o igual que `1`.
+- Se publica en JSON como `packDe`.
+- El selector y el carrito sólo aceptan múltiplos de ese valor.
+- El precio continúa siendo unitario; `pack_de: 6` no convierte el precio en
+  precio por pack.
+
+Cambiar un `pack_de` puede dejar líneas ya guardadas en revisión si su cantidad
+no es múltiplo del valor nuevo.
+
+### Agregar imágenes de producto
+
+1. Copiar la imagen bajo `assets/products/`, preferentemente en la carpeta de
+   su familia comercial.
+2. Agregar una fila en `Imagenes` con el `producto_id`, el `variante_id` si
+   corresponde, la ruta y el orden.
+3. Usar `/` y una ruta como `assets/products/categoria/archivo.webp`.
+4. Respetar exactamente mayúsculas y minúsculas del nombre real.
+
+Extensiones admitidas: `.webp`, `.png`, `.jpg` y `.jpeg`. No se aceptan rutas
+absolutas, `..`, barras invertidas ni archivos fuera de `assets/products/`.
+Los archivos no referenciados generan warning, no error.
+
+### Agregar categoría o subcategoría
+
+1. Agregar la fila correspondiente en `Categorias`.
+2. Para una subcategoría, usar un `parent_id` existente.
+3. Mantener únicos `categoria_id`, `target` y `orden` dentro del mismo padre.
+4. Asignar en `Productos` únicamente categorías/subcategorías definidas por las
+   filas de `Categorias`.
+5. Si se introduce un talle u otro valor controlado nuevo, actualizar también
+   `Listas`.
+
+### Secuencia correcta
+
+Primero validar el Excel sin escribir:
 
 ```powershell
-Set-Location C:\ruta\al\repositorio
+npm run check-products
 ```
 
-En Linux, incluido CachyOS:
+Si se cambió el Excel, es normal que informe que los JSON generados están
+desactualizados. Una vez corregidos los errores estructurales, generar:
 
-```bash
-cd /ruta/al/repositorio
+```powershell
+npm run import-products
+npm run check-products
+npm run compare-catalog
 ```
 
-## 5. Scripts
+`import-products` escribe conjuntamente:
 
-Todos los comandos están definidos en el `package.json` único de la raíz.
-El proyecto ya no expone aliases heredados (`react:dev`, `react:build`,
-`react:preview`, `react:test`); se usan los nombres planos.
+- `generated/catalog.json`;
+- `generated/catalog-version.json`.
 
-| Comando | Propósito | ¿Modifica archivos? | Uso habitual |
+`check-products` reconstruye todo en memoria, comprueba esos dos archivos y no
+escribe. `compare-catalog` compara el JSON generado con el baseline; devuelve
+código 1 cuando hay diferencias comerciales, lo que exige revisión.
+
+## 5. Cambio comercial vs. cambio de aplicación
+
+### `catalog-version.json`
+
+Identifica los bytes exactos de `catalog.json` con SHA-256. Cambia al modificar
+productos, precios, stock, categorías, variantes o relaciones del Excel. Lo
+genera `import-products`; no contiene timestamps.
+
+Una pestaña abierta consulta esta versión cada 60 segundos, pausa el polling
+cuando está oculta y vuelve a comprobar al recuperar foco o visibilidad. Si la
+versión cambia, descarga el catálogo, verifica su hash y actualiza productos,
+categorías, búsqueda, precios y carrito sin recargar la página. Ante un error
+conserva el último catálogo válido.
+
+### `app-version.json`
+
+Vite lo genera dentro de `dist/` durante cada build. La versión deriva de:
+
+- `assets/`, `public/` y `src/`;
+- `index.html`, `package.json`, `package-lock.json` y `vite.config.js`.
+
+No deriva de `generated/catalog.json`: un cambio puramente comercial puede
+actualizarse sin recarga. Sin embargo, agregar o modificar una imagen bajo
+`assets/` también es cambio de aplicación y sí cambia `app-version`.
+
+La pestaña comprueba la app cada 60 segundos. Antes de recargar verifica que
+`index.html`, JS y CSS del nuevo deploy estén completos y con hashes correctos.
+No recarga durante un checkout abierto, evita loops y conserva el carrito.
+
+## 6. Scripts npm
+
+Esta tabla coincide con la salida actual de `npm run`:
+
+| Comando | Qué hace / cuándo usarlo | ¿Escribe? | Precaución |
 |---|---|---:|---|
-| `npm run import-products` | Valida el Excel y genera `generated/catalog.json` y `generated/catalog-version.json` con SHA-256. | Sí | Después de editar el Excel. |
-| `npm run check-products` | Valida el Excel y compara en memoria el JSON y su manifiesto sin escribir. | No | Preflight y validación posterior. |
-| `npm run compare-catalog` | Compara el JSON generado con el baseline aprobado. | No | Antes de aprobar cambios. |
-| `npm run update-catalog-baseline` | Actualiza el baseline canónico. | Sí | Solo tras revisión consciente. |
-| `npm run test-importer` | Ejecuta la suite del importador y comparación. | No | Cambios de catálogo o importador. |
-| `npm run test-react` | Ejecuta la suite del frontend (carrito, checkout, etc.). | No | Cambios en React, carrito, checkout o servicios. |
-| `npm run test-integrity` | Ejecuta la suite de firma e integridad. | No | Cambios de build, firma o publicación. |
-| `npm run test:build` | Ejecuta la suite estática de paths de assets. | No | Después de cualquier cambio en `src/data/`, `src/components/layout/` o paths de assets. |
-| `npm run verify:build` | Verifica post-build que `dist/` contiene las imágenes, logo, hero y bundle correctos. | No | Después de `npm run build` y antes de un build firmado. |
-| `npm run react:build:signed` | Construye, firma, verifica y publica `dist`. | Sí | Build oficial; requiere clave privada. |
-| `npm run generate-signing-keys` | Inicia la generación de claves Ed25519. | Sí, con `--confirm` | Solo creación o rotación deliberada. |
-| `npm run integrity:manifest` | Genera el manifiesto de hashes. | Sí | Operación técnica de integridad. |
-| `npm run integrity:sign` | Firma el manifiesto. | Sí | Operación técnica con clave privada. |
-| `npm run integrity:verify` | Verifica firma y archivos del build. | No | Después de cada build firmado. |
-| `npm run dev` | Inicia Vite en modo desarrollo. | No | Desarrollo local. |
-| `npm run build` | Genera un build Vite normal en `dist/`. | Sí | Comprobación local; no publicar como build oficial. |
-| `npm run preview` | Sirve localmente el contenido de `dist/`. | No | Revisión previa a publicación. |
+| `npm run import-products` | Valida Excel y genera catálogo + versión. Después de editar el workbook. | Sí, `generated/` | Revisar los diffs comerciales. |
+| `npm run check-products` | Valida Excel y comprueba catálogo/versión en memoria. | No | Seguro; warnings no equivalen a error. |
+| `npm run compare-catalog` | Compara catálogo generado con baseline. | No | Código 1 puede significar cambio esperado aún no aprobado. |
+| `npm run update-catalog-baseline -- --confirm` | Reemplaza el snapshot comercial aprobado. | Sí | Sólo con aprobación consciente. |
+| `npm run test-importer` | Tests de lectura, validación, determinismo, baseline y versión. | Sólo temporales de test | Usar para catálogo/importador. |
+| `npm run test-react` | Tests de frontend, catálogo dinámico, carrito, checkout, navegación e integridad del navegador. | No sobre el repo | Usar para cambios comerciales y frontend. |
+| `npm run test-integrity` | Tests de firma, manifiesto y verificador. | Sólo temporales de test | Obligatorio para publicación/lógica crítica. |
+| `npm run test:build` | Tests estáticos de assets, versiones y workflow de Pages. | Sólo temporales de test | Ejecutar antes de build/publicación. |
+| `npm run verify:build` | Inspecciona un `dist/` existente: catálogo, versiones, entrypoints, logo, hero e imágenes. | No | Ejecutar después de un build. Falla si `dist/` no existe. |
+| `npm run react:build:signed` | Construye en staging, firma, verifica y promueve `dist/`. | Sí, `dist/` | Requiere clave privada; no ejecutar sin autorización. |
+| `npm run generate-signing-keys -- --confirm` | Crea una identidad Ed25519. | Sí | **No ejecutar en mantenimiento normal.** |
+| `npm run integrity:manifest` | Genera clave pública de publicación y manifiesto en `dist/`. | Sí, `dist/` | Operación técnica; no sustituye el pipeline firmado. |
+| `npm run integrity:sign` | Firma el manifiesto existente. | Sí, `dist/` | Requiere clave privada. |
+| `npm run integrity:verify` | Verifica firma y archivos de `dist/`. | No | Después de un build firmado. |
+| `npm run dev` | Inicia el servidor Vite de desarrollo. | No | Uso local. |
+| `npm run build` | Genera un build Vite normal en `dist/`. | Sí, `dist/` | Sirve para validar; GitHub Pages publica el build firmado de CI. |
+| `npm run preview` | Sirve el `dist/` ya generado. | No | Ejecutar después de build. |
 
-## 6. Flujo de desarrollo
+## 7. Baseline del catálogo
 
-El flujo habitual para una modificación de código es:
+`tests/fixtures/catalog-baseline.json` es el snapshot versionado del catálogo
+comercial aprobado. Permite detectar altas, bajas, cambios de precio, stock,
+orden, relaciones e imágenes aunque el Excel y el JSON generado sean válidos.
 
-```text
-modificar código
-        ↓
-ejecutar tests pertinentes
-        ↓
-npm run test:build
-        ↓
-npm run verify:build
-        ↓
-npm run react:build:signed
-        ↓
-npm run integrity:verify
-        ↓
-git diff --check
-        ↓
-git add <archivos> && git commit -m "..."
-        ↓
-git push
-        ↓
-publicar dist/
+Una diferencia es esperada cuando el cambio comercial fue intencional. Antes
+de aprobarla:
+
+1. Revisar `git diff` del Excel mediante el resumen del importador y el diff
+   legible de `generated/catalog.json`.
+2. Ejecutar `npm run compare-catalog` y leer cada diferencia.
+3. Confirmar que no haya cambios ajenos, IDs normalizados o bajas accidentales.
+4. Obtener aprobación comercial.
+
+Sólo entonces:
+
+```powershell
+npm run update-catalog-baseline -- --confirm
+npm run compare-catalog
 ```
 
-### Selección de las suites
+El script se niega a escribir sin `--confirm` y también exige que Excel y JSON
+sean válidos e idénticos.
 
-| Tipo de cambio | Suites obligatorias |
+> **Nunca actualizar el baseline solamente para hacer pasar tests.** No
+> actualizarlo ante errores de esquema, relaciones rotas o cambios todavía no
+> aprobados.
+
+## 8. Tests y validación
+
+| Tipo de cambio | Validación mínima recomendada |
 |---|---|
-| Catálogo / importador | `test-importer`, `test:build` |
-| Frontend, carrito, checkout | `test-react`, `test:build`, `verify:build` |
-| Build, firma, publicación | `test-integrity`, `test:build`, `verify:build` |
-| Path de assets (`src/data/`, `src/components/layout/`) | `test:build` (crítico). Si cambia, también `test-react` y `verify:build`. |
-| Configuración central, licencia, ownership | Actualizar documentación con la misma rigurosidad que el código. |
-| Refactor estructural | Todas las suites + revisión manual. |
+| Sólo Excel: stock/precios/datos | `check-products`, `import-products`, `check-products`, `compare-catalog`, `test-importer`, `test-react`, `test:build`, build, `verify:build`. |
+| Producto/categoría/variante nueva | Flujo de catálogo anterior + revisión visual de navegación, búsqueda y carrito. |
+| Imagen de producto o asset | Flujo de catálogo si aplica + `test-react`, `test:build`, build, `verify:build`. |
+| React/CSS/frontend | `test-react`, `test:build`, build, `verify:build`. |
+| Carrito/checkout | `test-react`, `test-integrity`, `test:build`, build, `verify:build` y prueba manual de éxito/fallo. |
+| Integridad/workflow/publicación | `test-integrity`, `test:build`, build, `verify:build`; build firmado sólo autorizado. |
 
-Ningún agente de IA debe hacer commit, push ni deploy sin orden expresa.
+### Validación completa antes de publicar
 
-## 7. Flujo cuando cambia el catálogo
-
-El catálogo solo se edita en `catalog/products.xlsx`. Este es el flujo
-completo:
-
-```text
-editar catalog/products.xlsx
-        ↓
-npm run check-products             # preflight, sin escribir
-        ↓
-corregir errores de esquema o datos
-        ↓
-npm run import-products            # regenera generated/catalog.json
-        ↓
-npm run check-products             # ahora debe aprobar
-        ↓
-npm run compare-catalog            # revisar cada diferencia
-        ↓
-npm run update-catalog-baseline    # solo si el cambio queda aprobado
-        ↓
+```powershell
+npm run check-products
+npm run compare-catalog
 npm run test-importer
-        ↓
 npm run test-react
-        ↓
 npm run test-integrity
-        ↓
 npm run test:build
-        ↓
+npm run build
 npm run verify:build
-        ↓
-npm run react:build:signed
-        ↓
-npm run integrity:verify
-        ↓
 git diff --check
-        ↓
-publicar dist/
+git status
+git diff --stat
+git diff
 ```
 
-No editar manualmente `generated/catalog.json`, `generated/catalog-version.json`
-ni `tests/fixtures/catalog-baseline.json`. La versión usa SHA-256 sobre los bytes
-exactos del catálogo, no un timestamp, para preservar el determinismo.
+Si `compare-catalog` detecta un cambio ya aprobado, actualizar el baseline con
+el comando confirmado y volver a ejecutar la comparación antes de continuar.
 
-### Detección en runtime
+## 9. Build
 
-La carga inicial continúa usando los JSON importados por Vite. En runtime,
-`CartContext` mantiene conjuntamente `activeCatalog` y `activeVersion`. Un único
-controlador consulta cada 60 segundos `catalog-version.json` con
-`cache: 'no-store'`; pausa las comprobaciones mientras la pestaña está oculta y
-comprueba inmediatamente al recuperar visibilidad o foco.
+### Build local normal
 
-Cuando cambia la versión, descarga `catalog.json?v=<sha256>`, calcula SHA-256
-con Web Crypto sobre los bytes recibidos y solo entonces aplica conjuntamente
-catálogo y versión. Las solicitudes concurrentes se deduplican. Ante errores de
-red, manifest, JSON o hash se conserva el último estado válido y el próximo
-ciclo vuelve a intentar. El carrito `realstep-head-cart` no se reinicia ni se
-reescribe por esta actualización.
-
-Los JSON importados por Vite se usan únicamente como bootstrap. Una vez
-montada la aplicación, `activeCatalog` es la fuente única para productos,
-categorías, búsqueda, tarjetas y resolución del carrito. Una actualización
-válida se refleja sin recargar la página, conserva selecciones todavía válidas
-y corrige variante, talle o índice de imagen cuando desaparecen.
-
-Cada versión aplicada muestra una sola notificación no bloqueante. El footer
-expone los primeros ocho caracteres del SHA-256 activo para facilitar soporte;
-esa referencia también cambia sin F5.
-
-Antes de cada envío, el checkout realiza una consulta nueva del manifest,
-incluso si acaba de ejecutarse el polling. Espera cualquier comprobación de
-background en curso y luego consulta con un nonce nuevo y `cache: 'no-store'`.
-El email se construye exclusivamente con el catálogo validado.
-
-Si cambia una línea —precio, nombre, SKU, color, producto, variante, talle o
-disponibilidad— ese intento no se envía. El modal muestra el detalle y exige
-revisión y una segunda confirmación; los precios además deben aceptarse desde
-el carrito. Si falla la red, el manifest, el JSON o el SHA-256, el formulario y
-el carrito se conservan y EmailJS no se ejecuta.
-
-Sin backend no existe una garantía transaccional absoluta: puede publicarse
-otra versión entre la última validación y el envío. La garantía ofrecida es que
-el pedido se contrasta con la última versión pública conocida inmediatamente
-antes de invocar EmailJS.
-No aprobar el baseline sin comprender el diff. Ver también
-[`catalog/README.md`](catalog/README.md).
-
-## 8. Build firmado e integridad
-
-### Qué es la firma
-
-El build firmado emite una **publicación verificable**: un `dist/` acompañado
-de un manifiesto (`integrity-manifest.json`) con hashes SHA-256 de cada archivo
-regular y una firma Ed25519 sobre la canonicalización de ese manifiesto. La
-firma:
-
-- identifica al motor (`santiago-lareu-catalog-engine`), proyecto
-  (`realstep-head-catalog`) y licencia (`SLCE-LIC-2026-0001`);
-- vincula la publicación con Santiago Lareu como titular y desarrollador, y
-  RealStep como licenciatario;
-- protege contra la sustitución silenciosa de archivos entre el build y el
-  hosting;
-- permite que el frontend (`src/security/integrityVerifier.js`) verifique
-  criptográficamente el contenido servido.
-
-La firma **no** impide copiar el frontend ni ofrece DRM, verificación remota,
-telemetría ni desactivación. La protección depende del contrato y de la
-custodia de la clave privada.
-
-### Cómo funciona
-
-1. `npm run react:build:signed` ejecuta un build Vite en un directorio
-   temporal del mismo filesystem.
-2. La clave privada se importa desde `.signing/ed25519-private.pem` (o desde
-   `SIGNING_PRIVATE_KEY_PATH` / `SIGNING_PRIVATE_KEY_PEM`).
-3. Se deriva y publica la clave pública en `dist/signing-public-key.pem`.
-4. Se calcula un manifiesto con SHA-256 de cada archivo regular de `dist/`.
-5. Se firma la canonicalización del manifiesto con Ed25519.
-6. Se verifica la copia antes de promoverla.
-7. El `dist` vigente se reemplaza mediante `atomic-rename` (con fallback por
-   copia en entornos que no lo permiten).
-
-La explicación técnica detallada está en
-[`docs/integrity-signing.md`](docs/integrity-signing.md).
-
-### La clave privada
-
-La clave privada **no se versiona**. Vive en `.signing/ed25519-private.pem`,
-ruta ignorada por `.gitignore`. Una computadora nueva no la obtiene al
-clonar: debe restaurarse manualmente desde un backup seguro, por un canal
-controlado.
-
-Reglas absolutas:
-
-- **Nunca** subir la clave a Git, prompts, logs, scripts, documentación ni
-  archivos compartidos.
-- **Nunca** ejecutar `npm run generate-signing-keys -- --force` sin una
-  decisión explícita: reemplaza la identidad criptográfica existente.
-- **Nunca** modificar `scripts/integrity/integrityCore.mjs` ni
-  `scripts/integrity/releaseOperations.mjs` sin entender el contrato de
-  canonicalización v1.
-- Ante pérdida o compromiso de la clave, archivar evidencia histórica y
-  emitir una identidad nueva. La revocación no es automática para copias
-  ya distribuidas.
-
-### Variables de entorno reconocidas
-
-- `SIGNING_PRIVATE_KEY_PATH`: ruta a una clave privada PKCS#8 externa.
-- `SIGNING_PRIVATE_KEY_PEM`: contenido PEM entregado por variable de entorno.
-- `SIGNING_PUBLIC_KEY_PATH`: ruta alternativa para importar o exportar la
-  clave pública.
-- `BUILD_COMMIT`: identificador opcional cuando Git no está disponible.
-
-## 9. Publicación
-
-El proyecto está preparado para servir el contenido firmado de `dist/` desde
-un hosting estático. La elección del proveedor no está cerrada todavía; las
-opciones son:
-
-### Opción actual: Netlify (recomendada por su soporte nativo de `_headers`)
-
-1. Ejecutar `npm run test-importer`.
-2. Ejecutar `npm run test-react`.
-3. Ejecutar `npm run test-integrity`.
-4. Ejecutar `npm run test:build`.
-5. Ejecutar `npm run verify:build`.
-6. Ejecutar `npm run react:build:signed` en un entorno con la clave
-   privada.
-7. Ejecutar `npm run integrity:verify`.
-8. Publicar **únicamente** el contenido de `dist/`.
-
-`public/_headers` se copia al `dist/` y define los headers de seguridad
-básicos (`X-Frame-Options: DENY`, `Content-Security-Policy: frame-ancestors
-'none'`, `X-Content-Type-Options: nosniff`, `Referrer-Policy:
-strict-origin-when-cross-origin`). Verificar en el dominio productivo que
-Netlify aplique estos headers.
-
-**Nunca publicar la raíz del repositorio**. Si Netlify reconstruye en sus
-servidores, el comando oficial debe ser el build firmado y la clave debe
-suministrarse por un mecanismo secreto, nunca por Git. Si la clave no se
-entrega a Netlify, desplegar el `dist` firmado previamente sin reconstruirlo
-allí.
-
-### Opción futura: GitHub Pages
-
-GitHub Pages es un objetivo futuro. Requiere:
-
-- garantizar HTTPS estricto (Pages ya lo cumple);
-- configurar el dominio y la rama de despliegue;
-- replicar manualmente los headers de `public/_headers` (GitHub Pages no
-  aplica archivos `_headers` de Netlify; requiere configuración equivalente
-  en `_headers`/`Routes`/CDN);
-- servir `dist/` como artefacto de despliegue.
-
-No está implementado todavía.
-
-### Otros hostings estáticos
-
-Cualquier hosting que sirva únicamente `dist/` con HTTPS y soporte
-`Cache-Control` adecuado es viable. Validar siempre que la verificación
-en navegador (`integrityStatus: verified`) se cumpla en producción.
-
-### Verificación post-deploy
-
-Después de publicar:
-
-```bash
-curl -I https://<HOST>/_headers
-curl -I https://<HOST>/integrity-manifest.json
-curl -I https://<HOST>/signing-public-key.pem
+```powershell
+npm run build
+npm run verify:build
+npm run preview
 ```
 
-El frontend ejecuta `verifyPublishedIntegrity(companyConfig)` al boot y refleja
-el estado en `data-integrity-status` del `<div id="root">`. Valores
-esperados: `verified`, `invalid`, `unavailable` o `error`.
+`build` genera `dist/` para comprobación local. `verify:build` exige, entre
+otras cosas, `index.html`, catálogo y versiones coherentes, entrypoints
+correctos, logo, hero y al menos 300 imágenes de producto bundleadas.
 
-## 10. Troubleshooting
+`preview` sirve el build ya generado. La terminal muestra la URL local real;
+no se fija un puerto en el repositorio.
 
-### Falta la clave privada para build firmado
+### Build firmado
 
+```powershell
+npm run react:build:signed
+npm run verify:build
+npm run integrity:verify
 ```
-IntegrityError: No se pudo leer la clave privada configurada.
-  code: 'PRIVATE_KEY_INVALID'
+
+El build firmado crea un staging, ejecuta Vite, publica la clave pública,
+genera manifiesto y firma Ed25519, verifica todo y recién entonces reemplaza
+`dist/`. No ejecutarlo localmente sin autorización y acceso legítimo a la clave.
+
+El criterio operativo es que el build termine con código 0 y que
+`verify:build` pase. No ignorar warnings de assets no resueltos.
+
+## 10. Integridad y firma
+
+La firma permite comprobar que los archivos publicados corresponden a una
+misma publicación y no fueron alterados después del build. Usa SHA-256 por
+archivo y una firma Ed25519 del manifiesto.
+
+Artefactos publicados en `dist/`:
+
+- `integrity-manifest.json`;
+- `integrity-manifest.sig`;
+- `signing-public-key.pem`.
+
+La clave privada vive fuera de Git, normalmente bajo `.signing/` o mediante
+variables secretas. Nunca mostrarla, copiarla al README ni versionarla.
+
+> **NO EJECUTAR EN EL FLUJO NORMAL:** `npm run generate-signing-keys --
+> --confirm`. Una rotación deliberada requiere además `--force` si ya existen
+> claves y cambia la identidad criptográfica de futuras publicaciones.
+
+GitHub Actions recibe la clave mediante el secret `SIGNING_PRIVATE_KEY_PEM`.
+No hace falta ni corresponde copiar ese valor a archivos locales.
+
+## 11. Desarrollo local
+
+Iniciar Vite:
+
+```powershell
+npm run dev
 ```
 
-Causa: `.signing/ed25519-private.pem` no existe. Solución: restaurar la clave
-desde un backup seguro a la ruta por defecto, o exportar
-`SIGNING_PRIVATE_KEY_PATH` apuntando a la clave. **Nunca** generar una clave
-nueva sin una decisión explícita.
+Abrir la URL que informa la terminal. El servidor expone también
+`catalog.json`, `catalog-version.json` y `app-version.json` para reproducir el
+comportamiento real. Detener con `Ctrl+C`.
 
-### Faltan imágenes en `dist/`
+Para revisar el resultado de producción:
 
-Síntoma: `npm run verify:build` falla por
-`dist/assets/` contiene < 300 imágenes de productos. Causa típica: un path
-en `src/data/productImages.js`, `src/components/layout/Header.jsx` o
-`src/components/layout/Hero.jsx` apunta un nivel arriba de la raíz (el bundle
-de Vite queda apuntando fuera de su alcance). Verificar contra
-`tests/build/assetPaths.test.mjs`, que detecta ese caso antes del build.
+```powershell
+npm run build
+npm run verify:build
+npm run preview
+```
 
-### `npm run verify:build` advierte `doesn't exist at build time`
+### Assets de la aplicación
 
-Síntoma: `npm run build` muestra
-`new URL('../../../../assets/...', import.meta.url) doesn't exist at build time`.
-Causa típica: un `new URL` o un `import.meta.glob` con un nivel de más o de
-menos. `npm run test:build` detecta este patrón antes del build.
+- Logo: `assets/Real_Step_logo.jpeg`, consumido por `Header.jsx`.
+- Hero: `assets/2026-padel-coello-heroHeader.jpg`, consumido por `Hero.jsx`.
+- Favicon: `public/favicon-32.png`, enlazado desde `index.html`.
+- Icono para dispositivos Apple: `public/apple-touch-icon.png`.
+- Portadas de categorías: archivos bajo `public/editorial/` y configuración en
+  `src/config/categoryEditorialCovers.js`.
 
-### `npm run integrity:verify` falla
+Al reemplazarlos, conservar las rutas o actualizar conjuntamente la referencia,
+las dimensiones/metadata aplicables y sus tests. Después ejecutar
+`test:build`, build, `verify:build` y una revisión visual responsive.
 
-Posibles causas:
+## 12. Git y publicación en GitHub Pages
 
-- `dist/integrity-manifest.json` no existe: ejecutar `npm run react:build:signed`
-  o `npm run integrity:manifest` + `npm run integrity:sign`.
-- Clave pública no coincide: regenerar solo si la clave privada cambió; los
-  hashes viejos son evidencia histórica.
-- Hash incorrecto: el contenido de `dist/` se modificó después de firmar;
-  reejecutar el build firmado.
+Remoto actual: `https://github.com/SantiLareu/Catalogo_Head.git`.
 
-### `npm run test-react` o `npm run test-integrity` fallan
+No hay un `CNAME` ni un dominio personalizado versionado. La URL estándar
+esperada de Pages es `https://santilareu.github.io/Catalogo_Head/`; la URL
+efectiva de cada deploy también aparece en el environment `github-pages` de
+GitHub Actions.
 
-No aplicar fixes sin reproducir el fallo. Capturar la salida completa y
-revisar:
+Flujo recomendado:
 
-- cambios recientes en `src/` (carrito, checkout, integridad);
-- paths absolutos en los tests (`new URL('../../generated/...', ...)` debe
-  coincidir con la profundidad del archivo de test);
-- compatibilidad de `node:test` con la versión de Node.
+```powershell
+git status
+git diff --stat
+git diff
+git add README.md
+git commit -m "Documentar manual operativo del catálogo"
+git push origin main
+```
 
-### `npm install` reporta vulnerabilidades en `uuid`
+Reemplazar `README.md` por la lista explícita de archivos del cambio. Evitar
+`git add .`: puede incluir Excel, JSON, imágenes o archivos inesperados sin
+revisión.
 
-`uuid` es una dependencia transitiva de `exceljs`. Las versiones
-vulnerables son `<11.1.1`. El fix requiere `npm audit fix --force` con
-breaking change de `exceljs` (downgrade a `3.4.0`). La severidad es
-moderada. Decisión del usuario si acepta el riesgo o fuerza el fix.
+Cada push a `main` dispara `.github/workflows/deploy-pages.yml`. Automáticamente:
 
-### Errores de import tras refactor
+1. hace checkout;
+2. configura Node 24 e instala con `npm ci`;
+3. ejecuta `check-products`, `test-react`, `test:build` y `test-integrity`;
+4. genera un build firmado usando el secret de GitHub;
+5. ejecuta `verify:build` e `integrity:verify`;
+6. sube únicamente `dist/` y lo publica en GitHub Pages.
 
-Si tras un cambio aparece `ERR_MODULE_NOT_FOUND` o un path roto, verificar:
+Si cualquier paso falla, no se completa el deploy. La workflow no ejecuta
+`import-products`, no corrige JSON, no actualiza baseline y no sustituye la
+revisión local de `compare-catalog`/`test-importer`.
 
-- la profundidad del path relativo al archivo que importa;
-- que `src/data/productImages.js` y `src/data/catalog.js` usen el mismo
-  número de niveles que la profundidad del archivo;
-- que `tests/frontend/*.test.mjs` usen `../../src/...` (dos niveles, porque
-  viven en `tests/frontend/`).
+GitHub Pages sirve por HTTPS. `vite.config.js` usa `base: './'` y las URLs de
+runtime se resuelven desde `document.baseURI`, por lo que funcionan tanto bajo
+el subpath `/Catalogo_Head/` como con un futuro dominio personalizado.
 
-### Imágenes de productos no se ven en runtime
+## 13. Checklist antes de push
 
-Síntoma: la página carga pero las imágenes de las fichas de producto no
-aparecen. Causa típica: `dist/assets/` no contiene las 396 imágenes
-esperadas. Verificar:
+- [ ] Revisé `git status`, `git diff --stat` y `git diff`.
+- [ ] Sólo modifiqué archivos relacionados con el objetivo.
+- [ ] Si cambié Excel, `check-products` terminó con cero errores.
+- [ ] Si cambié Excel, regeneré juntos catálogo y `catalog-version`.
+- [ ] Leí todos los warnings del importador.
+- [ ] Revisé conscientemente la salida de `compare-catalog`.
+- [ ] Actualicé baseline únicamente si el cambio comercial fue aprobado.
+- [ ] Ejecuté los tests correspondientes al alcance.
+- [ ] Ejecuté `npm run build` y luego `npm run verify:build`.
+- [ ] Revisé visualmente navegación, imágenes y checkout si fueron afectados.
+- [ ] `git diff --check` pasó.
+- [ ] No hay secretos, claves privadas, `.env`, temporales ni capturas.
+- [ ] No agregué `dist/` ni `node_modules/`.
+- [ ] Seleccioné archivos explícitos con `git add`.
 
-- `npm run build` no emitió warnings sobre `doesn't exist at build time`;
-- `npm run verify:build` pasó;
-- `tests/build/assetPaths.test.mjs` pasó.
+## 14. Recetas rápidas
 
-Si todas esas verificaciones pasan y la imagen sigue sin verse, el problema
-es de runtime (CSP, MIME, headers); revisar la pestaña Network del browser.
+### Sólo cambié stock, precios o productos en Excel
 
-### `git diff --check` reporta whitespace errors
+```powershell
+npm run check-products
+npm run import-products
+npm run check-products
+npm run compare-catalog
+# Revisar y aprobar el cambio comercial antes del siguiente comando:
+npm run update-catalog-baseline -- --confirm
+npm run compare-catalog
+npm run test-importer
+npm run test-react
+npm run test:build
+npm run build
+npm run verify:build
+git diff --check
+```
 
-`git diff --check` detecta errores de espacio al final de línea, tabs
-mezclados con espacios, líneas largas. Corregir antes de commit.
+### Agregué productos, imágenes o categorías
 
-### Build queda con `dist/` enorme (centenas de MB)
+```powershell
+npm run check-products
+npm run import-products
+npm run check-products
+npm run compare-catalog
+# Sólo después de aprobación comercial:
+npm run update-catalog-baseline -- --confirm
+npm run compare-catalog
+npm run test-importer
+npm run test-react
+npm run test:build
+npm run build
+npm run verify:build
+git diff --check
+```
 
-Normal: `dist/` pesa aproximadamente 55 MB por las 396 imágenes de productos
-bundleadas. Si supera 200 MB, probablemente hay assets duplicados fuera de
-`import.meta.glob` o imágenes sin comprimir. Usar `du -sh dist/assets/*` para
-localizar.
+Después abrir el build o `npm run dev` y comprobar la nueva navegación,
+búsqueda, imágenes, variantes, talles, cantidades y carrito.
+
+### Cambié React, CSS o frontend
+
+```powershell
+npm run test-react
+npm run test:build
+npm run build
+npm run verify:build
+git diff --check
+```
+
+### Cambié checkout, carrito o lógica crítica
+
+```powershell
+npm run check-products
+npm run test-react
+npm run test-integrity
+npm run test:build
+npm run build
+npm run verify:build
+git diff --check
+```
+
+### Validación completa antes de publicar
+
+```powershell
+npm run check-products
+npm run compare-catalog
+npm run test-importer
+npm run test-react
+npm run test-integrity
+npm run test:build
+npm run build
+npm run verify:build
+git diff --check
+git status
+git diff --stat
+git diff
+```
+
+### Comprobar qué voy a subir
+
+```powershell
+git status
+git diff --stat
+git diff
+git diff --cached
+```
+
+### Traer cambios de GitHub
+
+```powershell
+git status
+git pull --ff-only
+```
+
+No hacer pull con cambios locales sin revisar o guardar. Usar commit o stash
+según corresponda.
+
+## 15. Errores y warnings frecuentes
+
+| Mensaje/situación | Significado | Acción |
+|---|---|---|
+| `PENDING_CODE` | El SKU contiene el valor literal `PENDIENTE`. Es warning conocido. | Confirmar que sea comercialmente intencional. |
+| `UNUSED_IMAGE` | Hay un archivo bajo `assets/products/` no referenciado desde Excel. | Referenciarlo o retirarlo conscientemente; no impide importar. |
+| `TECH_NOT_CURRENTLY_RENDERED` | La característica se conserva en JSON pero la UI actual no muestra esa clave. | No borrar el dato sólo para silenciar el warning. |
+| `GENERATED_CATALOG_MISMATCH` | Excel y JSON generado no coinciden. | Revisar errores y ejecutar `import-products` si el cambio es intencional. |
+| `compare-catalog` sale con código 1 | El catálogo difiere del baseline. | Revisar diferencias; aprobar y actualizar baseline sólo si corresponde. |
+| Ruta de imagen inexistente o distinta en mayúsculas | El importador exige path y capitalización exactos. | Corregir la fila o el nombre físico. |
+| Vite indica que un asset no existe al build | Un path relativo/glob no resolvió y puede romper imágenes públicas. | Revisar paths; ejecutar `test:build` y `verify:build`. |
+| `verify:build` dice que no existe `dist/` | Se ejecutó antes del build. | Ejecutar primero `npm run build`. |
+| Falta clave privada en build firmado | La notebook no tiene acceso a la identidad Ed25519. | Usar build normal; restaurar la clave sólo por un canal autorizado. |
+| Warning LF/CRLF de Git | Git convertirá finales de línea según el entorno. | Revisar el diff; no reescribir archivos masivamente sólo por el warning. |
+
+Actualmente `check-products` puede terminar correctamente con advertencias
+conocidas de SKU pendientes, imágenes no usadas y claves técnicas no
+renderizadas. El criterio de bloqueo son los errores y el exit code, pero cada
+warning nuevo debe revisarse.
+
+## 16. Cosas que no hay que hacer
+
+- No editar manualmente `generated/catalog.json` ni
+  `generated/catalog-version.json`.
+- No editar manualmente `tests/fixtures/catalog-baseline.json`.
+- No ejecutar `update-catalog-baseline` sólo para hacer pasar pruebas.
+- No modificar IDs legacy ni quitar espacios finales silenciosamente.
+- No interpretar stock positivo como cantidad reservable mientras
+  `stockIsAvailabilityOnly` sea `true`.
+- No editar `app-version.json`: sólo existe como salida de build.
+- No generar ni rotar signing keys durante mantenimiento normal.
+- No subir claves privadas, secretos, `.env`, `dist/` ni `node_modules/`.
+- No hardcodear `/Catalogo_Head/` ni rutas absolutas para assets/runtime.
+- No modificar Excel, JSON generado, baseline, código y assets en un mismo
+  commit sin que todos pertenezcan al mismo cambio verificable.
+- No usar `git add .` ni hacer push sin revisar el diff.
+- No publicar manualmente la raíz del repositorio; Pages recibe únicamente
+  `dist/` desde la workflow.
+
+## 17. Sistema de pedidos actual
+
+El sistema vigente usa EmailJS desde el navegador:
+
+1. El carrito persiste referencias (`productId`, variante, talle, cantidad y
+   `priceSnapshot`) en `localStorage`; nombres, precios e imágenes se resuelven
+   otra vez desde el catálogo activo.
+2. Antes del submit, el checkout espera cualquier polling en curso y fuerza una
+   consulta fresca sin caché.
+3. Producto, variante, talle, disponibilidad, `packDe`, nombre, SKU, color y
+   precio se comparan con el catálogo publicado validado.
+4. Un cambio bloquea ese intento y exige revisión; un precio nuevo debe
+   aceptarse explícitamente.
+5. EmailJS envía primero el correo al propietario, espera 1150 ms y luego envía
+   la confirmación al cliente.
+6. Si falla el correo del cliente después del primero, el reintento envía sólo
+   la confirmación y evita duplicar el correo propietario.
+7. El carrito y el formulario se conservan ante fallos. El carrito se vacía y
+   las selecciones se reinician únicamente tras éxito completo.
+
+El correo no confirma stock ni procesa pagos; el pedido queda sujeto a
+confirmación comercial. La validación frontend mejora consistencia, pero no es
+seguridad transaccional ni autoridad server-side.
+
+Existe una migración futura de infraestructura de correo en desarrollo en un
+repositorio separado. No forma parte del sistema activo documentado aquí.
+
+## 18. Recuperación con Git stash
+
+Guardar temporalmente cambios locales, incluidos archivos no trackeados:
+
+```powershell
+git stash push --include-untracked -m "Trabajo temporal"
+git stash list
+```
+
+Recuperar sin borrar la entrada del stash:
+
+```powershell
+git stash apply
+```
+
+Revisar `git status` y resolver conflictos si los hubiera. El stash es local,
+no se sube a GitHub y no reemplaza un backup permanente.
+
+## 19. Fuentes de verdad
+
+| Tema | Fuente de verdad |
+|---|---|
+| Datos comerciales editables | `catalog/products.xlsx` |
+| Catálogo consumido por React/publicado | `generated/catalog.json`, generado desde Excel |
+| Identidad del catálogo | `generated/catalog-version.json`, SHA-256 del JSON exacto |
+| Snapshot comercial aprobado | `tests/fixtures/catalog-baseline.json` |
+| Aplicación | `src/`, `assets/`, `public/`, `index.html` y configuración Vite/npm |
+| Identidad de la app publicada | `dist/app-version.json`, generado por Vite |
+| Código publicado | Rama `main` y artefacto `dist/` generado por GitHub Actions |
+| Proceso de deploy | `.github/workflows/deploy-pages.yml` |
+| Contratos verificables | Tests bajo `tests/` |
+| Arquitectura y restricciones | `PROJECT_CONTEXT.md`, `AGENTS.md` y este manual |
+
+Cuando documentación y código discrepen, comprobar primero scripts, workflow y
+tests actuales. No considerar una idea de roadmap como funcionalidad existente.
