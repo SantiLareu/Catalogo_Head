@@ -91,3 +91,21 @@ npm run test-importer
 
 `update-catalog-baseline` nunca se ejecuta desde build, dev, tests o importación.
 Antes de escribir, exige que Excel y JSON sean válidos e idénticos.
+
+## Imágenes derivadas para la interfaz
+
+Las rutas comerciales de la hoja `Imagenes` continúan apuntando únicamente a
+originales bajo `assets/products/`. No se cargan thumbnails ni variantes
+responsive en Excel.
+
+`npm run import-products`, `npm run build` y `npm run dev` ejecutan
+automáticamente `npm run generate-product-images`. El generador toma sólo las
+imágenes referenciadas por `generated/catalog.json` y crea WebP de 200, 480 y
+800 px dentro de `public/product-images/`, sin ampliar originales pequeños.
+Ese directorio es regenerable y no se versiona.
+
+`generated/product-image-derivatives.json` registra dimensiones y una huella
+breve para resolver rutas deterministas y renovar caché. La caché local ignorada
+conserva el SHA-256 completo: una segunda ejecución reutiliza derivados cuyo
+original no cambió y un hash distinto fuerza su regeneración. ProductCard usa
+480/800 con `srcset`, ThumbnailRail usa 200 y Lightbox conserva el original.

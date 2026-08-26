@@ -51,6 +51,56 @@ test('configura portadas para todas las categorías principales previstas', () =
   assert.ok(Object.values(categoryEditorialCovers).every((cover) =>
     cover.image === null || cover.image.startsWith('editorial/')
   ));
+  assert.equal(
+    categoryEditorialCovers['paletas-padel'].image,
+    'editorial/portada-paletas.webp'
+  );
+  assert.equal(categoryEditorialCovers['raquetas-tenis'].image, 'editorial/portada-tenis.webp');
+  assert.equal(
+    categoryEditorialCovers['accesorios-medias'].image,
+    'editorial/portada-accesorios.webp'
+  );
+  assert.equal(categoryEditorialCovers.pelotas.image, 'editorial/portada-pelotas.webp');
+  assert.equal(
+    categoryEditorialCovers['bolsos-mochilas'].image,
+    'editorial/portada-bolsos.webp'
+  );
+  assert.equal(
+    categoryEditorialCovers['indumentaria-dama'].image,
+    'editorial/Screenshot 2026-08-05 110753.webp'
+  );
+  assert.equal(
+    categoryEditorialCovers.calzado.image,
+    'editorial/zapatilla-head-motion-pro-padel-273614-7.jpg'
+  );
+  assert.equal(
+    categoryEditorialCovers['indumentaria-hombre'].image,
+    'editorial/indumentaria-hombre.jpeg'
+  );
+});
+
+test('las portadas WebP optimizadas conservan sus originales y reducen el peso', async () => {
+  const optimizedCovers = [
+    ['portada-paletas.png', 'portada-paletas.webp'],
+    ['portada-tenis.png', 'portada-tenis.webp'],
+    ['portada-accesorios.png', 'portada-accesorios.webp'],
+    ['portada-pelotas.png', 'portada-pelotas.webp'],
+    ['portada-bolsos.png', 'portada-bolsos.webp'],
+    ['Screenshot 2026-08-05 110753.png', 'Screenshot 2026-08-05 110753.webp']
+  ];
+
+  for (const [originalName, webpName] of optimizedCovers) {
+    const original = await readFile(
+      new URL(`../../public/editorial/${originalName}`, import.meta.url)
+    );
+    const webp = await readFile(
+      new URL(`../../public/editorial/${webpName}`, import.meta.url)
+    );
+
+    assert.equal(webp.subarray(0, 4).toString('ascii'), 'RIFF');
+    assert.equal(webp.subarray(8, 12).toString('ascii'), 'WEBP');
+    assert.ok(webp.length < original.length * 0.35, webpName);
+  }
 });
 
 test('resuelve imágenes editoriales contra la base de publicación', () => {
@@ -90,6 +140,30 @@ test('portada omite imagen nula y difiere imágenes configuradas con dimensiones
   assert.match(cover, /loading="lazy"/);
   assert.match(cover, /decoding="async"/);
   assert.match(cover, /category-editorial-cover--without-image/);
+});
+
+test('portadas, ProductCards y thumbnails permanecen lazy hasta priorizar el destino', async () => {
+  const [cover, gallery, thumbnails] = await Promise.all([
+    readFile(
+      new URL('../../src/components/catalog/CategoryEditorialCover.jsx', import.meta.url),
+      'utf8'
+    ),
+    readFile(
+      new URL('../../src/components/product/ProductGallery.jsx', import.meta.url),
+      'utf8'
+    ),
+    readFile(
+      new URL('../../src/components/product/ThumbnailRail.jsx', import.meta.url),
+      'utf8'
+    )
+  ]);
+
+  assert.match(cover, /loading="lazy"/);
+  assert.match(gallery, /loading="lazy"/);
+  assert.match(thumbnails, /loading="lazy"/);
+  assert.doesNotMatch(cover, /loading="eager"/);
+  assert.doesNotMatch(gallery, /loading="eager"/);
+  assert.doesNotMatch(thumbnails, /loading="eager"/);
 });
 
 test('composición replace y prepend conserva sección, ancla y productos', async () => {

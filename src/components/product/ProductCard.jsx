@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { getCategoryLabel, normalizeSpecifications } from '../../data/catalogSelectors.js';
-import { resolveProductImage } from '../../data/productImages.js';
+import { resolveProductImageSources } from '../../data/productImages.js';
 import { productSelectionActions } from '../../hooks/productSelectionReducer.js';
 import useProductSelection from '../../hooks/useProductSelection.js';
 import useCart from '../../hooks/useCart.js';
@@ -26,7 +26,9 @@ function ProductCard({ categories, product }) {
   const variantControlRef = useRef(null);
   const sizeControlRef = useRef(null);
   const images = useMemo(
-    () => imagePaths.map(resolveProductImage).filter(Boolean),
+    () => imagePaths
+      .map((imagePath) => resolveProductImageSources(imagePath))
+      .filter(Boolean),
     [imagePaths]
   );
   const specifications = useMemo(

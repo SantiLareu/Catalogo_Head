@@ -216,7 +216,8 @@ Esta tabla coincide con la salida actual de `npm run`:
 
 | Comando | Qué hace / cuándo usarlo | ¿Escribe? | Precaución |
 |---|---|---:|---|
-| `npm run import-products` | Valida Excel y genera catálogo + versión. Después de editar el workbook. | Sí, `generated/` | Revisar los diffs comerciales. |
+| `npm run import-products` | Valida Excel, genera catálogo + versión y actualiza derivados de imágenes. | Sí, `generated/` y derivados locales | Revisar los diffs comerciales. |
+| `npm run generate-product-images` | Genera incrementalmente WebP de producto de 200, 480 y 800 px. | Sí, `public/product-images/` y manifiesto | Automático desde import, dev y build. |
 | `npm run check-products` | Valida Excel y comprueba catálogo/versión en memoria. | No | Seguro; warnings no equivalen a error. |
 | `npm run compare-catalog` | Compara catálogo generado con baseline. | No | Código 1 puede significar cambio esperado aún no aprobado. |
 | `npm run update-catalog-baseline -- --confirm` | Reemplaza el snapshot comercial aprobado. | Sí | Sólo con aprobación consciente. |
@@ -372,6 +373,9 @@ npm run preview
 
 - Logo: `assets/Real_Step_logo.jpeg`, consumido por `Header.jsx`.
 - Hero: `assets/2026-padel-coello-heroHeader.jpg`, consumido por `Hero.jsx`.
+- Originales de producto: `assets/products/`, referenciados únicamente desde Excel.
+- Derivados responsive: `public/product-images/`, generados automáticamente y no versionados.
+- Manifiesto determinista de derivados: `generated/product-image-derivatives.json`.
 - Favicon: `public/favicon-32.png`, enlazado desde `index.html`.
 - Icono para dispositivos Apple: `public/apple-touch-icon.png`.
 - Portadas de categorías: archivos bajo `public/editorial/` y configuración en

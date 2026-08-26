@@ -2,6 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import ThumbnailRail from './ThumbnailRail.jsx';
 
 const CROSSFADE_TOTAL_MS = 220;
+const PRODUCT_IMAGE_SIZES =
+  '(max-width: 768px) calc(100vw - 48px), ' +
+  '(max-width: 980px) calc(92vw - 48px), 760px';
 
 function ProductGallery({
   images,
@@ -24,7 +27,7 @@ function ProductGallery({
     const prevSrc = images[prevIndex];
     previousImageIndexRef.current = imageIndex;
 
-    if (!prevSrc || prevSrc === images[imageIndex]) {
+    if (!prevSrc || prevSrc.original === images[imageIndex]?.original) {
       setPreviousSrc(null);
       return;
     }
@@ -75,7 +78,9 @@ function ProductGallery({
           >
             <img
               key={imageIndex}
-              src={images[imageIndex]}
+              src={images[imageIndex].card}
+              srcSet={images[imageIndex].srcSet}
+              sizes={images[imageIndex].srcSet ? PRODUCT_IMAGE_SIZES : undefined}
               alt={`${name} imagen ${imageIndex + 1}`}
               loading="lazy"
               decoding="async"
@@ -85,8 +90,10 @@ function ProductGallery({
         ) : null}
         {previousSrc ? (
           <img
-            key={previousSrc}
-            src={previousSrc}
+            key={previousSrc.original}
+            src={previousSrc.card}
+            srcSet={previousSrc.srcSet}
+            sizes={previousSrc.srcSet ? PRODUCT_IMAGE_SIZES : undefined}
             alt=""
             aria-hidden="true"
             decoding="async"

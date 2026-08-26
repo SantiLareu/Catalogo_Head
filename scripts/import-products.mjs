@@ -20,6 +20,7 @@ import {
 import { readWorkbook } from './catalog-import/readWorkbook.mjs';
 import { validateWorkbookData } from './catalog-import/validateWorkbook.mjs';
 import { writeOutputsSafely } from './catalog-import/writeOutput.mjs';
+import { generateProductImages } from './generate-product-images.mjs';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const defaultRepoRoot = path.resolve(scriptDirectory, '..');
@@ -242,6 +243,14 @@ async function main() {
 
   const result = await runImport(options);
   printResult(result, options);
+  if (result.wroteOutput) {
+    const derivatives = await generateProductImages({ repoRoot: options.repoRoot });
+    console.log(
+      'Derivados de producto: ' + derivatives.derivatives +
+      ' (' + derivatives.generated + ' generados, ' +
+      derivatives.skipped + ' reutilizados).'
+    );
+  }
   process.exitCode = result.exitCode;
 }
 

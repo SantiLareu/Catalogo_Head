@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getProductImageDerivativePath } from '../src/data/productImageDerivativePaths.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, '..');
@@ -74,6 +75,11 @@ if (!exists(path.join(dist, 'index.html'))) {
 const catalogPath = path.join(dist, 'catalog.json');
 const catalogVersionPath = path.join(dist, 'catalog-version.json');
 const appVersionPath = path.join(dist, 'app-version.json');
+const productDerivativesManifestPath = path.join(
+  repoRoot,
+  'generated',
+  'product-image-derivatives.json'
+);
 if (!exists(catalogPath)) {
   fail('dist/catalog.json no existe');
 } else {
@@ -184,6 +190,37 @@ if (exists(assetsDir)) {
 }
 
 // 7. Logo bundleado
+if (!exists(productDerivativesManifestPath)) {
+  fail('generated/product-image-derivatives.json no existe');
+} else {
+  try {
+    const derivativeManifest = JSON.parse(
+      fs.readFileSync(productDerivativesManifestPath, 'utf8')
+    );
+    const derivativePaths = Object.entries(derivativeManifest.images || {})
+      .flatMap(([sourcePath, image]) => derivativeManifest.widths
+        .map(({ width }) => width)
+        .filter((width) => image.width > width)
+        .map((width) => getProductImageDerivativePath(sourcePath, width)));
+    const missingDerivatives = derivativePaths.filter(
+      (relativePath) => !exists(path.join(dist, ...relativePath.split('/')))
+    );
+    if (missingDerivatives.length) {
+      fail(
+        `faltan ${missingDerivatives.length} derivados responsive en dist/; ` +
+        `primero: ${missingDerivatives[0]}`
+      );
+    } else if (!derivativePaths.length) {
+      fail('el manifiesto de imágenes no contiene derivados responsive');
+    } else {
+      pass(`dist/ contiene los ${derivativePaths.length} derivados responsive esperados`);
+    }
+  } catch (error) {
+    fail('generated/product-image-derivatives.json no es válido: ' + error.message);
+  }
+}
+
+// 8. Logo bundleado
 if (exists(assetsDir)) {
   const logo = findFirstMatching(assetsDir, /^Real_Step_logo.*\.(jpe?g|png|webp)$/);
   if (!logo) {
@@ -198,7 +235,7 @@ if (exists(assetsDir)) {
   }
 }
 
-// 8. Hero bundleado
+// 9. Hero bundleado
 if (exists(assetsDir)) {
   const hero = findFirstMatching(assetsDir, /^2026-padel-coello-heroHeader.*\.(jpe?g|png|webp)$/);
   if (!hero) {
@@ -213,7 +250,7 @@ if (exists(assetsDir)) {
   }
 }
 
-// 9. Verificar que el bundle JS no depende de paths relativos problemáticos
+// 10. Verificar que el bundle JS no depende de paths relativos problemáticos
 //    para assets. Si Vite dejó advertencias, las URLs quedan como literales
 //    que no resuelven en runtime.
 if (exists(assetsDir)) {
@@ -230,7 +267,7 @@ if (exists(assetsDir)) {
   }
 }
 
-// 10. Resumen
+// 11. Resumen
 console.log('\n=== RESUMEN ===');
 if (errors.length === 0) {
   console.log(`✓ Todas las verificaciones críticas pasaron${warnings.length ? ` (${warnings.length} advertencias)` : ''}.`);

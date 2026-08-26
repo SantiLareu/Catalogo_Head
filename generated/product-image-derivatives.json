@@ -1,0 +1,2080 @@
+{
+  "schemaVersion": 1,
+  "format": "webp",
+  "widths": [
+    {
+      "width": 200,
+      "quality": 80
+    },
+    {
+      "width": 480,
+      "quality": 82
+    },
+    {
+      "width": 800,
+      "quality": 84
+    }
+  ],
+  "images": {
+    "assets/products/accesorios/066-0037 GREY SHORTS_1773323824_1776967761.jpg": {
+      "sha256": "9f5501c0810e7bd0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/105275_1773833995.jpg": {
+      "sha256": "57374e4e886244ff",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/165561-1_1773834447.jpg": {
+      "sha256": "d9cff083017f7f6a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281669 nube_1776951553.jpg": {
+      "sha256": "13fe82aa5a706a1e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281670 nube_1776951563.jpg": {
+      "sha256": "0ab7f40d04c23a86",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281675 (1) nube_1776967073.jpg": {
+      "sha256": "cef8d094e5b6f732",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281676 nube_1776967086.jpg": {
+      "sha256": "753358874f391d5f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281685 nube_1776967078.jpg": {
+      "sha256": "6d95a159e31eefc5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/281688 nube_1776967083.jpg": {
+      "sha256": "39b1cd2444c2f101",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/285525 ANTIVIBRADOR PRO DAMP JAR BOX_1776966123.jpg": {
+      "sha256": "e0ba9273e2980cd8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/285631 CUBREGRIP PRIME TOUR WHITE ok_1776959553.jpg": {
+      "sha256": "b939527d05ca6d22",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/45609_1778681955.jpg": {
+      "sha256": "265bc15d646becc9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUBRE GRIP PRIME TOUR 3PCS PACK - 285621 BLK copia_1776956764.jpg": {
+      "sha256": "21ef06fa15a00f69",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUBRE GRIP SUPER COMP 285088 -NUBE_1776953375.jpg": {
+      "sha256": "a6c9455b8866bf43",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUERDA LYNX REEL 200M - 281794 AN_1776966679.jpg": {
+      "sha256": "d37d5bbff894be38",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUERDA LYNX TOUR REEL 200M 17 CP - 281799_1776966716.jpg": {
+      "sha256": "ebfc9b703fa90643",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776965018.jpg": {
+      "sha256": "7f71c4cac9144aa4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966633.jpg": {
+      "sha256": "7f71c4cac9144aa4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/CUERDA MASTER 16 - 281023_1776966641.jpg": {
+      "sha256": "7f71c4cac9144aa4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/DELTA FLEXFIT CAP - 287814 BK_1776966309.jpg": {
+      "sha256": "a7088cca3ac2c93e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/FIVE PANEL TOUR CAP - 287834 BK_1776966321.jpg": {
+      "sha256": "2a35e6d1518cff00",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/GRIP HYDROSORB COMFORT BLK 285313_nube_1776955670.jpg": {
+      "sha256": "359498ece917d9a0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/GRIP HYDROSORB PRO BLK - 285303_nube_1776954787.jpg": {
+      "sha256": "04edff22b493e63e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/GRIP HYDROSORB PRO WTH - 285303_nube_1776954781.jpg": {
+      "sha256": "0488a70e0c5befe7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/HEA-285034-dual absorbing grip assorted_nube_1776954644.jpg": {
+      "sha256": "ec46786c8b6cc1a8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/head-hawk-touch-130-matassa-tennis-da-120-m-anthracite-281214-16an_A_2_1773835045.jpg": {
+      "sha256": "caa833065ab6dce8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/head-pressurizers-head-x100-basket-01 nube_1776951275.jpg": {
+      "sha256": "3fcd877b4279aab3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/head-sonic-pro-1-30-matassa-200-m-black-281128-16bk_A_1773834711.jpg": {
+      "sha256": "b0cd671b5410aba9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/MASTER REEL - 281033_1776967568.jpg": {
+      "sha256": "1b27480af3d043b3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PADEL PRO 60 PCS 285121 BK_1776964248.jpg": {
+      "sha256": "e00f0af0aeb2f289",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PADEL PRO 60 PCS 285121 WH_1776964259.jpg": {
+      "sha256": "57735a6dc3011774",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PADEL PRO X3 - 285111 nube_1776955712.jpg": {
+      "sha256": "4acb09faf78ba879",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PERFORMANCE CAP - 287104 BK_1776966335.jpg": {
+      "sha256": "db45795a61e306d4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PERFORMANCE CAP - 287104 WH_1776966340.jpg": {
+      "sha256": "b6d64883848db647",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/Presentation-Logo Jar Box_1776951489.jpg": {
+      "sha256": "ad6ba0ce2e4b1fbb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER CAP - 287115 AQ_1776966364.jpg": {
+      "sha256": "0eef27a5a3e1d224",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER CAP - 287115 BLK_1776966355.jpg": {
+      "sha256": "9febf6390a353b52",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER CAP - 287115 NV_1776966371.jpg": {
+      "sha256": "6c1be5bc253044ae",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER CAP - 287115 WG_1776966376.jpg": {
+      "sha256": "fbc9cd31a1f5a9a9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER VISOR - 287135 AQ_1776966391.jpg": {
+      "sha256": "1f5e6d28c13b1b35",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER VISOR - 287135 NAVY_1776966394.jpg": {
+      "sha256": "127d186cba7f1853",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PRO PLAYER VISOR - 287135 WG_1776966398.jpg": {
+      "sha256": "0083776061fe5dd0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PROMOTION CAP 287299 ANGR_1776966300.jpg": {
+      "sha256": "c49696cb1dc09820",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PROMOTION CAP 287299 bl_1776965775.jpg": {
+      "sha256": "69df8fc5cd1e6187",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PROMOTION CAP 287299 navy_1776965780.jpg": {
+      "sha256": "3ba427d4e5f08353",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PROMOTION CAP 287299 red_1776965784.jpg": {
+      "sha256": "6bbbef71e032633e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg": {
+      "sha256": "259759f5627585c1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/XTREME SOFT BOX 285425 WH_1776957457.jpg": {
+      "sha256": "0582779ffaa1fee7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/XTREME SOFT BOX 285425_1776954385.jpg": {
+      "sha256": "94ba6e611ea8bb76",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/XTREME SOFT DISPLAY BOX -70 GRIPS - 285712_1776954412.jpg": {
+      "sha256": "4e2861be0febe90c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 1_1776451589.jpg": {
+      "sha256": "ad8dc2ea714eaa64",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL 2_1776451589.jpg": {
+      "sha256": "674f5df03e28afdc",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260005 PRO X RACQUET BAG XL_1776451592.jpg": {
+      "sha256": "e22da7148beb9fb5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK a_1776455382.jpg": {
+      "sha256": "287c83fc40f3b65c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260015 PRO X RACQUET BAG L - BK_1776455382.jpg": {
+      "sha256": "6b896d0f90a43abd",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 1_1776693072.jpg": {
+      "sha256": "be37e3c4881bd2a0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 2_1776693072.jpg": {
+      "sha256": "0ae06ad043a56a53",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260344 pro padel bag L-nv nube 3_1776693072.jpg": {
+      "sha256": "592d7f8c72d27176",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK a_1776687233.jpg": {
+      "sha256": "fbfb308d3bceff96",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK b_1776687233.jpg": {
+      "sha256": "30e8cd5e7764d0f1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260724 TOUR TRAVEL BAG 110L - BK_1776687233.jpg": {
+      "sha256": "f413f48d97232f03",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260764 KIDS TOUR BACKPACK 14L - BKWH_1776455618.jpg": {
+      "sha256": "9edb74991cce3029",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260774 KIDS TOUR BACKPACK 14L MONSTER_1776687209.jpg": {
+      "sha256": "a0efd25b29a9a21f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 1_1777388891.jpg": {
+      "sha256": "ee80aa9eb76764aa",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260814 TOUR RACQUET BAG XL - FO 2_1777388891.jpg": {
+      "sha256": "bbabe69b82a9aa00",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 1_1776451334.jpg": {
+      "sha256": "db3a2106b4afa54c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO 2_1776451334.jpg": {
+      "sha256": "e03f63261a7d547c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/260854 TOUR BACKPACK 25L FO_1776451334.jpg": {
+      "sha256": "8bec253d13d97f3f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261235 BASE BACKPACK 17L 1_1776452376.jpg": {
+      "sha256": "3598deda71c7b871",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261335 BASE BACKPACK 17L - NV_1776454358.jpg": {
+      "sha256": "a53f2b192a63fed5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG A_1776454259.jpg": {
+      "sha256": "c86a36ffbd718b53",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261405 BASE RACQUET BAG L - SG_1776454259.jpg": {
+      "sha256": "baa100966128f101",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261435 BASE BACKPACK 17L - SG_1776453888.jpg": {
+      "sha256": "28afdaf62c6e4767",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L a_1776695982.jpg": {
+      "sha256": "98ea4c691beacf7b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L b_1776695983.jpg": {
+      "sha256": "5d6f8c1547966f80",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L c_1776695983.jpg": {
+      "sha256": "8924104877e1269b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261805 COELLO PRO X PADEL  DUFFLE BAG L_1776695983.jpg": {
+      "sha256": "2f54d0dda0d1bda6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L a_1776695394.jpg": {
+      "sha256": "1f76b2b3fe669b7c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L b_1776695394.jpg": {
+      "sha256": "132bee442cbf358c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261815 COELLO PRO X PADEL BACKPACK 30L_1776695394.jpg": {
+      "sha256": "7d5b59ab5b45e90e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD 2_1776968835.jpg": {
+      "sha256": "cc0f883210ad4035",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261835 RETRO PADEL BAG 25 LTD_1776968667.jpg": {
+      "sha256": "3bbb71e9a6125320",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261855 RETRO TOTE BAG 25 LTD_1776969211.jpg": {
+      "sha256": "16ddb69efa347b2c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON a_1776687124.jpg": {
+      "sha256": "f45466bc10c44679",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261945 TOUR RACQUET BAG XL 2025 - NEON_1776687124.jpg": {
+      "sha256": "f26dbce152cccd68",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON a_1776689985.jpg": {
+      "sha256": "f92d58b6d8aa413d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/261955 TOUR RACQUET BAG L 2025 - NEON_1776689985.jpg": {
+      "sha256": "6afeb2b8e3ded519",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/267534_1773838960.jpg": {
+      "sha256": "2013303cc1477f35",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/267565_1773838927.jpg": {
+      "sha256": "6def47f58e6d16e3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_750946-MLA113037416577_062026-F.webp": {
+      "sha256": "f3297ae9d5654fe5",
+      "width": 1197,
+      "height": 798
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_848570-MLA113037416579_062026-F.webp": {
+      "sha256": "1591a6896fd60e83",
+      "width": 1091,
+      "height": 1200
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_881169-MLA113036555379_062026-F.webp": {
+      "sha256": "1a71d63eb89f0be7",
+      "width": 1200,
+      "height": 935
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_935521-MLA110345733438_052026-F.webp": {
+      "sha256": "ae6fb381d0154f9a",
+      "width": 899,
+      "height": 1200
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_973323-MLA113036584545_062026-F.webp": {
+      "sha256": "0daf77e17433c80c",
+      "width": 1200,
+      "height": 897
+    },
+    "assets/products/bolso-mochila/D_NQ_NP_2X_996848-MLA111279153073_052026-F.webp": {
+      "sha256": "861304f2a4084b59",
+      "width": 899,
+      "height": 1200
+    },
+    "assets/products/bolso-mochila/paletero-head-retro-tote-bag-25th-ltd-2-e58a1ce8e25fb6884617818759097085-1024-1024.webp": {
+      "sha256": "fe1cc5f73d32e84f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/team-padel-bag-l-bkcc (1)_1776450605.jpg": {
+      "sha256": "a3aab7349649b09c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/team-padel-bag-l-bkcc_1776450608.jpg": {
+      "sha256": "d4f5f0875a89f612",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/team-padel-bag-l-blbk (1)_1776450736.jpg": {
+      "sha256": "d0d57266a7041243",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/bolso-mochila/team-padel-bag-l-blbk_1776450736.jpg": {
+      "sha256": "93f572a6eb787f8d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m1-1.webp": {
+      "sha256": "3d61803e34cbf16d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m1-2.webp": {
+      "sha256": "013d8672719a54e0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m1-3.webp": {
+      "sha256": "bb1ffef5e7304d5d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m2-1.webp": {
+      "sha256": "c8c88fe9efdc3998",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m2-2.webp": {
+      "sha256": "9d8ed16dd16bf267",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/ace-m2-3.webp": {
+      "sha256": "63406a48457ca2b7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/deuce-m1-2.webp": {
+      "sha256": "9bbf493594cebdc9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/deuce-m1-3.webp": {
+      "sha256": "6c9552715f1a5118",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/deuce-m1.webp": {
+      "sha256": "426d072351c72aeb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/deuce-m2.webp": {
+      "sha256": "7e3e654baf78caab",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/drop-w1-c.webp": {
+      "sha256": "bcea1e4f7f79df84",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/drop-w2-a.webp": {
+      "sha256": "eae2542bf8aee035",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/drop-w2-b.webp": {
+      "sha256": "c27027bf9a857ceb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/drop-w2-c.webp": {
+      "sha256": "92705f0630b37c66",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w1-a.webp": {
+      "sha256": "f098614e53b39cc4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w1-b.webp": {
+      "sha256": "e22a95fda80ac84e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w1-c.webp": {
+      "sha256": "77f8af492ef2b7be",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w2-a.webp": {
+      "sha256": "4a1c18e4cd82a390",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w2-b.webp": {
+      "sha256": "aea1366326b53a72",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/slice-w2-c.webp": {
+      "sha256": "fcf2a6ed9bb5b61e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m1-a.webp": {
+      "sha256": "f56284cce4ca37a1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m1-b.webp": {
+      "sha256": "e0aa9d75e1bc206e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m1-c.webp": {
+      "sha256": "43d3ab97c19de8ed",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m2-a.webp": {
+      "sha256": "c23d7e9f3d93a77c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m2-b.webp": {
+      "sha256": "2810c8094f8cf2a0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/smash-m2-c.webp": {
+      "sha256": "046aaf563e21704a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0131 SNEAKER WH OK 3_1776708082.jpg": {
+      "sha256": "763657a787124450",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0131 SNEAKER WH OK_1776708082.jpg": {
+      "sha256": "81e666dfc0552843",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0132 SNEAKER bk OK 3_1776708089.jpg": {
+      "sha256": "e0fae60cc8d7c2a9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0132 SNEAKER bk OK_1776708089.jpg": {
+      "sha256": "94b293d4e8ef602d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0134 SOCKS TENNIS 2P STRIPE QUARTER WH_1773325017.jpg": {
+      "sha256": "353229fd679b9647",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0135 SOCKS TENNIS 2P STRIPE QUARTER Black_1773325014.jpg": {
+      "sha256": "2f188f65ef3c1f25",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0136 811509 - 2P STRIPE QUARTER BK-RD_1773325011.jpg": {
+      "sha256": "776e2c8dc0e6fd8a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0137 SOCKS TENNIS 2P PERFORMANCE wh_1773325021.jpg": {
+      "sha256": "333b92ae1f43b162",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0138 SOCKS TENNIS 2P PERFORMANCE bk_1773325023.jpg": {
+      "sha256": "5ef87a08a00848eb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0139 SOCKS TENNIS 1P PERFORMANCE CREW wh_1773325026.jpg": {
+      "sha256": "279d54dfcd3400fb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0141 PADEL SOCKS WH_1773325041.webp": {
+      "sha256": "add72607467f593e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0142 PADEL SOCKS BK_1773325043.webp": {
+      "sha256": "8b379690af7d2b37",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0157 W PERFORMANCE SKORT WOMEN_1773255827.png": {
+      "sha256": "6e1f3d165108893e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0159 W PERFORMANCE SKORT WOMEN GF_1773255890.jpg": {
+      "sha256": "4cb70fe1494fb53f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0160 Move Skort Women WH_1773255903.png": {
+      "sha256": "d96e9264638e3a16",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0161 Move Skort Women NV_1773255916.png": {
+      "sha256": "1d5726e9d3b8c2c5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0162 PLAY SHORTS ROYAL BLUE_1773255930.png": {
+      "sha256": "301e4bebc67d77b6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0163 W PLAY SHORTS  ROYAL BK 814874_1773255940.jpg": {
+      "sha256": "59d172300c143cf9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0164 Spirit II Tank Top Women ZI_1773255974.png": {
+      "sha256": "e5c2e26d0b1d7242",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0165 Spirit II Tank Top Women WH_1773256215.png": {
+      "sha256": "d70be99797a57883",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0166 W SPIRIT II TANK TOP 814435 XWZI_1773256226.jpg": {
+      "sha256": "5ed0be32d8cae420",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0167 Club 25 Dress Women WH_1773256241.png": {
+      "sha256": "a4012a8defa0c00e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0168 Club 25 Dress Women NV_1773256299.jpg": {
+      "sha256": "e23fa2236b2332d2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0169 Tie-Break T-Shirt Women ZI_1773256303.png": {
+      "sha256": "8fb34e844a0e997b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0170 Tie-Break T-Shirt Women WH_1773256305.png": {
+      "sha256": "8e18da40d098a168",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0171 CLUB 25 TECH T-SHIRT WOMEN NAVY WHITE_1773256309.jpg": {
+      "sha256": "ca3a29be0ddf3c76",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0171 CLUB 25 TECH T-SHIRT WOMEN_1773256312.png": {
+      "sha256": "e603eeba5f4643a8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0173 MA Club Original T-Shirt Women_1773256315.jpg": {
+      "sha256": "e6f93756be681719",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0174 Club Original T-Shirt Women WH_1773256319.png": {
+      "sha256": "9d14412fb1c06365",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0175 GM Club Original T-Shirt Women_1773256322.jpg": {
+      "sha256": "1b23a8e56f0f7309",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0176 WH LARA T-SHIRT_1773256332.jpg": {
+      "sha256": "b1321c80081fe813",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0177 MA LARA T-SHORT WOMEN_1773256340.jpg": {
+      "sha256": "42824428e640365a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0178 CLUB ORIGINAL HOODIE FX WOMEN_1773256348.jpg": {
+      "sha256": "b8d0b4fa5b2d844f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0179 CLUB ORIGINAL HOODIE WOMEN_1773256351.jpg": {
+      "sha256": "c3134129a20a3104",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0215 ALL SPORT WH OK_1776708100.jpg": {
+      "sha256": "86cfb0f177802f45",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0216 ALL SPORT BK OK_1776708103.jpg": {
+      "sha256": "a3614fac376258e8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0217 TENNIS CREW WH_1776280537.jpg": {
+      "sha256": "c45f99adf0645924",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/062-0218 TENNIS CREW BK_1776280541.jpg": {
+      "sha256": "23e08442975c38ef",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/436776 club lara red_1773328015.jpg": {
+      "sha256": "f8449c4f8e13c453",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/436776-club-lara-red-back-d33b5a0788440b324a17134599538532-1024-1024.webp": {
+      "sha256": "ba549a8245c5db34",
+      "width": 800,
+      "height": 800
+    },
+    "assets/products/indumentaria-dama/63060503_o_a3.jpg": {
+      "sha256": "ea2d66cd10e258a5",
+      "width": 3000,
+      "height": 3000
+    },
+    "assets/products/indumentaria-dama/697a1c67736b1-660329-500x500.jpg": {
+      "sha256": "e15921bd32076161",
+      "width": 500,
+      "height": 500
+    },
+    "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_GM_1_1773328075.jpg": {
+      "sha256": "9229d249a359ecde",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_gm_2-07ec9cffca84c97b3517134579458552-1024-1024.webp": {
+      "sha256": "402f42fa651d14ec",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_RD_1_1773328077.jpg": {
+      "sha256": "891ed9b334e68e18",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_rd_2-d63d2a152eb686080b17134579631959-1024-1024.webp": {
+      "sha256": "5b8fb394c81ab302",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814400_CLUB_LUCY_t-SHirt_Women_WH_1_1773328078.jpg": {
+      "sha256": "5728c1ea923935b9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_wh_2-b862d1e6521d4e1a5417134579772335-1024-1024.webp": {
+      "sha256": "b029e36828a9f407",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_BK_1_1773328125.jpg": {
+      "sha256": "a8b1c91c626e77c4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_WH_1_1773328123.jpg": {
+      "sha256": "d1d83b419cb4d02e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814431_CLUB_22_Tech_T-Shirt_Women_BK_1_1773328161.jpg": {
+      "sha256": "cb3c4ecefce674b8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814431_CLUB_22_Tech_T-Shirt_Women_WHNV_1_1773328157.jpg": {
+      "sha256": "2e4776fa1c2c33d1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814489_club_rosie_hoodie_women_bk_2-2901a394b5d9e6e83b17690961076712-1024-1024.webp": {
+      "sha256": "fe255ee0c86d96b3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814499_club_greta_hoodie_fz_women_gm_2-e05fe0360533b8ca2f17134654759360-1024-1024.webp": {
+      "sha256": "ccf1eb11192c9f53",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814529_CLUB_LARA_T-Shirt_Women_GM_1_1773328012.jpg": {
+      "sha256": "b572fca300ea8cc4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814529_club_lara_t-shirt_women_gm_2-97d388667cda38487e17134597528048-1024-1024.webp": {
+      "sha256": "3451fcb08ed0f8e8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814529_CLUB_LARA_T-Shirt_Women_WH_1_1773328017.jpg": {
+      "sha256": "e24d8514718d5a06",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814529_club_lara_t-shirt_women_whrd_2-3b156dff8ca413ae3417134597899285-1024-1024.webp": {
+      "sha256": "011cf826f8d0e50a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814634 W TECH TIGHT blk_1773328381.jpg": {
+      "sha256": "c61d0d04ca5a64b7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814725-nvwh_A.jpg": {
+      "sha256": "a6e0b23a987c5d17",
+      "width": 1500,
+      "height": 1500
+    },
+    "assets/products/indumentaria-dama/814874_PLAY Shorts Women_CY_1_1773328447.png": {
+      "sha256": "da8b27d1851b7429",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/814874_play-shorts-women_cy_2-ok-9e144833656c1785ef17144969410252-1024-1024.webp": {
+      "sha256": "afc707de21cdd979",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/91jGD1V7asL._AC_SY879_.jpg": {
+      "sha256": "9204664d27846d33",
+      "width": 480,
+      "height": 879
+    },
+    "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-3-62520bd8e3c1d3019b17588099627372-1024-1024.webp": {
+      "sha256": "dc5586af5f258341",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-4-584494ab8308ecca6c17588099628470-1024-1024.webp": {
+      "sha256": "277b6a19867f468d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/ewff-76f23b29eaf821912717805736298063-1024-1024.webp": {
+      "sha256": "95b70fb1d47938d5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/generated-image-july-20-2026-12_10pm-489b785bc43c06ab5b17845605726602-1024-1024.webp": {
+      "sha256": "c26add822b3abade",
+      "width": 1024,
+      "height": 1835
+    },
+    "assets/products/indumentaria-dama/generated-image-july-20-2026-12_11pm-51ac7d483118593d6f17845605728801-1024-1024.webp": {
+      "sha256": "86efa9c0e0ca5d47",
+      "width": 1024,
+      "height": 1835
+    },
+    "assets/products/indumentaria-dama/generated-image-july-20-2026-12_15pm-7d0923baec03ba511d17845605726480-1024-1024.webp": {
+      "sha256": "1a7b4369caa8ab3b",
+      "width": 1024,
+      "height": 1835
+    },
+    "assets/products/indumentaria-dama/head-club-22-tech-maglietta-da-tennis-donna-white-dark-blue-814431-whdb_B.jpg": {
+      "sha256": "b5ad3c6a5b3ba823",
+      "width": 1500,
+      "height": 1500
+    },
+    "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-black-814421-bk_A-600x600.jpg": {
+      "sha256": "bc4f6ab6a1973e13",
+      "width": 600,
+      "height": 600
+    },
+    "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-white-814421-wh_A.jpg": {
+      "sha256": "092da7afc15e3e05",
+      "width": 1500,
+      "height": 1500
+    },
+    "assets/products/indumentaria-dama/head-club-lara-maglietta-da-tennis-donna-grey-melange-814529-gm_A.jpg": {
+      "sha256": "7c00f75f3688fd72",
+      "width": 1500,
+      "height": 1500
+    },
+    "assets/products/indumentaria-dama/head-shorts-mujer-plkay-f5488b937963fa108b17805673738032-1024-1024.webp": {
+      "sha256": "8b093c2dc6086b4b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/images.jpg": {
+      "sha256": "832139610bef7d75",
+      "width": 447,
+      "height": 447
+    },
+    "assets/products/indumentaria-dama/musuclosa-spirit-3e9f34d01e50b390ba17805665623550-1024-1024.webp": {
+      "sha256": "1ec15b5a9d9cf0b9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/rosie-a5214397493abe45f817805724563314-1024-1024.webp": {
+      "sha256": "a20f23e0e8b4d75d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/rs.webp": {
+      "sha256": "ce8abb8316558b13",
+      "width": 455,
+      "height": 607
+    },
+    "assets/products/indumentaria-dama/sasasaa-cb213f2fa8b9cec9e917805731566568-1024-1024 (1).webp": {
+      "sha256": "e2d6fb3598aec51b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/skort-move-5055f1caf3f963753f17805676727391-1024-1024.webp": {
+      "sha256": "6400702a94049491",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/sss-4bd29a640527a2f9b317805827757027-1024-1024.webp": {
+      "sha256": "5bd5ce719fa684c2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/tshirt-head-club-tech-blanca-24e32d2b3f6d81539c17805715944275-1024-1024.webp": {
+      "sha256": "9add264f2b978f2e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/tshirt-lara-e7a1cebf3ce2f5562917805683237012-1024-1024.webp": {
+      "sha256": "0eab015870cb4f2e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/untitled-1-0f720cd8d676485d3917805705848661-1024-1024.webp": {
+      "sha256": "c4cc2dd70a652504",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/vestido-club25-0073fd7c4fb2446f6117805663656562-1024-1024.webp": {
+      "sha256": "44c447f8fdbb4c0d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/viejo-436776-club-lara-mag-back-5c9af97cddc6a9a42c17690959060599-1024-1024.webp": {
+      "sha256": "98cdde34dd450466",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-dress-814745-nv-1-d28d181b5ef71d9f0717690953427965-1024-1024.webp": {
+      "sha256": "45d4a574dfbd99bb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-dress-814745-nv-2-3268e67cc3c606375517690953427978-1024-1024.webp": {
+      "sha256": "cbd11c96015accb1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-dress-814745-wh-1-fb0bb052a489cf817917690953427537-1024-1024.webp": {
+      "sha256": "478621bee8328e13",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-dress-814745-wh-2-894a633c9ff0a00e3c17690953427783-1024-1024.webp": {
+      "sha256": "7ced01ec63ac8e1d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-tech-t-shirt-814725-nvwh-1-116630b58200fd45ec17690956139944-1024-1024.webp": {
+      "sha256": "5a31351e5bbd0fcc",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-25-tech-t-shirt-814725-wh-1-5efa6012e6cc16014c17690956139774-1024-1024.webp": {
+      "sha256": "5173924100c8d93d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-original-t-shirt-814845-ma-1-46dd87c04da0dab3a117690957436855-1024-1024.webp": {
+      "sha256": "fa1fe6374addd6be",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-club-original-t-shirt-814845-wh-1-d8ed3a43599f454c7917690957431996-1024-1024.webp": {
+      "sha256": "2988331eab90e1ad",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-lara-t-shirt-814395-white-1-2d8696a2062864e7e017690959060566-1024-1024.webp": {
+      "sha256": "a055ae96c3f15a2a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-move-skort-814295-921e199ad52108b12217690948523598-1024-1024.webp": {
+      "sha256": "8a7401e020055a58",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-move-skort-814295-a-dd71962be229c9d28b17690948524135-1024-1024.webp": {
+      "sha256": "44fb7f7478e13b5a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-move-skort-814295-b-b1d840b5b29112976517690948526869-1024-1024.webp": {
+      "sha256": "48b3dbce79e3a718",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-move-skort-814295-nv-1-14d79ea35b43cdd55417690948526810-1024-1024.webp": {
+      "sha256": "b6a72d2b5271ce3d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-move-skort-814295-white-1-f21eff621b2f4fc24f17690948526323-1024-1024.webp": {
+      "sha256": "6abf9fd4eb32e11a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-b-4a48305d028de3a9c717690909401621-1024-1024.webp": {
+      "sha256": "393e93cc59417092",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-1-2e6263b813c4a0a11817690909398738-1024-1024.webp": {
+      "sha256": "1e867852b980e30f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-fe61e62306029872c217690909401995-1024-1024.webp": {
+      "sha256": "7a318bc4ce31a9ac",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-c-b56d19526f4ab6d27217690909402305-1024-1024.webp": {
+      "sha256": "10b62b520b391165",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-grape-fruit-1-e4cbaabc85a4c778c817690909398807-1024-1024.webp": {
+      "sha256": "fde4c60e9764e011",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-performance-skort-women-814035-white-1-2a408f19383617b39c17690909398777-1024-1024.webp": {
+      "sha256": "ff83a5a1ec1f29d2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-play-shorts-royal-bk-814874-a-38a40397c40ce4967d17690951515373-1024-1024.webp": {
+      "sha256": "d706f6977789ec6e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-play-shorts-royal-blue-814874-a-418ed74b9a995a1ade17690951515685-1024-1024.webp": {
+      "sha256": "f4efc46b3afe7ef6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-spirit-ii-tank-top-814435-white-1-b790d3c8fa4da07bb517690952547076-1024-1024.webp": {
+      "sha256": "f209036958850c51",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-spirit-ii-tank-top-814435-zi-1-e8d005616c76ca3cce17690952547434-1024-1024.webp": {
+      "sha256": "e6ef8592cfab9a0c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-b-90d6a0c1ef520a029817690954553297-1024-1024.webp": {
+      "sha256": "3b9c57347a3db028",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-white-1-34a914d3126081e56417690954550039-1024-1024.webp": {
+      "sha256": "9fdb513106b77130",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/w-tie-break-t-shirt-814205-zi-1-5f3d8bfe9d7edd257e17690954549577-1024-1024.webp": {
+      "sha256": "98ba7ffb9adefea8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/WhatsApp Image 2026-04-20 at 2.59.31 PM (2)_1776710152.jpeg": {
+      "sha256": "c90faf3fec67c9f3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-dama/WhatsApp Image 2026-04-20 at 2.59.31 PM_1776710152.jpeg": {
+      "sha256": "e81da42f82c8a51d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0180 Club 25 Shorts Men (BLACK)_1773256356.jpg": {
+      "sha256": "1b52812df1d78092",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0181 Club 25 Shorts Men WHITE_1773256358.jpg": {
+      "sha256": "68911a7625d032fb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0182 Club 25 Shorts Men (RED)_1773256363.jpg": {
+      "sha256": "9e06a8f24eef1e69",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0183 Play Shorts Men Navy_1773256367.jpg": {
+      "sha256": "242707c319cc8558",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0184 Play Shorts Men Spacy Green_1773256370.jpg": {
+      "sha256": "f2055b8d76d20735",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0185 Play Shorts Men WHITE_1773256373.jpg": {
+      "sha256": "6fb3415ab6f83249",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0186 MOTION SHORTS DK GREY ok_1773256376.jpg": {
+      "sha256": "23202d0f00e9f5f3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0187 MOTION SHORTS BK ok_1773256422.jpg": {
+      "sha256": "59c14a75fb0f9cbb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0188 MOTION T-SHIRT BLACK_1773256424.jpg": {
+      "sha256": "8d2cc9aa299e32de",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0189 MOTION T-SHIRT ROYAL BLUE_1773256427.jpg": {
+      "sha256": "12dbd5b269a4fb7a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0190 MOTION T-SHIRT DK GREY_1773256429.jpg": {
+      "sha256": "58d091b02e79c41f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0191 MOTION T-SHIRT NAVY_1773256432.jpg": {
+      "sha256": "a300a1c07a8743c4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0192  club-25-tech-t-shirt-men-red-white_1773256435.webp": {
+      "sha256": "4a5dcd467dd64f6b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0193 club-25-tech-t-shirt-men-white_1773256439.webp": {
+      "sha256": "077451cdf3e0cead",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0194 PLAY TECH T-SHIRT MEN 811085 grey 1_1773256565.jpg": {
+      "sha256": "0633e94019a91491",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0195 PLAY  Tech T-Shirt Men GI (1)_1773256569.jpg": {
+      "sha256": "136bfe346bbf3473",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0196 PLAY  Tech T-Shirt Men WG_1773256583.png": {
+      "sha256": "b3d1a358db7cbd1d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0197 SLICE T-SHIRT MEN 811215 WHBK OK_1773322070.jpg": {
+      "sha256": "92df3bbf280b4c69",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0198 SLICE T-SHIRT MEN LL_1773256628.png": {
+      "sha256": "17e0f431c2a1c69c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0199 TOPSPIN T-Shirt Men XVNV_1773256731.png": {
+      "sha256": "1b9247cde69db97a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0200 TOPSPIN T-Shirt Men IGXP_1773256733.jpg": {
+      "sha256": "406e9185b67e4315",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0201 CLUB 25 Tech Polo Shirt Men WH_1773256736.png": {
+      "sha256": "a27d10de596feaf6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0202 CLUB 25 Tech Polo Shirt Men NV_1773256739.jpg": {
+      "sha256": "d00449ab195a97be",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0203 SLICE POLO SHIRT MEN WH_1773256743.png": {
+      "sha256": "1388cb108c80adc3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0204 SLICE POLO SHIRT MEN 811205 BK_1773256746.jpg": {
+      "sha256": "cc6185dbcb243725",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0205 CLUB Original T-Shirt Men RB_1773256749.jpg": {
+      "sha256": "1561fabe23c0178c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0206 CLUB Original T-Shirt Men BK_1773256752.jpg": {
+      "sha256": "f49c8f3e7641bd96",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0207 CLUB Original T-Shirt Men WH_1773256755.jpg": {
+      "sha256": "57acbd648aa4d25b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0208 CLUB Original T-Shirt Men RD_1773256758.jpg": {
+      "sha256": "cab6692081b0cfb4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0209 CARL T-Shirt Men WH_1773256761.jpg": {
+      "sha256": "8bbde28578723bb6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0210 CARL T-Shirt Men bk_1773256810.webp": {
+      "sha256": "caf00373502ea592",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0211 CARL T-Shirt Men GM_1773256765.jpg": {
+      "sha256": "cda0e9c74111e01a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0213 CLUB ORIGINAL HOODIE FZ MEN GM_1773256816.jpg": {
+      "sha256": "4cda478525c925ba",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/062-0214 CLUB ORIGINAL HOODIE MEN NV_1773256818.jpg": {
+      "sha256": "744b18a3c84cea80",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/811459_club_fynn_hoodie_fz_men_gm_2-6cc7535b96929c2a5517691075370086-1024-1024.webp": {
+      "sha256": "2e2bfa0018147909",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/811725_club-25-tech-t-shirt-men_rdwh_2-nube-fe1ff3ce9db9c58f3a17691045736852-1024-1024.webp": {
+      "sha256": "849fd19caff492a8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/811725_club-25-tech-t-shirt-men_wh_2-nube-f9e3c24b36f00f9ddf17691045734529-1024-1024.webp": {
+      "sha256": "a956ba320e0ae035",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/CARL T-SHIRT MEN 811395 NAVY OK_1773327701.jpg": {
+      "sha256": "8da61d947243ea02",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-bk-1-nube-4fd6e5e2ca4e27786417734293350560-1024-1024.webp": {
+      "sha256": "c5a1f3081fde2446",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-navy-1-nube-ed774938b5bb48670c17734293350195-1024-1024.webp": {
+      "sha256": "8e5af2099182d55a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/carl-t-shirt-men-811395-wh-1-dcc05522781036e34b17691073989204-1024-1024.webp": {
+      "sha256": "3331b07385a1d50b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-19e8474e18ded1baec17691062532115-1024-1024.webp": {
+      "sha256": "af3f609acbd94bf2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-b-3c56890bf98967670217691062533565-1024-1024.webp": {
+      "sha256": "a3833bfaffa25cae",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-nv-1-6c88e1d87127d8980917691062532245-1024-1024.webp": {
+      "sha256": "38bf942666fc67e7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-25-tech-polo-shirt-men-811715-wh-1-9f41da4f5b8b471c0617691062532924-1024-1024.webp": {
+      "sha256": "910dcf4dad4e30e2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-25-tech-t-shirt-men-811725-rdwh-4-dde45ccd0fd5581e7d17691045733714-1024-1024.webp": {
+      "sha256": "8ca4130f05656407",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-original-hoodie-fz-men-811815-gm-4-397bd3a8e29dda62ba17691075369485-1024-1024.webp": {
+      "sha256": "2297cff3ec47dde0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-original-hoodie-men-811825-nv-1-ok-1acbc484e19d96e58517691075829644-1024-1024.webp": {
+      "sha256": "56d90a2744cb8db9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-blk-1-65637a87d6ec84eee817691065544124-1024-1024.webp": {
+      "sha256": "5fd09e31add2b88e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/club-original-t-shirt-men-811855-rd-2-d6a446419fc50fab4f17691065542206-1024-1024.webp": {
+      "sha256": "d39a47f74f4658c4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/indumetnaria-remera-head-carl-3649bfffd9de316ab617805610140079-1024-1024.webp": {
+      "sha256": "68f2a1649ea843e5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-gi-1-064bac975cf4015ff617691046779525-1024-1024.webp": {
+      "sha256": "fbd159e8a41bd4d8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-grey-1-ff05edd8fdaad7159117691055707986-1024-1024.webp": {
+      "sha256": "ee578ddac26ccfcf",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/play-tech-t-shirt-men-811085-wg-1-188cf493019bad65f817691046782612-1024-1024.webp": {
+      "sha256": "f18fab877da6376a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/short-club-e3a32755742fc9249f17805661126525-1024-1024.webp": {
+      "sha256": "0f29ddb2c28f948f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/short-head-lplay-17dda63ddc63aabb9a17805659705459-1024-1024.webp": {
+      "sha256": "49788dddd255ed9c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/short-motion-914cd861337992507c17805658059366-1024-1024.webp": {
+      "sha256": "b4091d36a753e28f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-4d5eb9ef2795a66f7c17691063571003-1024-1024.webp": {
+      "sha256": "ef3b4de3942dc6f2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-bk-1-4773dee6d7f9ce9cc017691063574514-1024-1024.webp": {
+      "sha256": "44c0da7fcdc1b8bb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/slice-polo-shirt-men-811205-wh-1-c53eb2e58f3c9f8f9117691063569941-1024-1024.webp": {
+      "sha256": "7829d1131aa7173c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/slice-t-shirt-men-811215-ll-1-c4f94d9e3426d21d6a17691058232450-1024-1024.webp": {
+      "sha256": "4a5a6b452425e718",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/slice-t-shirt-men-811215-whbk-1-ok-1b508aed702934364d17691058235681-1024-1024.webp": {
+      "sha256": "235b853ac959237e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/topspin-t-shirt-men-811235-igxp-1-cfad90d812b3f1b0ec17691060057730-1024-1024.webp": {
+      "sha256": "087f325f13488fe4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/tshir-top-spin-36fc3efba0e2974bb917805619124383-1024-1024.webp": {
+      "sha256": "0a210add682918fb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/tshirt-head-motion-35b21c416f1afc3ae717805654532195-1024-1024.webp": {
+      "sha256": "94b54c98014b82ea",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/indumentaria-hombre/tshirt-head-slice-3ffe6efb846d5631ee17805653104274-1024-1024.webp": {
+      "sha256": "c4e846384e870a44",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/221013 Speed Pro 2023_3-1TIENDA_1776184687.jpg": {
+      "sha256": "fcbe810742f66d0c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/221013 Speed Pro 2023_TIENDA_1776184687.jpg": {
+      "sha256": "5a3595742e12efd2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/221013_Speed_Pro_2023 TIENDA_1776184687.jpg": {
+      "sha256": "8906e9802f988e30",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/228162-Gravitiy-Pro-2022-c.jpg": {
+      "sha256": "e9aadb7d1ee7ade3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/228162-Gravity-Pro-2022-a.jpg": {
+      "sha256": "5588383aebdbe332",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/228162-Gravity-Pro-2022-b.jpg": {
+      "sha256": "ba6ae7ec92c91634",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/D_NQ_NP_2X_789689-MLA96058403379_102025-F.webp": {
+      "sha256": "7bc1fae999bc46a6",
+      "width": 606,
+      "height": 1067
+    },
+    "assets/products/paletas/D_NQ_NP_2X_838157-MLA99533125854_122025-F.webp": {
+      "sha256": "8a7a9ae96b9b1f63",
+      "width": 621,
+      "height": 1198
+    },
+    "assets/products/paletas/extreme-pro-2025 (1).webp": {
+      "sha256": "53b69405f27a2c6b",
+      "width": 1820,
+      "height": 2428
+    },
+    "assets/products/paletas/extreme-pro-2025.webp": {
+      "sha256": "9cfcdc823977310b",
+      "width": 1820,
+      "height": 2428
+    },
+    "assets/products/paletas/one ultralight black a.jpg": {
+      "sha256": "f20ae15aae985080",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/one ultralight black b.jpg": {
+      "sha256": "a65a2c07627e5161",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/one ultralight black c.jpg": {
+      "sha256": "ee18a55fc387aac5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/pala-head-extreme-one-2025-1600x1600.webp": {
+      "sha256": "d56e1dd57b0ea777",
+      "width": 1600,
+      "height": 1600
+    },
+    "assets/products/paletas/pala-head-extreme-one-2025-es-1-1600x1600.webp": {
+      "sha256": "fa4ed0b103550f48",
+      "width": 1600,
+      "height": 1600
+    },
+    "assets/products/paletas/RADICAL MOTION 2024 a.jpg": {
+      "sha256": "f979a0a269a83574",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/RADICAL MOTION 2024 b.jpg": {
+      "sha256": "fc46348f0aec64c7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/RADICAL MOTION 2024 c.jpg": {
+      "sha256": "c7f09e096f05e73e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/RADICAL PRO 2024 a.jpg": {
+      "sha256": "49fef690b2079fe3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/RADICAL PRO 2024 b.jpg": {
+      "sha256": "80a60a601df093c8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/RADICAL PRO 2024 c.jpg": {
+      "sha256": "90e9070c9081aad4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2025 GRBK - 226145 b_1776182093.jpg": {
+      "sha256": "9f287673c6a7b8c0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2025 GRBK - 226145 d_1776182093.jpg": {
+      "sha256": "5b95d8c66690edce",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2025 GRBK - 226145_1776182093.jpg": {
+      "sha256": "324826f500b1e370",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226106 a_1781895228.jpg": {
+      "sha256": "f7090859d3442e05",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226106 b_1781895228.jpg": {
+      "sha256": "5f057e162575c1fc",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226106_1781895228.jpg": {
+      "sha256": "55585a91a2a8c374",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226116 a_1781895214.jpg": {
+      "sha256": "cd6b73f2b9c1085e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226116 b_1781895214.jpg": {
+      "sha256": "72fc420989e785ac",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/VIBE 2026 - 226116_1781895214.jpg": {
+      "sha256": "7faec55199737f50",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pelotas/239606_1774656460.jpg": {
+      "sha256": "f0f08b94ace174ab",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pelotas/head pro_1782330042.jpg": {
+      "sha256": "61644426a42c894b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pelotas/padel-pro+-a.webp": {
+      "sha256": "1360fc05da5181a8",
+      "width": 1196,
+      "height": 670
+    },
+    "assets/products/pelotas/padel-pro+-b.webp": {
+      "sha256": "5a6f3d53269b0540",
+      "width": 646,
+      "height": 1179
+    },
+    "assets/products/pelotas/Team-a.webp": {
+      "sha256": "f0314a2eb92a76ac",
+      "width": 1058,
+      "height": 1078
+    },
+    "assets/products/pelotas/Team-b.webp": {
+      "sha256": "c332b089052a2bd8",
+      "width": 314,
+      "height": 910
+    },
+    "assets/products/pelotas/Team-c.webp": {
+      "sha256": "b91bcd7c82bd4cb5",
+      "width": 1200,
+      "height": 879
+    },
+    "assets/products/pop/152694_1774610624.jpg": {
+      "sha256": "835df0a152833488",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/196472_1781029313.jpg": {
+      "sha256": "c4f35f6d90c1a84d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/198454_1774610813.jpg": {
+      "sha256": "b0d8e44e7b782209",
+      "width": 1024,
+      "height": 170
+    },
+    "assets/products/pop/237916_1774610515.jpg": {
+      "sha256": "bb9919f6cfb038af",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287224 HEAD PEN POT_1778606304.jpg": {
+      "sha256": "5d05559b58e12fbe",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287500 HEAD NOTE PAD A5_1778599016.jpg": {
+      "sha256": "7d7a240408cce221",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287520 DOCUMENT FILO_1778605264.jpg": {
+      "sha256": "3ee8eb14764e20cf",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287568 HEAD Ball Pen_1778598876.jpg": {
+      "sha256": "8f390b48220f577e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287582 head ball tube_1778592280.jpg": {
+      "sha256": "c501507b0f254d6b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287598 HEAD PENCIL_1778605897.jpg": {
+      "sha256": "85ae5fae38b8afdd",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287740 CORPORATE FLOORMAT_1778606609.jpg": {
+      "sha256": "58749811372a7c6e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287748 HEAD CUBE_1778606419.jpg": {
+      "sha256": "0752961fe638f3f1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/287800 UMBRELLA SMALL_1778606925.jpg": {
+      "sha256": "f5a6c15cdbc34c80",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/289799_A.png": {
+      "sha256": "768682737d63c340",
+      "width": 400,
+      "height": 400
+    },
+    "assets/products/pop/299857_1774610591.jpg": {
+      "sha256": "f58b0ca5560dea08",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/Collapsible racquetholder_1778607116.jpg": {
+      "sha256": "5ecf280fd1459568",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/gancho_1778607134.jpg": {
+      "sha256": "042fbde47dcfe621",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/pop/padel net_1778607317.jpg": {
+      "sha256": "34da99ff9d8d047b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/327791_1773839444.jpg": {
+      "sha256": "abd12952958135cc",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/D_NQ_NP_2X_902365-MLA96290010386_102025-F_1773839482.webp": {
+      "sha256": "1b80e237bd4e235c",
+      "width": 1024,
+      "height": 1087
+    },
+    "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_2_1776448469.jpg": {
+      "sha256": "53a9b7d456cca2be",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_3_1776448469.jpg": {
+      "sha256": "3d9a4d4d0dbae11e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/Presentation-210044_Radical_135_SB_2024_4_1776448469.jpg": {
+      "sha256": "9dbeb033fafa2714",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 b tienda_1776447381.jpg": {
+      "sha256": "b671a4c10cd62947",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 c tienda_1776447381.jpg": {
+      "sha256": "9ec0825ee9710fe9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 120 SB 2024 - 210034 tienda_1776447381.jpg": {
+      "sha256": "c388dec4e46ffc5d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 b tienda_1776449126.jpg": {
+      "sha256": "e143b2dc59b2dd40",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 c tienda_1776449126.jpg": {
+      "sha256": "f62d9ec502fd2e38",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-squash/RADICAL 135 X 2024 - 210014 tienda_1776449126.jpg": {
+      "sha256": "a9fea1bcc4c82dad",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_1 nube_1776187909.jpg": {
+      "sha256": "720698f847c89553",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/230134_Boom_TEAM_2024_2 nube_1776187909.jpg": {
+      "sha256": "bfdebb484fb639e3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025 b_1776189626.jpg": {
+      "sha256": "76fd2c5527ee9a0f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/231605 ARTHUR ASHE COMPETITION 2025_1776189626.jpg": {
+      "sha256": "2ccac5dd79436014",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg": {
+      "sha256": "e2429efd3db1a71e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/236123_Prestige_MP_2023_10 nube_1776442320.jpg": {
+      "sha256": "f0366e21ec3ab45a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/236123_Prestige_MP_2023_4 nube_1776442318.jpg": {
+      "sha256": "536e5243cdc2f918",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/265506_1773835504.jpg": {
+      "sha256": "52aea8a2617ddb5d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/323578_1781105225.jpeg": {
+      "sha256": "7061621b75270ff0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/323583_1781105225.jpeg": {
+      "sha256": "4692acee7905a2ef",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/372051_1781105225.jpeg": {
+      "sha256": "bcdbe29a86074e57",
+      "width": 960,
+      "height": 1280
+    },
+    "assets/products/raqueta-tenis/372056_1781105225.jpeg": {
+      "sha256": "dc84ced56e5d0df4",
+      "width": 960,
+      "height": 1280
+    },
+    "assets/products/raqueta-tenis/372059_1781105225.jpeg": {
+      "sha256": "42816b8a8947736e",
+      "width": 960,
+      "height": 1280
+    },
+    "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 c_1776188235.jpg": {
+      "sha256": "d496c90dd0085925",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 d_1776188235.jpg": {
+      "sha256": "7f8febd051dc9c10",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 f_1776188235.jpg": {
+      "sha256": "2b6874a62bcc4afe",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 g_1776188235.jpg": {
+      "sha256": "2f32365b0ddb16e4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/BOOM MP 2024_1776188236.jpg": {
+      "sha256": "fc2b384aebfc39aa",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 a tienda_1776187950.jpg": {
+      "sha256": "d0e28eb6001d45ad",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 tienda_1776187950.jpg": {
+      "sha256": "6dcefc5fbe9b03e7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776187934.jpg": {
+      "sha256": "fd9839f611c951c2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776190127.jpg": {
+      "sha256": "fd9839f611c951c2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776187934.jpg": {
+      "sha256": "46f2a8da20b49488",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776190127.jpg": {
+      "sha256": "46f2a8da20b49488",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG EXTREME XCEED - 232115_1776437310.jpg": {
+      "sha256": "eca6373bf48f8ee4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236 a_1776440008.jpg": {
+      "sha256": "8b0e04206c4990ba",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236_1776440008.jpg": {
+      "sha256": "9f8c87d1cbd27f0c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 1_1776188605.jpg": {
+      "sha256": "4da4a9278c5c9dba",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 2_1776188605.jpg": {
+      "sha256": "99d10ddf04d763f5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 4_1776188605.jpg": {
+      "sha256": "1591cc16cb614e90",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 5_1776188605.jpg": {
+      "sha256": "98daaaf8e9428854",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 7_1776188606.jpg": {
+      "sha256": "af2d212c14ce88c1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg": {
+      "sha256": "478ff8d589375980",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 b_1776437201.jpg": {
+      "sha256": "c3127c2689eb7aa0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg": {
+      "sha256": "b935a8b86cc83d6a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg": {
+      "sha256": "c156318c9a9a7a15",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/ski/head_100943_black_1.webp": {
+      "sha256": "e16089f7cb21bda2",
+      "width": 1200,
+      "height": 1200
+    },
+    "assets/products/ski/jrs-4-5-gw-ca (2).webp": {
+      "sha256": "1c2575ba82d8bd10",
+      "width": 1820,
+      "height": 2428
+    },
+    "assets/products/ski/jrs-4-5-gw-ca.webp": {
+      "sha256": "93d73fa86af70e88",
+      "width": 1820,
+      "height": 2428
+    }
+  }
+}

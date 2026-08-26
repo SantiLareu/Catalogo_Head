@@ -34,11 +34,11 @@ function ThumbnailRail({ images, imageIndex, name, onSelect }) {
           type="button"
           aria-label={`Ver imagen ${index + 1} de ${name}`}
           aria-pressed={index === imageIndex}
-          key={`${image}-${index}`}
+          key={`${image.original}-${index}`}
           onClick={() => onSelect(index)}
           ref={index === imageIndex ? activeRef : null}
         >
-          <img src={image} alt="" loading="lazy" decoding="async" />
+          <img src={image.thumbnail} alt="" loading="lazy" decoding="async" />
         </button>
       ))}
     </div>

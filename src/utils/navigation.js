@@ -1,3 +1,26 @@
+export function prioritizeCatalogTargetImages(
+  targetId,
+  documentTarget = document
+) {
+  const section = documentTarget.getElementById(targetId);
+  if (!section) return 0;
+
+  const coverImage = section.querySelector('.category-editorial-cover-media img');
+  if (!coverImage) return 0;
+
+  const firstProductImage = section.querySelector(
+    '.list .product:first-child .gallery-image--current'
+  );
+  const priorityImages = [coverImage, firstProductImage].filter(Boolean);
+
+  priorityImages.forEach((image) => {
+    image.loading = 'eager';
+    image.fetchPriority = 'high';
+  });
+
+  return priorityImages.length;
+}
+
 export function normalizeHash(hash) {
   if (!hash) {
     return '';
@@ -50,6 +73,7 @@ export function scrollToHashTarget(hash, updateHash = true, behavior = 'smooth')
     window.history.pushState(null, '', `#${targetId}`);
   }
 
+  prioritizeCatalogTargetImages(targetId);
   target.scrollIntoView({ behavior });
   return true;
 }

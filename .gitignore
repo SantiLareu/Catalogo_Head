@@ -1,7 +1,9 @@
 node_modules/
 generated/*.tmp
 generated/.*.tmp
+/generated/.product-image-derivatives-cache.json
 dist/
+/public/product-images/
 .signing/
 *.private.pem
 *-private.pem

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate-product-images": "node scripts/generate-product-images.mjs",
     "import-products": "node scripts/import-products.mjs catalog/products.xlsx",
     "check-products": "node scripts/import-products.mjs --check catalog/products.xlsx",
     "compare-catalog": "node scripts/compare-catalog.mjs",
@@ -18,8 +19,8 @@
     "integrity:manifest": "node scripts/generate-integrity-manifest.mjs",
     "integrity:sign": "node scripts/sign-integrity-manifest.mjs",
     "integrity:verify": "node scripts/verify-integrity.mjs",
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run generate-product-images && vite",
+    "build": "npm run generate-product-images && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.4",
     "exceljs": "^4.4.0",
+    "sharp": "^0.35.3",
     "vite": "^8.1.5"
   }
 }

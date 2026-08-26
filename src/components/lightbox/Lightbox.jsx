@@ -215,7 +215,7 @@ function Lightbox({ imageIndex, images, name, onClose, onNext, onPrevious, origi
           <img
             decoding="async"
             className="lightbox-image"
-            src={images[imageIndex]}
+            src={images[imageIndex].original}
             alt={`${name} imagen ${imageIndex + 1}`}
             draggable="false"
             ref={imageRef}

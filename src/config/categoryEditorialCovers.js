@@ -4,7 +4,7 @@ export const categoryEditorialCovers = {
   'paletas-padel': {
     title: 'Paletas',
     subtitle: null,
-    image: 'editorial/portada-paletas.png',
+    image: 'editorial/portada-paletas.webp',
     imageWidth: 1828,
     imageHeight: 860,
     imageAlt: '',
@@ -31,7 +31,7 @@ export const categoryEditorialCovers = {
   'indumentaria-dama': {
     title: 'Indumentaria Dama',
     subtitle: null,
-    image: 'editorial/Screenshot 2026-08-05 110753.png',
+    image: 'editorial/Screenshot 2026-08-05 110753.webp',
     imageWidth: 1007,
     imageHeight: 862,
     imageAlt: '',
@@ -47,7 +47,7 @@ export const categoryEditorialCovers = {
   'raquetas-tenis': {
     title: 'Raquetas Tenis',
     subtitle: null,
-    image: 'editorial/portada-tenis.png',
+    image: 'editorial/portada-tenis.webp',
     imageWidth: 1679,
     imageHeight: 937,
     imageAlt: '',
@@ -56,7 +56,7 @@ export const categoryEditorialCovers = {
   'bolsos-mochilas': {
     title: 'Bolsos',
     subtitle: null,
-    image: 'editorial/portada-bolsos.png',
+    image: 'editorial/portada-bolsos.webp',
     imageWidth: 1672,
     imageHeight: 941,
     imageAlt: '',
@@ -65,7 +65,7 @@ export const categoryEditorialCovers = {
   pelotas: {
     title: 'Pelotas',
     subtitle: null,
-    image: 'editorial/portada-pelotas.png',
+    image: 'editorial/portada-pelotas.webp',
     imageWidth: 1774,
     imageHeight: 887,
     imageAlt: '',
@@ -102,7 +102,7 @@ export const categoryEditorialCovers = {
   'accesorios-medias': {
     title: 'Accesorios',
     subtitle: null,
-    image: 'editorial/portada-accesorios.png',
+    image: 'editorial/portada-accesorios.webp',
     imageWidth: 1959,
     imageHeight: 803,
     imageAlt: '',
