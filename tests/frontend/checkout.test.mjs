@@ -22,7 +22,8 @@ import {
 const companyConfig = {
   companyName: 'RealStep',
   catalogName: 'HEAD Calzado',
-  orderEmail: 'owner@example.com'
+  orderEmail: 'owner@example.com',
+  orderEmailBcc: 'owner-bcc@example.com'
 };
 const emailConfig = {
   serviceId: 'service',
@@ -119,6 +120,7 @@ test('payload del propietario coincide con el contrato clásico', () => {
     companyConfig
   });
   assert.equal(params.to_email, 'owner@example.com');
+  assert.equal(params.bcc_email, 'owner-bcc@example.com');
   assert.equal(params.reply_to, 'ana@example.com');
   assert.equal(params.subject, 'Nuevo pedido HEAD Calzado - Comercio & Cía.');
   assert.equal(params.customer_name, 'Ana <Cliente>');
@@ -132,6 +134,7 @@ test('payload del cliente coincide con el contrato clásico', () => {
     companyConfig
   });
   assert.equal(params.to_email, 'ana@example.com');
+  assert.equal(Object.hasOwn(params, 'bcc_email'), false);
   assert.equal(params.reply_to, 'owner@example.com');
   assert.equal(params.subject, 'Recibimos tu pedido HEAD Calzado - RealStep');
   assert.equal(params.customer_name, 'Ana <Cliente>');

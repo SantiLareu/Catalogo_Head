@@ -370,8 +370,8 @@
         },
         {
           "size": "9",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
@@ -519,7 +519,7 @@
       "code": "PENDIENTE",
       "price": 54000,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "size",
       "order": 3,
       "images": [
@@ -612,8 +612,8 @@
         },
         {
           "size": "11",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 4
         },
         {
@@ -664,8 +664,8 @@
         },
         {
           "size": "10",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 3
         },
         {
@@ -848,8 +848,8 @@
         },
         {
           "size": "10",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 5
         }
       ],
@@ -882,8 +882,8 @@
         },
         {
           "size": "6",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 1
         },
         {
@@ -906,8 +906,8 @@
         },
         {
           "size": "10",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 5
         }
       ],
@@ -1025,7 +1025,7 @@
       "code": "PENDIENTE",
       "price": 200050,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 13,
       "images": [
@@ -1067,7 +1067,7 @@
       "code": "PENDIENTE",
       "price": 323790,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 15,
       "images": [
@@ -1237,8 +1237,8 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -1288,8 +1288,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1321,8 +1321,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -1549,8 +1549,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1617,8 +1617,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1763,8 +1763,8 @@
             },
             {
               "size": "XL",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -1831,8 +1831,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1932,8 +1932,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2196,14 +2196,14 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2306,14 +2306,14 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2374,8 +2374,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2485,8 +2485,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2518,8 +2518,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2611,8 +2611,8 @@
           "sizes": [
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -2629,8 +2629,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3066,47 +3066,6 @@
               "order": 3
             }
           ]
-        },
-        {
-          "id": "black",
-          "code": "pendiente",
-          "colorName": "Black",
-          "colorHex": "#000000",
-          "price": null,
-          "thumbnail": null,
-          "order": 2,
-          "images": [
-            "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-fe61e62306029872c217690909401995-1024-1024.webp",
-            "assets/products/indumentaria-dama/w-performance-skort-women-814035-bk-1-2e6263b813c4a0a11817690909398738-1024-1024.webp",
-            "assets/products/indumentaria-dama/w-performance-skort-women-814035-b-4a48305d028de3a9c717690909401621-1024-1024.webp",
-            "assets/products/indumentaria-dama/w-performance-skort-women-814035-c-b56d19526f4ab6d27217690909402305-1024-1024.webp"
-          ],
-          "sizes": [
-            {
-              "size": "XS",
-              "stock": 0,
-              "inStock": false,
-              "order": 0
-            },
-            {
-              "size": "S",
-              "stock": 0,
-              "inStock": false,
-              "order": 1
-            },
-            {
-              "size": "M",
-              "stock": 0,
-              "inStock": false,
-              "order": 2
-            },
-            {
-              "size": "L",
-              "stock": 0,
-              "inStock": false,
-              "order": 3
-            }
-          ]
         }
       ]
     },
@@ -3155,8 +3114,8 @@
           "sizes": [
             {
               "size": "XS",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 0
             },
             {
@@ -3213,8 +3172,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3400,8 +3359,8 @@
           "sizes": [
             {
               "size": "XS",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 0
             },
             {
@@ -3516,8 +3475,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3613,8 +3572,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3653,8 +3612,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3745,14 +3704,14 @@
             },
             {
               "size": "M",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3842,14 +3801,14 @@
             },
             {
               "size": "M",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3876,20 +3835,20 @@
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
               "size": "M",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3928,8 +3887,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -3986,8 +3945,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -4413,8 +4372,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 3
             }
           ]
@@ -4684,7 +4643,7 @@
       "code": null,
       "price": 4605,
       "packDe": 6,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "size",
       "order": 51,
       "images": [],
@@ -5272,7 +5231,7 @@
       "code": null,
       "price": 9890,
       "packDe": 12,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 61,
       "images": [],
@@ -6136,19 +6095,6 @@
           "sizes": []
         },
         {
-          "id": "BLACK",
-          "code": "pendiente",
-          "colorName": "BLACK",
-          "colorHex": "#090909",
-          "price": null,
-          "thumbnail": null,
-          "order": 1,
-          "images": [
-            "assets/products/accesorios/PRO PLAYER CAP - 287115 BLK_1776966355.jpg"
-          ],
-          "sizes": []
-        },
-        {
           "id": "NAVY",
           "code": "pendiente",
           "colorName": "NAVY",
@@ -6192,19 +6138,6 @@
       "sizes": [],
       "specifications": null,
       "variants": [
-        {
-          "id": "BLACK",
-          "code": "pendiente",
-          "colorName": "BLACK",
-          "colorHex": "#090909",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/accesorios/PERFORMANCE CAP - 287104 BK_1776966335.jpg"
-          ],
-          "sizes": []
-        },
         {
           "id": "WHITE",
           "code": "pendiente",

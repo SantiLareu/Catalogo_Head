@@ -2,6 +2,7 @@ export const companyConfig = {
   companyName: 'RealStep',
   catalogName: 'HEAD Mayorista',
   orderEmail: 'martin@marquevich.com',
+  orderEmailBcc: 'santlareu71@gmail.com',
   storageKey: 'realstep-head-cart',
   contact: {
     instagramUrl: 'https://www.instagram.com/realstep.oficial/',

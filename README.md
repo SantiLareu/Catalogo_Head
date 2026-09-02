@@ -181,6 +181,97 @@ npm run compare-catalog
 escribe. `compare-catalog` compara el JSON generado con el baseline; devuelve
 código 1 cuando hay diferencias comerciales, lo que exige revisión.
 
+### Paso a paso cada vez que modifico el Excel
+
+Usar este procedimiento después de cambiar stock, precios, productos,
+variantes, imágenes, talles, categorías o cualquier otro dato comercial en
+`catalog/products.xlsx`.
+
+1. Guardar los cambios en `catalog/products.xlsx`. Si se agregaron imágenes,
+   copiar los originales dentro de `assets/products/` y escribir en la hoja
+   `Imagenes` su ruta exacta, respetando mayúsculas, espacios y extensión. El
+   Excel nunca debe contener rutas de thumbnails o variantes responsive.
+2. Validar el workbook antes de generar archivos:
+
+   ```powershell
+   npm run check-products
+   ```
+
+   Si el Excel cambió, es normal que en esta primera ejecución se informe que
+   el catálogo generado está desactualizado. Corregir cualquier otro error de
+   estructura, relación, duplicado o ruta inexistente antes de continuar.
+3. Regenerar el catálogo y las imágenes derivadas:
+
+   ```powershell
+   npm run import-products
+   ```
+
+   Este comando actualiza `generated/catalog.json`,
+   `generated/catalog-version.json`, el manifiesto de imágenes y los WebP
+   responsive necesarios. No editar manualmente esos artefactos.
+4. Comprobar que la generación quedó sincronizada:
+
+   ```powershell
+   npm run check-products
+   ```
+
+5. Comparar el resultado con el último catálogo comercial aprobado:
+
+   ```powershell
+   npm run compare-catalog
+   git status
+   git diff --stat
+   git diff
+   ```
+
+   `compare-catalog` devuelve código 1 cuando encuentra diferencias. Eso es
+   esperable si el cambio fue intencional, pero cada alta, baja, precio, stock,
+   variante, talle, categoría e imagen debe revisarse antes de aprobarlo.
+6. Sólo después de aprobar conscientemente todas las diferencias comerciales,
+   actualizar el baseline y comprobar nuevamente la comparación:
+
+   ```powershell
+   npm run update-catalog-baseline -- --confirm
+   npm run compare-catalog
+   ```
+
+   No editar `tests/fixtures/catalog-baseline.json` a mano ni actualizarlo
+   solamente para hacer pasar las pruebas.
+7. Ejecutar las pruebas y construir la aplicación:
+
+   ```powershell
+   npm run test-importer
+   npm run test-react
+   npm run test-integrity
+   npm run test:build
+   npm run build
+   npm run verify:build
+   git diff --check
+   ```
+
+8. Probar el resultado de producción:
+
+   ```powershell
+   npm run preview
+   ```
+
+   Abrir la URL indicada por la terminal y revisar productos, búsqueda,
+   categorías, precios, stock, imágenes principales, thumbnails, variantes,
+   talles y carrito. Revisar también que la consola del navegador no tenga
+   errores. Detener el servidor con `Ctrl+C`.
+9. Antes de preparar un commit, revisar exactamente qué se incluirá:
+
+   ```powershell
+   git status
+   git diff --stat
+   git diff
+   git diff --cached
+   ```
+
+   Seleccionar archivos explícitamente; no usar `git add .`. No incluir
+   `dist/`, `node_modules/`, secretos ni archivos temporales. El commit, push y
+   deploy son pasos separados y sólo deben realizarse después de esta revisión.
+
 ## 5. Cambio comercial vs. cambio de aplicación
 
 ### `catalog-version.json`

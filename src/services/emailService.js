@@ -177,6 +177,7 @@ export function buildOwnerParams({
 }) {
   return {
     to_email: companyConfig.orderEmail,
+    bcc_email: companyConfig.orderEmailBcc,
     reply_to: customer.email.trim(),
     subject: `Nuevo pedido ${companyConfig.catalogName} - ${customer.company.trim()}`,
     email_html: buildEmailHtml({ customer, lines, recipient: 'owner', companyConfig }),
