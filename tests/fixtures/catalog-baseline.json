@@ -364,8 +364,8 @@
         },
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
@@ -577,7 +577,7 @@
       "code": "PENDIENTE",
       "price": 54000,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "size",
       "order": 4,
       "images": [
@@ -588,14 +588,14 @@
       "sizes": [
         {
           "size": "7",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 0
         },
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
@@ -612,14 +612,14 @@
         },
         {
           "size": "11",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
           "size": "12",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         }
       ],
@@ -658,8 +658,8 @@
         },
         {
           "size": "9",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
@@ -807,7 +807,7 @@
       "code": "PENDIENTE",
       "price": 52000,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "size",
       "order": 8,
       "images": [
@@ -830,26 +830,26 @@
         },
         {
           "size": "7",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 3
         },
         {
           "size": "9",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         }
       ],
@@ -882,14 +882,14 @@
         },
         {
           "size": "6",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 1
         },
         {
           "size": "7",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
@@ -1180,7 +1180,7 @@
       "code": "PENDIENTE",
       "price": 257520,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 20,
       "images": [
@@ -1763,8 +1763,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2077,8 +2077,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2184,8 +2184,8 @@
           "sizes": [
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -2196,8 +2196,8 @@
             },
             {
               "size": "L",
-              "stock": 0,
-              "inStock": false,
+              "stock": 1,
+              "inStock": true,
               "order": 2
             },
             {
@@ -2271,8 +2271,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2541,7 +2541,7 @@
       "code": null,
       "price": 24030,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "size",
       "order": 31,
       "images": [],
@@ -3114,8 +3114,8 @@
           "sizes": [
             {
               "size": "XS",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -3172,8 +3172,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3365,8 +3365,8 @@
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -3698,20 +3698,20 @@
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3881,14 +3881,14 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3945,8 +3945,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -4042,8 +4042,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -4360,8 +4360,8 @@
             },
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -4372,8 +4372,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -4950,8 +4950,8 @@
             },
             {
               "size": "39-43",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             }
           ]
@@ -5020,8 +5020,8 @@
             },
             {
               "size": "39-43",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             }
           ]
@@ -5200,7 +5200,7 @@
       "code": null,
       "price": 8080,
       "packDe": 12,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 60,
       "images": [],
@@ -5231,7 +5231,7 @@
       "code": null,
       "price": 9890,
       "packDe": 12,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 61,
       "images": [],
@@ -5262,7 +5262,7 @@
       "code": null,
       "price": 10885,
       "packDe": 12,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 62,
       "images": [],
@@ -5530,26 +5530,13 @@
           "sizes": []
         },
         {
-          "id": "black",
-          "code": "pendiente",
-          "colorName": "Black",
-          "colorHex": "#090909",
-          "price": null,
-          "thumbnail": null,
-          "order": 1,
-          "images": [
-            "assets/products/accesorios/281675 (1) nube_1776967073.jpg"
-          ],
-          "sizes": []
-        },
-        {
           "id": "white",
           "code": "pendiente",
           "colorName": "White",
           "colorHex": "#ffff",
           "price": null,
           "thumbnail": null,
-          "order": 2,
+          "order": 1,
           "images": [
             "assets/products/accesorios/281688 nube_1776967083.jpg"
           ],
@@ -5562,7 +5549,7 @@
           "colorHex": "#6C757D",
           "price": null,
           "thumbnail": null,
-          "order": 3,
+          "order": 2,
           "images": [
             "assets/products/accesorios/281676 nube_1776967086.jpg"
           ],
@@ -5610,7 +5597,7 @@
       "code": null,
       "price": 10575,
       "packDe": 12,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 70,
       "images": [],
