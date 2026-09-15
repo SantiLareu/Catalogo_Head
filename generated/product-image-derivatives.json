@@ -181,11 +181,6 @@
       "width": 1024,
       "height": 1024
     },
-    "assets/products/accesorios/PRO PLAYER CAP - 287115 AQ_1776966364.jpg": {
-      "sha256": "0eef27a5a3e1d224",
-      "width": 1024,
-      "height": 1024
-    },
     "assets/products/accesorios/PRO PLAYER CAP - 287115 NV_1776966371.jpg": {
       "sha256": "6c1be5bc253044ae",
       "width": 1024,
@@ -488,16 +483,6 @@
     },
     "assets/products/bolso-mochila/team-padel-bag-l-bkcc_1776450608.jpg": {
       "sha256": "d4f5f0875a89f612",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/bolso-mochila/team-padel-bag-l-blbk (1)_1776450736.jpg": {
-      "sha256": "d0d57266a7041243",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/bolso-mochila/team-padel-bag-l-blbk_1776450736.jpg": {
-      "sha256": "93f572a6eb787f8d",
       "width": 1024,
       "height": 1024
     },
@@ -1866,6 +1851,21 @@
       "width": 1024,
       "height": 1024
     },
+    "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025 g_1776439604.jpg": {
+      "sha256": "7aabd26d4d699fa5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025 h_1776439604.jpg": {
+      "sha256": "11225778ccf40ec0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025_1776439604.jpg": {
+      "sha256": "d20b01ef90ddb159",
+      "width": 1024,
+      "height": 1024
+    },
     "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg": {
       "sha256": "e2429efd3db1a71e",
       "width": 1024,
@@ -1885,31 +1885,6 @@
       "sha256": "52aea8a2617ddb5d",
       "width": 1024,
       "height": 1024
-    },
-    "assets/products/raqueta-tenis/323578_1781105225.jpeg": {
-      "sha256": "7061621b75270ff0",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/raqueta-tenis/323583_1781105225.jpeg": {
-      "sha256": "4692acee7905a2ef",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/raqueta-tenis/372051_1781105225.jpeg": {
-      "sha256": "bcdbe29a86074e57",
-      "width": 960,
-      "height": 1280
-    },
-    "assets/products/raqueta-tenis/372056_1781105225.jpeg": {
-      "sha256": "dc84ced56e5d0df4",
-      "width": 960,
-      "height": 1280
-    },
-    "assets/products/raqueta-tenis/372059_1781105225.jpeg": {
-      "sha256": "42816b8a8947736e",
-      "width": 960,
-      "height": 1280
     },
     "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 c_1776188235.jpg": {
       "sha256": "d496c90dd0085925",
@@ -2006,6 +1981,31 @@
       "width": 1024,
       "height": 1024
     },
+    "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005 a_1776189756.jpg": {
+      "sha256": "a81a884a291059ab",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005 b_1776189756.jpg": {
+      "sha256": "efd4671ced58146d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005_1776189756.jpg": {
+      "sha256": "861df538f5473f7c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/SPEED PRO 2026 - 232006 b_1776438260.jpg": {
+      "sha256": "9f6355b7458b3800",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/raqueta-tenis/SPEED PRO 2026 - 232006_1776438260.jpg": {
+      "sha256": "f524a8154d9d2054",
+      "width": 1024,
+      "height": 1024
+    },
     "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg": {
       "sha256": "478ff8d589375980",
       "width": 1024,
@@ -2018,11 +2018,6 @@
     },
     "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg": {
       "sha256": "b935a8b86cc83d6a",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg": {
-      "sha256": "c156318c9a9a7a15",
       "width": 1024,
       "height": 1024
     },

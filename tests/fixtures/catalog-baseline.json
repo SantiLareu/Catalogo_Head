@@ -364,8 +364,8 @@
         },
         {
           "size": "8",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 1
         },
         {
@@ -658,8 +658,8 @@
         },
         {
           "size": "9",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 2
         },
         {
@@ -807,7 +807,7 @@
       "code": "PENDIENTE",
       "price": 52000,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "size",
       "order": 8,
       "images": [
@@ -836,20 +836,20 @@
         },
         {
           "size": "8",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 3
         },
         {
           "size": "9",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 4
         },
         {
           "size": "10",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 5
         }
       ],
@@ -888,8 +888,8 @@
         },
         {
           "size": "7",
-          "stock": 0,
-          "inStock": false,
+          "stock": 1,
+          "inStock": true,
           "order": 2
         },
         {
@@ -1025,7 +1025,7 @@
       "code": "PENDIENTE",
       "price": 200050,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 13,
       "images": [
@@ -1657,8 +1657,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -1825,8 +1825,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2541,7 +2541,7 @@
       "code": null,
       "price": 24030,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "size",
       "order": 31,
       "images": [],
@@ -2650,8 +2650,8 @@
           "sizes": [
             {
               "size": "S",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -5046,8 +5046,8 @@
             },
             {
               "size": "39-43",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             }
           ]
@@ -6069,26 +6069,13 @@
       "specifications": null,
       "variants": [
         {
-          "id": "AQUA",
-          "code": "pendiente",
-          "colorName": "AQUA",
-          "colorHex": "#B7EBEB",
-          "price": null,
-          "thumbnail": null,
-          "order": 0,
-          "images": [
-            "assets/products/accesorios/PRO PLAYER CAP - 287115 AQ_1776966364.jpg"
-          ],
-          "sizes": []
-        },
-        {
           "id": "NAVY",
           "code": "pendiente",
           "colorName": "NAVY",
           "colorHex": "#000080",
           "price": null,
           "thumbnail": null,
-          "order": 2,
+          "order": 0,
           "images": [
             "assets/products/accesorios/PRO PLAYER CAP - 287115 NV_1776966371.jpg"
           ],
@@ -6101,7 +6088,7 @@
           "colorHex": "#EBD4B7",
           "price": null,
           "thumbnail": null,
-          "order": 3,
+          "order": 1,
           "images": [
             "assets/products/accesorios/PRO PLAYER CAP - 287115 WG_1776966376.jpg"
           ],
@@ -6356,7 +6343,7 @@
       "code": "PENDIENTE",
       "price": 97260,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
       "order": 91,
       "images": [],
@@ -6374,20 +6361,6 @@
           "images": [
             "assets/products/bolso-mochila/team-padel-bag-l-bkcc_1776450608.jpg",
             "assets/products/bolso-mochila/team-padel-bag-l-bkcc (1)_1776450605.jpg"
-          ],
-          "sizes": []
-        },
-        {
-          "id": "BLBK",
-          "code": "BLBK",
-          "colorName": "BLBK",
-          "colorHex": "#0B3476",
-          "price": null,
-          "thumbnail": null,
-          "order": 1,
-          "images": [
-            "assets/products/bolso-mochila/team-padel-bag-l-blbk_1776450736.jpg",
-            "assets/products/bolso-mochila/team-padel-bag-l-blbk (1)_1776450736.jpg"
           ],
           "sizes": []
         }
@@ -6793,7 +6766,7 @@
       "code": "PENDIENTE",
       "price": 171060,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 106,
       "images": [
@@ -6825,7 +6798,7 @@
       "code": "PENDIENTE",
       "price": 186612,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 107,
       "images": [
@@ -6887,44 +6860,6 @@
       "variants": []
     },
     {
-      "id": "Tour Pro (MM TRADE)",
-      "category": "raquetas-tenis",
-      "subcategory": null,
-      "gender": null,
-      "name": "TOUR PRO (MM TRADE)",
-      "code": "PENDIENTE",
-      "price": 65314,
-      "packDe": 1,
-      "enabled": true,
-      "stockMode": "none",
-      "order": 109,
-      "images": [
-        "assets/products/raqueta-tenis/TOUR PRO MM TRADE - 230384_1776440368.jpg"
-      ],
-      "sizes": [],
-      "specifications": {
-        "features": [
-          "Si buscas una raqueta con mayor potencia y comodidad, prueba la Tour Pro. La tecnología Nano Titanium proporciona potencia y estabilidad adicionales en cada golpe. Su cabeza extragrande ofrece un punto dulce más amplio y mayor potencia. La Tour Pro cuenta con un marco tipo O-Beam para mayor durabilidad y comodidad.",
-          "Weight (unstrung)",
-          "280 g / 9.9 oz",
-          "String Pattern",
-          "16/19",
-          "Head Size",
-          "709 cm² / 110 in²",
-          "Balance",
-          "320 mm / 1 in HL",
-          "Length",
-          "685 mm / 27.0 in",
-          "Beam",
-          "22 mm",
-          "Technologies",
-          "DampPlus",
-          "The unique DAMPPlus insert isolates impact vibrations from the grip for exceptoinal comfort."
-        ]
-      },
-      "variants": []
-    },
-    {
       "id": "IG Extreme XCEED",
       "category": "raquetas-tenis",
       "subcategory": null,
@@ -6935,7 +6870,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 110,
+      "order": 109,
       "images": [
         "assets/products/raqueta-tenis/IG EXTREME XCEED - 232115_1776437310.jpg"
       ],
@@ -6958,7 +6893,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 111,
+      "order": 110,
       "images": [
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236_1776440008.jpg",
         "assets/products/raqueta-tenis/IG GRAVITY XCEED - 231236 a_1776440008.jpg"
@@ -7006,7 +6941,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 112,
+      "order": 111,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776187934.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776187934.jpg"
@@ -7051,7 +6986,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 113,
+      "order": 112,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 a TIENDA_1776190127.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE TEAM L - STEALTH - 235454 TIENDA_1776190127.jpg"
@@ -7096,7 +7031,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 114,
+      "order": 113,
       "images": [
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 tienda_1776187950.jpg",
         "assets/products/raqueta-tenis/IG CHALLENGE MP RED - 235414 a tienda_1776187950.jpg"
@@ -7152,7 +7087,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 115,
+      "order": 114,
       "images": [
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 2_1776188605.jpg",
         "assets/products/raqueta-tenis/INSTINCT MP 2022 nube 1_1776188605.jpg",
@@ -7180,6 +7115,27 @@
           "Tipo de producto : Raqueta de tenis"
         ]
       },
+      "variants": []
+    },
+    {
+      "id": "Instinct MP 2025",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "INSTINCT MP 2025",
+      "code": "PENDIENTE",
+      "price": 225488,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 115,
+      "images": [
+        "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005_1776189756.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005 a_1776189756.jpg",
+        "assets/products/raqueta-tenis/INSTINCT MP 2025 - 232005 b_1776189756.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
       "variants": []
     },
     {
@@ -7228,33 +7184,6 @@
       "variants": []
     },
     {
-      "id": "SQUARED 232606",
-      "category": "raquetas-tenis",
-      "subcategory": null,
-      "gender": null,
-      "name": "SQUARED 232606",
-      "code": "PENDIENTE",
-      "price": 264366,
-      "packDe": 1,
-      "enabled": true,
-      "stockMode": "none",
-      "order": 117,
-      "images": [
-        "assets/products/raqueta-tenis/323583_1781105225.jpeg",
-        "assets/products/raqueta-tenis/323578_1781105225.jpeg",
-        "assets/products/raqueta-tenis/372051_1781105225.jpeg",
-        "assets/products/raqueta-tenis/372059_1781105225.jpeg",
-        "assets/products/raqueta-tenis/372056_1781105225.jpeg"
-      ],
-      "sizes": [],
-      "specifications": {
-        "features": [
-          "La SQUARED es tan innovadora que ha establecido una nueva categoría en el mercado: una raqueta con balance ultrabajo para jugadores de todos los niveles y edades que buscan la fusión perfecta entre potencia y confort. SQUARED ofrece potencia², manejabilidad² y confort². Es la raqueta con el balance más hacia el puño que HEAD ha producido nunca; tiene una excelente sensación de recogida y es fácil de manejar, permitiéndote golpear con confianza para ejecutar una técnica limpia y precisa. Está demostrado que reduce la actividad muscular durante los golpes, por lo que SQUARED es especialmente adecuada para jugadores que buscan una raqueta respetuosa con el brazo. Mientras que la mayoría de las raquetas solo tienen un tubo, la SQUARED está fabricada con tecnología de doble tubo de última generación. El tubo exterior está hecho de fibra de carbono Torayca™ T800S de Toray y proporciona potencia, mientras que el tubo interior está relleno de espuma para maximizar el confort, el cuidado del brazo y una sensación de impacto nítida. HEAD ha escuchado lo que los jugadores quieren de sus raquetas. Da un gran golpe con una raqueta que cuenta con el patrón de encordado 16x18 más potente de HEAD, junto con un taladrado direccional que mejora el confort y la sensación de impacto nítida. Inspirada en las industrias automovilística y del ciclismo, la SQUARED presenta un moderno y elegante color gris. Para un aspecto aún más exclusivo, incorpora un efecto holográfico que aporta mayor sofisticación al gris y cambia de magenta a verde azulado (teal). La raqueta con el balance más hacia el puño jamás creada por HEAD Para jugadores de todos los niveles y edades que buscan el máximo nivel de potencia y confort Fácil de realizar golpes potentes y ejecutar una técnica limpia y precisa, ayudando a reducir la fatiga muscular Demostrado que reduce la actividad muscular durante los golpes, lo que la hace especialmente adecuada para jugadores que buscan una raqueta respetuosa con el brazo Tecnología de doble tubo de última generación Power Tube: tubo de fibra de carbono T800 de última generación para potencia y estabilidad Comfort Tube: segundo tubo relleno de espuma para maximizar el confort, el cuidado del brazo y una sensación de impacto nítida El Comfort Tube conecta directamente el grip con las cuerdas principales, creando una sensación muy conectada y cómoda El patrón de encordado 16x18 más potente de HEAD Taladrado direccional para mayor confort y sensación de impacto nítida Diseño exclusivo en gris moderno y elegante con efecto holográfico El característico diseño asimétrico de HEAD está moldeado en la raqueta El tubo exterior tiene un acabado mate premium y el tubo interior destaca con un acabado brillante"
-        ]
-      },
-      "variants": []
-    },
-    {
       "id": "Speed TEAM 2026",
       "category": "raquetas-tenis",
       "subcategory": null,
@@ -7265,7 +7194,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 118,
+      "order": 117,
       "images": [
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056_1776437201.jpg",
         "assets/products/raqueta-tenis/SPEED TEAM 2026 - 232056 a_1776437201.jpg",
@@ -7341,7 +7270,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 119,
+      "order": 118,
       "images": [
         "assets/products/raqueta-tenis/BOOM MP 2024_1776188236.jpg",
         "assets/products/raqueta-tenis/BOOM MP 2024 - 230114 g_1776188235.jpg",
@@ -7382,7 +7311,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 120,
+      "order": 119,
       "images": [
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_1 nube_1776442318.jpg",
         "assets/products/raqueta-tenis/236123_Prestige_MP_2023_10 nube_1776442320.jpg",
@@ -7441,7 +7370,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 121,
+      "order": 120,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7498,7 +7427,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 122,
+      "order": 121,
       "images": [
         "assets/products/raqueta-tenis/265506_1773835504.jpg"
       ],
@@ -7542,6 +7471,26 @@
           "El árbol es alargado con una flexión clásica y unas sensaciones que se aprecian en competición desde 1987."
         ]
       },
+      "variants": []
+    },
+    {
+      "id": "SPEED PRO 2026",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "SPEED PRO 2026",
+      "code": "PENDIENTE",
+      "price": 316495,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 122,
+      "images": [
+        "assets/products/raqueta-tenis/SPEED PRO 2026 - 232006_1776438260.jpg",
+        "assets/products/raqueta-tenis/SPEED PRO 2026 - 232006 b_1776438260.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
       "variants": []
     },
     {
@@ -7606,6 +7555,27 @@
       "variants": []
     },
     {
+      "id": "BOOM MP NEON 2025",
+      "category": "raquetas-tenis",
+      "subcategory": null,
+      "gender": null,
+      "name": "BOOM MP NEON 2025",
+      "code": "PENDIENTE",
+      "price": 412100,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 124,
+      "images": [
+        "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025_1776439604.jpg",
+        "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025 g_1776439604.jpg",
+        "assets/products/raqueta-tenis/231625 BOOM MP NEON 2025 h_1776439604.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
       "id": "SQ PRIME Ball DYD x12",
       "category": "pelotas-squash",
       "subcategory": null,
@@ -7616,7 +7586,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 124,
+      "order": 125,
       "images": [
         "assets/products/raqueta-squash/327791_1773839444.jpg",
         "assets/products/raqueta-squash/D_NQ_NP_2X_902365-MLA96290010386_102025-F_1773839482.webp"
@@ -7640,7 +7610,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 125,
+      "order": 126,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7709,7 +7679,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 126,
+      "order": 127,
       "images": [],
       "sizes": [],
       "specifications": {
@@ -7746,7 +7716,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 127,
+      "order": 128,
       "images": [
         "assets/products/pop/287568 HEAD Ball Pen_1778598876.jpg"
       ],
@@ -7765,7 +7735,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 128,
+      "order": 129,
       "images": [
         "assets/products/pop/287598 HEAD PENCIL_1778605897.jpg"
       ],
@@ -7784,7 +7754,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 129,
+      "order": 130,
       "images": [
         "assets/products/pop/152694_1774610624.jpg"
       ],
@@ -7803,7 +7773,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 130,
+      "order": 131,
       "images": [
         "assets/products/pop/gancho_1778607134.jpg"
       ],
@@ -7822,7 +7792,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 131,
+      "order": 132,
       "images": [
         "assets/products/pop/287224 HEAD PEN POT_1778606304.jpg"
       ],
@@ -7841,7 +7811,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 132,
+      "order": 133,
       "images": [
         "assets/products/pop/287520 DOCUMENT FILO_1778605264.jpg"
       ],
@@ -7860,7 +7830,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 133,
+      "order": 134,
       "images": [
         "assets/products/pop/287582 head ball tube_1778592280.jpg"
       ],
@@ -7879,7 +7849,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 134,
+      "order": 135,
       "images": [
         "assets/products/pop/287500 HEAD NOTE PAD A5_1778599016.jpg"
       ],
@@ -7898,7 +7868,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 135,
+      "order": 136,
       "images": [
         "assets/products/pop/287800 UMBRELLA SMALL_1778606925.jpg"
       ],
@@ -7917,7 +7887,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 136,
+      "order": 137,
       "images": [
         "assets/products/pop/287740 CORPORATE FLOORMAT_1778606609.jpg"
       ],
@@ -7936,7 +7906,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 137,
+      "order": 138,
       "images": [
         "assets/products/pop/Collapsible racquetholder_1778607116.jpg"
       ],
@@ -7955,7 +7925,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 138,
+      "order": 139,
       "images": [
         "assets/products/pop/198454_1774610813.jpg",
         "assets/products/pop/289799_A.png"
@@ -7975,7 +7945,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 139,
+      "order": 140,
       "images": [
         "assets/products/pop/237916_1774610515.jpg"
       ],
@@ -7994,7 +7964,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 140,
+      "order": 141,
       "images": [
         "assets/products/pop/287748 HEAD CUBE_1778606419.jpg"
       ],
@@ -8013,7 +7983,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 141,
+      "order": 142,
       "images": [
         "assets/products/pop/299857_1774610591.jpg"
       ],
@@ -8032,7 +8002,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 142,
+      "order": 143,
       "images": [
         "assets/products/pop/padel net_1778607317.jpg"
       ],
@@ -8051,7 +8021,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 143,
+      "order": 144,
       "images": [
         "assets/products/pop/196472_1781029313.jpg"
       ],
@@ -8070,7 +8040,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 144,
+      "order": 145,
       "images": [
         "assets/products/paletas/pala-head-extreme-one-2025-1600x1600.webp",
         "assets/products/paletas/pala-head-extreme-one-2025-es-1-1600x1600.webp"
@@ -8090,7 +8060,7 @@
       "packDe": 1,
       "enabled": false,
       "stockMode": "none",
-      "order": 145,
+      "order": 146,
       "images": [
         "assets/products/paletas/D_NQ_NP_2X_838157-MLA99533125854_122025-F.webp",
         "assets/products/paletas/D_NQ_NP_2X_789689-MLA96058403379_102025-F.webp"
@@ -8110,7 +8080,7 @@
       "packDe": 1,
       "enabled": true,
       "stockMode": "none",
-      "order": 146,
+      "order": 147,
       "images": [
         "assets/products/accesorios/head-pressurizers-head-x100-basket-01 nube_1776951275.jpg"
       ],
@@ -8127,9 +8097,9 @@
       "code": "PENDIENTE",
       "price": 280230,
       "packDe": 1,
-      "enabled": false,
+      "enabled": true,
       "stockMode": "none",
-      "order": 147,
+      "order": 148,
       "images": [
         "assets/products/paletas/221013_Speed_Pro_2023 TIENDA_1776184687.jpg",
         "assets/products/paletas/221013 Speed Pro 2023_3-1TIENDA_1776184687.jpg",
