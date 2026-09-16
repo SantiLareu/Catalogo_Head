@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import CartDrawer from '../cart/CartDrawer.jsx';
 import CategoryMenu, { MenuIcon } from '../categories/CategoryMenu.jsx';
+import ExportCatalogModal from '../export/ExportCatalogModal.jsx';
 import CheckoutModal, {
   createEmptyCheckoutForm
 } from '../checkout/CheckoutModal.jsx';
@@ -18,9 +19,11 @@ function Header({ categories, products }) {
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
   const [checkoutForm, setCheckoutForm] = useState(createEmptyCheckoutForm);
   const cartButtonRef = useRef(null);
   const categoryMenuButtonRef = useRef(null);
+  const exportButtonRef = useRef(null);
   const continueButtonRef = useRef(null);
   const headerRef = useRef(null);
 
@@ -97,6 +100,20 @@ function Header({ categories, products }) {
           Contacto
         </a>
         <button
+          className="export-button"
+          type="button"
+          aria-label="Exportar catálogo a Excel"
+          aria-haspopup="dialog"
+          onClick={() => setExportOpen(true)}
+          ref={exportButtonRef}
+        >
+          <svg className="export-button-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <path d="M8 1v9.2M4.8 7.4 8 10.6l3.2-3.2M2.5 12.5h11V15h-11z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <span className="export-button-full">Exportar a Excel</span>
+          <span className="export-button-short">Excel</span>
+        </button>
+        <button
           className="menu-toggle"
           type="button"
           aria-label="Abrir menú de categorías"
@@ -131,6 +148,14 @@ function Header({ categories, products }) {
           categories={categories}
           onClose={() => setCategoryMenuOpen(false)}
           openerRef={categoryMenuButtonRef}
+        />
+      ) : null}
+      {exportOpen ? (
+        <ExportCatalogModal
+          categories={categories}
+          products={products}
+          onClose={() => setExportOpen(false)}
+          openerRef={exportButtonRef}
         />
       ) : null}
       {cartOpen ? (

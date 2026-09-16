@@ -47,6 +47,7 @@ En CI se usa `npm ci` para instalar exactamente el lockfile. Hay un único
 | `assets/` | Logo, hero e imágenes bundleadas por Vite. Cualquier cambio aquí modifica la versión de la app. |
 | `public/` | Archivos copiados literalmente a `dist/`: favicon, icono Apple, portadas editoriales, headers y metadatos públicos. |
 | `src/` | Aplicación React: componentes, estilos, carrito, checkout, configuración y servicios de actualización. |
+| `src/services/catalogExport.js`, `src/services/exportWorkbook.js`, `src/components/export/` | Transformación, generación `.xlsx` y modal de exportación del catálogo a Excel. |
 | `scripts/catalog-import/` | Lectura, validación y construcción determinista del catálogo. |
 | `scripts/integrity/` | Firma, hashing y verificación de la publicación. |
 | `tests/` | Tests del importador, frontend, build e integridad; incluye el baseline aprobado. |
@@ -67,6 +68,7 @@ En CI se usa `npm ci` para instalar exactamente el lockfile. Hay un único
 | React, CSS o lógica de UI | `src/` | Cambia la aplicación y su `app-version`. | `test-react`, `test:build`, build y `verify:build`. |
 | Logo, hero, favicon o portada editorial | `assets/`, `public/` y, para portadas, `src/config/categoryEditorialCovers.js` | Cambian assets y `app-version`. | `test-react`, `test:build`, build, `verify:build` y revisión visual. |
 | Carrito o checkout | `src/context/`, `src/reducers/`, `src/services/`, `src/components/cart/`, `src/components/checkout/` | Cambia lógica sensible y contratos persistidos. | `test-react`, `test-integrity`, `test:build`, build, `verify:build` y prueba manual. |
+| Exportación a Excel (columnas, orden o modal) | `src/services/catalogExport.js`, `src/services/exportWorkbook.js`, `src/components/export/` | Cambia el Excel descargable y su UI. | `test-react`, `test:build`, build y `verify:build`. |
 
 Antes de tocar archivos:
 
@@ -313,7 +315,7 @@ Esta tabla coincide con la salida actual de `npm run`:
 | `npm run compare-catalog` | Compara catálogo generado con baseline. | No | Código 1 puede significar cambio esperado aún no aprobado. |
 | `npm run update-catalog-baseline -- --confirm` | Reemplaza el snapshot comercial aprobado. | Sí | Sólo con aprobación consciente. |
 | `npm run test-importer` | Tests de lectura, validación, determinismo, baseline y versión. | Sólo temporales de test | Usar para catálogo/importador. |
-| `npm run test-react` | Tests de frontend, catálogo dinámico, carrito, checkout, navegación e integridad del navegador. | No sobre el repo | Usar para cambios comerciales y frontend. |
+| `npm run test-react` | Tests de frontend, catálogo dinámico, carrito, checkout, exportación a Excel, navegación e integridad del navegador. | No sobre el repo | Usar para cambios comerciales y frontend. |
 | `npm run test-integrity` | Tests de firma, manifiesto y verificador. | Sólo temporales de test | Obligatorio para publicación/lógica crítica. |
 | `npm run test:build` | Tests estáticos de assets, versiones y workflow de Pages. | Sólo temporales de test | Ejecutar antes de build/publicación. |
 | `npm run verify:build` | Inspecciona un `dist/` existente: catálogo, versiones, entrypoints, logo, hero e imágenes. | No | Ejecutar después de un build. Falla si `dist/` no existe. |
@@ -699,7 +701,46 @@ seguridad transaccional ni autoridad server-side.
 Existe una migración futura de infraestructura de correo en desarrollo en un
 repositorio separado. No forma parte del sistema activo documentado aquí.
 
-## 18. Recuperación con Git stash
+## 18. Exportación de catálogo a Excel
+
+El header ofrece "Exportar a Excel" para que un cliente descargue los
+productos publicados en formato `.xlsx`, pensado como base de importación
+para su propio sistema de gestión, stock o ventas. El modal permite elegir:
+
+- catálogo completo;
+- una categoría;
+- una categoría + subcategoría.
+
+Las categorías y subcategorías se obtienen dinámicamente del catálogo
+activo; no hay listas hardcodeadas. Altas, bajas, renombres y
+reordenamientos realizados por el flujo normal (`products.xlsx` →
+`import-products` → `generated/catalog.json`) se reflejan
+automáticamente en futuras exportaciones: no existe ningún Excel de
+exportación que haya que regenerar o mantener a mano.
+
+El archivo se genera en el navegador al momento de la descarga con la
+dependencia `xlsx` (importada de forma diferida, fuera del bundle inicial).
+Contiene una única hoja `Productos` con estos encabezados, en este orden:
+
+`Artículo | Color | Talle | Categoría | Subcategoría | Precio`
+
+- Una fila por cada combinación válida de producto/color/talle.
+- Color o talle no aplicables quedan vacíos (sin `-`, `N/A` ni textos
+  similares).
+- `Precio` se escribe como valor numérico de Excel, sin símbolos monetarios.
+- No se exportan stock, disponibilidad, SKU, EAN, IDs, imágenes ni otros
+  datos internos. El stock tampoco filtra: una combinación válida con
+  stock `0` se exporta igual, porque el archivo es el maestro de productos,
+  no una foto del inventario.
+- Las filas se ordenan por orden de la categoría en el catálogo, orden de
+  la subcategoría dentro de su padre, artículo, color y talle (orden
+  natural del catálogo).
+
+Implementación en `src/services/catalogExport.js` (transformación pura y
+testeable), `src/services/exportWorkbook.js` (generación del `.xlsx`) y
+`src/components/export/ExportCatalogModal.jsx` (modal). Los tests de esta
+funcionalidad forman parte de `npm run test-react`.
+## 19. Recuperación con Git stash
 
 Guardar temporalmente cambios locales, incluidos archivos no trackeados:
 
@@ -717,7 +758,7 @@ git stash apply
 Revisar `git status` y resolver conflictos si los hubiera. El stash es local,
 no se sube a GitHub y no reemplaza un backup permanente.
 
-## 19. Fuentes de verdad
+## 20. Fuentes de verdad
 
 | Tema | Fuente de verdad |
 |---|---|

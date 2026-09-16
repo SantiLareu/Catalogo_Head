@@ -1,0 +1,271 @@
+/* Botón "Exportar a Excel" del header: acción secundaria junto a Pedido. */
+
+.export-button{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:11px 12px;
+  border:1px solid #ffffff59;
+  border-radius:999px;
+  background:transparent;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:
+    background var(--motion-duration-fast,160ms) var(--motion-ease-standard,linear),
+    border-color var(--motion-duration-fast,160ms) var(--motion-ease-standard,linear);
+}
+
+.export-button:hover{
+  border-color:#fff;
+  background:#ffffff14;
+}
+
+.export-button:focus-visible{
+  outline:2px solid var(--w);
+  outline-offset:3px;
+}
+
+.export-button-icon{
+  flex:0 0 auto;
+}
+
+.export-button-short{
+  display:none;
+}
+
+/* Modal de exportación: overlay y tarjeta centrada. */
+
+.export-modal{
+  position:fixed;
+  inset:0;
+  z-index:60;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.55);
+}
+
+.export-modal-card{
+  width:min(560px,96vw);
+  max-height:92vh;
+  overflow:auto;
+  overscroll-behavior:contain;
+  padding:28px;
+  background:#fff;
+  color:#111;
+  box-shadow:var(--sh);
+}
+
+.export-modal-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.export-modal-head h2{
+  margin:6px 0 0;
+  font-size:clamp(24px,4vw,32px);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+
+.export-modal-close{
+  flex:0 0 auto;
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--l);
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.export-modal-close:hover{
+  background:#f2f2f2;
+}
+
+.export-modal-description{
+  margin:14px 0 0;
+  color:#333;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.export-scope{
+  margin:20px 0 0;
+  padding:0;
+  border:0;
+  display:grid;
+  gap:4px;
+}
+
+.export-scope legend{
+  padding:0;
+  margin-bottom:8px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+
+.export-option{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:6px 2px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.export-option input{
+  width:20px;
+  height:20px;
+  accent-color:#111;
+}
+
+.export-filters{
+  display:grid;
+  gap:14px;
+  margin-top:16px;
+}
+
+.export-field{
+  display:grid;
+  gap:8px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.export-field select{
+  min-height:48px;
+  padding:12px;
+  border:1px solid var(--l);
+  background:#fff;
+  color:#111;
+  font:inherit;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+.export-hint{
+  margin:0;
+  color:var(--m);
+  font-size:13px;
+  line-height:1.5;
+}
+
+.export-error{
+  margin:16px 0 0;
+  padding:12px;
+  border-left:4px solid #b22;
+  background:#fff1f1;
+  color:#851616;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.export-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:24px;
+}
+
+.export-cancel,
+.export-download{
+  min-height:52px;
+  padding:12px 16px;
+  font-size:14px;
+  font-weight:900;
+  cursor:pointer;
+  transition:
+    background var(--motion-duration-fast,160ms) var(--motion-ease-standard,linear),
+    opacity var(--motion-duration-fast,160ms) var(--motion-ease-standard,linear);
+}
+
+.export-cancel{
+  border:1px solid var(--l);
+  background:#fff;
+  color:#111;
+}
+
+.export-cancel:not(:disabled):hover{
+  background:#f2f2f2;
+}
+
+.export-download{
+  border:0;
+  background:#111;
+  color:#fff;
+}
+
+.export-download:not(:disabled):hover{
+  background:#1d1d1d;
+}
+
+.export-cancel:disabled,
+.export-download:disabled{
+  cursor:not-allowed;
+  opacity:.55;
+}
+
+.export-modal-close:focus-visible,
+.export-option input:focus-visible,
+.export-field select:focus-visible,
+.export-cancel:focus-visible,
+.export-download:focus-visible{
+  outline:3px solid #777;
+  outline-offset:2px;
+}
+
+@media(max-width:760px){
+  .export-button-full{
+    display:none;
+  }
+
+  .export-button-short{
+    display:inline;
+  }
+
+  .export-button{
+    padding:11px 14px;
+  }
+}
+
+@media(max-width:680px){
+  .export-modal{
+    padding:8px;
+  }
+
+  .export-modal-card{
+    width:100%;
+    max-height:calc(100dvh - 16px);
+    padding:22px 18px;
+  }
+
+  .export-actions{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .export-button,
+  .export-cancel,
+  .export-download{
+    transition:none;
+  }
+}

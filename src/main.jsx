@@ -21,6 +21,7 @@ import './styles/product.css';
 import './styles/lightbox.css';
 import './styles/cart.css';
 import './styles/checkout.css';
+import './styles/export.css';
 import './styles/footer.css';
 import './styles/responsive.css';
 

@@ -4,10 +4,10 @@
   z-index:20;
   height:72px;
   display:grid;
-  grid-template-columns:auto minmax(240px,620px) auto;
+  grid-template-columns:auto minmax(200px,1fr) auto;
   justify-content:space-between;
   align-items:center;
-  padding:0 4vw;
+  padding:0 20px;
   background:#000000;
   color:#fff;
 }
@@ -54,7 +54,7 @@
 .actions{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
 }
 .contact-link{
   min-height:44px;
@@ -233,8 +233,11 @@
   to{transform:translateX(0);opacity:1}
 }
 
-@media(max-width:760px){
+@media(max-width:900px){
   .top{height:auto;min-height:64px;padding:8px 14px;grid-template-columns:1fr auto;gap:8px 12px}
+}
+
+@media(max-width:760px){
   .contact-link--desktop{display:none}
 }
 
