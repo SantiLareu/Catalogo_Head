@@ -36,6 +36,7 @@ test('configura portadas para todas las categorías principales previstas', () =
     'indumentaria-dama',
     'indumentaria-hombre',
     'paletas-padel',
+    'paletas-padel-preventa-2026',
     'pelotas',
     'pelotas-squash',
     'pop',

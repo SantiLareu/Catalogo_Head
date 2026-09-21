@@ -29,13 +29,13 @@ test('imageFit inválido se rechaza sin degradación silenciosa', () => {
   );
 });
 
-test('la portada configurada con contain expone su imageFit', () => {
+test('la portada de preventa usa el comportamiento cover por defecto', () => {
   const cover = getCategoryEditorialCover(
     'paletas-padel-preventa-2026',
     baseUrl
   );
 
-  assert.equal(cover.imageFit, 'contain');
+  assert.equal(cover.imageFit, undefined);
   assert.ok(cover.image.startsWith(baseUrl));
 });
 
@@ -62,4 +62,3 @@ test('el componente aplica object-fit solo cuando hay imageFit', async () => {
   assert.match(source, /loading="lazy"/);
   assert.match(source, /decoding="async"/);
 });
-
