@@ -12,7 +12,39 @@ function compareByOrder(left, right) {
   return orderDifference || String(left.id).localeCompare(String(right.id), 'es');
 }
 
-export function getRenderableCategories(categories = []) {
+export function getEnabledChildren(category = {}) {
+  const children = Array.isArray(category.children) ? category.children : [];
+
+  return [...children]
+    .sort(compareByOrder)
+    .filter((child) => child.enabled !== false);
+}
+
+export function getGeneralProductsForParent(products = [], parent = {}) {
+  const enabledChildren = getEnabledChildren(parent);
+
+  if (enabledChildren.length === 0) {
+    return [];
+  }
+
+  const items = Array.isArray(products) ? products : [];
+
+  return items
+    .filter(
+      (product) =>
+        productMatchesCategory(product, parent) &&
+        !enabledChildren.some((child) => productMatchesCategory(product, child))
+    )
+    .sort(compareByOrder);
+}
+
+export function parentHasOwnSection(products = [], parent = {}) {
+  return getGeneralProductsForParent(products, parent).length > 0;
+}
+
+export function getRenderableCategories(categories = [], products = null) {
+  const withGeneralProducts = Array.isArray(products);
+
   return [...categories]
     .sort(compareByOrder)
     .flatMap((category) => {
@@ -20,13 +52,20 @@ export function getRenderableCategories(categories = []) {
         return [];
       }
 
-      const children = Array.isArray(category.children)
-        ? [...category.children].sort(compareByOrder)
-        : [];
+      const children = getEnabledChildren(category);
 
-      return children.length > 0
-        ? children.filter((child) => child.enabled !== false)
-        : [category];
+      if (children.length === 0) {
+        return [category];
+      }
+
+      if (
+        withGeneralProducts &&
+        getGeneralProductsForParent(products, category).length > 0
+      ) {
+        return [category, ...children];
+      }
+
+      return children;
     });
 }
 
@@ -126,8 +165,17 @@ export function getCategoryLabel(categories = [], product) {
 }
 
 export function buildCatalogSections(categories = [], products = []) {
-  return getRenderableCategories(categories).map((category) => ({
-    category,
-    products: getProductsForCategory(products, category)
-  }));
+  return getRenderableCategories(categories, products).map((category) => {
+    if (getEnabledChildren(category).length > 0) {
+      return {
+        category,
+        products: getGeneralProductsForParent(products, category)
+      };
+    }
+
+    return {
+      category,
+      products: getProductsForCategory(products, category)
+    };
+  });
 }

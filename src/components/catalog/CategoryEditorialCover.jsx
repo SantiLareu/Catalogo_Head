@@ -1,7 +1,8 @@
-function CategoryEditorialCover({ image, imageAlt = '', imageHeight, imageWidth, subtitle, title }) {
+function CategoryEditorialCover({ image, imageAlt = '', imageFit, imageHeight, imageWidth, subtitle, title }) {
   const className = image
     ? 'category-editorial-cover category-editorial-cover--with-image'
     : 'category-editorial-cover category-editorial-cover--without-image';
+  const imageStyle = imageFit ? { objectFit: imageFit } : undefined;
 
   return (
     <header className={className}>
@@ -20,6 +21,7 @@ function CategoryEditorialCover({ image, imageAlt = '', imageHeight, imageWidth,
             height={imageHeight}
             loading="lazy"
             decoding="async"
+            style={imageStyle}
           />
         </figure>
       ) : null}

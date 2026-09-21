@@ -1092,7 +1092,7 @@ function validateCategoryAssignments(
 
     if (allowedSubcategories) {
       if (
-        isBlank(product.subcategoria) ||
+        !isBlank(product.subcategoria) &&
         !allowedSubcategories.has(product.subcategoria)
       ) {
         diagnostics.error(

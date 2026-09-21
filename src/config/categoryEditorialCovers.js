@@ -1,4 +1,5 @@
 const validCoverModes = new Set(['replace', 'prepend']);
+const validCoverImageFits = new Set(['cover', 'contain']);
 
 export const categoryEditorialCovers = {
   'paletas-padel': {
@@ -10,6 +11,17 @@ export const categoryEditorialCovers = {
     imageAlt: '',
     mode: 'replace'
   },
+
+  'paletas-padel-preventa-2026': {
+    title: 'Preventa 2026',
+    subtitle: null,
+    image: 'editorial/ChatGPT Image 18 sept 2026, 05_00_36 p.m.png',
+    imageWidth: 1536,
+    imageHeight: 1024,
+    imageAlt: '',
+    mode: 'replace'
+  },
+
   calzado: {
     title: 'Calzado',
     subtitle: null,
@@ -130,10 +142,21 @@ export function assertEditorialCoverMode(mode, categoryId = 'desconocida') {
   return mode;
 }
 
+export function assertEditorialCoverImageFit(fit, categoryId = 'desconocida') {
+  if (fit == null) return fit;
+  if (!validCoverImageFits.has(fit)) {
+    throw new TypeError(
+      `Ajuste de imagen editorial inválido para "${categoryId}": ${fit}`
+    );
+  }
+  return fit;
+}
+
 export function getCategoryEditorialCover(categoryId, baseUrl) {
   const cover = categoryEditorialCovers[categoryId] || null;
   if (!cover) return null;
   assertEditorialCoverMode(cover.mode, categoryId);
+  assertEditorialCoverImageFit(cover.imageFit, categoryId);
   return {
     ...cover,
     image: resolveEditorialImageUrl(cover.image, baseUrl)

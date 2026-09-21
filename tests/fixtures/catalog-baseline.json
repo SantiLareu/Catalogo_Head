@@ -334,7 +334,24 @@
         "subcategory": null,
         "gender": null
       },
-      "productCategory": "paletas-padel"
+      "productCategory": "paletas-padel",
+      "children": [
+        {
+          "id": "paletas-padel-preventa-2026",
+          "label": "PREVENTA 2026",
+          "target": "categoria-paletas-padel-preventa-2026",
+          "enabled": true,
+          "title": "Preventa 2026",
+          "subtitle": "",
+          "order": 12,
+          "filter": {
+            "category": "paletas-padel",
+            "subcategory": "preventa-2026",
+            "gender": null
+          },
+          "dataSource": "paletas-padelPreventa2026"
+        }
+      ]
     }
   ],
   "products": [
@@ -950,7 +967,7 @@
     {
       "id": "VIBE 2026",
       "category": "paletas-padel",
-      "subcategory": null,
+      "subcategory": "preventa-2026",
       "gender": null,
       "name": "VIBE 2026",
       "code": "PENDIENTE",
@@ -8104,6 +8121,189 @@
         "assets/products/paletas/221013_Speed_Pro_2023 TIENDA_1776184687.jpg",
         "assets/products/paletas/221013 Speed Pro 2023_3-1TIENDA_1776184687.jpg",
         "assets/products/paletas/221013 Speed Pro 2023_TIENDA_1776184687.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "radical pro 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "RADICAL PRO 2026",
+      "code": "PENDIENTE",
+      "price": 288470,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 149,
+      "images": [
+        "assets/products/paletas/RADICALPRO2026.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "bolt 2026 rd bk",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "BOLT 2026 RD-BK",
+      "code": "PENDIENTE",
+      "price": 160000,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 150,
+      "images": [
+        "assets/products/paletas/BOLT2026RDBK.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "extreme team 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "EXTREME TEAM 2025",
+      "code": "PENDIENTE",
+      "price": 271985,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 151,
+      "images": [
+        "assets/products/paletas/EXTREMETEAM2025.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "RADICAL MOTION 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "RADICAL MOTION 2026",
+      "code": "PENDIENTE",
+      "price": 271985,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 152,
+      "images": [
+        "assets/products/paletas/RADICALMOTION2026.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "SPEED JUNIOR 2025",
+      "category": "paletas-padel",
+      "subcategory": null,
+      "gender": null,
+      "name": "SPEED JUNIOR 2025",
+      "code": "PENDIENTE",
+      "price": 174000,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 153,
+      "images": [
+        "assets/products/paletas/SPEEDJUNIOR2025.jpg"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "COELLO JUNIOR 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "COELLO JUNIOR 2026",
+      "code": "PENDIENTE",
+      "price": 173080,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 154,
+      "images": [
+        "assets/products/paletas/coello-junior-2026.webp",
+        "assets/products/paletas/COELLOJUNIOR2026.jpg",
+        "assets/products/paletas/coello-junior-2026 (1).webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "COELLO VIBE 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "COELLO VIBE 2026",
+      "code": "PENDIENTE",
+      "price": 197807,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 155,
+      "images": [
+        "assets/products/paletas/coello-vibe-2026.webp",
+        "assets/products/paletas/coello-vibe-2026 (1).webp",
+        "assets/products/paletas/coello-vibe-2026 (2).webp",
+        "assets/products/paletas/coello-vibe-2026 (3).webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "COELLO MOTION 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "COELLO MOTION 2026",
+      "code": "PENDIENTE",
+      "price": 365200,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 156,
+      "images": [
+        "assets/products/paletas/coello-motion-2026 (3).webp",
+        "assets/products/paletas/coello-motion-2026.webp",
+        "assets/products/paletas/coello-motion-2026 (1).webp",
+        "assets/products/paletas/coello-motion-2026 (2).webp"
+      ],
+      "sizes": [],
+      "specifications": null,
+      "variants": []
+    },
+    {
+      "id": "COELLO PRO 2026",
+      "category": "paletas-padel",
+      "subcategory": "preventa-2026",
+      "gender": null,
+      "name": "COELLO PRO 2026",
+      "code": "PENDIENTE",
+      "price": 365200,
+      "packDe": 1,
+      "enabled": true,
+      "stockMode": "none",
+      "order": 157,
+      "images": [
+        "assets/products/paletas/coello-pro-2026.webp",
+        "assets/products/paletas/coello-pro-2026 (1).webp",
+        "assets/products/paletas/coello-pro-2026 (2).webp",
+        "assets/products/paletas/coello-pro-2026 (3).webp",
+        "assets/products/paletas/coello-pro-2026 (4).webp"
       ],
       "sizes": [],
       "specifications": null,

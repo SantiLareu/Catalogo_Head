@@ -13,7 +13,7 @@ function MenuIcon() {
   );
 }
 
-function CategoryMenu({ categories, onClose, openerRef }) {
+function CategoryMenu({ categories, products = [], onClose, openerRef }) {
   const menuRef = useRef(null);
   const closeRef = useRef(null);
   const close = useCallback(() => onClose(), [onClose]);
@@ -59,6 +59,7 @@ function CategoryMenu({ categories, onClose, openerRef }) {
         </div>
         <CategoryIndex
           categories={categories}
+          products={products}
           id="header-category-index"
           idPrefix="header-menu"
           onNavigate={close}

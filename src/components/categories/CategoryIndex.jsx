@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { parentHasOwnSection } from '../../data/catalogSelectors.js';
 import CategoryGroup from './CategoryGroup.jsx';
 import CategoryLink from './CategoryLink.jsx';
 
@@ -11,15 +12,20 @@ function getParentForHash(categories, hash) {
     target = hash.replace(/^#/, '');
   }
 
-  return categories.find((category) =>
-    (Array.isArray(category.children) ? category.children : []).some(
+  return categories.find((category) => {
+    if (category.target === target) {
+      return true;
+    }
+
+    return (Array.isArray(category.children) ? category.children : []).some(
       (child) => child.target === target
-    )
-  );
+    );
+  });
 }
 
 function CategoryIndex({
   categories,
+  products = [],
   id = 'category-index',
   idPrefix = 'catalog',
   onNavigate,
@@ -72,6 +78,7 @@ function CategoryIndex({
               key={category.id}
               onNavigate={onNavigate}
               onToggle={handleToggle}
+              showParentLink={parentHasOwnSection(products, category)}
             />
           ) : (
             <CategoryLink category={category} key={category.id} onNavigate={onNavigate} />

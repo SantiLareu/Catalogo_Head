@@ -1,7 +1,4 @@
-import {
-  getRenderableCategories,
-  productMatchesCategory
-} from './catalogSelectors.js';
+import { productMatchesCategory } from './catalogSelectors.js';
 import { getProductTargetId } from '../utils/navigation.js';
 
 export function normalizeSearchText(value) {
@@ -13,8 +10,28 @@ export function normalizeSearchText(value) {
     .replace(/\s+/g, ' ');
 }
 
+function getSearchableCategories(categories) {
+  const result = [];
+
+  for (const category of Array.isArray(categories) ? categories : []) {
+    if (category.enabled === false) {
+      continue;
+    }
+
+    result.push(category);
+
+    for (const child of Array.isArray(category.children) ? category.children : []) {
+      if (child.enabled !== false) {
+        result.push(child);
+      }
+    }
+  }
+
+  return result;
+}
+
 function getProductCategory(categories, product) {
-  const matches = getRenderableCategories(categories)
+  const matches = getSearchableCategories(categories)
     .filter((category) => productMatchesCategory(product, category))
     .sort((left, right) => {
       const leftSpecificity = Object.values(left.filter || {}).filter(Boolean).length;

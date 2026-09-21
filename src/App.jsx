@@ -62,7 +62,7 @@ function CatalogApplication() {
       <Header categories={categories} products={products} />
       <main>
         <Hero />
-        <CategoryIndex categories={categories} />
+        <CategoryIndex categories={categories} products={products} />
         <CatalogSections categories={categories} products={products} />
       </main>
       <Footer catalogVersion={activeVersion} />

@@ -146,6 +146,7 @@ function Header({ categories, products }) {
       {categoryMenuOpen ? (
         <CategoryMenu
           categories={categories}
+          products={products}
           onClose={() => setCategoryMenuOpen(false)}
           openerRef={categoryMenuButtonRef}
         />
