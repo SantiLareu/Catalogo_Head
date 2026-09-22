@@ -246,6 +246,20 @@
   }
 }
 
+@media(max-width:480px){
+  .export-button{
+    width:44px;
+    height:44px;
+    padding:0;
+    justify-content:center;
+    border-radius:50%;
+  }
+
+  .export-button-short{
+    display:none;
+  }
+}
+
 @media(max-width:680px){
   .export-modal{
     padding:8px;
