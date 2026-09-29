@@ -15,6 +15,11 @@ import {
 } from '../../src/services/emailService.js';
 import { escapeHtml } from '../../src/utils/html.js';
 import {
+  cuitValidationMessages,
+  normalizeCuit,
+  validateCuit
+} from '../../src/utils/cuit.js';
+import {
   productSelectionActions,
   productSelectionReducer
 } from '../../src/hooks/productSelectionReducer.js';
@@ -32,13 +37,25 @@ const emailConfig = {
 };
 const customer = {
   name: 'Ana <Cliente>',
-  company: 'Comercio & Cía.',
+  company: 'Razón Social & Cía.',
+  cuit: '20-00000000-1',
   phone: '111',
   email: 'ana@example.com',
   province: 'Buenos Aires',
   city: 'La Plata',
   address: 'Calle "Uno"',
   notes: '<script>alert(1)</script>'
+};
+const minimalCustomer = {
+  name: 'Cliente recurrente',
+  company: 'Razón Social Sintética',
+  cuit: '',
+  phone: '',
+  email: 'recurrente@example.com',
+  province: '',
+  city: '',
+  address: '',
+  notes: ''
 };
 const products = [
   {
@@ -78,12 +95,70 @@ const cart = [
   { productId: 'free', quantity: 1 }
 ];
 
-test('formulario válido conserva los campos clásicos requeridos y email', () => {
-  const required = ['name', 'company', 'phone', 'email', 'province', 'city'];
-  assert.ok(required.every((field) => customer[field].trim()));
-  assert.match(customer.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-  assert.ok(Object.hasOwn(customer, 'address'));
-  assert.ok(Object.hasOwn(customer, 'notes'));
+test('pedido mínimo acepta solamente nombre, razón social y email', () => {
+  const required = ['name', 'company', 'email'];
+  const optional = ['cuit', 'phone', 'province', 'city', 'address', 'notes'];
+  assert.ok(required.every((field) => minimalCustomer[field].trim()));
+  assert.ok(optional.every((field) => minimalCustomer[field] === ''));
+  assert.match(minimalCustomer.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+});
+
+test('CheckoutForm marca como obligatorios solamente los tres campos requeridos', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const source = await readFile(
+    new URL('../../src/components/checkout/CheckoutForm.jsx', import.meta.url),
+    'utf8'
+  );
+  for (const field of ['name', 'company', 'email']) {
+    assert.match(source, new RegExp(`name: '${field}'[^\\n]+required: true`));
+  }
+  for (const field of ['cuit', 'phone', 'province', 'city', 'address']) {
+    assert.doesNotMatch(source, new RegExp(`name: '${field}'[^\\n]+required: true`));
+  }
+});
+
+test('valida CUIT sintético con y sin guiones sin alterar el valor visible', () => {
+  assert.deepEqual(validateCuit('20-00000000-1'), {
+    valid: true,
+    normalized: '20000000001',
+    reason: null,
+    message: ''
+  });
+  assert.equal(validateCuit('20000000001').valid, true);
+  assert.equal(normalizeCuit('20-00000000-1'), '20000000001');
+});
+
+test('CUIT vacío es válido pero separadores sin dígitos no cuentan como vacío', () => {
+  assert.deepEqual(validateCuit(''), {
+    valid: true,
+    normalized: '',
+    reason: null,
+    message: ''
+  });
+  assert.equal(validateCuit('   ').valid, true);
+  assert.equal(validateCuit(undefined).valid, true);
+  assert.equal(validateCuit('---').message, cuitValidationMessages.length);
+  assert.equal(validateCuit(20000000001).message, cuitValidationMessages.format);
+});
+
+test('normaliza espacios, puntos y barras admitidos para validar el CUIT', () => {
+  assert.equal(validateCuit('20.000.000/00-1').valid, true);
+  assert.equal(validateCuit(' 20 00000000 1 ').normalized, '20000000001');
+});
+
+test('rechaza CUIT informado con longitud incorrecta o caracteres no admitidos', () => {
+  assert.equal(validateCuit('20-0000000-1').message, cuitValidationMessages.length);
+  assert.equal(validateCuit('20-000000000-1').message, cuitValidationMessages.length);
+  assert.equal(validateCuit('20_00000000_1').message, cuitValidationMessages.format);
+});
+
+test('rechaza CUIT con dígito verificador incorrecto', () => {
+  assert.deepEqual(validateCuit('20-00000000-2'), {
+    valid: false,
+    normalized: '20000000002',
+    reason: 'checksum',
+    message: cuitValidationMessages.checksum
+  });
 });
 
 test('construye líneas sin variante y con variante+talle, preservando ID literal', () => {
@@ -122,9 +197,16 @@ test('payload del propietario coincide con el contrato clásico', () => {
   assert.equal(params.to_email, 'owner@example.com');
   assert.equal(params.bcc_email, 'owner-bcc@example.com');
   assert.equal(params.reply_to, 'ana@example.com');
-  assert.equal(params.subject, 'Nuevo pedido HEAD Calzado - Comercio & Cía.');
+  assert.equal(params.subject, 'Nuevo pedido HEAD Calzado - Razón Social & Cía.');
   assert.equal(params.customer_name, 'Ana <Cliente>');
+  assert.equal(params.customer_cuit, '20-00000000-1');
   assert.match(params.email_html, /Datos del cliente/);
+  assert.match(params.email_html, /Razón Social:/);
+  assert.match(params.email_html, /20-00000000-1/);
+  assert.match(params.email_html, /Teléfono:/);
+  assert.match(params.email_html, /Ubicación:<\/strong> La Plata, Buenos Aires/);
+  assert.match(params.email_html, /Dirección:/);
+  assert.match(params.email_html, /Observaciones/);
 });
 
 test('payload del cliente coincide con el contrato clásico', () => {
@@ -138,8 +220,63 @@ test('payload del cliente coincide con el contrato clásico', () => {
   assert.equal(params.reply_to, 'owner@example.com');
   assert.equal(params.subject, 'Recibimos tu pedido HEAD Calzado - RealStep');
   assert.equal(params.customer_name, 'Ana <Cliente>');
+  assert.equal(params.customer_cuit, '20-00000000-1');
   assert.match(params.email_html, /¡Recibimos tu pedido!/);
+  assert.match(params.email_html, /Razón Social:/);
+  assert.match(params.email_html, /<strong>CUIT:<\/strong> 20-00000000-1/);
+  assert.match(params.email_html, /Teléfono:/);
+  assert.match(params.email_html, /Ubicación:<\/strong> La Plata, Buenos Aires/);
+  assert.match(params.email_html, /Dirección:/);
+  assert.match(params.email_html, /Observaciones/);
   assert.doesNotMatch(params.email_html, /<h2>Datos del cliente<\/h2>/);
+});
+
+test('payloads con campos opcionales vacíos conservan customer_cuit y omiten filas vacías', () => {
+  const lines = buildOrderLines(cart, products);
+  const ownerParams = buildOwnerParams({ customer: minimalCustomer, lines, companyConfig });
+  const customerParams = buildCustomerParams({ customer: minimalCustomer, lines, companyConfig });
+
+  assert.equal(ownerParams.customer_cuit, '');
+  assert.equal(customerParams.customer_cuit, '');
+  for (const html of [ownerParams.email_html, customerParams.email_html]) {
+    assert.match(html, /Razón Social:/);
+    assert.doesNotMatch(html, /<strong>CUIT:/);
+    assert.doesNotMatch(html, /<strong>Teléfono:/);
+    assert.doesNotMatch(html, /<strong>Ubicación:/);
+    assert.doesNotMatch(html, /<strong>Dirección:/);
+    assert.doesNotMatch(html, /<strong>Observaciones/);
+  }
+});
+
+test('pedido con sólo los tres campos obligatorios completa ambos envíos', async () => {
+  const events = [];
+  const result = await sendOrderEmails({
+    customer: minimalCustomer,
+    lines: buildOrderLines(cart, products),
+    client: { send: async (_service, _template, params) => events.push(params.to_email) },
+    emailConfig,
+    companyConfig,
+    delay: async () => {}
+  });
+  assert.deepEqual(events, ['owner@example.com', 'recurrente@example.com']);
+  assert.deepEqual(result, { ownerSent: true, customerSent: true });
+});
+
+test('CUIT inválido informado bloquea el servicio antes de llamar a EmailJS', async () => {
+  let calls = 0;
+  await assert.rejects(sendOrderEmails({
+    customer: { ...minimalCustomer, cuit: '20-00000000-2' },
+    lines: buildOrderLines(cart, products),
+    client: { send: async () => { calls += 1; } },
+    emailConfig,
+    companyConfig,
+    delay: async () => {}
+  }), (error) => (
+    error instanceof CheckoutEmailError &&
+    error.stage === 'validation' &&
+    error.code === 'invalid_cuit'
+  ));
+  assert.equal(calls, 0);
 });
 
 test('escapa HTML del usuario y del catálogo en el correo manual', () => {

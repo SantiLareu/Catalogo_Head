@@ -12,12 +12,14 @@ import {
   createCheckoutOrderSnapshot,
   validateCheckoutSubmission
 } from '../../services/checkoutValidation.js';
+import { validateCuit } from '../../utils/cuit.js';
 import CheckoutForm from './CheckoutForm.jsx';
 
 export function createEmptyCheckoutForm() {
   return {
     name: '',
     company: '',
+    cuit: '',
     phone: '',
     email: '',
     province: '',
@@ -30,6 +32,9 @@ export function createEmptyCheckoutForm() {
 function errorMessage(error) {
   if (error?.stage === 'configuration') {
     return 'No se puede enviar el pedido: la configuración de EmailJS está incompleta.';
+  }
+  if (error?.stage === 'validation') {
+    return error.message;
   }
   if (error?.ownerSent && error?.stage === 'customer') {
     return 'El pedido pudo haber llegado al negocio, pero falló la confirmación al cliente. Reintentá para enviar solamente la confirmación.';
@@ -104,6 +109,12 @@ function CheckoutModal({
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = formRef.current;
+    const cuitValidation = validateCuit(customer.cuit);
+    form?.elements.cuit?.setCustomValidity(cuitValidation.message);
+    if (!cuitValidation.valid) {
+      form?.reportValidity();
+      return;
+    }
     if (!form?.checkValidity()) {
       form?.reportValidity();
       return;

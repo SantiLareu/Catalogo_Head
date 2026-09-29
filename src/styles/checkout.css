@@ -9,9 +9,13 @@
 }
 .form{padding:24px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.grid label{display:grid;gap:7px;font-size:12px;font-weight:800}
+.grid label{display:grid;min-width:0;gap:7px;font-size:12px;font-weight:800}
+.checkout-field-label{display:flex;min-width:0;flex-wrap:wrap;align-items:baseline;column-gap:6px;row-gap:2px}
+.checkout-field-hint{color:var(--m);font-size:11px;font-weight:500;line-height:1.3;overflow-wrap:anywhere}
 .grid input,.grid textarea{min-width:0;padding:12px;border:1px solid var(--l);font:inherit}
 .grid input:focus-visible,.grid textarea:focus-visible{outline:3px solid #777;outline-offset:1px}
+.grid input[aria-invalid="true"]{border-color:#b22}
+.field-error{color:#851616;font-size:12px;font-weight:700;line-height:1.35}
 .wide{grid-column:1/-1}
 .preview{margin:22px 0;padding:18px;background:#eee;line-height:1.7}
 .checkout-preview h3{margin:0 0 14px}

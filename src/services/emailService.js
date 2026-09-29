@@ -8,6 +8,7 @@ import {
 } from '../data/catalogSelectors.js';
 import { escapeHtml } from '../utils/html.js';
 import { formatMoney } from '../utils/money.js';
+import { validateCuit } from '../utils/cuit.js';
 
 export const OWNER_TO_CUSTOMER_DELAY_MS = 1150;
 
@@ -92,6 +93,27 @@ export function buildProductRowsHtml(lines) {
   }).join('');
 }
 
+function trimCustomerValue(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function buildOptionalCustomerRows(customer) {
+  const cuit = trimCustomerValue(customer.cuit);
+  const phone = trimCustomerValue(customer.phone);
+  const location = [
+    trimCustomerValue(customer.city),
+    trimCustomerValue(customer.province)
+  ].filter(Boolean).join(', ');
+  const address = trimCustomerValue(customer.address);
+
+  return [
+    cuit ? `<p><strong>CUIT:</strong> ${escapeHtml(cuit)}</p>` : '',
+    phone ? `<p><strong>Teléfono:</strong> ${escapeHtml(phone)}</p>` : '',
+    location ? `<p><strong>Ubicación:</strong> ${escapeHtml(location)}</p>` : '',
+    address ? `<p><strong>Dirección:</strong> ${escapeHtml(address)}</p>` : ''
+  ].join('');
+}
+
 export function buildEmailHtml({
   customer,
   lines,
@@ -99,8 +121,11 @@ export function buildEmailHtml({
   companyConfig = defaultCompanyConfig
 }) {
   const totals = buildOrderTotals(lines);
-  const customerName = escapeHtml(customer.name);
-  const customerEmail = escapeHtml(customer.email);
+  const customerName = escapeHtml(trimCustomerValue(customer.name));
+  const customerCompany = escapeHtml(trimCustomerValue(customer.company));
+  const customerEmail = escapeHtml(trimCustomerValue(customer.email));
+  const optionalCustomerRows = buildOptionalCustomerRows(customer);
+  const notes = trimCustomerValue(customer.notes);
   const isOwner = recipient === 'owner';
   const title = isOwner
     ? `Nuevo pedido ${escapeHtml(companyConfig.catalogName)}`
@@ -113,16 +138,20 @@ export function buildEmailHtml({
     <div style="margin:24px 0;padding:18px;background:#f5f5f5;">
       <h2>Datos del cliente</h2>
       <p><strong>Nombre:</strong> ${customerName}</p>
-      <p><strong>Comercio:</strong> ${escapeHtml(customer.company)}</p>
-      <p><strong>Teléfono:</strong> ${escapeHtml(customer.phone)}</p>
+      <p><strong>Razón Social:</strong> ${customerCompany}</p>
       <p><strong>Correo:</strong> ${customerEmail}</p>
-      <p><strong>Ubicación:</strong>
-        ${escapeHtml(customer.city)},
-        ${escapeHtml(customer.province)}
-      </p>
-      <p><strong>Dirección:</strong>
-        ${escapeHtml(customer.address || '-')}
-      </p>
+      ${optionalCustomerRows}
+    </div>
+  ` : `
+    <div style="margin:20px 0;padding:14px;background:#f5f5f5;">
+      <p><strong>Razón Social:</strong> ${customerCompany}</p>
+      ${optionalCustomerRows}
+    </div>
+  `;
+  const notesBlock = notes ? `
+    <div style="margin-top:22px;padding:16px;border-left:4px solid #111;background:#f7f7f7;">
+      <strong>Observaciones</strong><br>
+      ${escapeHtml(notes)}
     </div>
   ` : '';
 
@@ -159,10 +188,7 @@ export function buildEmailHtml({
                 <strong>${escapeHtml(formatMoney(totals.total))}</strong>
               </p>
             </div>
-            <div style="margin-top:22px;padding:16px;border-left:4px solid #111;background:#f7f7f7;">
-              <strong>Observaciones</strong><br>
-              ${escapeHtml(customer.notes || 'Sin observaciones.')}
-            </div>
+            ${notesBlock}
           </div>
         </div>
       </body>
@@ -181,7 +207,8 @@ export function buildOwnerParams({
     reply_to: customer.email.trim(),
     subject: `Nuevo pedido ${companyConfig.catalogName} - ${customer.company.trim()}`,
     email_html: buildEmailHtml({ customer, lines, recipient: 'owner', companyConfig }),
-    customer_name: customer.name.trim()
+    customer_name: customer.name.trim(),
+    customer_cuit: trimCustomerValue(customer.cuit)
   };
 }
 
@@ -195,7 +222,8 @@ export function buildCustomerParams({
     reply_to: companyConfig.orderEmail,
     subject: `Recibimos tu pedido ${companyConfig.catalogName} - ${companyConfig.companyName}`,
     email_html: buildEmailHtml({ customer, lines, recipient: 'customer', companyConfig }),
-    customer_name: customer.name.trim()
+    customer_name: customer.name.trim(),
+    customer_cuit: trimCustomerValue(customer.cuit)
   };
 }
 
@@ -228,6 +256,15 @@ export async function sendOrderEmails({
   emailConfig = defaultEmailConfig,
   companyConfig = defaultCompanyConfig
 }) {
+  const cuitValidation = validateCuit(customer?.cuit);
+  if (!cuitValidation.valid) {
+    throw new CheckoutEmailError(
+      'validation',
+      cuitValidation.message,
+      { code: 'invalid_cuit', ownerSent: false }
+    );
+  }
+
   const validation = validateEmailConfig(emailConfig, companyConfig);
   if (!validation.valid) {
     throw new CheckoutEmailError(

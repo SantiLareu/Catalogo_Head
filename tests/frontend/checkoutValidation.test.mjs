@@ -244,3 +244,21 @@ test('CheckoutModal retorna antes de alcanzar EmailJS cuando la decisión bloque
   assert.ok(blockedGuard >= 0 && blockedReturn > blockedGuard && emailSend > blockedReturn);
   assert.match(source, /if \(submittingRef\.current \|\| cart\.length === 0\) return/);
 });
+
+test('CheckoutModal valida el CUIT antes de comprobar catálogo o enviar', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const source = await readFile(
+    new URL('../../src/components/checkout/CheckoutModal.jsx', import.meta.url),
+    'utf8'
+  );
+  const cuitValidation = source.indexOf('validateCuit(customer.cuit)');
+  const invalidGuard = source.indexOf('if (!cuitValidation.valid)', cuitValidation);
+  const invalidReturn = source.indexOf('return;', invalidGuard);
+  const catalogValidation = source.indexOf('validateCheckoutSubmission', invalidGuard);
+  assert.ok(
+    cuitValidation >= 0 &&
+    invalidGuard > cuitValidation &&
+    invalidReturn > invalidGuard &&
+    catalogValidation > invalidReturn
+  );
+});
