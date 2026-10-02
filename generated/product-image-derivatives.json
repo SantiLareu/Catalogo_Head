@@ -226,6 +226,16 @@
       "width": 1024,
       "height": 1024
     },
+    "assets/products/accesorios/PTMINT.jpg": {
+      "sha256": "18a7382cf30d091f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/accesorios/PTWHITE.jpeg": {
+      "sha256": "07e5391a332be16a",
+      "width": 1024,
+      "height": 1024
+    },
     "assets/products/accesorios/SONIC PRO REEL - 281128_1776700571.jpg": {
       "sha256": "259759f5627585c1",
       "width": 1024,
@@ -556,6 +566,191 @@
       "width": 1024,
       "height": 1024
     },
+    "assets/products/calzado/MOTION PRO BOA PADEL BKW - 273625 b_1790691044.jpg": {
+      "sha256": "a7060928edb3d20c",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO BOA PADEL BKW - 273625 c_1790691044.jpg": {
+      "sha256": "19abf4ee20bca4d2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO BOA PADEL BKW - 273625 d_1790691044.jpg": {
+      "sha256": "cb7b9e7c8a5d7057",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO BOA PADEL BKW - 273625_1790691044.jpg": {
+      "sha256": "b84c29bc5a57f0b3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO PADEL MEN WHBK - 273645 a_1790691025.jpg": {
+      "sha256": "9a7421f861e3da5f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO PADEL MEN WHBK - 273645 b_1790691025.jpg": {
+      "sha256": "a90dcab95e21ff3e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO PADEL MEN WHBK - 273645 c_1790691025.jpg": {
+      "sha256": "dcb4cd91a88feaf9",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO PADEL MEN WHBK - 273645 d_1790691025.jpg": {
+      "sha256": "b161c2746048e941",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION PRO PADEL MEN WHBK - 273645_1790691025.jpg": {
+      "sha256": "bca4f5d5b3493141",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION TEAM PADEL MEN WHBK - 273695 b_1790690980.jpg": {
+      "sha256": "f89c022365e99fc4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION TEAM PADEL MEN WHBK - 273695 c_1790690980.jpg": {
+      "sha256": "70c6ced763612f3d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION TEAM PADEL MEN WHBK - 273695 d_1790690980.jpg": {
+      "sha256": "c29419012f6d3e18",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/MOTION TEAM PADEL MEN WHBK - 273695_1790690980.jpg": {
+      "sha256": "97fb884d29ef750b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT COURT MEN BKGR - 273505 b_1790691066.jpg": {
+      "sha256": "143205fbf6f7dd34",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT COURT MEN BKGR - 273505 c_1790691066.jpg": {
+      "sha256": "9666723f057cec97",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT COURT MEN BKGR - 273505 d_1790691066.jpg": {
+      "sha256": "cea0f8462a4928ef",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT COURT MEN BKGR - 273505_1790691066.jpg": {
+      "sha256": "3fa40f314f629d8e",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 CLAY MEN NVLI - 273335 a_1790624286.jpg": {
+      "sha256": "07b80124fddde2b6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 CLAY MEN NVLI - 273335 b_1790624286.jpg": {
+      "sha256": "dab8111b16caa2b8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 CLAY MEN NVLI - 273335 d_1790624286.jpg": {
+      "sha256": "e81833014cc08a5a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 CLAY MEN NVLI - 273335_1790624286.jpg": {
+      "sha256": "676a498b475900fd",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN BKPL - 274305 b_1790690926.jpg": {
+      "sha256": "1e7b8a69eecc885d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN BKPL - 274305 c_1790690926.jpg": {
+      "sha256": "dceda92ec91aeeff",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN BKPL - 274305 d_1790690926.jpg": {
+      "sha256": "b6ca7c85a189d68b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN BKPL - 274305_1790690926.jpg": {
+      "sha256": "fb5d0cbc7406024a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN WHTQ - 274315 b_1790690914.jpg": {
+      "sha256": "a2342871debf2119",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN WHTQ - 274315 c_1790690914.jpg": {
+      "sha256": "457a18e94e1f097f",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN WHTQ - 274315 d_1790690914.jpg": {
+      "sha256": "8c4fbd68dd2dae16",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT EVO 2.0 WOMEN WHTQ - 274315_1790690914.jpg": {
+      "sha256": "96fbc2ae0607d4d8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN DBRD - 273255 b_1790623699.jpg": {
+      "sha256": "55cac4f2e5fbe9a3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN DBRD - 273255 c_1790623699.jpg": {
+      "sha256": "7014e871aea5db93",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN DBRD - 273255 d_1790623699.jpg": {
+      "sha256": "f826f5e568700874",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN DBRD - 273255_1790623699.jpg": {
+      "sha256": "098e7e79e3fe0224",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN NVLI - 273235 b_1790623253.jpg": {
+      "sha256": "e00c7ba405f906c7",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN NVLI - 273235 c_1790623253.jpg": {
+      "sha256": "2d6a482c9fa5eb6b",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN NVLI - 273235 d_1790623253.jpg": {
+      "sha256": "c8081848c2d00ad3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/REVOLT PRO 4.5 CLAY MEN NVLI - 273235_1790623253.jpg": {
+      "sha256": "2e581a6ccd3967b9",
+      "width": 1024,
+      "height": 1024
+    },
     "assets/products/calzado/slice-w1-a.webp": {
       "sha256": "f098614e53b39cc4",
       "width": 1024,
@@ -613,6 +808,106 @@
     },
     "assets/products/calzado/smash-m2-c.webp": {
       "sha256": "046aaf563e21704a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 CLAY WOMEN COWH - 274155 b_1790690945.jpg": {
+      "sha256": "7af376715e4495e0",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 CLAY WOMEN COWH - 274155 c_1790690945.jpg": {
+      "sha256": "e3679e7a4987b4c5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 CLAY WOMEN COWH - 274155 d_1790690945.jpg": {
+      "sha256": "c6a31c400af0aeb8",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 CLAY WOMEN COWH - 274155_1790690945.jpg": {
+      "sha256": "0119441887504184",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 SF MEN BKWH - 273105 b_1790622561.jpg": {
+      "sha256": "43787f7f8eb320c2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 SF MEN BKWH - 273105 c_1790622561.jpg": {
+      "sha256": "419314aa676a9fab",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 SF MEN BKWH - 273105 d_1790622561.jpg": {
+      "sha256": "216a09925ba9abb4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT PRO 4.0 SF MEN BKWH - 273105_1790622561.jpg": {
+      "sha256": "4028f199ce6233ee",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN DBRD - 273415 b_1790691545.jpg": {
+      "sha256": "6cb721baedb2c466",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN DBRD - 273415 c_1790691545.jpg": {
+      "sha256": "196c6d7ffd58ce8a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN DBRD - 273415 d_1790691545.jpg": {
+      "sha256": "843b8b0761ea80d5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN DBRD - 273415_1790691545.jpg": {
+      "sha256": "6319528c8ca52f0d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN NVLI - 273435 b_1790691124.jpg": {
+      "sha256": "1c96d3d86caf8168",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN NVLI - 273435 c_1790691124.jpg": {
+      "sha256": "3a7b439e51eb85dc",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN NVLI - 273435 d_1790691124.jpg": {
+      "sha256": "d52b774d0102800d",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN NVLI - 273435_1790691124.jpg": {
+      "sha256": "5846c2cc2a3c8fdb",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN WHBK - 273455 a_1790691100.jpg": {
+      "sha256": "3d3f1fc7915bcd27",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN WHBK - 273455 b_1790691100.jpg": {
+      "sha256": "06266717c6696ac5",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN WHBK - 273455 d_1790691100.jpg": {
+      "sha256": "896ccd449a22e8e3",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/calzado/SPRINT TEAM 4.0 CLAY MEN WHBK - 273455_1790691100.jpg": {
+      "sha256": "afe184f5047804fc",
       "width": 1024,
       "height": 1024
     },
@@ -816,11 +1111,6 @@
       "width": 800,
       "height": 800
     },
-    "assets/products/indumentaria-dama/63060503_o_a3.jpg": {
-      "sha256": "ea2d66cd10e258a5",
-      "width": 3000,
-      "height": 3000
-    },
     "assets/products/indumentaria-dama/697a1c67736b1-660329-500x500.jpg": {
       "sha256": "e15921bd32076161",
       "width": 500,
@@ -853,21 +1143,6 @@
     },
     "assets/products/indumentaria-dama/814400_club_lucy_t-shirt_women_wh_2-b862d1e6521d4e1a5417134579772335-1024-1024.webp": {
       "sha256": "b029e36828a9f407",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_BK_1_1773328125.jpg": {
-      "sha256": "a8b1c91c626e77c4",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/indumentaria-dama/814421_CLUB_22_Tech_Polo_Shirt_Women_WH_1_1773328123.jpg": {
-      "sha256": "d1d83b419cb4d02e",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/indumentaria-dama/814431_CLUB_22_Tech_T-Shirt_Women_BK_1_1773328161.jpg": {
-      "sha256": "cb3c4ecefce674b8",
       "width": 1024,
       "height": 1024
     },
@@ -906,11 +1181,6 @@
       "width": 1024,
       "height": 1024
     },
-    "assets/products/indumentaria-dama/814634 W TECH TIGHT blk_1773328381.jpg": {
-      "sha256": "c61d0d04ca5a64b7",
-      "width": 1024,
-      "height": 1024
-    },
     "assets/products/indumentaria-dama/814725-nvwh_A.jpg": {
       "sha256": "a6e0b23a987c5d17",
       "width": 1500,
@@ -930,16 +1200,6 @@
       "sha256": "9204664d27846d33",
       "width": 480,
       "height": 879
-    },
-    "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-3-62520bd8e3c1d3019b17588099627372-1024-1024.webp": {
-      "sha256": "dc5586af5f258341",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/indumentaria-dama/calza-larga-head-tech-tights-black-4-584494ab8308ecca6c17588099628470-1024-1024.webp": {
-      "sha256": "277b6a19867f468d",
-      "width": 1024,
-      "height": 1024
     },
     "assets/products/indumentaria-dama/ewff-76f23b29eaf821912717805736298063-1024-1024.webp": {
       "sha256": "95b70fb1d47938d5",
@@ -966,16 +1226,6 @@
       "width": 1500,
       "height": 1500
     },
-    "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-black-814421-bk_A-600x600.jpg": {
-      "sha256": "bc4f6ab6a1973e13",
-      "width": 600,
-      "height": 600
-    },
-    "assets/products/indumentaria-dama/head-club-22-tech-polo-da-tennis-donna-white-814421-wh_A.jpg": {
-      "sha256": "092da7afc15e3e05",
-      "width": 1500,
-      "height": 1500
-    },
     "assets/products/indumentaria-dama/head-club-lara-maglietta-da-tennis-donna-grey-melange-814529-gm_A.jpg": {
       "sha256": "7c00f75f3688fd72",
       "width": 1500,
@@ -986,11 +1236,6 @@
       "width": 1024,
       "height": 1024
     },
-    "assets/products/indumentaria-dama/images.jpg": {
-      "sha256": "832139610bef7d75",
-      "width": 447,
-      "height": 447
-    },
     "assets/products/indumentaria-dama/musuclosa-spirit-3e9f34d01e50b390ba17805665623550-1024-1024.webp": {
       "sha256": "1ec15b5a9d9cf0b9",
       "width": 1024,
@@ -1000,11 +1245,6 @@
       "sha256": "a20f23e0e8b4d75d",
       "width": 1024,
       "height": 1024
-    },
-    "assets/products/indumentaria-dama/rs.webp": {
-      "sha256": "ce8abb8316558b13",
-      "width": 455,
-      "height": 607
     },
     "assets/products/indumentaria-dama/sasasaa-cb213f2fa8b9cec9e917805731566568-1024-1024 (1).webp": {
       "sha256": "e2d6fb3598aec51b",
@@ -1626,6 +1866,21 @@
       "width": 621,
       "height": 1198
     },
+    "assets/products/paletas/EXTREME ONE X 2025 - 223105 a nube_1788368312.jpg": {
+      "sha256": "09e06d5110b3b2e2",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/EXTREME ONE X 2025 - 223105 b nube_1788368312.jpg": {
+      "sha256": "2766b67e5c3e0ed1",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/EXTREME ONE X 2025 - 223105 i nube_1788368312.jpg": {
+      "sha256": "b6a36c7b90f5061c",
+      "width": 1024,
+      "height": 1024
+    },
     "assets/products/paletas/extreme-pro-2025 (1).webp": {
       "sha256": "53b69405f27a2c6b",
       "width": 1820,
@@ -1705,6 +1960,36 @@
       "sha256": "5e960201a0dce3bb",
       "width": 1200,
       "height": 1200
+    },
+    "assets/products/paletas/SPEED MOTION 2025 - 221075 c_1776181110.jpg": {
+      "sha256": "bbcb850dc10d1cb4",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/SPEED MOTION 2025 - 221075 d_1776181111.jpg": {
+      "sha256": "0ec6966ffa07fff6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/SPEED MOTION 2025 - 221075 e_1776181111.jpg": {
+      "sha256": "3e1062c129d7529a",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/SPEED MOTION 2025.jpg": {
+      "sha256": "5d993cfe497dd420",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/SPEED ONE 2025 - 221055 b_1776181487.jpg": {
+      "sha256": "5c71de21ea8edda6",
+      "width": 1024,
+      "height": 1024
+    },
+    "assets/products/paletas/SPEED ONE 2025 - 221055_1776181487.jpg": {
+      "sha256": "134e750e653b61e9",
+      "width": 1024,
+      "height": 1024
     },
     "assets/products/paletas/SPEEDJUNIOR2025.jpg": {
       "sha256": "1a842123ee862ce7",

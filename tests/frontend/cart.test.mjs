@@ -189,13 +189,24 @@ test('unidades, total, precio de variante, fallback y precio cero', () => {
 });
 
 test('sanea carrito válido y conserva ID de variante con espacio final', () => {
+  const variantProduct = products.find((product) => product.id === 'variant');
+  assert.ok(variantProduct);
+  const trailingVariant = getVariantById(variantProduct, 'black ');
+  assert.ok(trailingVariant);
+  assert.equal(getVariantById(variantProduct, 'black'), null);
+
   const result = sanitizeCart([
     { productId: 'plain', quantity: 2 },
     { productId: 'direct', size: 'M', quantity: 1 },
     { productId: 'variant', variantId: 'black ', size: 'M', quantity: 3 }
   ], products);
   assert.equal(result.length, 3);
-  assert.equal(result[2].variantId, 'black ');
+  const variantLine = result.find((line) => line.productId === 'variant');
+  assert.ok(variantLine);
+  assert.equal(variantLine.variantId, 'black ');
+  const report = reconcileCart([variantLine], products);
+  assert.equal(report.entries[0].variant, trailingVariant);
+  assert.deepEqual(report.entries[0].issues, []);
 });
 
 test('conserva producto, variante y talle inexistentes para reconciliarlos', () => {
@@ -488,24 +499,12 @@ test('catálogo real cubre los casos de carrito requeridos', async () => {
   assert.ok(catalog.products.some((product) =>
     product.variants.some((variant) => variant.sizes.length > 0)
   ));
-  const trailingVariantProduct = catalog.products.find((product) =>
-    product.variants.some((variant) => variant.id === 'black ')
-  );
-  const trailingVariant = getVariantById(trailingVariantProduct, 'black ');
-  const size = trailingVariant.sizes[0].size;
-  const restored = sanitizeCart([{
-    productId: trailingVariantProduct.id,
-    variantId: 'black ',
-    size,
-    quantity: 2
-  }], catalog.products);
-  assert.equal(restored[0].variantId, 'black ');
-
   const availabilityProduct = catalog.products.find((product) =>
     product.variants.some((variant) =>
       variant.sizes.some((item) => item.stock === 1 && item.inStock === true)
     )
   );
+  assert.ok(availabilityProduct, 'El catálogo debe incluir una variante disponible con stock 1.');
   const availabilityVariant = availabilityProduct.variants.find((variant) =>
     variant.sizes.some((item) => item.stock === 1 && item.inStock === true)
   );

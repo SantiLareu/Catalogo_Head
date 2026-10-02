@@ -54,24 +54,35 @@ test('diagnóstico identifica diferencia en producto', async function() {
   assert.match(formatCatalogDifference(difference), /esperado .*recibido/);
 });
 
-test('diagnóstico identifica variante e ID con espacio final', async function() {
-  const expected = await approvedCatalog();
-  const productIndex = expected.products.findIndex((product) =>
-    product.variants.some((variant) => variant.id === 'black ')
-  );
-  const variantIndex = expected.products[productIndex].variants.findIndex(
-    (variant) => variant.id === 'black '
-  );
+test('diagnóstico identifica variante e ID con espacio final', function() {
+  const expected = {
+    products: [{ id: 'producto-prueba', variants: [{ id: 'black ', code: 'ORIGINAL' }] }]
+  };
   const actual = clone(expected);
-  actual.products[productIndex].variants[variantIndex].code = 'CAMBIO';
-  const difference = compareCatalogs(expected, actual)[0];
-  assert.match(difference.path, /\.variants\["black "\]\.code$/);
+  actual.products[0].variants[0].code = 'CAMBIO';
+  const codeDifferences = compareCatalogs(expected, actual);
+  assert.deepEqual(codeDifferences, [{
+    path: 'products[producto-prueba].variants["black "].code',
+    expected: 'ORIGINAL',
+    actual: 'CAMBIO'
+  }]);
+  assert.equal(
+    formatCatalogDifference(codeDifferences[0]),
+    'products[producto-prueba].variants["black "].code: esperado "ORIGINAL", recibido "CAMBIO"'
+  );
 
   const changedId = clone(expected);
-  changedId.products[productIndex].variants[variantIndex].id = 'black';
+  changedId.products[0].variants[0].id = 'black';
   const idDifferences = compareCatalogs(expected, changedId);
-  assert.ok(idDifferences.some((item) => item.path.endsWith('.id')));
-  assert.ok(idDifferences.some((item) => item.path.includes('"black "')));
+  assert.deepEqual(idDifferences, [{
+    path: 'products[producto-prueba].variants["black "].id',
+    expected: 'black ',
+    actual: 'black'
+  }]);
+  assert.equal(
+    formatCatalogDifference(idDifferences[0]),
+    'products[producto-prueba].variants["black "].id: esperado "black ", recibido "black"'
+  );
 });
 
 test('diagnóstico identifica imagen, stock y categoría', async function() {
