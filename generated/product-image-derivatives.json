@@ -511,21 +511,6 @@
       "width": 1024,
       "height": 1024
     },
-    "assets/products/calzado/ace-m2-1.webp": {
-      "sha256": "c8c88fe9efdc3998",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/ace-m2-2.webp": {
-      "sha256": "9d8ed16dd16bf267",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/ace-m2-3.webp": {
-      "sha256": "63406a48457ca2b7",
-      "width": 1024,
-      "height": 1024
-    },
     "assets/products/calzado/deuce-m1-2.webp": {
       "sha256": "9bbf493594cebdc9",
       "width": 1024,
@@ -543,11 +528,6 @@
     },
     "assets/products/calzado/deuce-m2.webp": {
       "sha256": "7e3e654baf78caab",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/drop-w1-c.webp": {
-      "sha256": "bcea1e4f7f79df84",
       "width": 1024,
       "height": 1024
     },
@@ -763,51 +743,6 @@
     },
     "assets/products/calzado/slice-w1-c.webp": {
       "sha256": "77f8af492ef2b7be",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/slice-w2-a.webp": {
-      "sha256": "4a1c18e4cd82a390",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/slice-w2-b.webp": {
-      "sha256": "aea1366326b53a72",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/slice-w2-c.webp": {
-      "sha256": "fcf2a6ed9bb5b61e",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m1-a.webp": {
-      "sha256": "f56284cce4ca37a1",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m1-b.webp": {
-      "sha256": "e0aa9d75e1bc206e",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m1-c.webp": {
-      "sha256": "43d3ab97c19de8ed",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m2-a.webp": {
-      "sha256": "c23d7e9f3d93a77c",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m2-b.webp": {
-      "sha256": "2810c8094f8cf2a0",
-      "width": 1024,
-      "height": 1024
-    },
-    "assets/products/calzado/smash-m2-c.webp": {
-      "sha256": "046aaf563e21704a",
       "width": 1024,
       "height": 1024
     },
