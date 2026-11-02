@@ -681,8 +681,8 @@
       "sizes": [
         {
           "size": "8",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 0
         },
         {
@@ -764,26 +764,26 @@
         },
         {
           "size": "9",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 2
         },
         {
           "size": "9.5",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 3
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
           "size": "10.5",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         },
         {
@@ -800,8 +800,8 @@
         },
         {
           "size": "12",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 8
         },
         {
@@ -863,14 +863,14 @@
             },
             {
               "size": "9",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
               "size": "9.5",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             },
             {
@@ -881,8 +881,8 @@
             },
             {
               "size": "10.5",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 5
             },
             {
@@ -1193,14 +1193,14 @@
         },
         {
           "size": "10",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         },
         {
           "size": "10.5",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 5
         },
         {
@@ -1537,8 +1537,8 @@
         },
         {
           "size": "11",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 4
         }
       ],
@@ -1625,8 +1625,8 @@
             },
             {
               "size": "6.5",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -1696,8 +1696,8 @@
         },
         {
           "size": "7.5",
-          "stock": 1,
-          "inStock": true,
+          "stock": 0,
+          "inStock": false,
           "order": 3
         },
         {
@@ -1990,7 +1990,7 @@
       "code": "PENDIENTE",
       "price": 201600,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 30,
       "images": [
@@ -2253,14 +2253,14 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -2382,8 +2382,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2837,8 +2837,8 @@
             },
             {
               "size": "M",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 1
             },
             {
@@ -2916,8 +2916,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -2995,8 +2995,8 @@
             },
             {
               "size": "XL",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -3098,8 +3098,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 2
             },
             {
@@ -4386,8 +4386,8 @@
             },
             {
               "size": "L",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 3
             }
           ]
@@ -5442,8 +5442,8 @@
           "sizes": [
             {
               "size": "34-38",
-              "stock": 1,
-              "inStock": true,
+              "stock": 0,
+              "inStock": false,
               "order": 0
             },
             {
@@ -6899,7 +6899,7 @@
       "code": "PENDIENTE",
       "price": 55984,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 97,
       "images": [
@@ -7039,7 +7039,7 @@
       "code": "PENDIENTE",
       "price": 116632,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 101,
       "images": [
@@ -7265,7 +7265,7 @@
       "code": "PENDIENTE",
       "price": 197810,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 109,
       "images": [
@@ -7365,7 +7365,7 @@
       "code": "PENDIENTE",
       "price": 202165,
       "packDe": 1,
-      "enabled": true,
+      "enabled": false,
       "stockMode": "none",
       "order": 113,
       "images": [
